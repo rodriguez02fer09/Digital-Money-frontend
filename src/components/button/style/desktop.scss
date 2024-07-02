@@ -1,0 +1,90 @@
+.button {
+  display: flex;
+  padding: 40px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-family: 'Open Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  &--large-green {
+    width: 360px;
+    height: 64px;
+    border: 1px solid var(--A---Color-3, #0aeb8c);
+    background: var(--B--Color-1, #0aeb8c);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background-color: #0aeb8c;
+      box-shadow: 0px -8px 0px 0px #07a865 inset;
+    }
+  }
+  &--large-black {
+    width: 360px;
+    height: 64px;
+    gap: 10px;
+    flex-shrink: 0;
+    background: var(--B---color-2, #052a2d);
+    cursor: pointer;
+    border: 1px solid #0aeb8c;
+    color: var(--A---Color-3, #0aeb8c);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--large-grey {
+    width: 360px;
+    height: 64px;
+    background: var(--Color-button-gris, #cecece);
+
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid#cecece;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #cecece;
+      box-shadow: 0px -8px 0px 0px #858484 inset;
+    }
+  }
+
+  &--small-green {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--A---Color-3, #0aeb8c);
+    background: var(--B--Color-1, #0aeb8c);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    &:hover {
+      background-color: #0aeb8c;
+      box-shadow: 0px -8px 0px 0px #07a865 inset;
+    }
+  }
+
+  &--small-black {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--B---color-2, #052a2d);
+    color: var(--A---Color-3, #0aeb8c);
+    cursor: pointer;
+    border: 1px solid var(--A---Color-3, #0aeb8c);
+  }
+  &--small-grey {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--Color-button-gris, #cecece);
+    box-shadow: 0px -8px 0px 0px #118c87 inset;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid#cecece;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #cecece;
+      box-shadow: 0px -8px 0px 0px #858484 inset;
+    }
+  }
+}
