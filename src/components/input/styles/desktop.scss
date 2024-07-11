@@ -1,0 +1,81 @@
+.prompt-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  &--container {
+    margin-bottom: 16px;
+  }
+  &__large-Input-red {
+    width: 360px;
+    height: 64px;
+    border-radius: 10px;
+    border: 1px solid var(--D---Color-Error-Fondo-Dark, #ee3838);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &:focus-visible {
+      outline: 1px solid #ee3838;
+    }
+  }
+  &__large-Input-blue {
+    width: 360px;
+    height: 64px;
+    border-radius: 10px;
+    border: 1px solid var(--B--Color-3, #d2ffec);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &:focus-visible {
+      outline: 2px solid #d2ffec;
+    }
+  }
+  &__large-Input-black {
+    width: 360px;
+    height: 64px;
+    border-radius: 10px;
+    border: 1px solid var(--A---Color-1, #201f22);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &:focus-visible {
+      outline: 1px solid #201f22;
+    }
+  }
+
+  &__small-Input-red {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--D---Color-Error-Fondo-Dark, #ee3838);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &:focus-visible {
+      outline: 1px solid #ee3838;
+    }
+  }
+  &__small-Input-blue {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--B--Color-3, #d2ffec);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &:focus-visible {
+      outline: 1px solid #d2ffec;
+    }
+  }
+  &__small-Input-black {
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--A---Color-1, #201f22);
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &:focus-visible {
+      outline: 1px solid #201f22;
+    }
+  }
+}
