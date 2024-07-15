@@ -1,5 +1,6 @@
 import InputSearch from '../index'
 import '../../conts/variables.scss'
+
 export default {
   component: InputSearch,
   title: 'InputSearch',
@@ -7,7 +8,7 @@ export default {
     type: {
       control: {
         type: 'select',
-        options: ['large-prompt', 'medium-prompt', 'small-Prompt'],
+        options: ['large-prompt', 'medium-prompt', 'small-prompt'],
       },
     },
   },
@@ -31,7 +32,7 @@ mediumPrompt.args = {
 
 export const smallPrompt = Template.bind({})
 smallPrompt.args = {
-  type: 'small-Prompt ',
+  type: 'small-prompt',
   value: '',
   placeholder: 'Buscar tu actividad',
 }

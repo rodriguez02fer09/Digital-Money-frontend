@@ -1,5 +1,4 @@
 import '../styles/desktop.scss'
-import Search from '../../../../public/images/search.svg'
 
 const InputSearch = ({
   type = 'text',
@@ -10,21 +9,24 @@ const InputSearch = ({
   className = '',
 }) => {
   const defaultClass = 'prompt-search'
+
   return (
-    <div className={`${defaultClass} ${defaultClass}--container`}>
-      {label && <label className="prompt-label">{label}</label>}
-      <input
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-        className={`${defaultClass} ${defaultClass}__${type} ${className}`}
-      />
-      <img
-        className={`${defaultClass} ${defaultClass}--container-img`}
-        src={Search}
-        alt="Search icon"
-      />
+    <div className={`${defaultClass}`}>
+      <div className={`${defaultClass}--container ${defaultClass}--${type}`}>
+        {label && <label className="prompt-label">{label}</label>}
+        <input
+          type="text"
+          value={value}
+          placeholder={placeholder}
+          onChange={onChange}
+          className={`${defaultClass} ${defaultClass}__${type} ${className}`}
+        />
+        <img
+          src="/images/search.svg"
+          alt="Search icon"
+          className={`${defaultClass} ${defaultClass}__${type}-icon`}
+        />
+      </div>
     </div>
   )
 }
