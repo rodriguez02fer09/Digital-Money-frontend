@@ -1,4 +1,4 @@
-import '../../common/conts/colors.scss'
+import '../../conts/variables.scss'
 import '../styles/desktop.scss'
 
 const Input = ({type, value, placeholder, onChange, label, className}) => {
