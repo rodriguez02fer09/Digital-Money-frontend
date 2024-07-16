@@ -1,149 +1,132 @@
 .button {
-  display: flex;
-  padding: 40px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  font-family: 'Open Sans';
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
   &--large-green {
     width: 360px;
-
-    border: 1px solid #0aeb8cbd;
-    background: #0aeb8c;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--B--Color-1, #0aeb8c);
+    background: var(--B--Color-1, #0aeb8c);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-      background-color: #0aeb8c;
-      box-shadow: 0px -8px 0px 0px #07a865 inset;
-    }
   }
   &--large-black {
     width: 360px;
     height: 64px;
-    gap: 10px;
-    flex-shrink: 0;
-    background: #052a2d;
-    cursor: pointer;
-    border: 1px solid #0aeb8c;
-
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--B---color-2, #052a2d);
+    border: 2px solid var(--B--Color-1, #0aeb8c);
+    /* sombra 1 */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    color: var(--B--Color-1, #0aeb8c);
+    text-align: center;
+    /* A - Botton 2 */
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
   &--large-grey {
     width: 360px;
     height: 64px;
-    background: #cecece;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid#cecece;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #cecece;
-      box-shadow: 0px -8px 0px 0px #858484 inset;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--Color-button-gris, #cecece);
+    box-shadow: 0px 4px 4px 0px #cecece;
+    border: 1px solid var(--B--Color-1, #cecece);
   }
-
   &--small-green {
     width: 300px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    border: 1px solid #0aeb8c;
-    background: #0aeb8c;
+    border: 1px solid var(--B--Color-1, #0aeb8c);
+    background: var(--B--Color-1, #0aeb8c);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    &:hover {
-      background-color: #0aeb8c;
-      box-shadow: 0px -8px 0px 0px #07a865 inset;
-    }
   }
-
   &--small-black {
     width: 300px;
     height: 50px;
     border-radius: 10px;
-    background: #052a2d;
-    border: 1px solid #0aeb8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--B---color-2, #052a2d);
+    border: 2px solid var(--B--Color-1, #0aeb8c);
+    /* sombra 1 */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    color: var(--B--Color-1, #0aeb8c);
+    text-align: center;
+    /* A - Botton 2 */
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
   &--small-grey {
     width: 300px;
     height: 50px;
-    background: #cecece;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid#cecece;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #cecece;
-      box-shadow: 0px -8px 0px 0px #858484 inset;
-    }
-
-    &:hover {
-      background-color: #cecece;
-      box-shadow: 0px -8px 0px 0px #858484 inset;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--Color-button-gris, #cecece);
+    box-shadow: 0px 4px 4px 0px #cecece;
+    border: 1px solid var(--B--Color-1, #cecece);
+    color: var(--A---Color-1, #201f22);
+    text-align: center;
+    /* A - Botton 2 */
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
-  &--boton-responsive {
+  &--boton-sign-in {
     width: 99px;
     height: 40px;
-    border-radius: 10px;
-    border: 1px solid #1d1b43;
-    background: #3a393e;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid var(--B--Color-1, #0aeb8c);
+    background: var(--B---color-2, #052a2d);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    padding: 40px 20px;
-    cursor: pointer;
+    color: var(--B--Color-1, #0aeb8c);
+    text-align: center;
+    /* A - Botton 1 */
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
-  &--boton-responsive-small {
-    width: 91px;
+  &--boton-create-account {
+    width: 99px;
     height: 40px;
-    border-radius: 10px;
-    border: 1px solid #1d1b43;
-    background: #3a393e;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: var(--B--Color-1, #0aeb8c);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-  }
-  &--button-secondary {
-    width: 496px;
-    height: 106px;
-    border-radius: 10px;
-    border: 1px solid #0aeb8c;
-    background: #0aeb8c;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    &:hover {
-      background-color: #0aeb8c;
-      box-shadow: 0px -8px 0px 0px #07a865 inset;
-    }
-  }
-  &--button-filter {
-    width: 172px;
-    height: 64px;
-    border-radius: 10px;
-    border: 1px solid #0aeb8c;
-    background: #0aeb8c;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    &:hover {
-      background-color: #0aeb8c;
-      box-shadow: 0px -8px 0px 0px #07a865 inset;
-    }
-  }
-  &--button-Apply {
-    width: 141px;
-    height: 37px;
-    border-radius: 10px;
-    border: 1px solid #0aeb8c;
-    background: #0aeb8c;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    &:hover {
-      background-color: #0aeb8c;
-      box-shadow: 0px -8px 0px 0px #07a865 inset;
-    }
+    border: 1px solid var(--B--Color-1, #0aeb8c);
+    color: var(--black, #000);
+    text-align: center;
+    /* A - Botton 1 */
+    font-family: 'Open Sans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 }

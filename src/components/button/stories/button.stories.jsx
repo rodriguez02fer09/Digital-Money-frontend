@@ -15,6 +15,11 @@ export default {
           'small-green',
           'small-black',
           'small-grey',
+          'boton-responsive',
+          'boton-responsive-small',
+          'button-secondary',
+          'button-filter',
+          'button-Apply ',
         ],
       },
     },
@@ -91,5 +96,17 @@ export const buttonApply = Template.bind({})
 buttonApply.args = {
   label: 'button-Apply ',
   type: 'button-Apply ',
+  // dataTestId: 'small-gray-button',
+}
+export const buttonSingIn = Template.bind({})
+buttonSingIn.args = {
+  label: 'boton-sign-in',
+  type: 'boton-sign-in',
+  // dataTestId: 'small-gray-button',
+}
+export const buttonCreateAcount = Template.bind({})
+buttonCreateAcount.args = {
+  label: 'btn-create-account',
+  type: 'boton-create-account',
   // dataTestId: 'small-gray-button',
 }
