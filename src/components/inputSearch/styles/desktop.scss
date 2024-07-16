@@ -1,49 +1,83 @@
 .prompt-search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  height: 64px;
-
   &--container {
-    margin-bottom: 16px;
-  }
-  &--container-img {
-    width: 14.919px;
-    height: 16.119px;
-    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    border: 2px solid #f1d2ff;
-    right: 362px;
+    /* Asegura que los elementos hijos posicionados absolutamente se posicionen respecto a este contenedor */
   }
+
   &__large-prompt {
     width: 813px;
+    height: 64px;
+    border-radius: 10px;
     border: 1px solid var(--B--Color-3, #d2ffec);
     background: #fff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    color: var(--Fill-in, rgba(0, 0, 0, 0.5));
+    /* A - Text 1 */
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 50px;
     &:focus-visible {
       outline: 2px solid #d2ffec;
     }
+  }
+  &__large-prompt-icon {
+    width: 16px;
+    height: 17px;
+    position: absolute;
+    right: 92%;
+    top: 50%;
+    transform: translateY(-50%);
   }
   &__medium-prompt {
     width: 350px;
-    border: 1px solid var(--B--Color-3, #d2ffec);
+    height: 64px;
+    border-radius: 10px;
     background: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--B--Color-3, #d2ffec);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 50px;
     &:focus-visible {
       outline: 2px solid #d2ffec;
     }
   }
-  &__small-Prompt {
+  &__medium-prompt-icon {
+    position: absolute;
+    right: 68%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__small-prompt {
     width: 318px;
-    border: 1px solid var(--B--Color-3, #d2ffec);
+    height: 64px;
+    border-radius: 10px;
     background: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--B--Color-3, #d2ffec);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 40px;
     &:focus-visible {
       outline: 2px solid #d2ffec;
     }
+  }
+  &__small-prompt-icon {
+    position: absolute;
+    right: 66%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
