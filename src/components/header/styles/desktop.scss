@@ -5,10 +5,13 @@
   align-items: center;
   width: 100%;
   height: 64px;
-  background: var(--B---color-2, #052a2d);
+  position: fixed;
 
   &--login-header {
     background: var(--B--Color-1, #0aeb8c);
+  }
+  &--header-home {
+    background: var(--B---color-2, #052a2d);
   }
 
   &--containImage {
