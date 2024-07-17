@@ -1,6 +1,6 @@
 import {Inter} from 'next/font/google'
-import Header from '../components/header/src/Header.jsx'
-import Footer from '../components/footer/src/Footer.jsx'
+import Header from '../components/shared/header/src/Header.jsx'
+import Footer from '../components/shared/footer/src/Footer.jsx'
 import './globals.css'
 
 const inter = Inter({subsets: ['latin']})
@@ -17,8 +17,8 @@ export default function RootLayout({children}) {
         {/* Aquí puedes agregar cualquier elemento adicional en el head si es necesario */}
       </head>
       <body className={inter.className}>
-        <Header type={'login-header'} />
-        <Footer type={'footer-login'} />
+        <Header type={'header-home'} />
+        <Footer type={'footer-home'} />
         {children} {/* Asegúrate de renderizar los hijos */}
       </body>
     </html>
