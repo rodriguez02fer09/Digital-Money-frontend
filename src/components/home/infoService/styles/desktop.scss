@@ -1,0 +1,35 @@
+.contain-service {
+  padding: 30px;
+  width: 500px;
+  height: 246px;
+  border-radius: 30px;
+  background: var(--white, #fff);
+  margin-left: 12px;
+  &--containTitle {
+    width: 417px;
+    height: 54px;
+  }
+  &__title {
+    color: #000;
+    font-family: 'Open Sans';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &--containDescription {
+    width: 417px;
+    height: 108px;
+    border-top: 2px solid #0aeb8c;
+    padding-top: 15px;
+    &__description {
+      color: #000;
+      font-family: 'Open Sans';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}

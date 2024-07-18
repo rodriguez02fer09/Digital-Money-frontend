@@ -13,9 +13,6 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <head>
-        {/* Aquí puedes agregar cualquier elemento adicional en el head si es necesario */}
-      </head>
       <body className={inter.className}>
         <Header type={'header-home'} />
         <Footer type={'footer-home'} />
