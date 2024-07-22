@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from '../../../button/index'
 import '../styles/desktop.scss'
 
@@ -14,8 +15,12 @@ const Header = ({type}) => {
       </div>
       {type !== 'login-header' && (
         <div className={`${defaultHeader}--containButton`}>
-          <Button type="boton-sign-in" label="Sign In" />
-          <Button type="boton-create-account" label="Create Account" />
+          <Button type="boton-sign-in" label="Sign In" href="/sign-in" />
+          <Button
+            type="boton-create-account"
+            label="Create Account"
+            href="/create-account"
+          />
         </div>
       )}
     </header>
