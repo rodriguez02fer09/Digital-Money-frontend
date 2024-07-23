@@ -39,7 +39,13 @@
     border-radius: 10px;
     border: 1px solid var(--A---Color-1, #201f22);
     background: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    color: var(--Fill-in, rgba(0, 0, 0, 0.5));
+    font-family: 'Open Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 134.766%; /* 24.258px */
+    padding: 20px 10px;
     &:focus-visible {
       outline: 1px solid #201f22;
     }
