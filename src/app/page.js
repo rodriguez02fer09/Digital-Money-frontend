@@ -12,7 +12,7 @@ export default function Home({titleService, titleDescription}) {
       <div className={`${defaultHome}--containInfo`}>
         <InfoService
           titleService="Transferí dinero"
-          titleDescription="Desde Digital Money House vas a poder transferir dinero a otras cuentas, asi como también recibir transferencias y nuclear tu capital en nuestra billetera virtua."
+          titleDescription="Desde Digital Money House vas a poder transferir dinero a otras cuentas, asi como también recibir transferencias y nuclear tu capital en nuestra billetera virtual."
         />
         <InfoService
           titleService="Pago de servicios"

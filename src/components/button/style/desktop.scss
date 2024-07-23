@@ -1,4 +1,5 @@
 .button {
+  font-weight: bold;
   &--large-green {
     width: 360px;
     height: 64px;
@@ -40,7 +41,6 @@
     align-items: center;
     border-radius: 10px;
     background: var(--Color-button-gris, #cecece);
-
     border: 1px solid var(--B--Color-1, #cecece);
     cursor: pointer;
   }

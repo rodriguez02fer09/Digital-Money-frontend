@@ -9,18 +9,18 @@
 
   &--containForm-login {
     width: 422px;
-    height: 292px;
+    height: 207px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
   }
   &--containtex {
     width: 422px;
     height: 19px;
     display: flex;
     justify-content: space-around;
+
     p {
       color: var(--white, #fff);
       text-align: center;
@@ -34,7 +34,7 @@
   }
   &--containForm {
     width: 422px;
-    height: 232px;
+    height: 148px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
