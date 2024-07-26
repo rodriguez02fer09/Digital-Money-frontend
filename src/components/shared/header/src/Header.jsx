@@ -18,8 +18,8 @@ const Header = ({type}) => {
           <Button type="boton-sign-in" label="Sign In" href="/sign-email" />
           <Button
             type="boton-create-account"
-            label="Create Account"
-            href="/create-account"
+            label="Create Acount"
+            href="/create-acount"
           />
         </div>
       )}
