@@ -1,5 +1,6 @@
 .button {
   font-weight: bold;
+  text-decoration: none;
   &--large-green {
     width: 360px;
     height: 64px;
@@ -10,9 +11,14 @@
     border: 1px solid var(--B--Color-1, #0aeb8c);
     background: var(--B--Color-1, #0aeb8c);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    margin-left: 16px;
-    margin-bottom: 20px;
+    color: var(--B---color-2, #052a2d);
+    text-align: center;
+    /* A - Botton 2 */
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
   &--large-black {
     width: 360px;
@@ -24,7 +30,7 @@
     background: var(--B---color-2, #052a2d);
     border: 2px solid var(--B--Color-1, #0aeb8c);
     /* sombra 1 */
-
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
     color: var(--B--Color-1, #0aeb8c);
     text-align: center;
     /* A - Botton 2 */
@@ -33,7 +39,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    cursor: pointer;
   }
   &--large-grey {
     width: 360px;
@@ -43,8 +48,8 @@
     align-items: center;
     border-radius: 10px;
     background: var(--Color-button-gris, #cecece);
+
     border: 1px solid var(--B--Color-1, #cecece);
-    cursor: pointer;
   }
   &--small-green {
     width: 300px;
@@ -56,7 +61,6 @@
     border: 1px solid var(--B--Color-1, #0aeb8c);
     background: var(--B--Color-1, #0aeb8c);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
   }
   &--small-black {
     width: 300px;
@@ -77,7 +81,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    cursor: pointer;
   }
   &--small-grey {
     width: 300px;
@@ -97,7 +100,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    cursor: pointer;
   }
   &--boton-sign-in {
     width: 99px;
@@ -117,7 +119,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    cursor: pointer;
   }
   &--boton-create-account {
     width: 99px;
@@ -137,6 +138,5 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    cursor: pointer;
   }
 }

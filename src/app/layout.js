@@ -14,9 +14,9 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header type={'login-header'} />
+        <Header type={'header-home'} />
         {children} {/* Asegúrate de renderizar los hijos */}
-        <Footer type={'footer-login'} />
+        <Footer type={'footer-home'} />
       </body>
     </html>
   )

@@ -7,10 +7,9 @@
   align-items: center;
   background: var(--B---color-2, #052a2d);
 
-  &--containForm-login {
+  &--containPassword-login {
     width: 422px;
     height: 207px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,7 +19,7 @@
     height: 19px;
     display: flex;
     justify-content: space-around;
-
+    margin-bottom: 40px;
     p {
       color: var(--white, #fff);
       text-align: center;

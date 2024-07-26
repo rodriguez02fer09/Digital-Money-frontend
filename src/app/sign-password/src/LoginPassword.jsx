@@ -7,7 +7,7 @@ const LoginPassword = () => {
   const defaulClass = 'mainContainForm-login'
   return (
     <main className={`${defaulClass} `}>
-      <div className={`${defaulClass}--containForm-login `}>
+      <div className={`${defaulClass}--containPassword-login `}>
         <div className={`${defaulClass}--containtex`}>
           <p>Hola! Ingresá tu contraseña</p>
         </div>

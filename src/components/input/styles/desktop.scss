@@ -1,11 +1,10 @@
 .prompt-input {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
 
   &--container {
@@ -21,6 +20,9 @@
     &:focus-visible {
       outline: 1px solid #ee3838;
     }
+    &::placeholder {
+      padding: 20px;
+    }
   }
   &__large-Input-blue {
     width: 360px;
@@ -31,6 +33,9 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
     &:focus-visible {
       outline: 2px solid #d2ffec;
+    }
+    &::placeholder {
+      padding: 20px;
     }
   }
   &__large-Input-black {
@@ -45,7 +50,9 @@
     font-style: normal;
     font-weight: 400;
     line-height: 134.766%; /* 24.258px */
-    padding: 20px 10px;
+    &::placeholder {
+      padding: 20px;
+    }
     &:focus-visible {
       outline: 1px solid #201f22;
     }
@@ -61,6 +68,9 @@
     &:focus-visible {
       outline: 1px solid #ee3838;
     }
+    &::placeholder {
+      padding: 20px;
+    }
   }
   &__small-Input-blue {
     width: 300px;
@@ -72,6 +82,9 @@
     &:focus-visible {
       outline: 1px solid #d2ffec;
     }
+    &::placeholder {
+      padding: 20px;
+    }
   }
   &__small-Input-black {
     width: 300px;
@@ -82,6 +95,9 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
     &:focus-visible {
       outline: 1px solid #201f22;
+    }
+    &::placeholder {
+      padding: 20px;
     }
   }
 }
