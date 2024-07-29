@@ -15,7 +15,7 @@ const FormCreateAcount = () => {
       </div>
       <p className={`${defaultClass}--InfoPassword`}>
         Usa entre 6 y 20 carácteres (debe contener al menos al menos 1 carácter
-        especial, una mayúscula y un número
+        especial, una mayúscula y un número).{' '}
       </p>
       <div className={`${defaultClass}--containPassword`}>
         <Input type={'large-Input-black'} placeholder={'Contraseña*'} />
