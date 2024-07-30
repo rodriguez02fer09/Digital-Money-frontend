@@ -1,22 +1,23 @@
 import Link from 'next/link'
 import '../styles/desktop.scss'
-import Input from '../../../components/input/src/Input'
-import Button from '../../../components/button/src/Button'
+import ContainFormResgister from '../../../components/containFormRegister/src/ContainFormResgister'
 
-const LoginPassword = () => {
-  const defaulClass = 'mainContainForm-login'
+const LoginPassword = ({
+  greetingText,
+  inputType,
+  placeholder,
+  label,
+  buttonHref,
+}) => {
   return (
-    <main className={`${defaulClass} `}>
-      <div className={`${defaulClass}--containPassword-login `}>
-        <div className={`${defaulClass}--containtex`}>
-          <p>Hola! Ingresá tu contraseña</p>
-        </div>
-        <div className={`${defaulClass}--containForm`}>
-          <Input type="large-Input-black" placeholder={'Contraseña'} />
-          <Button type="large-green" label="Continuar" href="/sign-password" />
-        </div>
-      </div>
-    </main>
+    <ContainFormResgister
+      greetingText="Ingresá tu contraseña"
+      inputType="large-Input-black"
+      inputPlaceholder="Contraseña"
+      buttonType="large-green"
+      buttonLabel="Continuar"
+      buttonHref="/"
+    />
   )
 }
 
