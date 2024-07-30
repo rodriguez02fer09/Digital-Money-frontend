@@ -1,3 +1,4 @@
+@import '../../../../sass/variables';
 .footer {
   display: flex;
   align-items: center;
@@ -13,11 +14,11 @@
   font-weight: 400;
   line-height: 140.625%; /* 19.688px */
   &--footer-home {
-    background: var(--B---Color-4, #151817);
-    color: var(--B--Color-1, #0aeb8c);
+    background: $tertiary-color;
+    color: $primary-color;
   }
   &--footer-login {
-    background: var(--B--Color-1, #0aeb8c);
-    color: var(--B---color-2, #052a2d);
+    background: $primary-color;
+    color: $secondary-color;
   }
 }

@@ -1,0 +1,51 @@
+// Definición de variables de colores
+$primary-color: #0aeb8c;
+$secondary-color: #052a2d;
+$tertiary-color: #151817;
+$cuartary-color: #d2ffec;
+$quinary-color: #fff;
+$text-color-primary: #fff;
+$text-color-secondary: #000;
+$senary-color: #e91010;
+//Importación de fuentes externas
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+// Estilos para la clase .roboto-bold utilizando la fuente Roboto bold
+.roboto-regular {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+// Otras variables y estilos CSS adicionales
+$font-stack: 'Roboto', sans-serif;
+$heading-5: 40px;
+$heading-1: 24px;
+$heading-2: 20px;
+$heading-3: 16px;
+$heading-4: 14px;
+$heading-6: 48px;
+$heading-7: 34px;
+//
+$button-text-size-primary: 14px;
+$button-text-size-secondary: 16px;
+$text-size-primary: 14px;
+$text-size-secondary: 12px;

@@ -1,3 +1,4 @@
+@import '../../../../sass/variables';
 .header {
   display: flex;
   flex-direction: row;
@@ -8,10 +9,10 @@
   position: fixed;
 
   &--login-header {
-    background: var(--B--Color-1, #0aeb8c);
+    background: $primary-color;
   }
   &--header-home {
-    background: var(--B---color-2, #052a2d);
+    background: $secondary-color;
   }
 
   &--containImage {
