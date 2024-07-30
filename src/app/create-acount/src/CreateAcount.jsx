@@ -1,4 +1,4 @@
-import './styles/desktop.scss'
+import '../styles/desktop.scss'
 import FormCreateAcount from '../../../components/FormCreateAcount/src/FormCreateAcount'
 
 const CreateAcount = ({type, placeholder}) => {

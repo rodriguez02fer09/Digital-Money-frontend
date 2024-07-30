@@ -1,18 +1,19 @@
+@import '../../../../sass/variables';
 .contain-service {
   padding: 30px;
-  width: 500px;
-  height: 246px;
+  width: 480px;
+  height: 240px;
   border-radius: 30px;
-  background: var(--white, #fff);
+  background: $quinary-color;
   margin-left: 12px;
   &--containTitle {
     width: 417px;
     height: 54px;
   }
   &__title {
-    color: #000;
-    font-family: 'Open Sans';
-    font-size: 40px;
+    color: $text-color-secondary;
+    font-family: $font-stack;
+    font-size: $heading-5;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -21,12 +22,12 @@
   &--containDescription {
     width: 417px;
     height: 108px;
-    border-top: 2px solid #0aeb8c;
+    border-top: 2px solid $primary-color;
     padding-top: 15px;
     &__description {
-      color: #000;
-      font-family: 'Open Sans';
-      font-size: 20px;
+      color: $tertiary-color;
+      font-family: $font-stack;
+      font-size: $heading-1;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
