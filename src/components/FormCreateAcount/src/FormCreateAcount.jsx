@@ -24,7 +24,11 @@ const FormCreateAcount = () => {
           placeholder={'Confirmar contraseña*'}
         />
         <Input type={'large-Input-black'} placeholder={'Telefono*'} />
-        <Button type={'large-green'} label="Crear cuenta" />
+        <Button
+          type={'large-green'}
+          label="Crear cuenta"
+          href="/successful-register"
+        />
       </div>
     </div>
   )

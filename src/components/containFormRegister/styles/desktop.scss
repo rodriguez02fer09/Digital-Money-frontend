@@ -1,0 +1,42 @@
+@import '../../../sass/variables';
+.mainContainForm-register {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $secondary-color;
+
+  &--containFrom {
+    width: 422px;
+    height: 207px;
+    display: flex;
+    flex-direction: column;
+  }
+  &--containtex {
+    width: 422px;
+    height: 19px;
+    display: flex;
+    justify-content: space-around;
+
+    p {
+      color: $quinary-color;
+      text-align: center;
+      /* A - Heading 2 */
+      font-family: $font-stack;
+      font-size: $heading-2;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 117.682%; /* 23.536px */
+    }
+  }
+  &--containForm {
+    width: 422px;
+    height: 232px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
