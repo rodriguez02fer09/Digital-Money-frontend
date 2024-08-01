@@ -21,7 +21,11 @@
   &--containInfo {
     display: flex;
     position: fixed;
-    right: 213px;
+    right: 230px;
     bottom: 100px;
+    margin-top: 76px;
   }
+}
+
+@media (max-width: 834px) {
 }
