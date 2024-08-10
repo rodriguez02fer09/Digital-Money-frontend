@@ -1,3 +1,4 @@
+import '../../../sass/_variables.scss'
 import '../style/desktop.scss'
 import Button from '../index'
 
@@ -5,108 +6,62 @@ export default {
   component: Button,
   title: 'Button', // El título de tu componente en Storybook
   argTypes: {
-    type: {
-      control: {
-        type: 'select',
-        options: [
-          'large-green',
-          'large-black',
-          'large-grey',
-          'small-green',
-          'small-black',
-          'small-grey',
-          'boton-responsive',
-          'boton-responsive-small',
-          'button-secondary',
-          'button-filter',
-          'button-Apply ',
-        ],
-      },
+    size: {
+      options: ['large', 'sign-up', 'create-acount', 'medium'],
+      control: {type: 'radio'},
+    },
+    color: {
+      options: ['green', 'black', 'grey'],
+      control: {type: 'radio'},
     },
   },
 }
 
 const Template = args => <Button {...args} />
 
-export const LargeGreen = Template.bind({})
-LargeGreen.args = {
+export const Green = Template.bind({})
+Green.args = {
   label: 'Botón',
-  type: 'large-green',
+  color: 'green',
   // dataTestId: 'large-yellow-button',
 }
 
-export const LargeBlack = Template.bind({})
-LargeBlack.args = {
+export const Black = Template.bind({})
+Black.args = {
   label: 'Botón',
-  type: 'large-black',
+  color: 'black',
 }
 
-export const LargeGrey = Template.bind({})
-LargeGrey.args = {
+export const Grey = Template.bind({})
+Grey.args = {
   label: 'Botón',
-  type: 'large-grey',
+  color: 'grey',
 }
 
-export const SmallGreen = Template.bind({})
-SmallGreen.args = {
+export const Large = Template.bind({})
+Large.args = {
   label: 'Botón Small',
-  type: 'small-green',
+  size: 'large',
   // dataTestId: 'small-gray-button',
 }
 
-export const SmallBlack = Template.bind({})
-SmallBlack.args = {
+export const Medium = Template.bind({})
+Medium.args = {
   label: 'Botón Small',
-  type: 'small-black',
+  size: 'medium',
   // dataTestId: 'small-gray-button',
 }
 
-export const SmallGray = Template.bind({})
-SmallGray.args = {
-  label: 'Small',
-  type: 'small-grey',
-  // dataTestId: 'small-gray-button',
-}
-export const ButtonResponsive = Template.bind({})
-ButtonResponsive.args = {
-  label: 'Botón Responsive',
-  type: 'boton-responsive',
-  // dataTestId: 'small-gray-button',
-}
-export const ButtonResponsiveSmall = Template.bind({})
-ButtonResponsiveSmall.args = {
-  label: 'Botón Responsive small',
-  type: 'boton-responsive-small',
-  // dataTestId: 'small-gray-button',
-}
-export const buttonSecondary = Template.bind({})
-buttonSecondary.args = {
-  label: 'Botón 2',
-  type: 'button-secondary',
+export const SignUp = Template.bind({})
+SignUp.args = {
+  label: 'Botón Small',
+  size: 'sign-up',
   // dataTestId: 'small-gray-button',
 }
 
-export const buttonFilter = Template.bind({})
-buttonFilter.args = {
-  label: 'button-filter',
-  type: 'button-filter',
-  // dataTestId: 'small-gray-button',
-}
-export const buttonApply = Template.bind({})
-buttonApply.args = {
-  label: 'button-Apply ',
-  type: 'button-Apply ',
-  // dataTestId: 'small-gray-button',
-}
-export const buttonSingIn = Template.bind({})
-buttonSingIn.args = {
-  label: 'boton-sign-in',
-  type: 'boton-sign-in',
-  // dataTestId: 'small-gray-button',
-}
-export const buttonCreateAcount = Template.bind({})
-buttonCreateAcount.args = {
-  label: 'btn-create-account',
-  type: 'boton-create-account',
+export const CreateAcount = Template.bind({})
+CreateAcount.args = {
+  label: 'Botón Small',
+  size: 'create-acount',
   // dataTestId: 'small-gray-button',
 }
