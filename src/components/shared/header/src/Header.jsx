@@ -2,19 +2,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../../../button/index'
 import '../styles/desktop.scss'
+import classNames from 'classnames'
 
-const Header = ({type, size, color}) => {
+const Header = ({type, color}) => {
   const defaultHeader = 'header'
   const imageSrc =
-    type === 'login-header' ? '/images/logoblack.svg' : '/images/logoverde.svg'
+    color === 'green' ? '/images/logoblack.svg' : '/images/logoverde.svg'
+
+  const customClass = classNames(defaultHeader, {
+    [`${defaultHeader}--${color}`]: color,
+  })
 
   return (
-    <header className={`${defaultHeader} ${defaultHeader}--${type}`}>
-      <div className={`${defaultHeader}--containImage`}>
+    <header className={`${customClass}`}>
+      <div className={`${customClass}--containImage`}>
         <Image src={imageSrc} alt="Logo" width={100} height={50} />
       </div>
-      {type !== 'home-header' && (
-        <div className={`${defaultHeader}--containButton`}>
+      {color !== 'green' && (
+        <div className={`${customClass}--containButton`}>
           <Button
             size={'sign-up'}
             color={'black'}
@@ -22,7 +27,7 @@ const Header = ({type, size, color}) => {
             href="/sign-email"
           />
           <Button
-            size={'sign-up'}
+            size={'create-acount'}
             color={'green'}
             label="Create Acount"
             href="/create-acount"
