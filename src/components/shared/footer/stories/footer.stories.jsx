@@ -5,23 +5,21 @@ export default {
   component: Footer,
   title: 'Footer',
   argTypes: {
-    type: {
-      control: {
-        type: 'select',
-        options: ['footer-home', 'footer-login'],
-      },
+    color: {
+      options: ['green', 'black'],
+      control: {type: 'radio'},
     },
   },
 }
 
 const Template = args => <Footer {...args} />
 
-export const footerHome = Template.bind({})
-footerHome.args = {
-  type: 'footer-home',
+export const Green = Template.bind({})
+Green.args = {
+  color: 'green',
 }
 
-export const footerLogin = Template.bind({})
-footerLogin.args = {
-  type: 'footer-login',
+export const Black = Template.bind({})
+Black.args = {
+  type: 'black',
 }

@@ -16,7 +16,7 @@ export default function RootLayout({children}) {
       <body className={inter.className}>
         <Header color={'black'} />
         {children} {/* Asegúrate de renderizar los hijos */}
-        <Footer type={'footer-home'} />
+        <Footer color={'black'} />
       </body>
     </html>
   )
