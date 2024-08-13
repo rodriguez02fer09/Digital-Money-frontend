@@ -1,65 +1,50 @@
 import Input from '../index'
+import '../styles/desktop.scss'
+import '../../../sass/_variables.scss'
 
 export default {
   component: Input,
   title: 'Input',
   argTypes: {
-    type: {
-      control: {
-        type: 'select',
-        options: [
-          'large-Input-red',
-          'large-Input-blue',
-          'large-Input-black',
-          'small-Input-red',
-          'small-Input-blue',
-          'small-Input-black',
-        ],
-      },
+    size: {
+      options: ['large', 'medium'],
+      control: {type: 'radio'},
+    },
+    color: {
+      options: ['red', 'blue', 'black'],
+      control: {type: 'radio'},
     },
   },
 }
 
 const Template = args => <Input {...args} />
 
-export const largeInputRed = Template.bind({})
-largeInputRed.args = {
-  type: 'large-Input-red',
-  value: '',
-  label: '',
+export const Large = Template.bind({})
+Large.args = {
+  placeholder: 'Input',
+  size: 'large',
 }
 
-export const largeInputBlue = Template.bind({})
-largeInputBlue.args = {
-  type: 'large-Input-blue',
-  value: '',
-  label: '',
+export const Medium = Template.bind({})
+Medium.args = {
+  size: 'medium',
+  placeholder: 'Input',
 }
 
-export const largeInputBlack = Template.bind({})
-largeInputBlack.args = {
-  type: 'large-Input-black',
-  value: '',
-  label: '',
+export const Red = Template.bind({})
+Red.args = {
+  color: 'red',
+  placeholder: 'Input',
 }
 
-export const SmallInputRed = Template.bind({})
-SmallInputRed.args = {
-  type: 'small-Input-red',
-  value: '',
-  label: '',
+export const Blue = Template.bind({})
+Blue.args = {
+  color: 'blue',
+  placeholder: 'Input',
 }
 
-export const SmallInputBlue = Template.bind({})
-SmallInputBlue.args = {
-  type: 'small-Input-blue',
-  value: '',
-  label: '',
-}
-
-export const SmallInputBlack = Template.bind({})
-SmallInputBlack.args = {
-  type: 'small-Input-black',
-  value: '',
-  label: '',
+export const Black = Template.bind({})
+Black.args = {
+  color: 'black',
+  placeholder: 'Input',
 }

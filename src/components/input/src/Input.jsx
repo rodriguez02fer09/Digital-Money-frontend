@@ -1,17 +1,29 @@
 import '../../../sass/_variables.scss'
 import '../styles/desktop.scss'
+import classNames from 'classnames'
 
-const Input = ({type, value, placeholder, onChange, label, className}) => {
-  const defaultClass = 'prompt-input'
+const Input = ({
+  color,
+  size,
+  value,
+  placeholder,
+  onChange,
+  label,
+  className,
+}) => {
+  const defaultClass = 'container-input'
+
+  const inputClass = classNames(defaultClass, {
+    [`${defaultClass}--${size}`]: size,
+    [`${defaultClass}--${color}`]: color,
+  })
   return (
-    <div className={`${defaultClass} ${defaultClass}--container`}>
-      {label && <label className="input-label">{label}</label>}
+    <div className={`${inputClass}`}>
       <input
-        type={type}
-        value={value}
+        size={size}
+        color={color}
         placeholder={placeholder}
-        onChange={onChange}
-        className={`${defaultClass} ${defaultClass}__${type} ${className}`}
+        className={`${inputClass}`}
       />
     </div>
   )

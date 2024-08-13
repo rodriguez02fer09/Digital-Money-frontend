@@ -1,0 +1,47 @@
+@import '../../../sass/variables';
+input {
+  padding: 20px;
+  box-sizing: border-box;
+  border: none;
+  font-family: $font-stack;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 134.766%;
+}
+input:focus-visible {
+  outline: none;
+}
+
+.container-input {
+  border-radius: 10px;
+  border: none;
+
+  &--large {
+    width: 360px;
+    height: 64px;
+  }
+  &--medium {
+    width: 300px;
+    height: 50px;
+  }
+
+  &--red {
+    border: 1px solid $senary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--blue {
+    border: 1px solid $cuartary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--black {
+    border: 1px solid $tertiary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    &::placeholder {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: #3a393e;
+    }
+  }
+}
