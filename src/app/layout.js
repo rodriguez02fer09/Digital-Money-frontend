@@ -14,7 +14,7 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header type={'black'} />
+        <Header color={'black'} />
         {children} {/* Asegúrate de renderizar los hijos */}
         <Footer type={'footer-home'} />
       </body>
