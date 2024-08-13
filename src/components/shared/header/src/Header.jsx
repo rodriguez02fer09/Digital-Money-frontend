@@ -4,7 +4,7 @@ import Button from '../../../button/index'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 
-const Header = ({type, color}) => {
+const Header = ({color}) => {
   const defaultHeader = 'header'
   const imageSrc =
     color === 'green' ? '/images/logoblack.svg' : '/images/logoverde.svg'
@@ -15,11 +15,11 @@ const Header = ({type, color}) => {
 
   return (
     <header className={`${customClass}`}>
-      <div className={`${customClass}--containImage`}>
+      <div className={`${customClass}__containImage`}>
         <Image src={imageSrc} alt="Logo" width={100} height={50} />
       </div>
       {color !== 'green' && (
-        <div className={`${customClass}--containButton`}>
+        <div className={`${customClass}__containButton`}>
           <Button
             size={'sign-up'}
             color={'black'}

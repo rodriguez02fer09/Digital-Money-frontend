@@ -6,29 +6,22 @@
   align-items: center;
   width: 100%;
   height: 64px;
+  padding: 20px;
+
   &--green {
     background: $primary-color;
+    &__containButton {
+      display: none;
+    }
   }
   &--black {
     background: $secondary-color;
-  }
-  &--containImage {
-    width: 87px;
-    height: 40px;
-    margin-left: 20px;
-
-    img {
-      width: 100%;
-      height: auto;
+    &__containImage {
+      width: 130px;
+      height: 50px;
     }
-  }
-
-  &--containButton {
-    width: 250px;
-    height: 40px;
-    margin-right: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    &__containButton {
+      width: 290px;
+    }
   }
 }
