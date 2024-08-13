@@ -14,7 +14,7 @@
   }
   &--black {
     background: $secondary-color;
-    color: $primary-color;
+
     border: 1px solid $primary-color;
   }
   &--grey {
@@ -38,7 +38,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    color: $secondary-color;
+    color: $primary-color;
   }
   &--create-acount {
     width: 131px;
@@ -48,5 +48,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    color: $secondary-color;
   }
 }

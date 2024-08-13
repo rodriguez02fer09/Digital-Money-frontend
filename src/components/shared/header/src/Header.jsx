@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Button from '../../../button/index'
 import '../styles/desktop.scss'
 
-const Header = ({type}) => {
+const Header = ({type, size, color}) => {
   const defaultHeader = 'header'
   const imageSrc =
     type === 'login-header' ? '/images/logoblack.svg' : '/images/logoverde.svg'
@@ -15,9 +15,15 @@ const Header = ({type}) => {
       </div>
       {type !== 'home-header' && (
         <div className={`${defaultHeader}--containButton`}>
-          <Button type="boton-sign-in" label="Sign In" href="/sign-email" />
           <Button
-            type="boton-create-account"
+            size={'sign-up'}
+            color={'black'}
+            label="Sign In"
+            href="/sign-email"
+          />
+          <Button
+            size={'sign-up'}
+            color={'green'}
             label="Create Acount"
             href="/create-acount"
           />
