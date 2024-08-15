@@ -1,15 +1,13 @@
 import InputSearch from '../index'
-import '../../conts/variables.scss'
+import '../../../sass/_variables.scss'
 
 export default {
   component: InputSearch,
   title: 'InputSearch',
   argTypes: {
-    type: {
-      control: {
-        type: 'select',
-        options: ['large-prompt', 'medium-prompt', 'small-prompt'],
-      },
+    size: {
+      options: ['large-prompt', 'medium-prompt', 'small-prompt'],
+      control: {type: 'radio'},
     },
   },
 }
@@ -18,21 +16,19 @@ const Template = args => <InputSearch {...args} />
 
 export const largePrompt = Template.bind({})
 largePrompt.args = {
-  type: 'large-prompt',
-  value: '',
+  size: 'large-prompt',
+
   placeholder: 'Buscar tu actividad',
 }
 
 export const mediumPrompt = Template.bind({})
 mediumPrompt.args = {
-  type: 'medium-prompt',
-  value: '',
+  size: 'medium-prompt',
   placeholder: 'Buscar tu actividad',
 }
 
 export const smallPrompt = Template.bind({})
 smallPrompt.args = {
-  type: 'small-prompt',
-  value: '',
+  size: 'small-prompt',
   placeholder: 'Buscar tu actividad',
 }

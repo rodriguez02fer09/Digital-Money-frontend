@@ -1,32 +1,33 @@
 import '../styles/desktop.scss'
-
+import classNames from 'classnames'
 const InputSearch = ({
-  type = 'text',
+  size,
   value,
   placeholder,
   onChange,
   label,
   className = '',
 }) => {
-  const defaultClass = 'prompt-search'
+  const defaultClass = 'container-SearchPrompt'
+
+  const inputSearchClass = classNames(defaultClass, {
+    [`${defaultClass}--${size}`]: size,
+  })
 
   return (
-    <div className={`${defaultClass}`}>
-      <div className={`${defaultClass}--container ${defaultClass}--${type}`}>
-        {label && <label className="prompt-label">{label}</label>}
-        <input
-          type="text"
-          value={value}
-          placeholder={placeholder}
-          onChange={onChange}
-          className={`${defaultClass} ${defaultClass}__${type} ${className}`}
-        />
-        <img
-          src="/images/search.svg"
-          alt="Search icon"
-          className={`${defaultClass} ${defaultClass}__${type}-icon`}
-        />
-      </div>
+    <div className={`${inputSearchClass}`}>
+      <input
+        size={size}
+        value={value}
+        placeholder={placeholder}
+        onChange={onChange}
+        className={`${inputSearchClass}`}
+      />
+      <img
+        src="/images/search.svg"
+        alt="Search icon"
+        className={`${inputSearchClass} `}
+      />
     </div>
   )
 }

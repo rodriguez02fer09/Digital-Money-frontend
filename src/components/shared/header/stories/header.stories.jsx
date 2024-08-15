@@ -5,23 +5,21 @@ export default {
   component: Header,
   title: 'Header',
   argTypes: {
-    type: {
-      control: {
-        type: 'select',
-        options: ['header-home', 'login-header'],
-      },
+    color: {
+      options: ['green', 'black'],
+      control: {type: 'radio'},
     },
   },
 }
 
 const Template = args => <Header {...args} />
 
-export const headerHome = Template.bind({})
-headerHome.args = {
-  type: 'header-home',
+export const Green = Template.bind({})
+Green.args = {
+  color: 'green',
 }
 
-export const loginHeader = Template.bind({})
-loginHeader.args = {
-  type: 'login-header',
+export const Black = Template.bind({})
+Black.args = {
+  type: 'black',
 }

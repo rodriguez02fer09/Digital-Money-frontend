@@ -1,28 +1,19 @@
 // src/componentes/button/Button.js
 import React from 'react'
-import Link from 'next/link'
-import PropTypes from 'prop-types'
+import classNames from 'classnames'
+// import Link from 'next/link'
 import '../style/desktop.scss' // Asegúrate de tener este archivo de estilos
 
-const Button = ({type, label, onClick, href}) => {
+const Button = ({size, color, label, onClick}) => {
   const defaultButton = 'button'
 
-  if (href) {
-    return (
-      <Link
-        className={`${defaultButton} ${defaultButton}--${type}`}
-        href={href}
-      >
-        {label}
-      </Link>
-    )
-  }
+  const customClass = classNames(defaultButton, {
+    [`${defaultButton}--${size}`]: size,
+    [`${defaultButton}--${color}`]: color,
+  })
 
   return (
-    <button
-      onClick={onClick}
-      className={`${defaultButton} ${defaultButton}--${type}`}
-    >
+    <button onClick={onClick} className={`${customClass}`}>
       {label}
     </button>
   )

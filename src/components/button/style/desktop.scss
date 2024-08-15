@@ -1,116 +1,53 @@
 @import '../../../sass/variables';
+
 .button {
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  /* A - Botton 2 */
+  border-radius: 10px;
+  border: none;
   font-family: $font-stack;
+  font-size: $button-text-size-secondary;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  &--large-green {
-    width: 360px;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid $primary-color; // Usa la variable directamente
-    background: $primary-color; // Usa la
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    color: $secondary-color;
-    font-size: $heading-3;
-  }
-  &--large-black {
-    width: 360px;
-    height: 64px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: ($secondary-color);
-    border: 2px solid $primary-color;
-    /* sombra 1 */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    color: $primary-color;
-    font-size: $heading-3;
-  }
-  &--large-grey {
-    width: 360px;
-    height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background: $cuartary-color;
-    border: 1px solid $cuartary-color;
-    font-size: $heading-3;
-  }
-  &--small-green {
-    width: 300px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid $primary-color;
+
+  &--green {
     background: $primary-color;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    font-size: $heading-3;
-    color: $secondary-color;
   }
-  &--small-black {
-    width: 300px;
-    height: 50px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &--black {
     background: $secondary-color;
-    border: 2px solid $primary-color;
-    /* sombra 1 */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    color: $primary-color;
-    font-size: $heading-3;
+
+    border: 1px solid $primary-color;
   }
-  &--small-grey {
+  &--grey {
+    background: $cuartary-color;
+    color: $secondary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--large {
+    width: 360px;
+    height: 64px;
+  }
+  &--medium {
     width: 300px;
     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background: $cuartary-color;
-    box-shadow: 0px 4px 4px 0px $cuartary-color;
-    border: 1px solid $cuartary-color;
-    color: var(--A---Color-1, #201f22);
-    font-size: $heading-3;
-    color: $secondary-color;
   }
-  &--boton-sign-in {
+  &--sign-up {
     width: 99px;
     height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid var(--B--Color-1, #0aeb8c);
-    background: var(--B---color-2, #052a2d);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    color: var(--B--Color-1, #0aeb8c);
+    font-family: $font-stack;
     font-size: $heading-4;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: $primary-color;
   }
-  &--boton-create-account {
-    width: 99px;
+  &--create-acount {
+    width: 131px;
     height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background: $primary-color;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid $primary-color;
-    color: $secondary-color;
+    font-family: $font-stack;
     font-size: $heading-4;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: $secondary-color;
   }
 }
