@@ -1,5 +1,5 @@
 @import '../../../sass/variables';
-.mainContainForm-login {
+.mainContainForm-password {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -8,12 +8,13 @@
   align-items: center;
   background: $secondary-color;
 
-  &--containPassword-login {
+  &--containFrom {
     width: 422px;
-    height: 207px;
+    height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    margin-bottom: 193px;
   }
   &--containtex {
     width: 422px;

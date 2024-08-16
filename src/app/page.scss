@@ -8,7 +8,9 @@
   background-position: center; /* Centra la imagen en el contenedor */
   background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor sin distorsionar */
   background-attachment: fixed; /* Fija la imagen para que permanezca estática mientras se desplaza */
-
+  &--contain-home {
+    height: 512px;
+  }
   &--section {
     width: 100%;
     height: 148px;
@@ -27,4 +29,21 @@
 }
 
 @media (max-width: 834px) {
+  .home {
+    &--contain-home {
+      height: 400px;
+    }
+    &--section {
+      height: 434px;
+    }
+    &--containInfo {
+      width: 515px;
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      right: 161px;
+      left: 161px;
+    }
+  }
 }
