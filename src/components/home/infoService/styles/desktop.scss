@@ -1,8 +1,8 @@
 @import '../../../../sass/variables';
 .contain-service {
   padding: 30px;
-  width: 480px;
-  height: 216px;
+  width: 500px;
+  height: 246px;
   border-radius: 30px;
   background: $quinary-color;
   margin-left: 12px;
@@ -27,10 +27,24 @@
     &__description {
       color: $tertiary-color;
       font-family: $font-stack;
-      font-size: $heading-1;
+      font-size: $heading-2;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .contain-service {
+    &--containTitle {
+    }
+    &__title {
+    }
+
+    &--containDescription {
+      &__description {
+      }
     }
   }
 }

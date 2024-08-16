@@ -9,8 +9,6 @@ body,
   padding: 0;
   box-sizing: inherit; /* Hereda el box-sizing de html */
 }
-
-/* Ajustes específicos para body */
 body {
   margin: 0;
   padding: 0;
@@ -22,4 +20,8 @@ body {
   bottom: 0px;
   overflow-y: hidden;
   overflow-x: hidden;
+}
+@media (max-width: 834px) {
+  body {
+  }
 }

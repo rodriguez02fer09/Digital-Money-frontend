@@ -1,0 +1,51 @@
+@import '../../../sass/variables';
+.mainContainForm-email {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $secondary-color;
+  &--containFrom {
+    width: 422px;
+    height: 330px;
+    margin-bottom: 131px;
+  }
+  &--containtex {
+    margin-bottom: 40px;
+
+    p {
+      color: $quinary-color;
+      text-align: center;
+      /* A - Heading 2 */
+      font-family: $font-stack;
+      font-size: $heading-2;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 117.682%; /* 23.536px */
+    }
+  }
+  &--containForm {
+    height: 232px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (max-width: 834px) {
+  .mainContainForm-email {
+    &--containFrom {
+    }
+    &--containtex {
+      p {
+      }
+    }
+    &--containForm {
+    }
+  }
+}
+
+@media (max-width: 834px) {
+}

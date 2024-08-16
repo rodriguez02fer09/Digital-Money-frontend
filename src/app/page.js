@@ -7,7 +7,9 @@ export default function Home({titleService, titleDescription}) {
   const defaultHome = 'home'
   return (
     <main className={`${defaultHome}`}>
-      <InfoHome />
+      <div className={`${defaultHome}--contain-home`}>
+        <InfoHome />
+      </div>
       <div className={`${defaultHome}--section`}></div>
       <div className={`${defaultHome}--containInfo`}>
         <InfoService

@@ -4,7 +4,7 @@ import Button from '../../../button/index'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 
-const Header = ({color}) => {
+const Header = ({color, size}) => {
   const defaultHeader = 'header'
   const imageSrc =
     color === 'green' ? '/images/logoblack.svg' : '/images/logoverde.svg'
@@ -20,18 +20,16 @@ const Header = ({color}) => {
       </div>
       {color !== 'green' && (
         <div className={`${customClass}__containButton`}>
-          <Button
-            size={'sign-up'}
-            color={'black'}
-            label="Sign In"
-            href="/sign-email"
-          />
-          <Button
-            size={'create-acount'}
-            color={'green'}
-            label="Create Acount"
-            href="/create-acount"
-          />
+          <Link href="/sign-email">
+            <Button size="sign-up" color="black" label="Sign In" />
+          </Link>
+          <Link href="/create-account">
+            <Button
+              size={'create-acount'}
+              color="green"
+              label="Create Account"
+            />
+          </Link>
         </div>
       )}
     </header>
