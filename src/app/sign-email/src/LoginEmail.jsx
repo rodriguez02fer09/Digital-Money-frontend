@@ -31,7 +31,7 @@ const LoginEmail = ({
           </Link>
 
           <Link href="/create-account">
-            <Button size={'large'} label={'Crear cuenta'} color={'grey'} />
+            <Button size={'large'} label={'Crear cuenta'} color={'green'} />
           </Link>
         </div>
       </div>
