@@ -9,15 +9,14 @@
   background: $secondary-color;
 
   &--containFrom {
-    width: 422px;
+    width: 360px;
     height: 250px;
     display: flex;
     flex-direction: column;
-
     margin-bottom: 193px;
   }
   &--containtex {
-    width: 422px;
+    width: 360px;
     height: 19px;
     display: flex;
     justify-content: space-around;
@@ -34,7 +33,7 @@
     }
   }
   &--containForm {
-    width: 422px;
+    width: 360px;
     height: 148px;
     display: flex;
     flex-direction: column;

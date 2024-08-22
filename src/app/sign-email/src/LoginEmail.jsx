@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import '../styles/desktop.scss'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
@@ -26,13 +25,18 @@ const LoginEmail = ({
             placeholder={'Correo electronico'}
             color={'black'}
           />
-          <Link href="/sign-password">
-            <Button size={'large'} label={'Continuar'} color={'green'} />
-          </Link>
-
-          <Link href="/create-account">
-            <Button size={'large'} label={'Crear cuenta'} color={'green'} />
-          </Link>
+          <Button
+            size={'large'}
+            label={'Continuar'}
+            color={'green'}
+            href="/sign-password"
+          ></Button>{' '}
+          <Button
+            size={'large'}
+            label={'Crear cuenta'}
+            color={'grey'}
+            href="/create-account"
+          />
         </div>
       </div>
     </main>
