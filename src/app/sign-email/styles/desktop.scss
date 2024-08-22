@@ -8,9 +8,14 @@
   align-items: center;
   background: $secondary-color;
   &--containFrom {
-    width: 422px;
+    width: 360px;
     height: 330px;
     margin-bottom: 131px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &--containtex {
     margin-bottom: 40px;
@@ -27,6 +32,7 @@
     }
   }
   &--containForm {
+    width: 360px;
     height: 232px;
     display: flex;
     flex-direction: column;
