@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import '../styles/desktop.scss'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
@@ -13,9 +12,8 @@ const LoginPassword = ({}) => {
         </div>
         <div className={`${defaulClass}--containForm`}>
           <Input size={'large'} placeholder={'Contraseña'} color={'black'} />
-          <Link href="/">
-            <Button size={'large'} label={'Continuar'} color={'green'} />
-          </Link>
+
+          <Button size={'large'} label={'Continuar'} color={'green'} href="/" />
         </div>
       </div>
     </main>

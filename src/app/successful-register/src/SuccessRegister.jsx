@@ -12,12 +12,20 @@ const SuccessResgister = () => {
         <div className={`${defaullSuccess}--contain-info`}>
           <p>Registro Exitoso</p>
           <ImgCheck alt="Logo" width={92} height={95} />
+
           <p>
             Hemos enviado un correo de confirmación para validar tu email, por
             favor revisalo para iniciar sesión
           </p>
         </div>
-        <Button type="large-green" label="Continuar" href="/sign-email" />
+        <div className={`${defaullSuccess}--containButton`}>
+          <Button
+            size={'large'}
+            color={'green'}
+            label="Continuar"
+            href="/sign-email"
+          />
+        </div>
       </div>
     </main>
   )
