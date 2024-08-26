@@ -52,3 +52,16 @@
     }
   }
 }
+@media (max-width: 398px) {
+  .mainContainForm-email {
+    &--containFrom {
+    }
+    &--containtex {
+      p {
+      }
+    }
+    &--containForm {
+      height: 202px;
+    }
+  }
+}

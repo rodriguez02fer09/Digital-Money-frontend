@@ -30,3 +30,20 @@
     }
   }
 }
+@media (max-width: 398px) {
+  .footer {
+    width: 398px;
+    &--green {
+      &--containText {
+        p {
+        }
+      }
+    }
+    &--black {
+      &--containText {
+        p {
+        }
+      }
+    }
+  }
+}

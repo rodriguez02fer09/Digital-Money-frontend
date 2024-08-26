@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+
 import Button from '../../../button/index'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
@@ -16,20 +16,23 @@ const Header = ({color, size}) => {
   return (
     <header className={`${customClass}`}>
       <div className={`${customClass}__containImage`}>
-        <Image src={imageSrc} alt="Logo" width={100} height={50} />
+        <Image src={imageSrc} alt="Logo" width={87} height={34} />
       </div>
       {color !== 'green' && (
         <div className={`${customClass}__containButton`}>
-          <Link href="/sign-email">
-            <Button size="sign-up" color="black" label="Sign In" />
-          </Link>
-          <Link href="/create-account">
-            <Button
-              size={'create-acount'}
-              color="green"
-              label="Create Account"
-            />
-          </Link>
+          <Button
+            size="sign-up"
+            color="black"
+            label="Sign In"
+            href="/sign-email"
+          />
+
+          <Button
+            size={'create-acount'}
+            color="green"
+            label="Create Account"
+            href="/create-account"
+          />
         </div>
       )}
     </header>
