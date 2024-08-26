@@ -41,3 +41,17 @@
     align-items: center;
   }
 }
+@media (max-width: 398px) {
+  .mainContainForm-password {
+    &--containFrom {
+      height: 230px;
+    }
+    &--containtex {
+      p {
+      }
+    }
+    &--containForm {
+      height: 120px;
+    }
+  }
+}
