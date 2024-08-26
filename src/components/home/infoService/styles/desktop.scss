@@ -48,3 +48,25 @@
     }
   }
 }
+@media (max-width: 398px) {
+  .contain-service {
+    width: 360px;
+    height: 190px;
+    margin-left: 0px;
+    &--containTitle {
+      width: 277px;
+      height: 36px;
+    }
+    &__title {
+      font-size: 28px;
+    }
+
+    &--containDescription {
+      width: 318px;
+      height: 108px;
+      &__description {
+        font-size: 16px;
+      }
+    }
+  }
+}

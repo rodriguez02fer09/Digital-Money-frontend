@@ -47,3 +47,22 @@
     }
   }
 }
+@media (max-width: 398px) {
+  .home {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    &--contain-home {
+      height: 823px;
+    }
+    &--section {
+      width: 93%;
+      height: 329px;
+    }
+    &--containInfo {
+      width: 354px;
+      height: 400px;
+
+      left: 16px;
+    }
+  }
+}
