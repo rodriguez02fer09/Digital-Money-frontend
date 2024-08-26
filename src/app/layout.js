@@ -19,9 +19,9 @@ export default function RootLayout({children}) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <body className={inter.className}>
-        <Header color={'green'} />
+        <Header color={'black'} />
         {children}
-        <Footer color={'green'} />
+        <Footer color={'black'} />
       </body>
     </html>
   )
