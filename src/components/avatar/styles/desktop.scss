@@ -1,6 +1,9 @@
 @import '../../../sass/variables';
 .contain-avatar {
-  width: 218px;
+  width: 260px;
   height: 40px;
-  background: wheat;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -32,7 +32,7 @@ const Header = ({color, size, userName}) => {
             label="Create Account"
             href="/create-account"
           /> */}
-          <Avatar name={userName?.name} lastName={userName?.lastName} />
+          <Avatar name={'Fernanda'} lastName={'Rodriguez'} />
         </div>
       )}
     </header>
