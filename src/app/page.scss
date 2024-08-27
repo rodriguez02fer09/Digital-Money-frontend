@@ -22,9 +22,9 @@
   &--containInfo {
     display: flex;
     position: fixed;
-    right: 213px;
     bottom: 93px;
-    left: 214px;
+    width: 100%;
+    justify-content: center;
   }
 }
 

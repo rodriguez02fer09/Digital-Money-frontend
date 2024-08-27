@@ -1,13 +1,15 @@
 @import '../../../../sass/variables';
 .contain-service {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   width: 500px;
-  height: 246px;
+  height: 224px;
   border-radius: 30px;
   background: $quinary-color;
   margin-left: 12px;
+
   &--containTitle {
-    width: 417px;
     height: 54px;
   }
   &__title {
@@ -20,7 +22,6 @@
   }
 
   &--containDescription {
-    width: 417px;
     height: 108px;
     border-top: 2px solid $primary-color;
     padding-top: 15px;
@@ -37,13 +38,20 @@
 
 @media (max-width: 834px) {
   .contain-service {
+    width: 500px;
+    height: 246px;
+
     &--containTitle {
+      height: 54px;
     }
     &__title {
+      font-size: 40px;
     }
 
     &--containDescription {
+      height: 108px;
       &__description {
+        font-size: 20px;
       }
     }
   }
@@ -53,16 +61,15 @@
     width: 360px;
     height: 190px;
     margin-left: 0px;
+
     &--containTitle {
-      width: 277px;
-      height: 36px;
+      height: 50px;
     }
     &__title {
       font-size: 28px;
     }
 
     &--containDescription {
-      width: 318px;
       height: 108px;
       &__description {
         font-size: 16px;
