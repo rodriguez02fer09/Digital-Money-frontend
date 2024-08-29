@@ -40,26 +40,9 @@
     background: salmon;
   }
 }
-@media (max-width: 834px) {
-  .mainContainForm-email {
-    &--containForm {
-    }
-    &--containtex {
-      p {
-      }
-    }
-    &--containForm {
-    }
-  }
-}
+
 @media (max-width: 398px) {
   .mainContainForm-email {
-    &--containForm {
-    }
-    &--containtex {
-      p {
-      }
-    }
     &--containForm {
       height: 202px;
     }
