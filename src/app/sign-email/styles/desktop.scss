@@ -7,11 +7,10 @@
   justify-content: center;
   align-items: center;
   background: $secondary-color;
-  &--containFrom {
+  &--containForm {
     width: 360px;
     height: 330px;
     margin-bottom: 131px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,11 +37,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background: salmon;
   }
 }
 @media (max-width: 834px) {
   .mainContainForm-email {
-    &--containFrom {
+    &--containForm {
     }
     &--containtex {
       p {
@@ -54,7 +54,7 @@
 }
 @media (max-width: 398px) {
   .mainContainForm-email {
-    &--containFrom {
+    &--containForm {
     }
     &--containtex {
       p {
