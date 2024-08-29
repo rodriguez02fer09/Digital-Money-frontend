@@ -7,6 +7,7 @@ const UseAvatar = ({username}) => {
   return (
     <div className={`${defaultUser}`}>
       <p>Hola , </p>
+
       <p>
         {name} {lastName}
       </p>
