@@ -2,7 +2,7 @@
 .home {
   width: 100%;
   min-height: 100vh;
-  background-image: url('../../public/images/X-secretos-de-las-cuentas-bancarias-para-jovenes.jpg.img.1176.1626483132424.jpg');
+  background-image: url('../../public/images/fondoDesktop.png');
   /* Ajusta la imagen para que toda se vea dentro del contenedor */
   background-repeat: no-repeat;
   background-position: center; /* Centra la imagen en el contenedor */
@@ -22,9 +22,9 @@
   &--containInfo {
     display: flex;
     position: fixed;
-    right: 213px;
     bottom: 93px;
-    left: 214px;
+    width: 100%;
+    justify-content: center;
   }
 }
 
