@@ -5,18 +5,7 @@ import React from 'react'
 
 const Input = React.forwardRef(
   (
-    {
-      color,
-      size,
-      value,
-      placeholder,
-      onChange,
-      className,
-      register,
-      required,
-      name,
-      type,
-    },
+    {color, size, value, placeholder, onChange, className, name, type, ...rest},
     ref,
   ) => {
     const defaultClass = 'container-input'
@@ -34,9 +23,9 @@ const Input = React.forwardRef(
           name={name}
           value={value}
           placeholder={placeholder}
-          className={`${inputClass}`}
+          className={`${inputClass} ${className}`}
           onChange={onChange}
-          {...register(name, {required: true})}
+          {...rest}
         />
       </div>
     )

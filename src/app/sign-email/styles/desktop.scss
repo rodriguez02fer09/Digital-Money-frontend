@@ -10,11 +10,11 @@
 
   &--containForm {
     width: 360px;
-    height: 330px;
+    height: 350px;
     margin-bottom: 131px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
   }
   &--containText {

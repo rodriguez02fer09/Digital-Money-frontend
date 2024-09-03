@@ -10,10 +10,11 @@
 
   &--containFrom {
     width: 360px;
-    height: 250px;
+    height: 274px;
     display: flex;
     flex-direction: column;
     margin-bottom: 193px;
+    justify-content: space-between;
   }
   &--containtex {
     width: 360px;
@@ -34,13 +35,24 @@
   }
   &--containForm {
     width: 360px;
-    height: 148px;
+    height: 169px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
+
+  span {
+    color: #da0000;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 140.625%; /* 21.094px */
+  }
 }
+
 @media (max-width: 398px) {
   .mainContainForm-password {
     &--containFrom {
