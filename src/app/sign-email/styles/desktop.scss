@@ -40,36 +40,12 @@
     justify-content: space-between;
     align-items: center;
   }
-}
-<<<<<<< HEAD
 
-=======
-span {
-  display: block;
-  color: $senary-color;
-  font-family: $font-stack;
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 140.625%; /* 21.094px */
-}
-@media (max-width: 834px) {
-  .mainContainForm-email {
-    &--containForm {
-    }
-    &--containtex {
-      p {
+  @media (max-width: 398px) {
+    .mainContainForm-email {
+      &--containForm {
+        height: 202px;
       }
-    }
-    &--containForm {
-    }
-  }
-}
->>>>>>> 68aea7fba19448bae00e378028637f2f4ff64987
-@media (max-width: 398px) {
-  .mainContainForm-email {
-    &--containForm {
-      height: 202px;
     }
   }
 }
