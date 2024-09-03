@@ -1,5 +1,5 @@
 @import '../../../sass/variables';
-.mainContainForm-email {
+.mainContain-email {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   background: $secondary-color;
+
   &--containForm {
     width: 360px;
     height: 330px;
@@ -16,8 +17,9 @@
     justify-content: center;
     align-items: center;
   }
-  &--containtex {
+  &--containText {
     margin-bottom: 40px;
+    color: white;
 
     p {
       color: $quinary-color;
@@ -30,15 +32,23 @@
       line-height: 117.682%; /* 23.536px */
     }
   }
-  &--containForm {
+  &--containInput {
     width: 360px;
     height: 232px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: salmon;
   }
+}
+span {
+  display: block;
+  color: $senary-color;
+  font-family: $font-stack;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 140.625%; /* 21.094px */
 }
 @media (max-width: 834px) {
   .mainContainForm-email {
