@@ -36,7 +36,7 @@ const Input = React.forwardRef(
           placeholder={placeholder}
           className={`${inputClass}`}
           onChange={onChange}
-          {...register(name, {required})}
+          {...register(name, {required: true})}
         />
       </div>
     )
