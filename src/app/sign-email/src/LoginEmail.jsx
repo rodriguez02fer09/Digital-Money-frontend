@@ -19,7 +19,6 @@ const LoginEmail = ({
     handleSubmit,
     formState: {errors},
   } = useForm()
-  console.log(errors)
 
   const onSubmit = data => console.log(data)
 
@@ -28,7 +27,7 @@ const LoginEmail = ({
   return (
     <main className={`${defaultClass}`}>
       <div className={`${defaultClass}--containForm`}>
-        <div className={`${defaultClass}--containText `}>
+        <div className={`${defaultClass}--containText`}>
           <p>{'¡Hola! Ingresá tu e-mail'}</p>
         </div>
         <form
@@ -38,11 +37,16 @@ const LoginEmail = ({
           <Input
             size={'large'}
             placeholder={'Correo electronico'}
-            color={'black'}
+            color={errors.email ? 'red' : 'black'}
             type="email"
             name="email"
-            register={register}
-            required
+            {...register('email', {
+              required: 'Correo es requerido',
+              pattern: {
+                value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                message: 'Correo no válido',
+              },
+            })}
           />
 
           <Button
@@ -58,8 +62,8 @@ const LoginEmail = ({
             color="grey"
             href="/create-account"
           />
-          {errors.email && <span>Usuario inexistente campo requerido</span>}
         </form>
+        {errors.email && <span>{errors.email.message}</span>}
       </div>
     </main>
   )

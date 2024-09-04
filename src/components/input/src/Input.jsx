@@ -12,10 +12,10 @@ const Input = React.forwardRef(
       placeholder,
       onChange,
       className,
-      register,
-      required,
       name,
       type,
+      errors,
+      ...rest
     },
     ref,
   ) => {
@@ -29,14 +29,15 @@ const Input = React.forwardRef(
     return (
       <div className={`${inputClass}`}>
         <input
+          color={color}
           ref={ref}
           type={type}
           name={name}
           value={value}
           placeholder={placeholder}
-          className={`${inputClass}`}
+          className={`${inputClass} ${className}`}
           onChange={onChange}
-          {...register(name, {required: true})}
+          {...rest}
         />
       </div>
     )
