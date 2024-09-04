@@ -1,5 +1,6 @@
 'use client'
 import {useForm} from 'react-hook-form'
+import Link from 'next/link'
 import '../styles/desktop.scss'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
@@ -45,12 +46,14 @@ const LoginPassword = () => {
               },
             })}
           />
-          <Button
-            size={'large'}
-            label={'Continuar'}
-            color={'green'}
-            type="submit"
-          />
+          <Link href={'/'}>
+            <Button
+              size={'large'}
+              label={'Continuar'}
+              color={'green'}
+              type="submit"
+            />
+          </Link>
         </form>
         {errors.password && <span>{errors.password.message}</span>}{' '}
       </div>

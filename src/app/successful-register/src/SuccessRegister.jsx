@@ -2,6 +2,7 @@ import '../styles/desktop.scss'
 import Image from 'next/image'
 import Button from '../../../components/button/src/Button'
 import ImgCheck from '../../../../public/images/check.svg'
+import Link from 'next/link'
 
 const SuccessResgister = () => {
   const defaullSuccess = 'main-successRegister'
@@ -19,12 +20,9 @@ const SuccessResgister = () => {
           </p>
         </div>
         <div className={`${defaullSuccess}--containButton`}>
-          <Button
-            size={'large'}
-            color={'green'}
-            label="Continuar"
-            href="/sign-email"
-          />
+          <Link href="/sign-email" passHref>
+            <Button size={'large'} color={'green'} label="Continuar" />
+          </Link>
         </div>
       </div>
     </main>

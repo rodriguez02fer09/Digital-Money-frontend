@@ -40,6 +40,9 @@
     justify-content: space-between;
     align-items: center;
   }
+  a {
+    width: 100%;
+  }
   span {
     color: var(--D---Color-Error-Fondo-Light, #e91010);
     /* D - Text Error */
@@ -50,7 +53,7 @@
     line-height: 140.625%; /* 21.094px */
   }
   @media (max-width: 398px) {
-    .mainContainForm-email {
+    .mainContain-email {
       &--containForm {
         height: 202px;
       }

@@ -1,5 +1,6 @@
 'use client'
 import {useForm} from 'react-hook-form'
+import Link from 'next/link'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
 import '../styles/desktop.scss'
@@ -48,20 +49,18 @@ const LoginEmail = ({
               },
             })}
           />
+          <Link href={'/sign-password'} passHref>
+            <Button
+              type="submit"
+              size={'large'}
+              label={'Continuar'}
+              color={'green'}
+            />
+          </Link>
 
-          <Button
-            type="submit"
-            size={'large'}
-            label={'Continuar'}
-            color={'green'}
-            href={'/sign-password'}
-          />
-          <Button
-            size="large"
-            label="Crear cuenta"
-            color="grey"
-            href="/create-account"
-          />
+          <Link href="/create-acount" passHref>
+            <Button size="large" label="Crear cuenta" color="grey" />
+          </Link>
         </form>
         {errors.email && <span>{errors.email.message}</span>}
       </div>
