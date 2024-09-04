@@ -3,7 +3,6 @@ import {useForm} from 'react-hook-form'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
 import '../styles/desktop.scss'
-import Link from 'next/link'
 
 const CreateAcount = () => {
   const {
@@ -119,7 +118,7 @@ const CreateAcount = () => {
             {...register('password', {
               required: 'La contraseña es requerida',
               minLength: {
-                value: 6,
+                value: 5,
                 message: 'La contraseña debe tener al menos 5 caracteres',
               },
               pattern: {
@@ -155,9 +154,7 @@ const CreateAcount = () => {
               },
             })}
           />
-          <Link href="/successful-register" passHref>
-            <Button size={'large'} label={'Crear cuenta'} color={'green'} />
-          </Link>
+          <Button size={'large'} label={'Crear cuenta'} color={'green'} />
         </form>
 
         {getMessage() && <span>{getMessage()}</span>}

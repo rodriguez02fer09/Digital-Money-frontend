@@ -46,14 +46,13 @@ const LoginPassword = () => {
               },
             })}
           />
-          <Link href={'/'}>
-            <Button
-              size={'large'}
-              label={'Continuar'}
-              color={'green'}
-              type="submit"
-            />
-          </Link>
+
+          <Button
+            size={'large'}
+            label={'Continuar'}
+            color={'green'}
+            type="submit"
+          />
         </form>
         {errors.password && <span>{errors.password.message}</span>}{' '}
       </div>
