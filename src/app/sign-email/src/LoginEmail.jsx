@@ -37,19 +37,14 @@ const LoginEmail = ({
           <Input
             size={'large'}
             placeholder={'Correo electronico'}
-            color={'black'}
+            color={errors.email ? 'red' : 'black'}
             type="email"
             name="email"
             {...register('email', {
-              required: 'El correo electrónico es requerido',
+              required: 'Correo es requerido',
               pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'Formato de correo electrónico no válido',
-              },
-              minLength: {
-                value: 5,
-                message:
-                  'El correo electrónico debe tener al menos 5 caracteres',
+                value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+                message: 'Correo no válido',
               },
             })}
           />

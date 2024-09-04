@@ -8,6 +8,7 @@ const LoginPassword = () => {
   const {
     register,
     handleSubmit,
+
     formState: {errors},
   } = useForm()
 
@@ -29,21 +30,18 @@ const LoginPassword = () => {
           <Input
             size={'large'}
             placeholder={'Contraseña'}
-            color={'black'}
+            color={errors.password ? 'red' : 'black'}
             type="password"
             {...register('password', {
-              required: {
-                value: true,
-                message: 'La contraseña es requerida',
-              },
+              required: 'La contraseña es requerida',
               minLength: {
-                value: 8,
-                message: 'La contraseña debe tener al menos 8 caracteres',
+                value: 5,
+                message: 'La contraseña debe tener al menos 5 caracteres',
               },
               pattern: {
-                value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                value: /^(?=.*[a-z]).*$/,
                 message:
-                  'La contraseña debe contener al menos un número y una letra',
+                  'La contraseña debe contener al menos una letra minúscula',
               },
             })}
           />
