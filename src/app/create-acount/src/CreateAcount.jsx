@@ -12,8 +12,37 @@ const CreateAcount = () => {
     formState: {errors},
   } = useForm()
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = async data => {
+    console.log('Datos enviados:', data) // Imprime los datos para verificar
 
+    try {
+      const response = await fetch(
+        'https://digitalmoney.digitalhouse.com/api/users',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        },
+      )
+
+      if (!response.ok) {
+        const errorResponse = await response.json()
+        console.error('Detalles del error:', errorResponse) // Muestra detalles del error
+        throw new Error(
+          `Error ${response.status}: ${errorResponse.message || 'Error en la solicitud'}`,
+        )
+      }
+
+      const result = await response.json()
+      console.log('Usuario registrado con éxito:', result)
+    } catch (error) {
+      console.error('Error:', error.message)
+    }
+  }
+
+  //material ui
   const password = watch('password')
 
   const getMessage = () => {
@@ -35,11 +64,11 @@ const CreateAcount = () => {
         >
           <Input
             size={'large'}
-            color={errors.nombre ? 'red' : 'black'}
+            color={errors.firstname ? 'red' : 'black'}
             placeholder={'Nombre'}
             type="text"
-            name="nombre"
-            {...register('nombre', {
+            name="firstname"
+            {...register('firstname', {
               required: 'El nombre es requerido',
               minLength: {
                 value: 2,
@@ -54,11 +83,11 @@ const CreateAcount = () => {
 
           <Input
             size={'large'}
-            color={errors.apellido ? 'red' : 'black'}
+            color={errors.lastname ? 'red' : 'black'}
             placeholder={'Apellido*'}
             type="text"
-            name="apellido"
-            {...register('apellido', {
+            name="lastname"
+            {...register('lastname', {
               required: 'El apellido es requerido',
               minLength: {
                 value: 2,
@@ -134,8 +163,8 @@ const CreateAcount = () => {
             color={errors.confirmPassword ? 'red' : 'black'}
             placeholder={'Confirmar contraseña*'}
             type="password"
-            name="confirmPassword"
-            {...register('confirmPassword', {
+            name="confirmPassword "
+            {...register('confirmPassword ', {
               required: 'La confirmación de la contraseña es requerida',
               validate: value =>
                 value === password || 'Las contraseñas no coinciden',
@@ -143,15 +172,13 @@ const CreateAcount = () => {
           />
           <Input
             size={'large'}
-            color={errors.telefono ? 'red' : 'black'}
+            color={errors.phone ? 'red' : 'black'}
             placeholder={'Teléfono*'}
             type="tel"
-            name="telefono"
-            {...register('telefono', {
+            name="phone"
+            {...register('phone', {
               required: 'El campo teléfono es obligatorio.',
-              pattern: {
-                value: /^[0-9]+$/,
-              },
+              pattern: {},
             })}
           />
           <Button size={'large'} label={'Crear cuenta'} color={'green'} />
