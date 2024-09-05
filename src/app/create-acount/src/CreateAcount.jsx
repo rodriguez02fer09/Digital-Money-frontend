@@ -1,5 +1,6 @@
 'use client'
 import {useForm} from 'react-hook-form'
+import {useRouter} from 'next/navigation'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
 import '../styles/desktop.scss'
@@ -11,6 +12,8 @@ const CreateAcount = () => {
     watch,
     formState: {errors},
   } = useForm()
+
+  const router = useRouter()
 
   const onSubmit = async data => {
     console.log('Datos enviados:', data)
@@ -37,6 +40,7 @@ const CreateAcount = () => {
 
       const result = await response.json()
       console.log('Usuario registrado con éxito:', result)
+      router.push('/successful-register')
     } catch (error) {
       console.error('Error:', error.message)
     }
