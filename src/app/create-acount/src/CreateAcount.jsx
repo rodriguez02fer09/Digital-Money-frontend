@@ -13,7 +13,7 @@ const CreateAcount = () => {
   } = useForm()
 
   const onSubmit = async data => {
-    console.log('Datos enviados:', data) // Imprime los datos para verificar
+    console.log('Datos enviados:', data)
 
     try {
       const response = await fetch(
@@ -29,7 +29,7 @@ const CreateAcount = () => {
 
       if (!response.ok) {
         const errorResponse = await response.json()
-        console.error('Detalles del error:', errorResponse) // Muestra detalles del error
+        console.error('Detalles del error:', errorResponse)
         throw new Error(
           `Error ${response.status}: ${errorResponse.message || 'Error en la solicitud'}`,
         )
@@ -112,6 +112,7 @@ const CreateAcount = () => {
                 value: /^[0-9]+$/,
                 message: 'El DNI solo puede contener números.',
               },
+              setValueAs: value => parseInt(value, 10),
             })}
           />
 
