@@ -1,6 +1,6 @@
 'use client'
 import {useForm} from 'react-hook-form'
-
+import {useRouter} from 'next/navigation'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
 import '../styles/desktop.scss'
@@ -21,8 +21,16 @@ const LoginEmail = ({
     formState: {errors},
   } = useForm()
 
-  const onSubmit = data => console.log(data)
+  const router = useRouter()
 
+  const handleEmail = () => {
+    router.push('/sign-password')
+  }
+
+  const onSubmit = data => {
+    console.log(data)
+    handleEmail()
+  }
   const defaultClass = 'mainContain-email'
 
   return (
@@ -57,7 +65,12 @@ const LoginEmail = ({
             color={'green'}
           />
 
-          <Button size="large" label="Crear cuenta" color="grey" />
+          <Button
+            size="large"
+            label="Crear cuenta"
+            color="grey"
+            onClick={handleEmail}
+          />
         </form>
         {errors.email && <span>{errors.email.message}</span>}
       </div>

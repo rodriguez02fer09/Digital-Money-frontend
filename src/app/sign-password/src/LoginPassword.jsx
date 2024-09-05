@@ -1,6 +1,6 @@
 'use client'
 import {useForm} from 'react-hook-form'
-import Link from 'next/link'
+import {useRouter} from 'next/navigation'
 import '../styles/desktop.scss'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
@@ -13,7 +13,14 @@ const LoginPassword = () => {
     formState: {errors},
   } = useForm()
 
+  const router = useRouter()
+
+  const handlePassword = () => {
+    router.push('/')
+  }
+
   const onSubmit = data => {
+    handlePassword()
     console.log(data)
   }
 
@@ -52,6 +59,7 @@ const LoginPassword = () => {
             label={'Continuar'}
             color={'green'}
             type="submit"
+            onClick={handlePassword}
           />
         </form>
         {errors.password && <span>{errors.password.message}</span>}{' '}
