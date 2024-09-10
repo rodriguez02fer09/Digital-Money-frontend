@@ -1,6 +1,8 @@
 'use client'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
+import {useContext} from 'react'
+import {UserContext} from '../../../Context/index'
 import '../styles/desktop.scss'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
@@ -15,13 +17,19 @@ const LoginPassword = () => {
 
   const router = useRouter()
 
-  const handlePassword = () => {
+  const {account, setAccount} = useContext(UserContext)
+
+  const handlePassword = password => {
+    setAccount(prevAccount => ({
+      ...prevAccount,
+      password: password,
+    }))
     router.push('/')
   }
 
   const onSubmit = data => {
-    handlePassword()
     console.log(data)
+    handlePassword(data.password)
   }
 
   const defaultClass = 'mainContainForm-password'
