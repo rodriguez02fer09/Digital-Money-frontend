@@ -132,6 +132,20 @@ const CreateAcount = () => {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
                 message: 'Correo no válido',
               },
+              validate: async value => {
+                try {
+                  const response = await fetch(
+                    `https://digitalmoney.digitalhouse.com/api/users?email=${value}`,
+                  )
+                  const data = await response.json()
+
+                  if (data.exists) {
+                    return 'El correo ya está registrado'
+                  }
+                } catch (error) {
+                  return 'Error en la validación del correo'
+                }
+              },
             })}
           />
         </form>
