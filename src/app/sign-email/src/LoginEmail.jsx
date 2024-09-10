@@ -1,9 +1,12 @@
 'use client'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
+import {UserContext} from '../../../Context/index'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
 import '../styles/desktop.scss'
+
+const {setAccount} = useContext(UserContext)
 
 const LoginEmail = ({
   inputColor,
@@ -23,14 +26,19 @@ const LoginEmail = ({
 
   const router = useRouter()
 
-  const handleEmail = () => {
+  const handleEmail = email => {
+    setAccount(prevAccount => ({
+      ...prevAccount,
+      email: email,
+    }))
     router.push('/sign-password')
   }
 
   const onSubmit = data => {
     console.log(data)
-    handleEmail()
+    handleEmail(data.email)
   }
+
   const defaultClass = 'mainContain-email'
 
   return (
@@ -69,7 +77,7 @@ const LoginEmail = ({
             size="large"
             label="Crear cuenta"
             color="grey"
-            onClick={handleEmail}
+            onClick={handleEmail('')}
           />
         </form>
         {errors.email && <span>{errors.email.message}</span>}

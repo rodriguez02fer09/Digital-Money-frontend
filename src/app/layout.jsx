@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Header from '../components/shared/header/src/Header.jsx'
 import Footer from '../components/shared/footer/src/Footer.jsx'
 import '../sass/globals.scss'
+import {UserProvider} from 'app/Context/index.jsx'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -21,9 +22,11 @@ export default function RootLayout({children}) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <body className={roboto.className}>
-        <Header color={'black'} />
-        {children}
-        <Footer color={'black'} />
+        <UserProvider>
+          <Header color={'black'} />
+          {children}
+          <Footer color={'black'} />
+        </UserProvider>
       </body>
     </html>
   )
