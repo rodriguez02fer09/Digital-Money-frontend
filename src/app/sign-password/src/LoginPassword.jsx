@@ -24,7 +24,8 @@ const LoginPassword = () => {
       ...prevAccount,
       password: password,
     }))
-    router.push('/')
+    fetch()
+    //router.push('/')
   }
 
   const onSubmit = data => {
