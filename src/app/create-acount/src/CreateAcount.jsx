@@ -1,4 +1,6 @@
 'use client'
+import {useContext} from 'react'
+import {UserContext} from 'app/Context'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 import Input from '../../../components/input/src/Input'
@@ -137,11 +139,22 @@ const CreateAcount = () => {
                   const response = await fetch(
                     `https://digitalmoney.digitalhouse.com/api/users?email=${value}`,
                   )
-                  const data = await response.json()
 
+                  if (response.status === 404) {
+                    return 'Endpoint no encontrado'
+                  }
+
+                  if (!response.ok) {
+                    const errorResponse = await response.json()
+                    return `Error ${response.status}: ${errorResponse.message || 'Error en la solicitud'}`
+                  }
+
+                  const data = await response.json()
                   if (data.exists) {
                     return 'El correo ya está registrado'
                   }
+
+                  return true
                 } catch (error) {
                   return 'Error en la validación del correo'
                 }
@@ -182,8 +195,8 @@ const CreateAcount = () => {
             color={errors.confirmPassword ? 'red' : 'black'}
             placeholder={'Confirmar contraseña*'}
             type="password"
-            name="confirmPassword "
-            {...register('confirmPassword ', {
+            name="confirmPassword"
+            {...register('confirmPassword', {
               required: 'La confirmación de la contraseña es requerida',
               validate: value =>
                 value === password || 'Las contraseñas no coinciden',

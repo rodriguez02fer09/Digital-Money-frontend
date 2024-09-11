@@ -1,12 +1,11 @@
 'use client'
+import {useContext} from 'react'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 import {UserContext} from '../../../Context/index'
 import Input from '../../../components/input/src/Input'
 import Button from '../../../components/button/src/Button'
 import '../styles/desktop.scss'
-
-const {setAccount} = useContext(UserContext)
 
 const LoginEmail = ({
   inputColor,
@@ -18,6 +17,7 @@ const LoginEmail = ({
   buttonLabel,
   buttonHref,
 }) => {
+  const {setAccount} = useContext(UserContext)
   const {
     register,
     handleSubmit,
@@ -31,12 +31,17 @@ const LoginEmail = ({
       ...prevAccount,
       email: email,
     }))
-    router.push('/sign-password')
   }
 
   const onSubmit = data => {
     console.log(data)
     handleEmail(data.email)
+    router.push('/sign-password')
+  }
+
+  // Función para manejar el clic en "Crear cuenta"
+  const handleCreateAccount = () => {
+    handleEmail('') // Esto debería estar bien si no causa actualizaciones infinitas
   }
 
   const defaultClass = 'mainContain-email'
@@ -77,7 +82,7 @@ const LoginEmail = ({
             size="large"
             label="Crear cuenta"
             color="grey"
-            onClick={handleEmail('')}
+            onClick={handleCreateAccount} // Esto debería ser seguro
           />
         </form>
         {errors.email && <span>{errors.email.message}</span>}

@@ -22,9 +22,16 @@ export const UserProvider = ({children}) => {
     }
   }, [])
 
+  const cleanAccount = acc => {
+    return {
+      email: acc.email || '',
+    }
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('account', JSON.stringify(account))
+      console.log(account) // Verifica la estructura del estado
+      localStorage.setItem('account', JSON.stringify(cleanAccount(account)))
       localStorage.setItem('sign-out', JSON.stringify(signOut))
     }
   }, [account, signOut])
