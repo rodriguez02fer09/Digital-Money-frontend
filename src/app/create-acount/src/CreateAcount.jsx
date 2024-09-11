@@ -13,6 +13,7 @@ const CreateAcount = () => {
     handleSubmit,
     watch,
     formState: {errors},
+    getValues,
   } = useForm()
 
   const router = useRouter()
