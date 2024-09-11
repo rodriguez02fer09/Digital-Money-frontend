@@ -11,12 +11,9 @@ const LoginPassword = () => {
   const {
     register,
     handleSubmit,
-
     formState: {errors},
   } = useForm()
-
   const router = useRouter()
-
   const {account, setAccount} = useContext(UserContext)
 
   const handlePassword = password => {
@@ -24,15 +21,40 @@ const LoginPassword = () => {
       ...prevAccount,
       password: password,
     }))
-    router.push('/')
+  }
+
+  const loguin = async (email, password) => {
+    const response1 = await fetch(
+      'https://digitalmoney.digitalhouse.com/api/login',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({email, password}),
+      },
+    )
+      .catch(error => {
+        throw new Error('La respuesta de la red no fue correcta' + error)
+      })
+      .then(response => response.json())
+      .then(({token}) => {
+        setAccount(prevAccount => ({
+          ...prevAccount,
+          token,
+        }))
+        router.push('/')
+      })
   }
 
   const onSubmit = data => {
     console.log(data)
     handlePassword(data.password)
+    loguin(account.email, data.password)
   }
 
   const defaultClass = 'mainContainForm-password'
+
   return (
     <main className={`${defaultClass}`}>
       <div className={`${defaultClass}--containFrom`}>
@@ -41,7 +63,7 @@ const LoginPassword = () => {
         </div>
         <form
           className={`${defaultClass}--containForm`}
-          onSubmit={handleSubmit(onSubmit)} // Asociar handleSubmit al form
+          onSubmit={handleSubmit(onSubmit)}
         >
           <Input
             size={'large'}
@@ -67,10 +89,9 @@ const LoginPassword = () => {
             label={'Continuar'}
             color={'green'}
             type="submit"
-            onClick={handlePassword}
           />
         </form>
-        {errors.password && <span>{errors.password.message}</span>}{' '}
+        {errors.password && <span>{errors.password.message}</span>}
       </div>
     </main>
   )

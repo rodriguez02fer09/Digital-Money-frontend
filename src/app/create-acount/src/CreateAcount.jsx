@@ -1,6 +1,4 @@
 'use client'
-import {useContext} from 'react'
-import {UserContext} from 'app/Context'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 import Input from '../../../components/input/src/Input'
@@ -15,41 +13,29 @@ const CreateAcount = () => {
     formState: {errors},
     getValues,
   } = useForm()
-
   const router = useRouter()
 
-  const onSubmit = async data => {
+  const onSubmit = data => {
     console.log('Datos enviados:', data)
 
-    try {
-      const response = await fetch(
-        'https://digitalmoney.digitalhouse.com/api/users',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        },
-      )
+    fetch('https://digitalmoney.digitalhouse.com/api/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(result => result.json())
+      .then(result => {
+        console.log('Usuario registrado con éxito:', result)
 
-      if (!response.ok) {
-        const errorResponse = await response.json()
-        console.error('Detalles del error:', errorResponse)
-        throw new Error(
-          `Error ${response.status}: ${errorResponse.message || 'Error en la solicitud'}`,
-        )
-      }
-
-      const result = await response.json()
-      console.log('Usuario registrado con éxito:', result)
-      router.push('/successful-register')
-    } catch (error) {
-      console.error('Error:', error.message)
-    }
+        router.push('/successful-register')
+      })
+      .catch(error => {
+        console.error('Detalles del error:', error)
+      })
   }
 
-  //material ui
   const password = watch('password')
 
   const getMessage = () => {
@@ -72,9 +58,8 @@ const CreateAcount = () => {
           <Input
             size={'large'}
             color={errors.firstname ? 'red' : 'black'}
-            placeholder={'Nombre'}
+            placeholder={'Nombre*'}
             type="text"
-            name="firstname"
             {...register('firstname', {
               required: 'El nombre es requerido',
               minLength: {
@@ -93,7 +78,6 @@ const CreateAcount = () => {
             color={errors.lastname ? 'red' : 'black'}
             placeholder={'Apellido*'}
             type="text"
-            name="lastname"
             {...register('lastname', {
               required: 'El apellido es requerido',
               minLength: {
@@ -112,7 +96,6 @@ const CreateAcount = () => {
             color={errors.dni ? 'red' : 'black'}
             placeholder={'DNI*'}
             type="text"
-            name="dni"
             {...register('dni', {
               required: 'El campo DNI es obligatorio.',
               pattern: {
@@ -128,7 +111,6 @@ const CreateAcount = () => {
             color={errors.email ? 'red' : 'black'}
             placeholder={'Correo electrónico*'}
             type="email"
-            name="email"
             {...register('email', {
               required: 'Correo es requerido',
               pattern: {
@@ -137,15 +119,7 @@ const CreateAcount = () => {
               },
             })}
           />
-        </form>
-        <p className={`${defaultClass}--InfoPassword`}>
-          Usa entre 6 y 20 caracteres (debe contener al menos 1 carácter
-          especial, una mayúscula y un número).
-        </p>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className={`${defaultClass}--containPassword `}
-        >
+
           <Input
             size={'large'}
             color={errors.password ? 'red' : 'black'}
@@ -178,17 +152,17 @@ const CreateAcount = () => {
               },
             })}
           />
+
           <Input
             size={'large'}
             color={errors.phone ? 'red' : 'black'}
             placeholder={'Teléfono*'}
             type="tel"
-            name="phone"
             {...register('phone', {
               required: 'El campo teléfono es obligatorio.',
-              pattern: {},
             })}
           />
+
           <Button size={'large'} label={'Crear cuenta'} color={'green'} />
         </form>
 
