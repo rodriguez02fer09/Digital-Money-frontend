@@ -1,4 +1,6 @@
 'use client'
+import {useContext} from 'react'
+import {UserContext} from 'app/Context'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 import Input from '../../../components/input/src/Input'
@@ -132,20 +134,6 @@ const CreateAcount = () => {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
                 message: 'Correo no válido',
               },
-              validate: async value => {
-                try {
-                  const response = await fetch(
-                    `https://digitalmoney.digitalhouse.com/api/users?email=${value}`,
-                  )
-                  const data = await response.json()
-
-                  if (data.exists) {
-                    return 'El correo ya está registrado'
-                  }
-                } catch (error) {
-                  return 'Error en la validación del correo'
-                }
-              },
             })}
           />
         </form>
@@ -162,7 +150,6 @@ const CreateAcount = () => {
             color={errors.password ? 'red' : 'black'}
             placeholder={'Contraseña*'}
             type="password"
-            name="password"
             {...register('password', {
               required: 'La contraseña es requerida',
               minLength: {
@@ -182,11 +169,12 @@ const CreateAcount = () => {
             color={errors.confirmPassword ? 'red' : 'black'}
             placeholder={'Confirmar contraseña*'}
             type="password"
-            name="confirmPassword "
-            {...register('confirmPassword ', {
+            {...register('confirmPassword', {
               required: 'La confirmación de la contraseña es requerida',
-              validate: value =>
-                value === password || 'Las contraseñas no coinciden',
+              validate: value => {
+                const password = getValues('password')
+                return value === password || 'Las contraseñas no coinciden'
+              },
             })}
           />
           <Input
