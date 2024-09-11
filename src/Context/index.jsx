@@ -15,16 +15,22 @@ export const UserProvider = ({children}) => {
       if (accountInLocalStorage) {
         setAccount(JSON.parse(accountInLocalStorage))
       }
-
       if (signOutInLocalStorage) {
         setSignOut(JSON.parse(signOutInLocalStorage))
       }
     }
   }, [])
 
+  const cleanAccount = acc => {
+    return {
+      email: acc.email || '',
+    }
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('account', JSON.stringify(account))
+      console.log(account)
+      localStorage.setItem('account', JSON.stringify(cleanAccount(account)))
       localStorage.setItem('sign-out', JSON.stringify(signOut))
     }
   }, [account, signOut])
