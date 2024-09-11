@@ -41,7 +41,7 @@ const LoginPassword = () => {
         </div>
         <form
           className={`${defaultClass}--containForm`}
-          onSubmit={handleSubmit(onSubmit)} // Asociar handleSubmit al form
+          onSubmit={handleSubmit(onSubmit)}
         >
           <Input
             size={'large'}

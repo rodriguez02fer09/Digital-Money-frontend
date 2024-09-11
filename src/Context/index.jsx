@@ -15,7 +15,6 @@ export const UserProvider = ({children}) => {
       if (accountInLocalStorage) {
         setAccount(JSON.parse(accountInLocalStorage))
       }
-
       if (signOutInLocalStorage) {
         setSignOut(JSON.parse(signOutInLocalStorage))
       }
@@ -30,7 +29,7 @@ export const UserProvider = ({children}) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      console.log(account) // Verifica la estructura del estado
+      console.log(account)
       localStorage.setItem('account', JSON.stringify(cleanAccount(account)))
       localStorage.setItem('sign-out', JSON.stringify(signOut))
     }
