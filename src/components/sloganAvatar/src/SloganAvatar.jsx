@@ -2,7 +2,7 @@ import '../styles/desktop.scss'
 
 const SloganAvatar = ({username}) => {
   const FIRSTLATTER = 0
-  const {name, lastName} = username
+  const {name = '', lastName = ''} = username ?? {}
 
   const firstLaterName = name?.charAt(FIRSTLATTER)
   const firstLaterLastName = lastName?.charAt(FIRSTLATTER)
