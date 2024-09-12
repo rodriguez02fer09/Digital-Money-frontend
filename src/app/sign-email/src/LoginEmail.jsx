@@ -17,7 +17,7 @@ const LoginEmail = ({
   buttonLabel,
   buttonHref,
 }) => {
-  const {setAccount} = useContext(UserContext)
+  const {credencials, setCredencials} = useContext(UserContext)
   const {
     register,
     handleSubmit,
@@ -27,8 +27,8 @@ const LoginEmail = ({
   const router = useRouter()
 
   const handleEmail = email => {
-    setAccount(prevAccount => ({
-      ...prevAccount,
+    setCredencials(prevAcount => ({
+      ...prevAcount,
       email: email,
     }))
     router.push('/sign-password')

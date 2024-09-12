@@ -14,10 +14,10 @@ const LoginPassword = () => {
     formState: {errors},
   } = useForm()
   const router = useRouter()
-  const {account, setAccount} = useContext(UserContext)
+  const {credencials, setCredencials, setToken} = useContext(UserContext)
 
   const handlePassword = password => {
-    setAccount(prevAccount => ({
+    setCredencials(prevAccount => ({
       ...prevAccount,
       password: password,
     }))
@@ -39,9 +39,9 @@ const LoginPassword = () => {
       })
       .then(response => response.json())
       .then(({token}) => {
-        setAccount(prevAccount => ({
+        setToken(prevAccount => ({
           ...prevAccount,
-          token,
+          token: token,
         }))
         router.push('/')
       })
@@ -50,7 +50,7 @@ const LoginPassword = () => {
   const onSubmit = data => {
     console.log(data)
     handlePassword(data.password)
-    loguin(account.email, data.password)
+    loguin(credencials.email, data.password)
   }
 
   const defaultClass = 'mainContainForm-password'
