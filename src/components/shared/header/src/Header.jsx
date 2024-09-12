@@ -3,6 +3,8 @@ import Button from '../../../button/index'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 import Avatar from '../../../avatar/index'
+import {useContext} from 'react'
+import {UserContext} from '../../../../Context/index'
 
 const Header = ({color, size, userName}) => {
   const defaultHeader = 'header'
@@ -20,18 +22,6 @@ const Header = ({color, size, userName}) => {
       </div>
       {color !== 'green' && (
         <div className={`${customClass}__containButton`}>
-          {/* <Button
-            size="sign-up"
-            color="black"
-            label="Sign In"
-            href="/sign-email"
-          />
-          <Button
-            size="create-acount"
-            color="green"
-            label="Create Account"
-            href="/create-account"
-          /> */}
           <Avatar name={'Fernanda'} lastName={'Rodriguez'} />
         </div>
       )}
