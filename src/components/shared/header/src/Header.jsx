@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Button from '../../../button/index'
 import '../styles/desktop.scss'
@@ -6,7 +7,7 @@ import Avatar from '../../../avatar/index'
 import {useContext} from 'react'
 import {UserContext} from '../../../../Context/index'
 
-const Header = ({color, size, userName}) => {
+const Header = ({color}) => {
   const defaultHeader = 'header'
   const imageSrc =
     color === 'green' ? '/images/logoblack.svg' : '/images/logoverde.svg'
@@ -15,6 +16,11 @@ const Header = ({color, size, userName}) => {
     [`${defaultHeader}--${color}`]: color,
   })
 
+  const {acount} = useContext(UserContext)
+
+  const firstname = acount.firstname || 'Usuario'
+  const lastName = acount.lastName || ''
+
   return (
     <header className={`${customClass}`}>
       <div className={`${customClass}__containImage`}>
@@ -22,7 +28,7 @@ const Header = ({color, size, userName}) => {
       </div>
       {color !== 'green' && (
         <div className={`${customClass}__containButton`}>
-          <Avatar name={'Fernanda'} lastName={'Rodriguez'} />
+          <Avatar username={{firstname, lastName}} />
         </div>
       )}
     </header>
