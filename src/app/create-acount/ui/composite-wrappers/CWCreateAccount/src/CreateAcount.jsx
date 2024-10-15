@@ -176,7 +176,7 @@ const CreateAcount = () => {
               required: 'El campo DNI es obligatorio.',
               pattern: {
                 value: /^[0-9]+$/,
-                message: 'El DNI solo puede contener números.',
+                message: 'El DNI solo puede contener números.
               },
               setValueAs: value => parseInt(value, 10),
             })}

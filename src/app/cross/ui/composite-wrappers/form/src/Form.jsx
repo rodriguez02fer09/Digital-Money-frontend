@@ -18,11 +18,7 @@ const Form = ({formData, inputs = [], name}) => {
     [`${defaultClass}--${name}`]: name,
   })
 
-  const onSubmit = data => {
-    debugger
-    console.log(formState)
-    console.log(data)
-  }
+  const onSubmit = data => console.log(data)
 
   return (
     <>
