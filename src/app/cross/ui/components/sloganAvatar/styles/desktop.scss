@@ -1,0 +1,21 @@
+@import '../../../../sass/variables';
+.contain-slogan {
+  width: 43px;
+  height: 40px;
+  background: $primary-color;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  p {
+    text-align: center;
+    /* A - Heading 2 */
+    font-family: $font-stack;
+    font-size: $heading-2;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 117.682%; /* 23.536px */
+  }
+}

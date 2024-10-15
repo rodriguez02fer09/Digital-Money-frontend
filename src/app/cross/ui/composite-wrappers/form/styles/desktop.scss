@@ -1,0 +1,13 @@
+.form-container {
+  &--createAccount {
+    width: 798px;
+    height: 168px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 20px;
+    column-gap: 60px;
+    margin-bottom: 10px;
+  }
+}

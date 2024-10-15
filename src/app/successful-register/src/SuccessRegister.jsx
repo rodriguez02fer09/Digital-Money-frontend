@@ -3,8 +3,8 @@ import '../styles/desktop.scss'
 import Image from 'next/image'
 import {useContext} from 'react'
 import {UserContext} from '../../../Context/index'
-import Button from '../../../components/button/src/Button'
-import ImgCheck from '../../../../public/images/check.svg' // Usa la ruta correcta para la imagen SVG
+import Button from '../../cross/ui/components/button/index'
+import ImgCheck from '../../../../public/images/add.svg'
 import {useRouter} from 'next/navigation'
 
 const SuccessRegister = () => {
@@ -23,7 +23,6 @@ const SuccessRegister = () => {
       <div className={`${defaultSuccess}--contain-successRegister`}>
         <div className={`${defaultSuccess}--contain-info`}>
           <p>Registro Exitoso</p>
-          <Image src={ImgCheck} alt="Logo" width={92} height={95} />
 
           <p>
             Hemos enviado un correo de confirmación para validar tu email, por

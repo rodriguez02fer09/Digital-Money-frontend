@@ -1,8 +1,11 @@
 import {Roboto} from 'next/font/google'
 import Head from 'next/head'
-import Header from '../components/shared/header/src/Header.jsx'
-import Footer from '../components/shared/footer/src/Footer.jsx'
-import '../sass/globals.scss'
+
+import Header from '../app/cross/ui/components/shared/header/src/Header'
+import Footer from '../app/cross/ui/components/shared/footer/src/Footer.jsx'
+
+import '../app/cross/sass/globals.scss'
+
 import {UserProvider} from 'app/Context/index.jsx'
 
 const roboto = Roboto({

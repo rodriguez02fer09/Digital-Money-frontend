@@ -1,11 +1,16 @@
 'use client'
-import {useForm} from 'react-hook-form'
-import {useRouter} from 'next/navigation'
-import {useContext} from 'react'
-import {UserContext} from '../../../Context/index'
 import '../styles/desktop.scss'
-import Input from '../../../components/input/src/Input'
-import Button from '../../../components/button/src/Button'
+
+import {useForm} from 'react-hook-form'
+
+import {useRouter} from 'next/navigation'
+
+import {useContext} from 'react'
+
+import {UserContext} from '../../../Context/index'
+
+import Input from '../../cross/ui/components/input/index'
+import Button from '../../cross/ui/components/button'
 
 const LoginPassword = () => {
   const {
@@ -39,16 +44,12 @@ const LoginPassword = () => {
       })
       .then(response => response.json())
       .then(({token}) => {
-        setToken(prevAccount => ({
-          ...prevAccount,
-          token: token,
-        }))
+        setToken(prevAccount => token)
         router.push('/')
       })
   }
 
   const onSubmit = data => {
-    console.log(data)
     handlePassword(data.password)
     loguin(credencials.email, data.password)
   }
