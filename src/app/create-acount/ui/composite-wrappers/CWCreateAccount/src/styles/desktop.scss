@@ -1,0 +1,126 @@
+@import '../../../../../../cross/sass/variables';
+
+.mainForm-cuenta {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $secondary-color;
+
+  &--container {
+    width: 798px;
+    height: 500px;
+
+    margin-bottom: 91px;
+    p {
+      color: $quinary-color;
+      text-align: center;
+      font-family: $font-stack;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 117.682%;
+    }
+  }
+  &--containInfo {
+    width: 798px;
+    height: 168px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 20px;
+    column-gap: 60px;
+    margin-bottom: 10px;
+  }
+  p:nth-of-type(2) {
+    color: $quinary-color;
+    font-family: $font-stack;
+    font-size: 15.2px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140.625%; /* 21.375px */
+  }
+
+  &--containPassword {
+    width: 798px;
+    height: 168px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 20px;
+    column-gap: 60px;
+    margin-top: 10px;
+  }
+  span {
+    width: 216px;
+    height: 21px;
+    color: #ee3838;
+    text-align: left;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 140.625%;
+  }
+  a {
+    width: 100%;
+  }
+}
+@media (max-width: 834px) {
+  .mainForm-cuenta {
+    &--container {
+      width: 715px;
+
+      p {
+      }
+    }
+    &--containInfo {
+      width: 715px;
+      column-gap: 57px;
+    }
+    p:nth-of-type(2) {
+    }
+
+    &--containPassword {
+      width: 715px;
+      column-gap: 57px;
+    }
+  }
+}
+
+@media (max-width: 398px) {
+  .mainForm-cuenta {
+    &--container {
+      width: 300px;
+      height: 624px;
+
+      p {
+        font-size: 20px;
+        height: 20px;
+      }
+    }
+    &--containInfo {
+      width: 300px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    p:nth-of-type(2) {
+      font-size: 11px;
+
+      height: 32px;
+    }
+
+    &--containPassword {
+      width: 300px;
+      height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

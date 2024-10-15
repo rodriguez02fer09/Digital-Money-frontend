@@ -1,7 +1,9 @@
 import Image from 'next/image'
+
 import './page.scss'
-import InfoHome from '../components/home/infoHome/src/InfoHome.jsx'
-import InfoService from 'app/components/home/infoService'
+
+import InfoHome from '../app/cross/ui/components/home/infoHome/index'
+import InfoService from '../app/cross/ui/components/home/infoService'
 
 export default function Home({titleService, titleDescription}) {
   const defaultHome = 'home'

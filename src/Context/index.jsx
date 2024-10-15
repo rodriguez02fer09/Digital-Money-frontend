@@ -5,9 +5,10 @@ export const UserContext = createContext()
 
 export const UserProvider = ({children}) => {
   const [credencials, setCredencials] = useState({email: '', password: ''})
-  const [acount, setAcount] = useState({})
-  const [token, setToken] = useState({})
-  const [userId, setUserId] = useState('')
+  const [acount, setAcount] = useState()
+  const [token, setToken] = useState()
+  const [userId, setUserId] = useState()
+
   useEffect(() => {
     if (typeof window != 'undefined') {
       const credencialsInLocalStorage = localStorage.getItem('credencials')
@@ -18,19 +19,21 @@ export const UserProvider = ({children}) => {
 
     if (typeof window !== 'undefined') {
       const acountInLocalStorage = localStorage.getItem('acount')
-      if (acountInLocalStorage) {
+      if (acountInLocalStorage !== undefined) {
         setAcount(JSON.parse(acountInLocalStorage))
       }
     }
-    if (typeof window != 'undefined') {
+
+    if (typeof window !== 'undefined') {
       const tokenInSlocalStorage = localStorage.getItem('token')
-      if (tokenInSlocalStorage) {
+      if (tokenInSlocalStorage !== undefined) {
         setToken(tokenInSlocalStorage)
       }
     }
+
     if (typeof window !== 'undefined') {
       const userIdInLocalStorage = localStorage.getItem('user_id')
-      if (userIdInLocalStorage) {
+      if (userIdInLocalStorage !== undefined) {
         setUserId(userIdInLocalStorage)
       }
     }
@@ -44,21 +47,21 @@ export const UserProvider = ({children}) => {
   }, [credencials])
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && acount !== undefined) {
       console.log(acount)
       localStorage.setItem('acount', JSON.stringify(acount))
     }
   }, [acount])
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && token !== undefined) {
       console.log(token)
       localStorage.setItem('token', token)
     }
   }, [token])
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && userId !== undefined) {
       localStorage.setItem('user_id', userId)
     }
   }, [userId])

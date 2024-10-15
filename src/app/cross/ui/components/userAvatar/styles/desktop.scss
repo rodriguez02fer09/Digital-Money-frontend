@@ -1,0 +1,18 @@
+@import '../../../../sass/variables';
+.contain-user {
+  width: 200px;
+  height: 24px;
+
+  display: flex;
+  flex-direction: row;
+  p {
+    color: var(--white, #fff);
+    text-align: center;
+    /* A - Heading 3 */
+    font-family: $font-stack;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 138.182%; /* 22.109px */
+  }
+}
