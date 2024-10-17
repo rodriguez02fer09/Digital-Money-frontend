@@ -1,0 +1,10 @@
+@import '../../cross/sass/variables';
+@media (max-width: 398px) {
+  .mainContain-dashBoard {
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: rgba(210, 255, 236, 1);
+  }
+}

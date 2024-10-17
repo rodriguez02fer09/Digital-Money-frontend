@@ -1,0 +1,16 @@
+@import '../../../../sass/variables';
+.cardActivityMoney {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgb(205, 201, 201);
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 16px;
+  margin: 16px;
+  &--ActivityMoney {
+    min-height: 358px;
+  }
+  &--HistoryCard {
+    min-height: 370px;
+  }
+}
