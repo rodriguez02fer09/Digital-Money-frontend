@@ -8,7 +8,7 @@ export default {
   title: 'Button', // El título de tu componente en Storybook
   argTypes: {
     size: {
-      options: ['large', 'sign-up', 'create-acount', 'medium'],
+      options: ['large', 'sign-up', 'create-acount', 'medium','dashBoard-mobile'],
       control: {type: 'radio'},
     },
     color: {
@@ -64,5 +64,12 @@ export const CreateAcount = Template.bind({})
 CreateAcount.args = {
   label: 'Botón Small',
   size: 'create-acount',
+  // dataTestId: 'small-gray-button',
+}
+
+export const DashBoard = Template.bind({})
+DashBoard.args = {
+  label: 'dashBoard-mobile',
+  size: 'dashBoard-mobile'',
   // dataTestId: 'small-gray-button',
 }

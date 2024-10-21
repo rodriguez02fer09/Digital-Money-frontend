@@ -1,29 +1,55 @@
+'use client'
 import '../styles/desktop.scss'
-
 import Image from 'next/image'
-import arrowBlack from '../../../../public/images/arrowBlack.svg'
 import CardBlack from '../../../app/cross/ui/components/cardBlack'
-import Button from 'app/app/cross/ui/components/button'
+import Button from '../../../app/cross/ui/components/button'
 import InputSearch from '../../../app/cross/ui/components/inputSearch'
-import CardActivityMoney from 'app/app/cross/ui/components/cardActivityMoney'
+import CardActivityMoney from '../../../app/cross/ui/components/cardActivityMoney'
 
 const DashBoard = () => {
-  const defaultClass = 'mainContain-dashBoard'
+  const defaultClass = 'dashboard'
 
   return (
-    <div className={`${defaultClass}`}>
-      <arrowBlack />
-      <p>Inicio</p>
-      <CardBlack size={'AvailableAmountCard'} />
-      <div>
-        <Button size={'large'} label={'Ingresar dinero'} color={'green'} />
-        <Button size={'large'} label={'Pago de servicios'} color={'green'} />
+    <main className={`${defaultClass}`}>
+      <div className={`${defaultClass}__contain-header`}>
+        <Image
+          src="/images/arrowBlack.svg"
+          width={14}
+          height={22}
+          alt="Arrow"
+        />
+        <p>Inicio</p>
       </div>
-      <div>
-        <InputSearch size={'medium-prompt'} />
+
+      <div className={`${defaultClass}__contain-card-black`}>
+        <CardBlack size={'AvailableAmountCard'} />
+      </div>
+
+      <div className={`${defaultClass}__contain-buttons`}>
+        <Button
+          size={'dashboard-mobile'}
+          label={'Ingresar dinero'}
+          color={'green'}
+        />
+        <Button
+          size={'dashboard-mobile'}
+          label={'Pago de servicios'}
+          color={'green'}
+        />
+      </div>
+
+      <div className={`${defaultClass}__contain-input`}>
+        <InputSearch
+          size={'medium-prompt'}
+          placeholder={'Busca tu actividad'}
+        />
+      </div>
+
+      <div className={`${defaultClass}__contain-activity`}>
         <CardActivityMoney size={'ActivityMoney'} />
       </div>
-    </div>
+    </main>
   )
 }
+
 export default DashBoard
