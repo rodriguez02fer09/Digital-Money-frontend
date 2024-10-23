@@ -28,3 +28,9 @@ HistoryCard.args = {
   color: 'black',
   size: 'HistoryCard',
 }
+
+// export const ProfileData = Template.bind({})
+// ProfileData.args = {
+//   color: 'black',
+//   size: 'ProfileData',
+// }
