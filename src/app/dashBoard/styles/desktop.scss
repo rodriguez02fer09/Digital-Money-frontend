@@ -3,7 +3,7 @@
   .dashboard {
     width: 100%;
     min-height: 100vh;
-    overflow-y: hidden;
+    overflow-y: auto; /* Habilita el scroll solo en vertical */
     overflow-x: hidden;
     background-color: rgba(210, 255, 236, 1);
 
