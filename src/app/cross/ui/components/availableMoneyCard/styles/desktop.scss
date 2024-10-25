@@ -1,0 +1,24 @@
+@import '../../../../sass/variables';
+@media (max-width: 398px) {
+  .container-availableMoneyCard {
+    width: 340px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: aqua;
+    &__views {
+      width: 190px;
+      height: 16px;
+      background: darkcyan;
+      display: flex;
+      flex-direction: row;
+    }
+    &__title {
+      width: 160px;
+      height: 16px;
+      background: darkmagenta;
+    }
+  }
+}

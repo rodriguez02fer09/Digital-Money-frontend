@@ -5,7 +5,7 @@ import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
 import InputSearch from '../../../app/cross/ui/components/inputSearch'
 import CardActivityMoney from '../../../app/cross/ui/components/cardActivityMoney'
-
+import AvailableMoneyCard from '../../../app/cross/ui/components/availableMoneyCard'
 const DashBoard = () => {
   const defaultClass = 'dashboard'
 
@@ -22,7 +22,9 @@ const DashBoard = () => {
       </div>
 
       <div className={`${defaultClass}__contain-card-black`}>
-        <CardBlack size={'AvailableAmountCard'} />
+        <CardBlack size={'AvailableAmountCard'}>
+          <AvailableMoneyCard />
+        </CardBlack>
       </div>
 
       <div className={`${defaultClass}__contain-buttons`}>

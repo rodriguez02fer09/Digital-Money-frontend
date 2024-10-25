@@ -1,0 +1,14 @@
+@import '../../../../sass/variables';
+
+@media (max-width: 398px) {
+  .titleView {
+    width: 160px;
+    height: 16px;
+
+    p {
+      size: 12px;
+      font-family: $font-stack;
+      color: $quinary-color;
+    }
+  }
+}
