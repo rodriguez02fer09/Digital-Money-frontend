@@ -3,12 +3,12 @@ import '../../../../sass/_variables.scss'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 
-const CardBlack = ({size}) => {
+const CardBlack = ({children, size}) => {
   const defauldCard = 'cardBlack'
   const customClass = classNames(defauldCard, {
     [`${defauldCard}--${size}`]: size,
   })
 
-  return <div className={`${customClass}`}></div>
+  return <div className={`${customClass}`}>{children}</div>
 }
 export default CardBlack

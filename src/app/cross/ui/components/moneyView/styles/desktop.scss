@@ -1,0 +1,15 @@
+@import '../../../../sass/variables';
+
+@media (max-width: 398px) {
+  .moneyView {
+    width: 170px;
+    height: 22px;
+    border-radius: 100px;
+    border: 1px solid $primary-color;
+    p {
+      size: 12px;
+      font-family: $font-stack;
+      color: $quinary-color;
+    }
+  }
+}
