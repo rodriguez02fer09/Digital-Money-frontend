@@ -4,10 +4,15 @@
   .moneyView {
     width: 170px;
     height: 22px;
-    border-radius: 100px;
-    border: 1px solid $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     p {
-      size: 12px;
+      size: 22px;
+      font-weight: 700;
+      line-height: 33;
       font-family: $font-stack;
       color: $quinary-color;
     }

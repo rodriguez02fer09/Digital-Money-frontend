@@ -16,7 +16,7 @@ const AvailableMoneyCard = () => {
       <div className={`${defaultClass}__title`}>
         <TitleView title="Dinero Disponible" />
       </div>
-      <div>
+      <div className={`${defaultClass}__account`}>
         <MoneyView account="$ 6.890.534,17" />
       </div>
     </div>
