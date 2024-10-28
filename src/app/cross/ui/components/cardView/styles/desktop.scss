@@ -4,11 +4,14 @@
   .cardView {
     width: 103px;
     height: 16px;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
     p {
       size: 12px;
       font-family: $font-stack;
       color: $quinary-color;
+      text-decoration: underline;
     }
   }
 }
