@@ -7,18 +7,27 @@
     flex-direction: column;
     justify-content: space-around;
 
-    background-color: aqua;
     &__views {
-      width: 190px;
+      width: 170px;
       height: 16px;
-      background: darkcyan;
+
       display: flex;
       flex-direction: row;
+
+      margin-left: 162px;
     }
     &__title {
       width: 160px;
       height: 16px;
-      background: darkmagenta;
+    }
+    &__account {
+      width: 207px;
+      height: 53px;
+      border-radius: 100px;
+      border: 1px solid $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
