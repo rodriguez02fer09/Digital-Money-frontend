@@ -4,7 +4,7 @@ import Image from 'next/image'
 import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
 import InputSearch from '../../../app/cross/ui/components/inputSearch'
-import CardActivityMoney from '../../../app/cross/ui/components/cardActivityMoney'
+import CardActivity from '../../cross/ui/components/cardActivity'
 import AvailableMoneyCard from '../../../app/cross/ui/components/availableMoneyCard'
 const DashBoard = () => {
   const defaultClass = 'dashboard'
@@ -48,7 +48,7 @@ const DashBoard = () => {
       </div>
 
       <div className={`${defaultClass}__contain-activity`}>
-        <CardActivityMoney size={'ActivityMoney'} />
+        <CardActivity size={'Activity'} />
       </div>
     </main>
   )

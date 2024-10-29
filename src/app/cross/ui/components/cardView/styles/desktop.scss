@@ -7,6 +7,9 @@
     display: flex;
     flex-direction: row;
     justify-content: end;
+    :hover {
+      cursor: pointer;
+    }
     p {
       size: 12px;
       font-family: $font-stack;

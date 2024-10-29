@@ -3,13 +3,13 @@ import '../../../../sass/_variables.scss'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 
-const CardActivityMoney = ({size}) => {
-  const defauldCard = 'cardActivityMoney'
+const CardActivity = ({children, size}) => {
+  const defauldCard = 'cardActivity'
   const customClass = classNames(defauldCard, {
     [`${defauldCard}--${size}`]: size,
   })
 
-  return <div className={`${customClass}`}></div>
+  return <div className={`${customClass}`}>{children}</div>
 }
 
-export default CardActivityMoney
+export default CardActivity

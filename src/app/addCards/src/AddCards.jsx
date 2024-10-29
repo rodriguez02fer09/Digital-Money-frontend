@@ -2,7 +2,7 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 import CardBlack from 'app/app/cross/ui/components/cardBlack'
-import CardActivityMoney from '../../../app/cross/ui/components/cardActivityMoney'
+import CardActivity from '../../cross/ui/components/cardActivity'
 
 const AddCards = () => {
   return (
@@ -22,7 +22,7 @@ const AddCards = () => {
       </div>
 
       <div>
-        <CardActivityMoney size={'HistoryCard'} />
+        <CardActivity size={'HistoryCard'} />
       </div>
     </main>
   )
