@@ -1,0 +1,12 @@
+@import '../../../../sass/variables';
+@media (max-width: 398px) {
+  .contain-Item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 77px;
+    border-bottom: 1px solid rgba(58, 57, 62, 1);
+    border-top: 1px solid rgba(58, 57, 62, 1);
+  }
+}
