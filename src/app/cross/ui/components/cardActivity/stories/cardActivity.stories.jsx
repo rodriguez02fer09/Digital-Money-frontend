@@ -1,12 +1,12 @@
-// src/app/cross/ui/components/cardActivityMoney/stories/cardActivityMoney.stories.jsx
-import CardActivityMoney from '../index' // Asegúrate de que la ruta sea correcta
+// src/app/cross/ui/components/cardActivityy/stories/cardActivity.stories.jsx
+import CardActivity from '../index' // Asegúrate de que la ruta sea correcta
 
 export default {
-  component: CardActivityMoney,
-  title: 'CardActivityMoney',
+  component: CardActivity,
+  title: 'CardActivity',
   argTypes: {
     size: {
-      options: ['ActivityMoney', 'HistoryCard'],
+      options: ['Activity', 'HistoryCard'],
       control: {type: 'radio'},
     },
     color: {
@@ -15,12 +15,12 @@ export default {
   },
 }
 
-const Template = args => <CardActivityMoney {...args} />
+const Template = args => <CardActivity {...args} />
 
-export const ActivityMoney = Template.bind({})
+export const Activity = Template.bind({})
 ActivityMoney.args = {
   color: 'white',
-  size: 'ActivityMoney',
+  size: 'Activity',
 }
 
 export const HistoryCard = Template.bind({})

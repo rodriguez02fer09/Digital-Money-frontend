@@ -3,7 +3,7 @@ import '../styles/desktop.scss'
 import Image from 'next/image'
 import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
-import CardActivityMoney from '../../../app/cross/ui/components/cardActivityMoney'
+import CardActivity from '../../cross/ui/components/cardActivity'
 
 const Perfil = () => {
   const defaultClass = 'perfil'
@@ -20,7 +20,7 @@ const Perfil = () => {
         <p>Perfil</p>
       </div>
       <div>
-        <CardActivityMoney size={'ActivityMoney'} />
+        <CardActivity size={'ActivityMoney'} />
       </div>
 
       <div className={`${defaultClass}__contain-buttons`}>
