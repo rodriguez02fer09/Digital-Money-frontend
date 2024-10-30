@@ -6,7 +6,7 @@ export default {
   title: 'CardActivity',
   argTypes: {
     size: {
-      options: ['Activity', 'HistoryCard'],
+      options: ['Activity', 'HistoryCard', 'ProfileData'],
       control: {type: 'radio'},
     },
     color: {
@@ -29,8 +29,8 @@ HistoryCard.args = {
   size: 'HistoryCard',
 }
 
-// export const ProfileData = Template.bind({})
-// ProfileData.args = {
-//   color: 'black',
-//   size: 'ProfileData',
-// }
+export const ProfileData = Template.bind({})
+ProfileData.args = {
+  color: 'black',
+  size: 'ProfileData',
+}
