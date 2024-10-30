@@ -31,5 +31,20 @@
     // &--profileData {
     //   min-height: 381px;
     // }
+    .contain-footer {
+      height: 20px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-family: $font-stack;
+        font-size: $heading-4;
+        font-weight: 700;
+        line-height: 16.34px;
+        text-align: left;
+      }
+    }
   }
 }
