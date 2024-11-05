@@ -1,0 +1,7 @@
+@import '../../../../../cross/sass/variables';
+@media (max-width: 398px) {
+  .contain-form-date-perfil {
+    display: flex;
+    flex-direction: column;
+  }
+}
