@@ -1,8 +1,7 @@
-// src/componentes/button/Button.js
 import React from 'react'
 import classNames from 'classnames'
-// import Link from 'next/link'
-import '../style/desktop.scss' // Asegúrate de tener este archivo de estilos
+import Image from 'next/image'
+import '../style/desktop.scss'
 
 const Button = ({size, color, label, onClick}) => {
   const defaultButton = 'button'
@@ -15,6 +14,16 @@ const Button = ({size, color, label, onClick}) => {
   return (
     <button onClick={onClick} className={`${customClass}`}>
       {label}
+
+      {size === 'button-arrow' && (
+        <Image
+          className={`${defaultButton}__icon`}
+          src="/images/arrowBlack.svg"
+          width={14}
+          height={22}
+          alt="Arrow"
+        />
+      )}
     </button>
   )
 }

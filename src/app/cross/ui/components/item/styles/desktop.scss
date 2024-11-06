@@ -6,9 +6,9 @@
     justify-content: space-between;
     align-items: center;
     height: 77px;
-    border-top: 1px solid rgba(58, 57, 62, 1);
+    border-top: 1px solid #cecece;
     &:last-child {
-      border-bottom: 1px solid rgba(58, 57, 62, 1); // Borde inferior solo para el último elemento
+      border-bottom: 1px solid #cecece; // Borde inferior solo para el último elemento
     }
   }
 }

@@ -13,7 +13,8 @@ export default {
         'sign-up',
         'create-acount',
         'medium',
-        'dashBoard-mobile',
+        'button-activity',
+        'button-arrow',
       ],
       control: {type: 'radio'},
     },
@@ -71,8 +72,13 @@ CreateAcount.args = {
   size: 'create-acount',
 }
 
-export const DashBoard = Template.bind({})
-DashBoard.args = {
-  label: 'dashBoard-mobile',
-  size: 'dashBoard-mobile',
+export const buttonActivity = Template.bind({})
+buttonActivity.args = {
+  label: 'button-activity',
+  size: 'button-activity',
+}
+export const buttonArrow = Template.bind({})
+buttonArrow.args = {
+  label: 'button-arrow',
+  size: 'button-arrow',
 }
