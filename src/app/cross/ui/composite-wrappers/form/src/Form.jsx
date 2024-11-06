@@ -2,15 +2,13 @@ import '../styles/desktop.scss'
 
 import React from 'react'
 import classNames from 'classnames'
-import {useForm} from 'react-hook-form'
+import {useForm, FormProvider} from 'react-hook-form'
 
 import Inputs from '../../../components/inputs/index'
 import Button from '../../../../../cross/ui/components/button/src/Button'
 
-const Form = ({formData, inputs = [], name}) => {
-  const {register, handleSubmit, watch, formState, getValues} = useForm()
-
-  const {errors} = formState
+const Form = ({formData, inputs = [], name, callBackOnSubmit}) => {
+  const methods = useForm()
 
   const defaultClass = 'form-container'
 
@@ -18,22 +16,19 @@ const Form = ({formData, inputs = [], name}) => {
     [`${defaultClass}--${name}`]: name,
   })
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => {
+    console.log(data)
+    callBackOnSubmit(data)
+  }
 
   return (
     <>
-      <form className={customClass} onSubmit={handleSubmit(onSubmit)}>
-        <Inputs
-          inputs={inputs}
-          register={register}
-          formData={{
-            register,
-            watch,
-            formState,
-          }}
-        />
-        <Button size={'large'} label={'Crear cuenta'} color={'green'} />
-      </form>
+      <FormProvider {...methods}>
+        <form className={customClass} onSubmit={methods.handleSubmit(onSubmit)}>
+          <Inputs inputs={inputs} />
+          <Button size={'large'} label={'Crear cuenta'} color={'green'} />
+        </form>
+      </FormProvider>
     </>
   )
 }

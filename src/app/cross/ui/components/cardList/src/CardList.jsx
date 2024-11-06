@@ -2,10 +2,12 @@ import '../styles/desktop.scss'
 import Item from '../../item/src/Item'
 
 const CardList = () => {
+  const items = [1, 2, 3, 4]
+
   return (
     <div className="contain-cardList">
-      {[...Array(4)].map((_, index) => (
-        <Item key={index} />
+      {items.map(item => (
+        <Item key={item} />
       ))}
     </div>
   )
