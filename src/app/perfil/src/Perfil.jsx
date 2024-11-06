@@ -4,8 +4,8 @@ import '../styles/desktop.scss'
 import Image from 'next/image'
 import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
-import CardActivity from '../../cross/ui/components/cardActivity'
-import ContainFormDatePerfil from 'app/app/cross/ui/composite-wrappers/containFormDatePerfil/src/ContainFormDatePerfil'
+import CardActivity from '../../../app/cross/ui/components/cardActivity'
+import ContainFormDatePerfil from '../../../app/cross/ui/composite-wrappers/containFormDatePerfil/src/ContainFormDatePerfil'
 
 const Perfil = () => {
   const defaultClass = 'perfil'
@@ -21,6 +21,7 @@ const Perfil = () => {
         />
         <p>Perfil</p>
       </div>
+
       <div>
         <CardActivity size="profileData" titleActivity="Tus datos">
           <ContainFormDatePerfil titleLabel="Email" />
@@ -29,10 +30,10 @@ const Perfil = () => {
 
       <div className={`${defaultClass}__contain-buttons`}>
         <Button
-          size="dashboard-mobile"
-          label="Pago de servicios"
+          size="button-arrow"
+          label="Gestioná los medios de pago"
           color="green"
-        />
+        ></Button>
       </div>
 
       <div className={`${defaultClass}__contain-card-black`}>
