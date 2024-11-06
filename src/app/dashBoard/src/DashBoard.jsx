@@ -50,11 +50,7 @@ const DashBoard = () => {
       </div>
 
       <div className={`${defaultClass}__contain-activity`}>
-        <CardActivity
-          size={'Activity'}
-          titleActivity="Tu actividad"
-          titleFooter="Ver toda tu actividad"
-        >
+        <CardActivity size={'Activity'}>
           <CardList />
         </CardActivity>
       </div>

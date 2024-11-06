@@ -4,28 +4,38 @@ import '../styles/desktop.scss'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-const CardActivity = ({children, size}) => {
-  const defauldCard = 'cardActivity'
-  const customClass = classNames(defauldCard, {
-    [`${defauldCard}--${size}`]: size,
+const CardActivity = ({children, size, title}) => {
+  const defaultCard = 'cardActivity'
+  const customClass = classNames(defaultCard, {
+    [`${defaultCard}--${size}`]: size,
   })
 
   return (
     <div className={`${customClass}`}>
-      <div className="contain-header">
-        <p>Tu actividad</p>
-      </div>
+      {/* Mostrar un título dinámico pasado como prop */}
+      {size === 'ProfileData' ? (
+        <div className="contain-header">
+          <p>{'Tus datos'}</p>
+        </div>
+      ) : (
+        <div className="contain-header">
+          <p>{'Tu actividad'}</p>
+        </div>
+      )}
 
       <div className="content">{children}</div>
-      <div className="contain-footer">
-        <p className="parrafo">Ver toda tu actividad</p>
-        <Image
-          src="/images/arrowBlack.svg"
-          width={14}
-          height={22}
-          alt="Arrow"
-        />
-      </div>
+
+      {size !== 'ProfileData' && (
+        <div className="contain-footer">
+          <p className="parrafo">Ver toda tu actividad</p>
+          <Image
+            src="/images/arrowBlack.svg"
+            width={14}
+            height={22}
+            alt="Arrow"
+          />
+        </div>
+      )}
     </div>
   )
 }
