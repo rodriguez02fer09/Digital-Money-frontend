@@ -23,8 +23,8 @@ const Perfil = () => {
       </div>
 
       <div>
-        <CardActivity size="profileData" titleActivity="Tus datos">
-          <ContainFormDatePerfil titleLabel="Email" />
+        <CardActivity size="ProfileData">
+          <ContainFormDatePerfil />
         </CardActivity>
       </div>
 
