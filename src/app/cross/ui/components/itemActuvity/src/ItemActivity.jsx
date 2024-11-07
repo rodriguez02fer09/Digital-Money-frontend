@@ -1,7 +1,7 @@
 import '../styles/desktop.scss'
-import NameItem from '../../nameItem/src/NameItem'
+import NameItem from '../../nameItem/src/NameCard'
 import DateActivity from '../../dateActivity/src/DateActivity'
-const Item = () => {
+const ItemActivity = () => {
   return (
     <div className="contain-Item">
       <NameItem nameActivity="Transferiste a Rodrigo" />
@@ -9,4 +9,4 @@ const Item = () => {
     </div>
   )
 }
-export default Item
+export default ItemActivity

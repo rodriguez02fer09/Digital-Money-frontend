@@ -4,6 +4,7 @@ import Image from 'next/image'
 import CardBlack from 'app/app/cross/ui/components/cardBlack'
 import CardActivity from '../../cross/ui/components/cardActivity'
 import ContainAddCards from '../../cross/ui/components/containAddCards'
+import ContainHistoryCards from '../../cross/ui/components/ContainHistoryCards'
 
 const AddCards = () => {
   const defaultClass = 'addCards'
@@ -26,7 +27,9 @@ const AddCards = () => {
       </div>
 
       <div>
-        <CardActivity size={'HistoryCard'} />
+        <CardActivity size={'HistoryCard'}>
+          {/* <ContainHistoryCards /> */}
+        </CardActivity>
       </div>
     </main>
   )
