@@ -1,14 +1,8 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .ItemMoneyTransfer {
-    p {
-      color: var(--A---Color-4, #eeeaea);
-      /* Text Mobile 1 */
-      font-family: 'Open Sans';
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid white;
   }
 }
