@@ -6,9 +6,18 @@ const ItemMoneyTransfer = ({cvTitle, descriptionCV}) => {
   const defaultItemMoney = 'ItemMoneyTransfer'
   return (
     <div className={`${defaultItemMoney}`}>
-      <p className={`${defaultItemMoney}__title`}>{cvTitle}</p>
-      <p className={`${defaultItemMoney}__description`}>{descriptionCV}</p>
-      <Image src="/images/carbon:copy.svg" width={14} height={22} alt="copy" />
+      <div className={`${defaultItemMoney}__contain-title`}>
+        <p>{cvTitle}</p>
+        <Image
+          src="/images/carbon:copy.svg"
+          width={14}
+          height={22}
+          alt="copy"
+        />
+      </div>
+      <div className={`${defaultItemMoney}__contain-description`}>
+        <p className={`${defaultItemMoney}--description`}>{descriptionCV}</p>
+      </div>
     </div>
   )
 }
