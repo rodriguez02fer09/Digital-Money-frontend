@@ -13,8 +13,11 @@ const ContainMoneyTransfer = () => {
         </p>
       </div>
       <div className={`${defaultContainMoney}__containItem`}>
-        <ItemMoneyTransfer />
-        <ItemMoneyTransfer />
+        <ItemMoneyTransfer
+          cvTitle="CVU"
+          descriptionCV="0000002100075320000000"
+        />
+        <ItemMoneyTransfer cvTitle="Alias" descriptionCV="estealiasnoexiste" />
       </div>
     </div>
   )
