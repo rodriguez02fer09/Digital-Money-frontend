@@ -6,13 +6,13 @@ import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
 import CardActivity from '../../../app/cross/ui/components/cardActivity'
 import ContainFormDatePerfil from '../../../app/cross/ui/composite-wrappers/containFormDatePerfil/src/ContainFormDatePerfil'
-import ContainMoneyTransfer from '../../cross/ui/components/ItemMoneyTransfer/src/ItemMoneyTransfer'
+import ContainMoneyTransfer from '../../../app/cross/ui/components/ContainMoneyTransfer/src/ContainMoneyTransfer' // Asegúrate de que esta ruta sea correcta
 
 const Perfil = () => {
   const defaultClass = 'perfil'
 
   return (
-    <main className={`${defaultClass}`}>
+    <main className={defaultClass}>
       <div className={`${defaultClass}__perfil-header`}>
         <Image
           src="/images/arrowBlack.svg"
@@ -34,7 +34,7 @@ const Perfil = () => {
           size="button-arrow"
           label="Gestioná los medios de pago"
           color="green"
-        ></Button>
+        />
       </div>
 
       <div className={`${defaultClass}__contain-card-black`}>
