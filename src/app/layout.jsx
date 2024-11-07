@@ -1,8 +1,8 @@
 import {Roboto} from 'next/font/google'
 import Head from 'next/head'
 
-import Header from '../app/cross/ui/components/shared/header/src/Header'
-import Footer from '../app/cross/ui/components/shared/footer/src/Footer.jsx'
+import Header from '../app/cross/ui/components/shared/header'
+import Footer from '../app/cross/ui/components/shared/footer'
 
 import '../app/cross/sass/globals.scss'
 

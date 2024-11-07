@@ -21,16 +21,16 @@ const Template = args => <CardBlack {...args} />
 export const AvailableAmountCard = Template.bind({})
 AvailableAmountCard.args = {
   color: 'black',
-  size: 'AvailableAmountCard', // Establecer un tamaño por defecto si es necesario
+  size: 'AvailableAmountCard',
 }
 
 export const MoneyTransfer = Template.bind({})
 MoneyTransfer.args = {
   color: 'black',
-  size: 'MoneyTransfer', // Puedes ajustar el tamaño o dejarlo como 'small' si es más relevante
+  size: 'MoneyTransfer',
 }
 export const AddCard = Template.bind({})
 AddCard.args = {
   color: 'black',
-  size: 'AddCard', // Establecer un tamaño por defecto si es necesario
+  size: 'AddCard',
 }

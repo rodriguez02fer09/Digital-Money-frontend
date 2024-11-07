@@ -6,6 +6,7 @@ import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
 import CardActivity from '../../../app/cross/ui/components/cardActivity'
 import ContainFormDatePerfil from '../../../app/cross/ui/composite-wrappers/containFormDatePerfil/src/ContainFormDatePerfil'
+import ContainMoneyTransfer from '../../cross/ui/components/ItemMoneyTransfer/src/ItemMoneyTransfer'
 
 const Perfil = () => {
   const defaultClass = 'perfil'
@@ -37,7 +38,9 @@ const Perfil = () => {
       </div>
 
       <div className={`${defaultClass}__contain-card-black`}>
-        <CardBlack size="MoneyTransfer" />
+        <CardBlack size="MoneyTransfer">
+          <ContainMoneyTransfer />
+        </CardBlack>
       </div>
     </main>
   )
