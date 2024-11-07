@@ -1,5 +1,5 @@
 import '../styles/desktop.scss'
-import Item from '../../item/src/Item'
+import ItemActuvity from '../../itemActuvity/src/ItemActivity'
 
 const CardList = () => {
   const items = [1, 2, 3, 4]
@@ -7,7 +7,7 @@ const CardList = () => {
   return (
     <div className="contain-cardList">
       {items.map(item => (
-        <Item key={item} />
+        <ItemActuvity key={item} />
       ))}
     </div>
   )

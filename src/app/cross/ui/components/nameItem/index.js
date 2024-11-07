@@ -1,2 +1,2 @@
-import nameItem from './src/NameItem.jsx'
-export default nameItem
+import NameItem from './src/NameCard.jsx'
+export default NameItem

@@ -17,11 +17,11 @@ export default {
 
 const Template = args => <CardActivity {...args} />
 
-export const Activity = Template.bind({})
-ActivityMoney.args = {
-  color: 'white',
-  size: 'Activity',
-}
+// export const Activity = Template.bind({})
+// ActivityMoney.args = {
+//   color: 'white',
+//   size: 'Activity',
+// }
 
 export const HistoryCard = Template.bind({})
 HistoryCard.args = {

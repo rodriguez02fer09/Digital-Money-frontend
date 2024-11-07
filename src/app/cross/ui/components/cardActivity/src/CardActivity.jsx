@@ -12,7 +12,6 @@ const CardActivity = ({children, size, title}) => {
 
   return (
     <div className={`${customClass}`}>
-      {/* Mostrar un título dinámico pasado como prop */}
       {size === 'ProfileData' ? (
         <div className="contain-header">
           <p>{'Tus datos'}</p>
