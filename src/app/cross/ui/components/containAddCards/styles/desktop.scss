@@ -1,0 +1,19 @@
+@import '../../../../sass/variables';
+@media (max-width: 398px) {
+  .containAddCards {
+    padding: 15px 24px 0px 24px;
+    &__containTitle {
+      height: 16px;
+      margin-bottom: 38px;
+
+      p {
+        color: var(--white, #fff);
+        font-family: $font-stack;
+        font-size: $heading-3;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 138.182%;
+      }
+    }
+  }
+}
