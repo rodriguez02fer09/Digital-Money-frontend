@@ -1,0 +1,30 @@
+@import '../../../../sass/variables';
+@media (max-width: 398px) {
+  .ItemAddCards {
+    width: 100%;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__containtex {
+      height: 22px;
+      width: 130px;
+
+      p {
+        color: $primary-color;
+        text-align: center;
+        font-family: $font-stack;
+        font-size: $heading-2;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+
+    &__arrow {
+      margin-left: 122px;
+    }
+  }
+}
