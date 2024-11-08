@@ -1,3 +1,14 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
+  .contain-ItemHistoryCards {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #cecece;
+    &:last-child {
+      border-bottom: 1px solid #cecece;
+    }
+  }
 }

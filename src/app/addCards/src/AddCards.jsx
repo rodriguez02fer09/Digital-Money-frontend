@@ -1,13 +1,14 @@
+// AddCards.js
 'use client'
 import '../styles/desktop.scss'
 import Image from 'next/image'
-import CardBlack from 'app/app/cross/ui/components/cardBlack'
+import CardBlack from '../../cross/ui/components/cardBlack/'
 import CardActivity from '../../cross/ui/components/cardActivity'
 import ContainAddCards from '../../cross/ui/components/containAddCards'
-import ContainHistoryCards from '../../cross/ui/components/ContainHistoryCards'
+import ContainHistoryCards from 'app/app/cross/ui/components/containHistoryCards/src/ContainHistoryCards'
 
 const AddCards = () => {
-  const defaultClass = 'addCards'
+  const defaultClass = 'add-cards'
   return (
     <main className={defaultClass}>
       <div className={`${defaultClass}__addCards-header`}>
@@ -15,20 +16,20 @@ const AddCards = () => {
           src="/images/arrowBlack.svg"
           width={14}
           height={22}
-          alt="Arrow"
+          alt="Flecha"
         />
         <p>Tarjetas</p>
       </div>
 
       <div>
-        <CardBlack size={'AddCard'}>
+        <CardBlack size="AddCard">
           <ContainAddCards />
         </CardBlack>
       </div>
 
       <div>
-        <CardActivity size={'HistoryCard'}>
-          {/* <ContainHistoryCards /> */}
+        <CardActivity size="ProfileData">
+          <ContainHistoryCards />
         </CardActivity>
       </div>
     </main>
