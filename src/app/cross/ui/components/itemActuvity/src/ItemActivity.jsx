@@ -1,5 +1,5 @@
 import '../styles/desktop.scss'
-import NameItem from '../../nameItem/src/NameCard'
+import NameItem from '../../nameItem/src/NameItem'
 import DateActivity from '../../dateActivity/src/DateActivity'
 const ItemActivity = () => {
   return (
