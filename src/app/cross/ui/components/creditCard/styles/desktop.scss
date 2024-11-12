@@ -1,0 +1,18 @@
+@import '../../../../sass/variables';
+
+.creditCard {
+  background-color: rgb(218, 215, 215);
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 26px;
+  height: 174px;
+
+  &__cardEmpty {
+    background-color: rgb(218, 215, 215);
+  }
+
+  &__cardFilled {
+    background-color: black;
+  }
+}
