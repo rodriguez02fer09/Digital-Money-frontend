@@ -22,3 +22,7 @@ export const cardFilled = Template.bind({})
 cardFilled.args = {
   size: 'cardFilled',
 }
+export const grey = Template.bind({})
+grey.args = {
+  color: 'grey',
+}

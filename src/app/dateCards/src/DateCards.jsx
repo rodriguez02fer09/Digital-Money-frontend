@@ -25,7 +25,7 @@ const DateCards = () => {
 
       <div className={`${defaultClass}__containDateFormCard`}>
         <div className={`${defaultClass}__dateCard`}>
-          <CreditCard size="cardEmpty">
+          <CreditCard size="cardEmpty" color="grey">
             <ContainCards />
           </CreditCard>
         </div>
