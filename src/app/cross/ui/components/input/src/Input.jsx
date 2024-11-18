@@ -1,6 +1,5 @@
 import React from 'react'
 import classNames from 'classnames'
-
 import {useFormContext} from 'react-hook-form'
 
 import '../../../../sass/_variables.scss'
@@ -18,26 +17,27 @@ const Input = ({
   type,
   ...rest
 }) => {
-  const {register, watch, formState} = useFormContext()
-  const {errors} = formState
-  const defaultClass = 'container-input'
+  const methods = useFormContext()
+  const {register, formState} = methods || {} // Solo intenta destructurar si `methods` está disponible
+  const errors = formState?.errors || {} // Maneja errores de manera segura
 
+  const defaultClass = 'container-input'
   const inputClass = classNames(defaultClass, {
     [`${defaultClass}--${size}`]: size,
     [`${defaultClass}--${color}`]: color,
   })
 
   return (
-    <div className={`${inputClass}`}>
+    <div className={inputClass}>
       <input
-        {...register(name, registerData)}
+        {...(register ? register(name, registerData) : {})} // Solo aplica `register` si está disponible
         color={color}
         type={type}
         id={name}
         name={name}
         value={value}
         placeholder={placeholder}
-        className={`${inputClass}`}
+        className={inputClass}
         onChange={onChange}
         {...rest}
       />

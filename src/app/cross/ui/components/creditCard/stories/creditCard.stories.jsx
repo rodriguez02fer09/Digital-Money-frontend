@@ -5,9 +5,15 @@ import CreditCard from '../index'
 export default {
   component: CreditCard,
   title: 'CreditCard',
-  size: {
-    options: ['cardEmpty', 'cardFilled'],
-    control: {type: 'radio'},
+  argTypes: {
+    size: {
+      options: ['cardEmpty', 'cardFilled'],
+      control: {type: 'radio'},
+    },
+    color: {
+      options: ['grey', 'black'],
+      control: {type: 'radio'},
+    },
   },
 }
 
@@ -16,13 +22,11 @@ const Template = args => <CreditCard {...args} />
 export const cardEmpty = Template.bind({})
 cardEmpty.args = {
   size: 'cardEmpty',
+  color: 'grey',
 }
 
 export const cardFilled = Template.bind({})
 cardFilled.args = {
   size: 'cardFilled',
-}
-export const grey = Template.bind({})
-grey.args = {
-  color: 'grey',
+  color: 'black',
 }

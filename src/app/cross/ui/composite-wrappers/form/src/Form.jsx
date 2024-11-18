@@ -4,7 +4,7 @@ import React from 'react'
 import classNames from 'classnames'
 import {useForm, FormProvider} from 'react-hook-form'
 
-import Inputs from '../../../components/inputs/index'
+import Input from '../../../components/input'
 import Button from '../../../../../cross/ui/components/button/src/Button'
 
 const Form = ({formData, inputs = [], name, callBackOnSubmit}) => {
@@ -25,7 +25,7 @@ const Form = ({formData, inputs = [], name, callBackOnSubmit}) => {
     <>
       <FormProvider {...methods}>
         <form className={customClass} onSubmit={methods.handleSubmit(onSubmit)}>
-          <Inputs inputs={inputs} />
+          <Input inputs={inputs} />
           <Button size={'large'} label={'Crear cuenta'} color={'green'} />
         </form>
       </FormProvider>
