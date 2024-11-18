@@ -1,18 +1,24 @@
-@import '../../../../sass/variables';
-
 .creditCard {
-  background-color: rgb(218, 215, 215);
   box-sizing: border-box;
-  border-radius: 8px;
   cursor: pointer;
   margin: 26px;
   height: 174px;
+  padding-top: 43px;
+  border-radius: 8px;
 
-  &__cardEmpty {
-    background-color: rgb(218, 215, 215);
+  /* Variantes para la tarjeta */
+  &--cardEmpty {
+    background: #eeeaea;
   }
 
-  &__cardFilled {
-    background-color: black;
+  &--cardFilled {
+    color: white; /* Texto blanco */
+  }
+
+  &--grey {
+  }
+
+  &--black {
+    background-color: black; /* Fondo negro para la tarjeta negra */
   }
 }

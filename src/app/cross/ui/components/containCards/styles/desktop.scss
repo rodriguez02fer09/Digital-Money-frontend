@@ -1,1 +1,14 @@
-  
+@import '../../../../sass/variables';
+
+@media (max-width: 398px) {
+  .contain-card {
+    width: 283px;
+    height: 130px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 17px;
+  }
+}

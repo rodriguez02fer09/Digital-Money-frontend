@@ -1,7 +1,9 @@
-// AddCards.js
 'use client'
+
+import {useForm} from 'react-hook-form'
+import Form from '../../cross/ui/composite-wrappers/form/src/Form'
 import '../styles/desktop.scss'
-import InputSearch from '../../cross/ui/components/inputSearch'
+import Input from '../../../app/cross/ui/components/input'
 import Image from 'next/image'
 import CardBlack from '../../../app/cross/ui/components/cardBlack'
 import Button from '../../../app/cross/ui/components/button'
@@ -10,6 +12,34 @@ import ContainCards from '../../../app/cross/ui/components/containCards'
 
 const DateCards = () => {
   const defaultClass = 'date-cards'
+
+  // Inicializa el formulario con react-hook-form
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm()
+
+  const callBackOnSubmit = data => {
+    console.log(data)
+    setAccount(data)
+  }
+
+  // Configuración de inputs
+  const inputs = [
+    {name: 'numberCard', placeholder: 'Número de tarjera*', type: 'text'},
+    {name: 'lastname', placeholder: 'Nombre y apellido*', type: 'text'},
+    {
+      name: 'fechaDeVencimiemto',
+      placeholder: 'Fecha de vencimiemto*',
+      type: 'number',
+    },
+    {
+      name: 'Código de seguridad',
+      placeholder: 'Código de seguridad*',
+      type: 'number',
+    },
+  ]
 
   return (
     <main className={defaultClass}>
@@ -25,41 +55,42 @@ const DateCards = () => {
 
       <div className={`${defaultClass}__containDateFormCard`}>
         <div className={`${defaultClass}__dateCard`}>
-          <CreditCard size="cardEmpty">
+          <CreditCard size="cardEmpty" color="grey">
             <ContainCards />
           </CreditCard>
         </div>
-        <div className={`${defaultClass}__dateFormCard`}>
-          <InputSearch
-            type="text"
-            color="blue"
-            placeholder="Numero de tarjeta*"
-          />
-          <InputSearch
-            type="text"
-            size="large"
-            color="blue"
-            placeholder="Nombre y apellido*"
-          />
-          <InputSearch
-            type="text"
-            size="large"
-            color="blue"
-            placeholder="Fecha de vencimiento*"
-          />
-          <InputSearch
-            type="text"
-            size="large"
-            color="blue"
-            placeholder="Código de seguridad*"
-          />
+
+        <form
+          onSubmit={handleSubmit(callBackOnSubmit)}
+          className={`${defaultClass}__dateFormCard`}
+        >
+          {inputs.map(input => (
+            <Input
+              key={input.name}
+              {...register(input.name, {
+                required: `${input.placeholder} es obligatorio`,
+              })}
+              placeholder={input.placeholder}
+              type={input.type}
+              size="large"
+              color="blue"
+              error={errors[input.name]?.message}
+            />
+          ))}
+
           <div className={`${defaultClass}__contain-button`}>
-            <Button size="large" label="Continuar" color="green" />
+            <Button
+              size="large"
+              label="Continuar"
+              color="green"
+              type="submit"
+            />
           </div>
-        </div>
+        </form>
       </div>
     </main>
   )
 }
 
+DateCards.displayName = 'dateCards'
 export default DateCards

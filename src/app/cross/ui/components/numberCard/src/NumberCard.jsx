@@ -2,8 +2,11 @@ import '../styles/desktop.scss'
 
 const NumberCard = () => {
   return (
-    <div>
-      <p>**** **** **** ****</p>
+    <div className="contain-number">
+      <p>****</p>
+      <p>****</p>
+      <p>****</p>
+      <p>****</p>
     </div>
   )
 }

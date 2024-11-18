@@ -10,7 +10,7 @@ const CreditCard = ({children, size, color}) => {
     [`${defaultCard}--${color}`]: color,
   })
 
-  return <div className={`${customClass}`}>{children}</div>
+  return <div className={customClass}>{children}</div>
 }
 
 export default CreditCard

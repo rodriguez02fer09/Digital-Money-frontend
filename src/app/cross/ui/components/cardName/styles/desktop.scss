@@ -1,0 +1,11 @@
+@import '../../../../sass/variables';
+
+@media (max-width: 398px) {
+  .contain-titleCard {
+    width: 262px;
+    height: 69px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
