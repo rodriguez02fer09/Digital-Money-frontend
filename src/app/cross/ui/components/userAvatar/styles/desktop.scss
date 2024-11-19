@@ -2,7 +2,6 @@
 .contain-user {
   width: 200px;
   height: 24px;
-
   display: flex;
   flex-direction: row;
   p {
@@ -14,5 +13,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 138.182%; /* 22.109px */
+  }
+}
+@media (max-width: 398px) {
+  .contain-user {
+    width: 36px;
+    height: 30px;
   }
 }

@@ -1,6 +1,6 @@
 import '../styles/desktop.scss'
 import NumberCard from '../../numberCard'
-import TitleCard from '../../cardName/src/TitleCard'
+import TitleCard from '../../titleCard/src/TitleCard'
 
 const ContainCards = () => {
   const defaultClass = 'contain-card'

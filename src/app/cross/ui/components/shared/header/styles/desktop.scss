@@ -34,6 +34,7 @@
 @media (max-width: 398px) {
   .header {
     width: 398px;
+
     &--green {
       background: $primary-color;
       &__containImage {
@@ -48,8 +49,8 @@
         height: 30px;
 
         img {
-          width: 100%;
-          height: auto;
+          width: 63px;
+          height: 25px;
         }
       }
     }
