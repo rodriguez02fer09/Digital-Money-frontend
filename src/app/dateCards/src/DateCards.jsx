@@ -13,7 +13,6 @@ import ContainCards from '../../../app/cross/ui/components/containCards'
 const DateCards = () => {
   const defaultClass = 'date-cards'
 
-  // Inicializa el formulario con react-hook-form
   const {
     register,
     handleSubmit,
@@ -25,7 +24,6 @@ const DateCards = () => {
     setAccount(data)
   }
 
-  // Configuración de inputs
   const inputs = [
     {name: 'numberCard', placeholder: 'Número de tarjera*', type: 'text'},
     {name: 'lastname', placeholder: 'Nombre y apellido*', type: 'text'},
@@ -35,7 +33,7 @@ const DateCards = () => {
       type: 'number',
     },
     {
-      name: 'Código de seguridad',
+      name: 'CódigoDeSeguridad',
       placeholder: 'Código de seguridad*',
       type: 'number',
     },

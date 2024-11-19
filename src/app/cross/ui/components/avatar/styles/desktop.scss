@@ -8,3 +8,10 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 398px) {
+  .contain-avatar {
+    width: 240px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
