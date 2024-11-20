@@ -7,12 +7,14 @@ import InputSearch from '../../../app/cross/ui/components/inputSearch'
 import CardActivity from '../../cross/ui/components/cardActivity'
 import AvailableMoneyCard from '../../../app/cross/ui/components/availableMoneyCard'
 import CardList from '../../cross/ui/components/cardList'
+import MenuDesplegable from '../../cross/ui/components/menuDesplegable'
 
 const DashBoard = () => {
   const defaultClass = 'dashboard'
 
   return (
     <main className={`${defaultClass}`}>
+      <MenuDesplegable />
       <div className={`${defaultClass}__contain-header`}>
         <Image
           src="/images/arrowBlack.svg"
@@ -22,13 +24,11 @@ const DashBoard = () => {
         />
         <p>Inicio</p>
       </div>
-
       <div className={`${defaultClass}__contain-card-black`}>
         <CardBlack size={'AvailableAmountCard'}>
           <AvailableMoneyCard />
         </CardBlack>
       </div>
-
       <div className={`${defaultClass}__contain-buttons`}>
         <Button
           size={'dashboard-mobile'}
@@ -41,14 +41,12 @@ const DashBoard = () => {
           color={'green'}
         />
       </div>
-
       <div className={`${defaultClass}__contain-input`}>
         <InputSearch
           size={'medium-prompt'}
           placeholder={'Busca tu actividad'}
         />
       </div>
-
       <div className={`${defaultClass}__contain-activity`}>
         <CardActivity size={'Activity'}>
           <CardList />

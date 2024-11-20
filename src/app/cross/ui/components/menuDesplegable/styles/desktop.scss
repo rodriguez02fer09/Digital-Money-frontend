@@ -1,0 +1,13 @@
+@import '../../../../sass/variables';
+.contain-menu {
+  width: 276px;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background: $primary-color;
+  position: fixed; /* Mantén el menú fijo */
+  z-index: 1000;
+  &--contain-list {
+    width: 160px;
+    height: 244px;
+    background: hotpink;
+  }
+}
