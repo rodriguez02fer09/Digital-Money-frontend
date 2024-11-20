@@ -7,8 +7,8 @@ import {useForm, FormProvider} from 'react-hook-form'
 import Input from '../../../components/input'
 import Button from '../../../../../cross/ui/components/button/src/Button'
 
-const Form = ({formData, inputs = [], name, callBackOnSubmit}) => {
-  const methods = useForm()
+const Form = ({inputs = [], name, callBackOnSubmit}) => {
+  const methods = useForm() // Inicializamos React Hook Form
 
   const defaultClass = 'form-container'
 
@@ -17,19 +17,27 @@ const Form = ({formData, inputs = [], name, callBackOnSubmit}) => {
   })
 
   const onSubmit = data => {
-    console.log(data)
-    callBackOnSubmit(data)
+    console.log('Formulario enviado:', data)
+    callBackOnSubmit(data) // Llamamos al callback pasado como prop
   }
 
   return (
-    <>
-      <FormProvider {...methods}>
-        <form className={customClass} onSubmit={methods.handleSubmit(onSubmit)}>
-          <Input inputs={inputs} />
-          <Button size={'large'} label={'Crear cuenta'} color={'green'} />
-        </form>
-      </FormProvider>
-    </>
+    <FormProvider {...methods}>
+      <form className={customClass} onSubmit={methods.handleSubmit(onSubmit)}>
+        {inputs.map((input, index) => (
+          <Input
+            key={index}
+            name={input.name}
+            type={input.type}
+            placeholder={input.placeholder}
+            size={input.size}
+            color={input.color}
+            registerData={input.registerData} // Pasamos las validaciones individuales
+          />
+        ))}
+        <Button size="large" label="Crear cuenta" color="green" type="submit" />
+      </form>
+    </FormProvider>
   )
 }
 

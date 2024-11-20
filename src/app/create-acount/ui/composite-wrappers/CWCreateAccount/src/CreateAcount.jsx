@@ -134,6 +134,7 @@ const CreateAcount = () => {
           callBackOnSubmit={callBackOnSubmit}
           inputs={inputs}
           name="createAccount"
+          className={`${defaultClass}--createAccount`}
         />
       </div>
     </main>
