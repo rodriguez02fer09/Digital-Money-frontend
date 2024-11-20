@@ -1,3 +1,4 @@
+@import '../../../../sass/variables';
 .form-container {
   &--createAccount {
     width: 798px;
@@ -9,5 +10,17 @@
     row-gap: 20px;
     column-gap: 60px;
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 398px) {
+  .form-container {
+    &--createAccount {
+      width: 300px;
+      height: 528px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
