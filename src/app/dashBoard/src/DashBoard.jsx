@@ -14,43 +14,47 @@ const DashBoard = () => {
 
   return (
     <main className={`${defaultClass}`}>
-      <MenuDesplegable />
-      <div className={`${defaultClass}__contain-header`}>
-        <Image
-          src="/images/arrowBlack.svg"
-          width={14}
-          height={22}
-          alt="Arrow"
-        />
-        <p>Inicio</p>
-      </div>
-      <div className={`${defaultClass}__contain-card-black`}>
-        <CardBlack size={'AvailableAmountCard'}>
-          <AvailableMoneyCard />
-        </CardBlack>
-      </div>
-      <div className={`${defaultClass}__contain-buttons`}>
-        <Button
-          size={'dashboard-mobile'}
-          label={'Ingresar dinero'}
-          color={'green'}
-        />
-        <Button
-          size={'dashboard-mobile'}
-          label={'Pago de servicios'}
-          color={'green'}
-        />
-      </div>
-      <div className={`${defaultClass}__contain-input`}>
-        <InputSearch
-          size={'medium-prompt'}
-          placeholder={'Busca tu actividad'}
-        />
-      </div>
-      <div className={`${defaultClass}__contain-activity`}>
-        <CardActivity size={'Activity'}>
-          <CardList />
-        </CardActivity>
+      <div className={`${defaultClass}__layout`}>
+        <MenuDesplegable />
+        <div className={`${defaultClass}__content`}>
+          <div className={`${defaultClass}__contain-header`}>
+            <Image
+              src="/images/arrowBlack.svg"
+              width={14}
+              height={22}
+              alt="Arrow"
+            />
+            <p>Inicio</p>
+          </div>
+          <div className={`${defaultClass}__contain-card-black`}>
+            <CardBlack size="AvailableAmountCard">
+              <AvailableMoneyCard />
+            </CardBlack>
+          </div>
+          <div className={`${defaultClass}__contain-buttons`}>
+            <Button
+              size="button-activity"
+              label="Cargar dinero"
+              color="green"
+            />
+            <Button
+              size="button-activity"
+              label="Pago de servicios"
+              color="green"
+            />
+          </div>
+          <div className={`${defaultClass}__contain-input`}>
+            <InputSearch
+              size="medium-prompt"
+              placeholder="Busca tu actividad"
+            />
+          </div>
+          <div className={`${defaultClass}__contain-activity`}>
+            <CardActivity size="Activity">
+              <CardList />
+            </CardActivity>
+          </div>
+        </div>
       </div>
     </main>
   )
