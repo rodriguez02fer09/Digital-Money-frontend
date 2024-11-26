@@ -1,4 +1,4 @@
-export const createAccountSlice = set => ({
+export const createAccountSlice = (set, get) => ({
   account: {
     name: null,
     lastName: null,
