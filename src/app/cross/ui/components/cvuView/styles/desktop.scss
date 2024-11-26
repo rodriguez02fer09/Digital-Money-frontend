@@ -1,5 +1,14 @@
 @import '../../../../sass/variables';
+.cvuView {
+  width: 100px;
+  height: 20px;
 
+  p {
+    size: 12px;
+    font-family: $font-stack;
+    color: $quinary-color;
+  }
+}
 @media (max-width: 398px) {
   .cvuView {
     width: 103px;
