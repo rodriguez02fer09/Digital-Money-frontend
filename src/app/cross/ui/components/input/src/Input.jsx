@@ -18,7 +18,7 @@ const Input = ({
   ...rest
 }) => {
   const methods = useFormContext()
-  const {register, formState} = methods || {} // Solo intenta destructurar si `methods` está disponible
+  const {register, formState, setValue} = methods || {} // Solo intenta destructurar si `methods` está disponible
   const errors = formState?.errors || {} // Maneja errores de manera segura
 
   const defaultClass = 'container-input'
