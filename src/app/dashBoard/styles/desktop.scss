@@ -12,31 +12,27 @@
 
   &__content {
     flex: 1; /* El contenido ocupa todo el espacio restante */
-    padding: 16px;
+    padding: 16px 79px 0px 79px;
     overflow-y: auto; /* Permite el scroll si el contenido es largo */
     background-color: rgba(210, 255, 236, 1);
   }
 
   &__contain-header {
-    width: 78px;
-    height: 22px;
-    margin: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: none;
 
     p {
       text-decoration: underline;
     }
   }
-  // &__contain-cardBlack {
-  // }
+  &__contain-cardBlack {
+    height: 230px;
+  }
   &__contain-buttons {
     margin: 16px;
     height: 106px;
-
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
   &__contain-input {
     margin: 16px;
@@ -81,8 +77,8 @@
         text-decoration: underline;
       }
     }
-    // &__contain-cardBlack {
-    // }
+    &__contain-cardBlack {
+    }
     &__contain-buttons {
       margin: 16px;
       height: 134px;

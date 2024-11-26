@@ -1,19 +1,48 @@
 @import '../../../../sass/variables';
+
+.container-availableMoneyCard {
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__views {
+    width: 170px;
+    height: 16px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 584px;
+    justify-content: space-between;
+  }
+  &__title {
+    width: 141px;
+    height: 22px;
+    margin-left: 40px;
+  }
+  &__account {
+    width: 247px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 42px;
+  }
+}
+
 @media (max-width: 398px) {
   .container-availableMoneyCard {
     width: 340px;
     height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 
     &__views {
       width: 170px;
       height: 16px;
-
       display: flex;
       flex-direction: row;
-
       margin-left: 162px;
     }
     &__title {
@@ -21,13 +50,6 @@
       height: 16px;
     }
     &__account {
-      width: 207px;
-      height: 53px;
-      border-radius: 100px;
-      border: 1px solid $primary-color;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 }

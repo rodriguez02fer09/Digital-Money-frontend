@@ -37,6 +37,7 @@ const DashBoard = () => {
               label="Cargar dinero"
               color="green"
             />
+
             <Button
               size="button-activity"
               label="Pago de servicios"

@@ -1,8 +1,8 @@
 import '../styles/desktop.scss'
 import CardView from '../../cardView/src/CardView'
-import CvuView from '../../cvuView'
-import TitleView from '../../titleView'
-import MoneyView from '../../moneyView'
+import CvuView from '../../cvuView/src/CvuView'
+import TitleView from '../../titleView/src/TitleView'
+import MoneyView from '../../moneyView/src/MoneyView'
 
 const AvailableMoneyCard = () => {
   const defaultClass = 'container-availableMoneyCard'

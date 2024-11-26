@@ -1,5 +1,15 @@
 @import '../../../../sass/variables';
 
+.cardView {
+  :hover {
+    cursor: pointer;
+  }
+  p {
+    color: $quinary-color;
+    text-decoration: underline;
+  }
+}
+
 @media (max-width: 398px) {
   .cardView {
     width: 103px;
