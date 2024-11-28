@@ -9,7 +9,7 @@ export const requestCreateAccount = (account, callBack) => {
     .then(result => result.json())
     .then(result => {
       console.log('Usuario registrado con éxito:', result)
-      callBack()
+      callBack(result) // Pasar el result al callback
     })
     .catch(error => {
       console.error('Detalles del error:', error)

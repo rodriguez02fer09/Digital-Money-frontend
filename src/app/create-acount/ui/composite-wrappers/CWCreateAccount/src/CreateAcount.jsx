@@ -17,9 +17,9 @@ const CreateAcount = () => {
 
   const {account, setAccount} = useAcountStore()
 
-  const useCallbackCreateAccount = () => {
+  const useCallbackCreateAccount = result => {
     console.log('Usuario registrado con éxito:', result)
-    router.push('/successful-register')
+    router.push('/successful-register') // Redirigir después de la creación exitosa
   }
 
   const callBackOnSubmit = newDataAccount => {

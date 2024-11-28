@@ -15,7 +15,7 @@
     "container-query-polyfill": "^1.0.2",
     "install": "^0.13.0",
     "lodash": "^4.17.21",
-    "next": "14.2.4",
+    "next": "^14.2.18",
     "npm": "^10.8.2",
     "react": "^18",
     "react-dom": "^18",

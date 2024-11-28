@@ -25,12 +25,23 @@ const Header = ({color}) => {
   const firstname = acount?.firstname || 'Usuario'
   const lastName = acount?.lastName || ''
 
+  const isLoggedIn = acount // Esto verifica si el usuario está logueado
+
   return (
     <header className={`${customClass}`}>
       <div className={`${customClass}__containImage`}>
         <Image src={imageSrc} alt="Logo" width={87} height={34} />
       </div>
-      {color !== 'green' && (
+
+      {/* Mostrar el botón si no está logueado */}
+      {!isLoggedIn && (
+        <div className={`${customClass}__containButton`}>
+          <Button text="Iniciar sesión" />
+        </div>
+      )}
+
+      {/* Mostrar Avatar si está logueado */}
+      {isLoggedIn && (
         <div className={`${customClass}__containButton`}>
           <Avatar username={{firstname, lastName}} />
         </div>
