@@ -1,0 +1,17 @@
+export const requestSignEmail = (account, callBack) => {
+  fetch('https://digitalmoney.digitalhouse.com/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(account),
+  })
+    .then(result => result.json())
+    .then(result => {
+      console.log('Usuario registrado con éxito:', result)
+      callBack(result) // Pasar el result al callback
+    })
+    .catch(error => {
+      console.error('Detalles del error:', error)
+    })
+}

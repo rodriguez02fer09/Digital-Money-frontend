@@ -7,10 +7,10 @@ import {useRouter} from 'next/navigation'
 
 import {useContext} from 'react'
 
-import {UserContext} from '../../../Context/index'
+import {UserContext} from '../../../../../../Context/index'
 
-import Input from '../../cross/ui/components/input'
-import Button from '../../cross/ui/components/button/src/Button'
+import Input from '../../../../../cross/ui/components/input'
+import Button from '../../../../../cross/ui/components/button/src/Button'
 
 const LoginEmail = ({
   inputColor,

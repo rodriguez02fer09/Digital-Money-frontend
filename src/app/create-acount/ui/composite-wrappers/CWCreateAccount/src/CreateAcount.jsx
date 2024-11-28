@@ -1,5 +1,5 @@
 'use client'
-import './styles/desktop.scss'
+import '../styles/desktop.scss'
 
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
