@@ -33,7 +33,6 @@ const Header = ({color}) => {
         <Image src={imageSrc} alt="Logo" width={87} height={34} />
       </div>
 
-      {/* Mostrar el botón si no está logueado */}
       {!isLoggedIn && (
         <div className={`${customClass}__containButton`}>
           <Button text="Iniciar sesión" />

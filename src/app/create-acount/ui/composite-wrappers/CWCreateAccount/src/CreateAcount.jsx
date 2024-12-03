@@ -1,10 +1,10 @@
 'use client'
-import './styles/desktop.scss'
+import '../styles/desktop.scss'
 
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 
-import Form from '../../../../../cross/ui/composite-wrappers/form/index'
+import Form from '../../../../../cross/ui/composite-wrappers/createAccountForm/src/createAccountForm'
 
 import {createAccountForm} from '../../../../data/forms/default'
 
