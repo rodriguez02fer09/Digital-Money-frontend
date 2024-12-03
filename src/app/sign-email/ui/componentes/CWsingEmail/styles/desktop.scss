@@ -8,29 +8,26 @@
   align-items: center;
   background: $secondary-color;
 
-  &--containForm {
+  &--container {
     width: 360px;
-    height: 350px;
+    height: 292px;
     margin-bottom: 131px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
-  &--containText {
+  &__InfoTitle {
     margin-bottom: 40px;
     color: white;
-
-    p {
-      color: $quinary-color;
-      text-align: center;
-      /* A - Heading 2 */
-      font-family: $font-stack;
-      font-size: $heading-2;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 117.682%; /* 23.536px */
-    }
+    color: $quinary-color;
+    text-align: center;
+    /* A - Heading 2 */
+    font-family: $font-stack;
+    font-size: $heading-2;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 117.682%; /* 23.536px */
   }
   &--containInput {
     width: 360px;

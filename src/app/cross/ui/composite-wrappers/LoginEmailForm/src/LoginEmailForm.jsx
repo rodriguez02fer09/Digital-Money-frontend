@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import {useForm, FormProvider} from 'react-hook-form'
 
 import Input from '../../../components/input'
-import Button from '../../../../../cross/ui/components/button/src/Button'
+import Button from '../../../components/button/src/Button'
 
 const Form = ({inputs = [], name, callBackOnSubmit}) => {
   const methods = useForm() // Inicializamos React Hook Form
@@ -35,7 +35,8 @@ const Form = ({inputs = [], name, callBackOnSubmit}) => {
             registerData={input.registerData} // Pasamos las validaciones individuales
           />
         ))}
-        <Button size="large" label="Crear cuenta" color="green" type="submit" />
+        <Button size="large" label="Continuar" color="green" type="submit" />
+        <Button size="large" label="Crear cuenta" color="grey" type="submit" />
       </form>
     </FormProvider>
   )

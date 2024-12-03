@@ -1,0 +1,15 @@
+@import '../../../../sass/variables';
+.form-container {
+  &--loginEmail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 232px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 398px) {
+  .form-container {
+  }
+}

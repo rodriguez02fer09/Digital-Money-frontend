@@ -1,6 +1,6 @@
 import {parseInt} from 'lodash'
 
-export const createAccountForm = [
+export const emailForm = [
   {
     registerData: {
       required: 'Correo es requerido',
