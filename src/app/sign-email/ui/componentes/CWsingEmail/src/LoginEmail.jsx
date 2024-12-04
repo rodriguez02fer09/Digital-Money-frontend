@@ -24,7 +24,6 @@ const LoginEmail = () => {
 
   // Función que maneja el envío del formulario
   const onSubmit = data => {
-    debugger
     console.log('Correo:', data.email)
     setEmail(data.email) // Guardamos el correo en el estado global
     localStorage.setItem('email', data.email)
