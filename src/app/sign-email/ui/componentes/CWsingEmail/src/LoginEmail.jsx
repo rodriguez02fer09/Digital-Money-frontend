@@ -6,7 +6,6 @@ import {useRouter} from 'next/navigation'
 import {useAuthStore} from '../../../../../sign-email/core/hoocks/UseAuthStore'
 import Form from '../../../../../cross/ui/composite-wrappers/LoginEmailForm'
 import {emailForm} from '../../../../data/forms/default'
-import {requestSignEmail} from '../../../../core/uses-cases/request-signEmail'
 
 const LoginEmail = () => {
   // Usando Zustand para gestionar el estado global
@@ -24,6 +23,7 @@ const LoginEmail = () => {
 
   // Función que maneja el envío del formulario
   const onSubmit = data => {
+    debugger
     console.log('Correo:', data.email)
     setEmail(data.email) // Guardamos el correo en el estado global
     localStorage.setItem('email', data.email)
