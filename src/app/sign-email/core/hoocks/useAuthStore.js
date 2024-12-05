@@ -1,6 +1,6 @@
 import {create} from 'zustand'
+import {signEmailSlice} from '../../data/slices/signEmailSlices'
 
-export const useAuthStore = create(set => ({
-  email: '',
-  setEmail: email => set({email}),
+export const useAuthStore = create((...a) => ({
+  ...signEmailSlice(...a),
 }))

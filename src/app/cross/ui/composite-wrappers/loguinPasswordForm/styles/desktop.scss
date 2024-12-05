@@ -1,0 +1,15 @@
+@import '../../../../sass/variables';
+.form-container {
+  &--loginPassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 148px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 398px) {
+  .form-container {
+  }
+}
