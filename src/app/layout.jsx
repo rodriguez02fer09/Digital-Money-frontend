@@ -6,8 +6,6 @@ import Footer from '../app/cross/ui/components/shared/footer'
 
 import '../app/cross/sass/globals.scss'
 
-import {UserProvider} from 'app/Context/index.jsx'
-
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -25,11 +23,9 @@ export default function RootLayout({children}) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <body className={roboto.className}>
-        <UserProvider>
-          <Header color={'black'} />
-          {children}
-          <Footer color={'black'} />
-        </UserProvider>
+        <Header color={'black'} />
+        {children}
+        <Footer color={'black'} />
       </body>
     </html>
   )
