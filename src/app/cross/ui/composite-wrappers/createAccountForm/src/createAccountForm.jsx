@@ -32,7 +32,7 @@ const Form = ({inputs = [], name, callBackOnSubmit}) => {
             placeholder={input.placeholder}
             size={input.size}
             color={input.color}
-            registerData={input.registerData} // Pasamos las validaciones individuales
+            registerData={input.registerData}
           />
         ))}
         <Button size="large" label="Continuar" color="green" type="submit" />
