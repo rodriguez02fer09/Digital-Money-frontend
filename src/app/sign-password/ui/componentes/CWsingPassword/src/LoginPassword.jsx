@@ -20,49 +20,49 @@ const LoginPassword = () => {
   } = useForm()
   const router = useRouter()
 
-useEffect(() => {
-  if (!email) {
-    const storeEmail = localStorage.getItem('email');
-    if (storeEmail) {
-      console.log('Correo recuperado del localStorage:', storeEmail);
-      setEmail(storeEmail);
+  useEffect(() => {
+    if (!email) {
+      const storeEmail = localStorage.getItem('email');
+      if (storeEmail) {
+        console.log('Correo recuperado del localStorage:', storeEmail);
+        setEmail(storeEmail);
+      } else {
+        console.log('No se encontró correo, redirigiendo a /sign-email');
+        router.push('/sign-email'); // Redirigir si no hay correo
+      }
     } else {
-      console.log('No se encontró correo, redirigiendo a /sign-email');
-      router.push('/sign-email'); // Redirigir si no hay correo
+      console.log('Correo en el estado:', email);
     }
-  } else {
-    console.log('Correo en el estado:', email);
-  }
-}, [email, setEmail]);
+  }, [email, setEmail]);
 
-
-  const rq = (response) => {
-    console.log('Respuesta de la API:', response);
-  };
-
-  const onSubmit = (data) => {
-    console.log('Datos enviados al servidor:', {
-      email,
-      password: data.password,
-    });
   
-    requestSignPassword(
-      {
+    const rq = (response) => {
+      console.log('Respuesta de la API:', response);
+    };
+  
+    const onSubmit = (data) => {
+      console.log('Datos enviados al servidor:', {
         email,
         password: data.password,
-      },
-      (result) => {
-        console.log('Resultado recibido del servidor:', result);
-        if (result.success) {
-          console.log('Autenticación exitosa. Redirigiendo...');
-          router.push('/home');
-        } else {
-          console.error('Error de autenticación:', result.error);
-          alert('Contraseña incorrecta o problema en el servidor.');
+      });
+    
+      requestSignPassword(
+        {
+          email,
+          password: data.password,
+        },
+        (result) => {
+          console.log('Resultado recibido del servidor:', result);
+          if (result.success) {
+            console.log('Autenticación exitosa. Redirigiendo...');
+            router.push('/home');
+          } else {
+            console.error('Error de autenticación:', result.error);
+            alert('Contraseña incorrecta o problema en el servidor.');
+          }
         }
-      }
-    );
-  };
+      );
+    };
   
 
   const defaultClass = 'mainContainForm-password'
@@ -74,12 +74,12 @@ useEffect(() => {
           <p>{'Ingresá tu contraseña'}</p>
         </div>
         <Form
-  callBackOnSubmit={handleSubmit(onSubmit)} // Usamos handleSubmit aquí
-  inputs={passwordForm}
-  name="loginPassword"
-  className={`${defaultClass}--loginPassword`}
-/>
-
+          // Pasamos el método de onSubmit y las propiedades del formulario
+          callBackOnSubmit={onSubmit} // Se pasa handleSubmit
+          inputs={passwordForm} // Usamos emailForm para las entradas
+          name="loginPassword"
+          className={`${defaultClass}--loginPassword`}
+        />
       </div>
     </main>
   )

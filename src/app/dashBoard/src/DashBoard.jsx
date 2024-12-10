@@ -8,6 +8,7 @@ import CardActivity from '../../cross/ui/components/cardActivity'
 import AvailableMoneyCard from '../../../app/cross/ui/components/availableMoneyCard'
 import CardList from '../../cross/ui/components/cardList'
 import MenuDesplegable from '../../cross/ui/components/menuDesplegable'
+import {useEffect} from 'react'
 
 const DashBoard = () => {
   const defaultClass = 'dashboard'
