@@ -73,7 +73,7 @@ export const createAccountForm = [
         message: 'La contraseña debe tener al menos 6 caracteres',
       },
       pattern: {
-        value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/, // Contraseña con al menos una letra y un número
+        value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/, 
         message: 'Contraseña no válida',
       },
     },
@@ -82,7 +82,8 @@ export const createAccountForm = [
     color: 'black',
     placeholder: 'Contraseña*',
     type: 'password',
-  },
+  }
+  ,
   {
     registerData: {
       required: 'La confirmación de la contraseña es requerida',

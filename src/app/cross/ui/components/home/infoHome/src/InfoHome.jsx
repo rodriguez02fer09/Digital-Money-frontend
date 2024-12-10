@@ -13,7 +13,7 @@ const InfoHome = () => {
         className={`${defaultInfoHome} ${defaultInfoHome}--containTextSecond`}
       >
         <p>
-          Tu nueva <span class="negrilla">billetera virtual</span>.
+          Tu nueva <span className="negrilla">billetera virtual</span>.
         </p>
       </div>
     </div>

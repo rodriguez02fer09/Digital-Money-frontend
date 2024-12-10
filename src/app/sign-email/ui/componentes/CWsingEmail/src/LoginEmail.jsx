@@ -24,9 +24,11 @@ const LoginEmail = () => {
   // Función que maneja el envío del formulario
   const onSubmit = data => {
     console.log('Correo:', data.email)
-    setEmail(data.email) // Guardamos el correo en el estado global
-    localStorage.setItem('email', data.email)
-    router.push('/sign-password') // Redirige a la página de contraseña
+    setEmail(data.email); // Esto guarda el correo en Zustand
+    localStorage.setItem('email', data.email); // Esto lo persiste en el almacenamiento local
+    
+    router.push('/sign-password'); // Redirige a la página de contraseña
+
   }
 
   // Definición de clase para el componente
