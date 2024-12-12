@@ -22,48 +22,43 @@ const LoginPassword = () => {
 
   useEffect(() => {
     if (!email) {
-      const storeEmail = localStorage.getItem('email');
+      const storeEmail = localStorage.getItem('email')
       if (storeEmail) {
-        console.log('Correo recuperado del localStorage:', storeEmail);
-        setEmail(storeEmail);
+        console.log('Correo recuperado del localStorage:', storeEmail)
+        setEmail(storeEmail)
       } else {
-        console.log('No se encontró correo, redirigiendo a /sign-email');
-        router.push('/sign-email'); // Redirigir si no hay correo
+        console.log('No se encontró correo, redirigiendo a /sign-email')
+        router.push('/sign-email') // Redirigir si no hay correo
       }
     } else {
-      console.log('Correo en el estado:', email);
+      console.log('Correo en el estado:', email)
     }
-  }, [email, setEmail]);
+  }, [email, setEmail])
 
-  
-    const rq = (response) => {
-      console.log('Respuesta de la API:', response);
-    };
-  
-    const onSubmit = (data) => {
-      console.log('Datos enviados al servidor:', {
+  const rq = response => {
+    console.log('Respuesta de la API:', response)
+  }
+
+  const onSubmit = data => {
+    requestSignPassword(
+      {
         email,
         password: data.password,
-      });
-    
-      requestSignPassword(
-        {
-          email,
-          password: data.password,
-        },
-        (result) => {
-          console.log('Resultado recibido del servidor:', result);
-          if (result.success) {
-            console.log('Autenticación exitosa. Redirigiendo...');
-            router.push('/home');
-          } else {
-            console.error('Error de autenticación:', result.error);
-            alert('Contraseña incorrecta o problema en el servidor.');
-          }
+      },
+      result => {
+        const {success, data} = result
+        console.log('Resultado recibido del servidor:', result)
+        if (success) {
+          localStorage.setItem('token', data.token)
+          console.log('Autenticación exitosa. Redirigiendo...')
+          router.push('/')
+        } else {
+          console.error('Error de autenticación:', result.error)
+          alert('Contraseña incorrecta o problema en el servidor.')
         }
-      );
-    };
-  
+      },
+    )
+  }
 
   const defaultClass = 'mainContainForm-password'
 
