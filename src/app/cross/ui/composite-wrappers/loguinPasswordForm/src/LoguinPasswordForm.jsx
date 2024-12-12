@@ -14,11 +14,13 @@ const Form = ({inputs = [], name, callBackOnSubmit}) => {
   const customClass = classNames(defaultClass, {
     [`${defaultClass}--${name}`]: name,
   })
-  const onSubmit = data => {}
 
   return (
     <FormProvider {...methods}>
-      <form className={customClass} onSubmit={methods.handleSubmit(onSubmit)}>
+      <form
+        className={customClass}
+        onSubmit={methods.handleSubmit(callBackOnSubmit)}
+      >
         {inputs.map((input, index) => (
           <Input
             key={index}

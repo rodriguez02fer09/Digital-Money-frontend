@@ -6,7 +6,7 @@ import {useAuthStore} from '../../../../../sign-email/core/hoocks/UseAuthStore'
 import {useRouter} from 'next/navigation'
 import {passwordForm} from '../../../../data/forms/default'
 import Form from '../../../../../cross/ui/composite-wrappers/loguinPasswordForm'
-import requestSignPassword from '../../../../core/uses-cases/request-signPassword'
+import {requestSignPassword} from '../../../../core/uses-cases/request-signPassword'
 import Input from '../../../../../cross/ui/components/input/index'
 import Button from '../../../../../cross/ui/components/button'
 import {useEffect} from 'react'
@@ -24,15 +24,19 @@ const LoginPassword = () => {
     if (!email) {
       const storeEmail = localStorage.getItem('email')
       if (storeEmail) {
+        console.log('Correo recuperado del localStorage:', storeEmail)
         setEmail(storeEmail)
       } else {
-        router.push('/sign-email') // Redirigir a la pantalla de correo si no hay correo
+        console.log('No se encontró correo, redirigiendo a /sign-email')
+        router.push('/sign-email') // Redirigir si no hay correo
       }
+    } else {
+      console.log('Correo en el estado:', email)
     }
   }, [email, setEmail])
 
-  const rq = r => {
-    console.log(r)
+  const rq = response => {
+    console.log('Respuesta de la API:', response)
   }
 
   const onSubmit = data => {
@@ -41,7 +45,18 @@ const LoginPassword = () => {
         email,
         password: data.password,
       },
-      rq,
+      result => {
+        const {success, data} = result
+        console.log('Resultado recibido del servidor:', result)
+        if (success) {
+          localStorage.setItem('token', data.token)
+          console.log('Autenticación exitosa. Redirigiendo...')
+          router.push('/')
+        } else {
+          console.error('Error de autenticación:', result.error)
+          alert('Contraseña incorrecta o problema en el servidor.')
+        }
+      },
     )
   }
 
