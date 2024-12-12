@@ -1,37 +1,59 @@
 'use client'
-import '../styles/desktop.scss'
 
+import '../styles/desktop.scss'
 import {useRouter} from 'next/navigation'
 import Button from '../../button/src/Button'
+import {useEffect, useState} from 'react'
+import SloganAvatar from '../../sloganAvatar'
+import UserAvatar from '../../userAvatar'
 
 const Avatar = () => {
+  const getCurrentLoguin = () => {
+    return localStorage.getItem('token') === null ? false : true
+  }
+  const [isLoguin, setIsLoguin] = useState(getCurrentLoguin())
   const router = useRouter()
+
+  useEffect(() => {
+    setIsLoguin(getCurrentLoguin())
+  }, [])
 
   const handleSignUp = () => {
     router.push('/sign-email')
   }
 
   const handleCreateAccount = () => {
-    router.push('/create-acount')
+    router.push('/create-account')
   }
 
+  const defaultAvatar = 'contain-avatar'
+
   return (
-    <>
-      <Button
-        size="sign-up"
-        label="Ingresar"
-        href="/sign-email"
-        color="black"
-        onClick={handleSignUp}
-      />
-      <Button
-        size="create-acount" // Ajusta el tamaño como necesites
-        color="green"
-        label="Crear cuenta"
-        href="/create-account"
-        onClick={handleCreateAccount}
-      />
-    </>
+    <div className={`${defaultAvatar}`}>
+      {isLoguin ? (
+        <>
+          <SloganAvatar />
+          <UserAvatar />
+        </>
+      ) : (
+        <>
+          <div className={`${defaultAvatar}--button`}>
+            <Button
+              size="sign-up"
+              label="Ingresar"
+              color="black"
+              onClick={handleSignUp}
+            />
+            <Button
+              size="create-account" // Corregido el nombre del tamaño
+              color="green"
+              label="Crear cuenta"
+              onClick={handleCreateAccount}
+            />
+          </div>
+        </>
+      )}
+    </div>
   )
 }
 
