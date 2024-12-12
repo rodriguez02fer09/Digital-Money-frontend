@@ -1,23 +1,26 @@
-export const requestSignEmail = (data, callBack) => {
+export const requestSignPassword = (data, callBack) => {
+  console.log('Datos enviados a la API:', data);
+
   fetch('https://digitalmoney.digitalhouse.com/api/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({data}), // Enviar solo el correo
+    body: JSON.stringify(data), // Asegúrate de enviar email y password correctamente
   })
-    .then(response => {
+    .then((response) => {
+      console.log('Estado de la respuesta:', response.status);
       if (!response.ok) {
-        // Si la respuesta no es exitosa (no 2xx)
-        throw new Error(`Error ${response.status}: ${response.statusText}`)
+        throw new Error(`Error ${response.status}: ${response.statusText}`);
       }
-      return response.json() // Si la respuesta es exitosa, convertirla en JSON
+      return response.json();
     })
-    .then(result => {
-      console.log('Correo enviado correctamente:', result)
-      callBack(result) // Ejecutar el callback con la respuesta de la API
+    .then((result) => {
+      console.log('Respuesta del servidor:', result);
+      callBack({ success: true, data: result });
     })
-    .catch(error => {
-      console.error('Detalles del error:', error)
-    })
-}
+    .catch((error) => {
+      console.error('Error al contactar el servidor:', error);
+      callBack({ success: false, error: error.message });
+    });
+};
