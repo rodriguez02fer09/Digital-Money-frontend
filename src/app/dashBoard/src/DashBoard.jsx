@@ -31,17 +31,19 @@ const DashBoard = () => {
               <AvailableMoneyCard />
             </CardBlack>
           </div>
+
           <div className={`${defaultClass}__contain-buttons`}>
             <Button
               size="button-activity"
               label="Cargar dinero"
               color="green"
+              className="button"
             />
-
             <Button
               size="button-activity"
               label="Pago de servicios"
               color="green"
+              className="button"
             />
           </div>
           <div className={`${defaultClass}__contain-input`}>

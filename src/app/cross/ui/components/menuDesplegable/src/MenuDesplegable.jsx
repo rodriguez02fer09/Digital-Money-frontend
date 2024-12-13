@@ -8,22 +8,22 @@ const MenuDesplegable = () => {
       <div className={`${defaultMenu}--contain-list`}>
         <ul>
           <li>
-            <Link href="/dashboard">Inicio</Link>
+            <Link href="/dashBoard">Inicio</Link>
           </li>
           <li>
-            <Link href="/profile">Actividad</Link>
+            <Link href="/dashBoard">Actividad</Link>
           </li>
           <li>
-            <Link href="/settings">Tu perfil</Link>
+            <Link href="/perfil">Tu perfil</Link>
           </li>
           <li>
-            <Link href="/logout">Cargar dinero</Link>
+            <Link href="/">Cargar dinero</Link>
           </li>
           <li>
-            <Link href="/logout">Pagar sevicios</Link>
+            <Link href="/">Pagar sevicios</Link>
           </li>
           <li>
-            <Link href="/logout">Tarjetas</Link>
+            <Link href="/addCards">Tarjetas</Link>
           </li>
           <li>
             <Link href="/logout">Cerrar sesión</Link>
