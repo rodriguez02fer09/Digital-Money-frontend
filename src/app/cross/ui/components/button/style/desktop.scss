@@ -13,7 +13,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
 
   &--green {
     background: $primary-color;
@@ -36,20 +35,22 @@
   }
 
   &--sign-up {
-    width: 99px;
+    width: 100%;
     height: 40px;
     font-size: $heading-4;
     color: $primary-color;
   }
 
   &--create-acount {
-    width: 131px;
+    width: 100%;
     height: 40px;
     font-size: $heading-4;
     color: $secondary-color;
   }
 
   &--button-activity {
+    width: 496px;
+
     height: 106;
   }
 
@@ -64,6 +65,26 @@
   }
 }
 
+@media (max-width: 834px) {
+  .button {
+    &--large {
+      height: 50px;
+    }
+
+    &--button-activity,
+    &--button-arrow {
+      height: 85px;
+      width: 481px;
+    }
+
+    &--button-arrow {
+      .button__icon {
+        left: 55px; // Ajuste específico para pantallas pequeñas
+      }
+    }
+  }
+}
+
 @media (max-width: 398px) {
   .button {
     &--large {
@@ -73,6 +94,7 @@
     &--button-activity,
     &--button-arrow {
       height: 67px;
+      margin: 16px;
     }
 
     &--button-arrow {

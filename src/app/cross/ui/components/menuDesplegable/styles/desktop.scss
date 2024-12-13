@@ -28,3 +28,16 @@
     }
   }
 }
+@media (max-width: 834px) {
+  .contain-menu {
+    width: 221px;
+    &--contain-list {
+      ul {
+      }
+      li {
+        a {
+        }
+      }
+    }
+  }
+}

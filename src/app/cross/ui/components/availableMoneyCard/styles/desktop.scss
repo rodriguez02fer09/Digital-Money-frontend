@@ -52,3 +52,18 @@
     }
   }
 }
+
+@media (max-width: 834px) {
+  .container-availableMoneyCard {
+    &__views {
+      margin-left: 276px;
+      justify-content: space-between;
+    }
+    &__title {
+      width: 160px;
+      height: 16px;
+    }
+    &__account {
+    }
+  }
+}

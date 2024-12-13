@@ -29,17 +29,12 @@
     height: 230px;
   }
   &__contain-buttons {
-    width: 100%;
+    padding: 16px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: space-around;
+    gap: 20px;
     height: 106px;
-
-    .button {
-      flex: 1;
-      margin: 16px;
-    }
   }
 
   &__contain-input {
@@ -54,56 +49,36 @@
   &__contain-activity {
   }
 }
-//MOBILE
-@media (max-width: 398px) {
+
+//tablet
+
+@media (max-width: 834px) {
   .dashboard {
-    width: 100%;
-    min-height: 100vh;
-    overflow-y: auto; /* Habilita el scroll solo en vertical */
-    overflow-x: hidden;
-    background-color: rgba(210, 255, 236, 1);
     &__layout {
-      display: flex; /* Coloca los hijos en una fila */
-      width: 100%;
-      height: 100vh; /* Mantiene la altura completa */
     }
 
     &__content {
-      flex: 1; /* El contenido ocupa todo el espacio restante */
-      padding: 16px;
-      overflow-y: auto; /* Permite el scroll si el contenido es largo */
-      background-color: rgba(210, 255, 236, 1);
+      padding: 48px 50px 0px 50px;
+      overflow-y: auto;
+      max-height: calc(100vh - 140px); // Ajusta según el diseño en tablet
     }
-
     &__contain-header {
-      width: 78px;
-      height: 22px;
-      margin: 16px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-
       p {
-        text-decoration: underline;
       }
     }
     &__contain-cardBlack {
+      margin: 0px;
     }
     &__contain-buttons {
-      margin: 16px;
-      height: 134px;
-
+      height: 190px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      margin-top: 0px;
     }
     &__contain-input {
-      margin: 16px;
-      height: 64px;
-
+      margin-top: 0px;
       &::placeholder {
-        background: rgba(255, 255, 255, 1);
-        size: $heading-3;
       }
     }
   }
