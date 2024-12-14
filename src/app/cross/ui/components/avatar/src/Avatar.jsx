@@ -46,7 +46,7 @@ const Avatar = () => {
               onClick={handleSignUp}
             />
             <Button
-              size="create-account" // Corregido el nombre del tamaño
+              size="create-account"
               color="green"
               label="Crear cuenta"
               onClick={handleCreateAccount}

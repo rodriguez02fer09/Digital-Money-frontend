@@ -41,3 +41,16 @@
     }
   }
 }
+@media (max-width: 398px) {
+  .contain-menu {
+    display: none;
+    &--contain-list {
+      ul {
+      }
+      li {
+        a {
+        }
+      }
+    }
+  }
+}
