@@ -6,17 +6,57 @@ import Button from '../../button/src/Button'
 import {useEffect, useState} from 'react'
 import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
+import 
+  getDataLocalStore,
+ from '../../../../../cross/core/uses-cases/getDataLocalStore'
+import updateDataLocalStore from '../../../../../cross/core/uses-cases/updateDataLocalStore'
+import request from '../../../../core/uses-cases/request'
 
 const Avatar = () => {
-  const getCurrentLoguin = () => {
-    return localStorage.getItem('token') === null ? false : true
-  }
-  const [isLoguin, setIsLoguin] = useState(getCurrentLoguin())
+  const [isLogin, setIsLogin] = useState(false)
+  const [account, setAccount] = useState()
   const router = useRouter()
 
-  useEffect(() => {
-    setIsLoguin(getCurrentLoguin())
+
+   useEffect(() => {
+    setIsLogin(getDataLocalStore('token') === null ? false : true)
   }, [])
+
+  const setAccountCallback = (data) => {
+    debugger
+    setAccount(data)
+  }
+
+  const callbackRequet = (data) => {
+    debugger
+    const {user_id} = data;
+    request({
+      path: `users/${user_id}`,
+      method: 'GET',
+      addHeaders: {
+        Authorization: getDataLocalStore('token'),
+      }
+    }, setAccountCallback)
+  }
+
+  useEffect(() => {
+    if (isLogin && !account) {
+      const dataRequest = {
+        path: 'account',
+        method: 'GET',
+        addHeaders: {
+          Authorization: getDataLocalStore('token'),
+        },
+      }
+      const r = request(dataRequest, callbackRequet)
+
+      if (r?.error) {
+        updateDataLocalStore('token', null)
+      }
+
+    } 
+
+  }, [isLogin, account])
 
   const handleSignUp = () => {
     router.push('/sign-email')
@@ -30,10 +70,10 @@ const Avatar = () => {
 
   return (
     <div className={`${defaultAvatar}`}>
-      {isLoguin ? (
+      {isLogin && account ? (
         <>
-          <SloganAvatar />
-          <UserAvatar />
+          <SloganAvatar {...account} />
+          <UserAvatar {...account} />
         </>
       ) : (
         <>
