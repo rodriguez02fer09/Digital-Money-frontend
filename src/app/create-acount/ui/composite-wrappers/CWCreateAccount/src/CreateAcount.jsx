@@ -1,18 +1,16 @@
 'use client'
-import './styles/desktop.scss'
+import '../styles/desktop.scss'
 
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
-
-import Form from '../../../../../cross/ui/composite-wrappers/form/index'
-
+import Form from '../../../../../cross/ui/composite-wrappers/createAccountForm/src/createAccountForm'
 import {createAccountForm} from '../../../../data/forms/default'
-
 import {requestCreateAccount} from 'app/app/create-acount/core/uses-cases/request-create-account'
 import {useAcountStore} from '../../../../core/hoocks/useAcountStore'
 import {useEffect} from 'react'
 
 const CreateAcount = () => {
+  const {register, handleSubmit, formState} = useForm()
   const router = useRouter()
 
   const {account, setAccount} = useAcountStore()
@@ -27,11 +25,8 @@ const CreateAcount = () => {
       ...newDataAccount,
       dni: parseInt(newDataAccount.dni),
     })
-  }
-
-  useEffect(() => {
     requestCreateAccount(account, useCallbackCreateAccount)
-  }, [account])
+  }
 
   const defaultClass = 'mainForm-cuenta'
 

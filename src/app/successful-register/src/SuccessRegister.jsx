@@ -1,15 +1,11 @@
 'use client'
 import '../styles/desktop.scss'
 import Image from 'next/image'
-import {useContext} from 'react'
-import {UserContext} from '../../../Context/index'
 import Button from '../../cross/ui/components/button/index'
 import ImgCheck from '../../../../public/images/add.svg'
 import {useRouter} from 'next/navigation'
 
 const SuccessRegister = () => {
-  const {credencials, setCredencials} = useContext(UserContext)
-
   const router = useRouter()
 
   const handleSucces = () => {

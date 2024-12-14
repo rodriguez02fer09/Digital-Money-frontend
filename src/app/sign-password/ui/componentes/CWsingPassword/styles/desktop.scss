@@ -1,5 +1,5 @@
-@import '../../cross/sass/variables';
-.mainContain-email {
+@import '../../../../../cross/sass/variables';
+.mainContainForm-password {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -8,19 +8,20 @@
   align-items: center;
   background: $secondary-color;
 
-  &--containForm {
+  &--containFrom {
     width: 360px;
-    height: 350px;
-    margin-bottom: 131px;
+    height: 208px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    margin-bottom: 193px;
+    justify-content: space-between;
   }
-  &--containText {
+  &--containtex {
+    width: 360px;
+    height: 19px;
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 40px;
-    color: white;
-
     p {
       color: $quinary-color;
       text-align: center;
@@ -32,31 +33,40 @@
       line-height: 117.682%; /* 23.536px */
     }
   }
-  &--containInput {
+  &--containForm {
     width: 360px;
-    height: 232px;
+    height: 169px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
-  a {
-    width: 100%;
-  }
+
   span {
-    color: var(--D---Color-Error-Fondo-Light, #e91010);
-    /* D - Text Error */
+    color: #da0000;
+    text-align: center;
     font-family: 'Open Sans';
     font-size: 15px;
     font-style: italic;
     font-weight: 400;
     line-height: 140.625%; /* 21.094px */
   }
-  @media (max-width: 398px) {
-    .mainContain-email {
-      &--containForm {
-        height: 250px;
+  a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 398px) {
+  .mainContainForm-password {
+    &--containFrom {
+      height: 230px;
+    }
+    &--containtex {
+      p {
       }
+    }
+    &--containForm {
+      height: 120px;
     }
   }
 }

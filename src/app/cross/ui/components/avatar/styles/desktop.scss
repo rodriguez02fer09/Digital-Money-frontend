@@ -1,12 +1,16 @@
 @import '../../../../sass/variables';
 
 .contain-avatar {
-  width: 260px;
+  width: 250px;
   height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  &--button {
+    width: 250px;
+    height: 40px;
+  }
 }
 @media (max-width: 398px) {
   .contain-avatar {

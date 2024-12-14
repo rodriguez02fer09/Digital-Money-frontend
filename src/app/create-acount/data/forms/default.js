@@ -40,6 +40,10 @@ export const createAccountForm = [
   {
     registerData: {
       required: 'El campo DNI es obligatorio.',
+      pattern: {
+        value: /^\d+$/,
+        message: 'DNI inválido',
+      },
     },
     name: 'dni',
     size: 'large',
@@ -63,9 +67,14 @@ export const createAccountForm = [
   },
   {
     registerData: {
-      required: 'password es requerido',
+      required: 'Contraseña es requerida',
+      minLength: {
+        value: 6,
+        message: 'La contraseña debe tener al menos 6 caracteres',
+      },
       pattern: {
-        message: 'Password no válido',
+        value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/, 
+        message: 'Contraseña no válida',
       },
     },
     name: 'password',
@@ -73,10 +82,13 @@ export const createAccountForm = [
     color: 'black',
     placeholder: 'Contraseña*',
     type: 'password',
-  },
+  }
+  ,
   {
     registerData: {
       required: 'La confirmación de la contraseña es requerida',
+      validate: (value, context) =>
+        value === context.password || 'Las contraseñas no coinciden', // Validar que coincidan
     },
     name: 'confirmPassword',
     size: 'large',
@@ -87,6 +99,10 @@ export const createAccountForm = [
   {
     registerData: {
       required: 'El campo teléfono es obligatorio.',
+      pattern: {
+        value: /^[0-9]{10}$/, // Validar formato de teléfono (por ejemplo, 10 dígitos)
+        message: 'Teléfono inválido',
+      },
     },
     name: 'phone',
     size: 'large',
