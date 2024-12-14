@@ -34,3 +34,75 @@
     }
   }
 }
+
+@media (max-width: 834px) {
+  .perfil {
+    background-color: rgba(210, 255, 236, 1);
+    &__layout {
+    }
+
+    &__content {
+      padding: 68px 52px 0 50px;
+      max-height: calc(100vh - 120px);
+    }
+
+    &__contain-header {
+      display: none;
+
+      p {
+      }
+    }
+
+    &__contain-Profile {
+      margin: 0;
+    }
+
+    &__contain-buttons {
+    }
+
+    &__contain-input {
+      &::placeholder {
+      }
+    }
+
+    &__contain-cardBlack {
+    }
+  }
+}
+//dashboard
+.perfil {
+  &__layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 40px 81px 0 80px;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+    background-color: rgba(210, 255, 236, 1);
+  }
+
+  &__contain-header {
+    display: none;
+
+    p {
+    }
+  }
+
+  &__contain-Profile {
+  }
+
+  &__contain-buttons {
+  }
+
+  &__contain-input {
+    &::placeholder {
+    }
+  }
+
+  &__contain-cardBlack {
+  }
+}

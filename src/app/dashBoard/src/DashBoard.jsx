@@ -17,6 +17,7 @@ const DashBoard = () => {
     <main className={`${defaultClass}`}>
       <div className={`${defaultClass}__layout`}>
         <MenuDesplegable />
+
         <div className={`${defaultClass}__content`}>
           <div className={`${defaultClass}__contain-header`}>
             <Image
@@ -27,6 +28,7 @@ const DashBoard = () => {
             />
             <p>Inicio</p>
           </div>
+
           <div className={`${defaultClass}__contain-card-black`}>
             <CardBlack size="AvailableAmountCard">
               <AvailableMoneyCard />
