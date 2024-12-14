@@ -11,11 +11,19 @@
     width: 250px;
     height: 40px;
   }
+  &--menu {
+    display: none;
+  }
 }
 @media (max-width: 398px) {
   .contain-avatar {
-    width: 240px;
-    justify-content: flex-end;
-    align-items: center;
+    width: 223px;
+    justify-content: end;
+
+    &--button {
+    }
+    &--menu {
+      display: block;
+    }
   }
 }

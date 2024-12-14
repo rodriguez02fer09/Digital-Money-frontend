@@ -6,6 +6,7 @@ import Button from '../../button/src/Button'
 import {useEffect, useState} from 'react'
 import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
+import Image from 'next/image'
 
 const Avatar = () => {
   const getCurrentLoguin = () => {
@@ -53,6 +54,9 @@ const Avatar = () => {
           </div>
         </>
       )}
+      <div className={`${defaultAvatar}--menu`}>
+        <Image src="/images/iconMenú.svg" width={40} height={40} alt="Arrow" />
+      </div>
     </div>
   )
 }
