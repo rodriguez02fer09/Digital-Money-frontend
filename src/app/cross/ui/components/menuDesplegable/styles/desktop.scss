@@ -43,7 +43,7 @@
 }
 @media (max-width: 398px) {
   .contain-menu {
-    display: none;
+    position: absolute;
     &--contain-list {
       ul {
       }
