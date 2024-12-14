@@ -32,17 +32,10 @@
   }
 }
 
-@media (max-width: 398px) {
+@media (max-width: 834px) {
   .container-availableMoneyCard {
-    width: 340px;
-    height: 150px;
-
     &__views {
-      width: 170px;
-      height: 16px;
-      display: flex;
-      flex-direction: row;
-      margin-left: 162px;
+      margin-left: 276px;
     }
     &__title {
       width: 160px;
@@ -53,11 +46,20 @@
   }
 }
 
-@media (max-width: 834px) {
+@media (max-width: 398px) {
   .container-availableMoneyCard {
+    width: 340px;
+    height: 150px;
+    justify-content: space-around;
+
     &__views {
-      margin-left: 276px;
+      width: 170px;
+      height: 16px;
+      display: flex;
+      flex-direction: row;
       justify-content: space-between;
+
+      margin-left: 166px;
     }
     &__title {
       width: 160px;

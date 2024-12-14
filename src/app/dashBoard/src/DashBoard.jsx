@@ -38,12 +38,11 @@ const DashBoard = () => {
               label="Cargar dinero"
               color="green"
             />
-
             <Button
               size="button-activity"
               label="Pago de servicios"
               color="green"
-            /> 
+            />
           </div>
           <div className={`${defaultClass}__contain-input`}>
             <InputSearch
