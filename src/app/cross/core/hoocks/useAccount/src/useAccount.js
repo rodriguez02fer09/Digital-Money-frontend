@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react'
 
 import getDataLocalStore from '../../../../core/uses-cases/getDataLocalStore'
+import updateDataLocalStore from '../../../../core/uses-cases/updateDataLocalStore'
+
 import request from '../../../../core/uses-cases/request'
 
 const useAccount = () => {
@@ -19,14 +21,17 @@ const useAccount = () => {
 
   useEffect(() => {
     setIsLogin(validUserIsLogin())
+    setAccount(JSON.parse(getDataLocalStore('account')))
   }, [])
 
   const setAccountCallback = response => {
     if (response?.error) {
       localStorage.removeItem('token')
+      localStorage.removeItem('account')
       setAccount(null)
     } else {
       setAccount(response)
+      updateDataLocalStore('account', JSON.stringify(response))
     }
   }
 
