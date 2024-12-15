@@ -1,4 +1,4 @@
-const getDataLocalStore = (key) => {
+const getDataLocalStore = key => {
   return localStorage?.getItem(key)
 }
 
