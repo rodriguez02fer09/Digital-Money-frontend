@@ -3,20 +3,13 @@
 import '../styles/desktop.scss'
 import {useRouter} from 'next/navigation'
 import Button from '../../button/src/Button'
-import {useEffect, useState} from 'react'
 import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
+import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
 
 const Avatar = () => {
-  const getCurrentLoguin = () => {
-    return localStorage.getItem('token') === null ? false : true
-  }
-  const [isLoguin, setIsLoguin] = useState(getCurrentLoguin())
   const router = useRouter()
-
-  useEffect(() => {
-    setIsLoguin(getCurrentLoguin())
-  }, [])
+  const {account, isLogin} = useAccount()
 
   const handleSignUp = () => {
     router.push('/sign-email')
@@ -30,10 +23,10 @@ const Avatar = () => {
 
   return (
     <div className={`${defaultAvatar}`}>
-      {isLoguin ? (
+      {isLogin && account ? (
         <>
-          <SloganAvatar />
-          <UserAvatar />
+          <SloganAvatar {...account} />
+          <UserAvatar {...account} />
         </>
       ) : (
         <>
