@@ -1,21 +1,15 @@
 'use client'
-
 import '../styles/desktop.scss'
 
-const SloganAvatar = ({}) => {
-  // const FIRSTLATTER = 0
-  // const {firstname = '', lastName = ''} = username ?? {}
-
-  // const firstLaterName = name?.charAt(FIRSTLATTER)
-  // const firstLaterLastName = lastName?.charAt(FIRSTLATTER)
+const SloganAvatar = account => {
+  const FIRSTLATTER = 0
+  const {firstname = '', lastname = ''} = account ?? {}
+  const firstLaterName = firstname?.charAt(FIRSTLATTER).toUpperCase()
+  const firstLaterLastName = lastname?.charAt(FIRSTLATTER).toUpperCase()
   const defaultSlogan = 'contain-slogan'
   return (
     <div className={`${defaultSlogan}`}>
-      <p>
-        {/* {firstLaterName}
-        {firstLaterLastName} */}
-        FR
-      </p>
+      <p>{`${firstLaterName}${firstLaterLastName}`}</p>
     </div>
   )
 }

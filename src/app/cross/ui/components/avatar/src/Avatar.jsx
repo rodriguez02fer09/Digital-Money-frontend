@@ -3,7 +3,6 @@
 import '../styles/desktop.scss'
 import {useRouter} from 'next/navigation'
 import Button from '../../button/src/Button'
-import {useEffect, useState} from 'react'
 import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
 import Image from 'next/image'
@@ -38,10 +37,10 @@ const Avatar = () => {
 
   return (
     <div className={`${defaultAvatar}`}>
-      {isLoguin ? (
+      {isLogin && account ? (
         <>
-          <SloganAvatar />
-          <UserAvatar />
+          <SloganAvatar {...account} />
+          <UserAvatar {...account} />
         </>
       ) : (
         <div className={`${defaultAvatar}--button`}>
