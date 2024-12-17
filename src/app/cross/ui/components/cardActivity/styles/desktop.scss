@@ -13,15 +13,12 @@
   // }
 
   &__Activity {
-    max-height: 380px;
   }
 
   &__historyCard {
-    max-height: 380px;
   }
 
   &__ProfileData {
-    height: 380px;
   }
   .contain-header {
     margin-bottom: 16px;
@@ -54,21 +51,18 @@
 @media (max-width: 398px) {
   .cardActivity {
     .content {
-      height: 330px;
-      display: flex;
     }
 
     &__activity {
-      min-height: 358px;
-      max-height: 381px;
+      height: 320px;
     }
 
     &__historyCard {
-      min-height: 370px;
+      height: 370px;
     }
 
     &__profileData {
-      height: 320px;
+      height: 381px;
     }
     .contain-header {
       margin-bottom: 16px;

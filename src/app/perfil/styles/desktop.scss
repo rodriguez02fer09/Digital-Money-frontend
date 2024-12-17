@@ -3,35 +3,28 @@
 .perfil {
   &__layout {
     display: flex;
+    width: 100%;
+    height: 100vh;
   }
 
   &__content {
-    padding: 68px 52px 0 50px;
-    max-height: calc(100vh - 120px);
-    width: 100%;
-    min-height: 100vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    max-height: calc(100vh - 20px);
+    flex: 1;
+    padding: 16px 79px 0 79px;
+    overflow-y: auto;
     background-color: rgba(210, 255, 236, 1);
   }
 
   &__contain-header {
-    width: 78px;
-    height: 22px;
-    margin: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: none;
     p {
-      text-decoration: underline;
     }
   }
-  // &__contain-cardBlack {
-  // }
+  &__contain-cardBlack {
+  }
   &__contain-buttons {
     margin: 16px;
     height: 67px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -60,6 +53,7 @@
       }
     }
     &__contain-Profile {
+      height: 381px;
     }
     &__contain-buttons {
       margin: 16px;
@@ -83,13 +77,12 @@
 @media (max-width: 398px) {
   .perfil {
     width: 100%;
-
-    overflow-y: auto;
     &__layout {
     }
 
     &__content {
       padding: 0px;
+      max-height: calc(100vh - 120px);
     }
 
     &__contain-header {
@@ -103,8 +96,8 @@
         text-decoration: underline;
       }
     }
-    // &__contain-cardBlack {
-    // }
+    &__contain-cardBlack {
+    }
     &__contain-buttons {
       margin: 16px;
       height: 67px;
