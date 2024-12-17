@@ -15,7 +15,7 @@ const Perfil = () => {
   return (
     <main className={defaultClass}>
       <div className={`${defaultClass}__layout`}>
-        <MenuDesplegable />
+     <MenuDesplegable /> 
 
         <div className={`${defaultClass}__content`}>
           <div className={`${defaultClass}__contain-header`}>

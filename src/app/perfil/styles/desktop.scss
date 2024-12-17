@@ -1,12 +1,98 @@
 @import '../../cross/sass/variables';
-@media (max-width: 398px) {
-  .perfil {
+//desktop
+.perfil {
+  &__layout {
+    display: flex;
+  }
+
+  &__content {
+    padding: 68px 52px 0 50px;
+    max-height: calc(100vh - 120px);
     width: 100%;
     min-height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
     background-color: rgba(210, 255, 236, 1);
-    &__perfil-header {
+  }
+
+  &__contain-header {
+    width: 78px;
+    height: 22px;
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    p {
+      text-decoration: underline;
+    }
+  }
+  // &__contain-cardBlack {
+  // }
+  &__contain-buttons {
+    margin: 16px;
+    height: 67px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+  }
+}
+
+//tablet
+@media (max-width: 834px) {
+  .perfil {
+    &__layout {
+    }
+
+    &__content {
+      padding: 68px 52px 0 50px;
+      max-height: calc(100vh - 120px);
+    }
+
+    &__contain-header {
+      display: none;
+      p {
+      }
+    }
+    &__contain-Profile {
+    }
+    &__contain-buttons {
+      margin: 16px;
+      height: 67px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      &::placeholder {
+        background: rgba(255, 255, 255, 1);
+        size: $heading-3;
+      }
+    }
+    &__contain-cardBlack {
+    }
+  }
+}
+
+//mobile
+@media (max-width: 398px) {
+  .perfil {
+    width: 100%;
+
+    overflow-y: auto;
+    &__layout {
+    }
+
+    &__content {
+      padding: 0px;
+    }
+
+    &__contain-header {
       width: 78px;
       height: 22px;
       margin: 16px;
@@ -32,77 +118,5 @@
         size: $heading-3;
       }
     }
-  }
-}
-
-@media (max-width: 834px) {
-  .perfil {
-    background-color: rgba(210, 255, 236, 1);
-    &__layout {
-    }
-
-    &__content {
-      padding: 68px 52px 0 50px;
-      max-height: calc(100vh - 120px);
-    }
-
-    &__contain-header {
-      display: none;
-
-      p {
-      }
-    }
-
-    &__contain-Profile {
-      margin: 0;
-    }
-
-    &__contain-buttons {
-    }
-
-    &__contain-input {
-      &::placeholder {
-      }
-    }
-
-    &__contain-cardBlack {
-    }
-  }
-}
-//dashboard
-.perfil {
-  &__layout {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-  }
-
-  &__content {
-    flex: 1;
-    padding: 40px 81px 0 80px;
-    overflow-y: auto;
-    max-height: calc(100vh - 120px);
-    background-color: rgba(210, 255, 236, 1);
-  }
-
-  &__contain-header {
-    display: none;
-
-    p {
-    }
-  }
-
-  &__contain-Profile {
-  }
-
-  &__contain-buttons {
-  }
-
-  &__contain-input {
-    &::placeholder {
-    }
-  }
-
-  &__contain-cardBlack {
   }
 }

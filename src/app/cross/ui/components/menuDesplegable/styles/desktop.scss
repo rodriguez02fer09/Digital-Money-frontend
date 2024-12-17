@@ -44,6 +44,8 @@
 @media (max-width: 398px) {
   .contain-menu {
     position: absolute;
+    display: none;
+
     &--contain-list {
       ul {
       }

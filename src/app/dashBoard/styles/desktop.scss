@@ -45,15 +45,15 @@
     }
   }
 
-  &__contain-activity {
-  }
+  // &__contain-activity {
+  // }
 }
 
 //Tablet Styles
 @media (max-width: 834px) {
   .dashboard {
-    &__layout {
-    }
+    // &__layout {
+    // }
 
     &__content {
       padding: 68px 52px 0 50px;
@@ -63,8 +63,8 @@
     &__contain-header {
       display: none;
 
-      p {
-      }
+      // p {
+      // }
     }
 
     &__contain-cardBlack {
@@ -81,12 +81,12 @@
     &__contain-input {
       margin-top: 0;
 
-      &::placeholder {
-      }
+      // &::placeholder {
+      // }
     }
 
-    &__contain-activity {
-    }
+    // &__contain-activity {
+    // }
   }
 }
 @media (max-width: 398px) {
@@ -95,8 +95,8 @@
     min-height: 100vh;
     overflow-y: auto;
 
-    &__layout {
-    }
+    // &__layout {
+    // }
 
     &__content {
       padding: 0px;
@@ -115,8 +115,8 @@
       }
     }
 
-    &__contain-cardBlack {
-    }
+    // &__contain-cardBlack {
+    // }
 
     &__contain-buttons {
       margin: 16px;
@@ -138,7 +138,7 @@
       }
     }
 
-    &__contain-activity {
-    }
+    // &__contain-activity {
+    // }
   }
 }

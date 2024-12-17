@@ -19,7 +19,7 @@ const InputFormDate = ({value, placeholder, label}) => {
         <Image
           src="/images/pencil.svg"
           alt="Edit Icon"
-          width={14}
+          width={22}
           height={22}
         />
       </div>

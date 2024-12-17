@@ -1,49 +1,45 @@
 'use client'
 
 import '../styles/desktop.scss'
+import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import Button from '../../button/src/Button'
 import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
-import Image from 'next/image'
+import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
+import {useState} from 'react'
 import MenuDesplegable from '../../menuDesplegable'
 
 const Avatar = () => {
-  const [isLoguin, setIsLoguin] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const token = localStorage.getItem('token')
-      setIsLoguin(token !== null)
-    }
-  }, [])
+  const [menuOpen, setMenuOpen] = useState(false)
+  const {account, isLogin} = useAccount()
 
   const handleSignUp = () => {
     router.push('/sign-email')
   }
 
   const handleCreateAccount = () => {
-    router.push('/create-account')
+    router.push('/create-acount')
   }
 
   const toggleMenu = () => {
-    console.log('menú abierto')
     setMenuOpen(prev => !prev)
   }
 
-  const defaultAvatar = 'contain-avatar'
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
 
   return (
-    <div className={`${defaultAvatar}`}>
+    <div className="contain-avatar">
       {isLogin && account ? (
         <>
           <SloganAvatar {...account} />
           <UserAvatar {...account} />
         </>
       ) : (
-        <div className={`${defaultAvatar}--button`}>
+        <div className="contain-avatar--button">
           <Button
             size="sign-up"
             label="Ingresar"
@@ -51,23 +47,28 @@ const Avatar = () => {
             onClick={handleSignUp}
           />
           <Button
-            size="create-account"
+            size="create-acount"
             color="green"
             label="Crear cuenta"
             onClick={handleCreateAccount}
           />
         </div>
       )}
-      <div className={`${defaultAvatar}--menu`}>
+      <div className="contain-avatar--menu">
         <Image
           src="/images/iconMenú.svg"
           width={40}
           height={40}
           alt="Abrir menú"
           onClick={toggleMenu}
+          style={{cursor: 'pointer'}}
         />
       </div>
-      {menuOpen && <MenuDesplegable />}
+      {menuOpen && (
+        <div className="menu-desplegable" onClick={closeMenu}>
+          <MenuDesplegable />
+        </div>
+      )}
     </div>
   )
 }

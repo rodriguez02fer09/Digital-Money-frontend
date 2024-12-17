@@ -12,13 +12,13 @@ const CardActivity = ({children, size, title}) => {
 
   return (
     <div className={`${customClass}`}>
-      {size === 'ProfileData' ? (
+      {size === 'Activity' ? (
         <div className="contain-header">
           <p>{'Tus datos'}</p>
         </div>
       ) : (
         <div className="contain-header">
-          <p>{'Tu actividad'}</p>
+          <p>{'Tus datos'}</p>
         </div>
       )}
 

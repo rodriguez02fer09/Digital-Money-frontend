@@ -9,20 +9,19 @@
   margin: 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  .content {
-  }
+  // .content {
+  // }
 
-  &__activity {
-    min-height: 358px;
-    max-height: 381px;
+  &__Activity {
+    max-height: 380px;
   }
 
   &__historyCard {
-    max-height: 370px;
+    max-height: 380px;
   }
 
-  &--profileData {
-    max-height: 381px;
+  &__ProfileData {
+    height: 380px;
   }
   .contain-header {
     margin-bottom: 16px;
@@ -55,6 +54,8 @@
 @media (max-width: 398px) {
   .cardActivity {
     .content {
+      height: 330px;
+      display: flex;
     }
 
     &__activity {
@@ -63,11 +64,11 @@
     }
 
     &__historyCard {
-      max-height: 370px;
+      min-height: 370px;
     }
 
     &__profileData {
-      max-height: 381px;
+      height: 320px;
     }
     .contain-header {
       margin-bottom: 16px;
