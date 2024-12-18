@@ -5,6 +5,10 @@
     height: 60px;
     padding-top: 5px;
     border-top: 1px solid #cecece;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 
     &:last-child {
       border-bottom: 1px solid #cecece;
@@ -19,7 +23,7 @@
       line-height: normal;
     }
     &__inputForm {
-      width: 100%;
+      width: 90%;
       height: 22px;
       border: none;
       color: #cecece;
@@ -34,11 +38,7 @@
       }
     }
     &__containImage {
-      position: relative;
-
-      rigth: 300px;
-
-      bottom: 18px;
+      width: 10%;
     }
   }
 }
