@@ -1,32 +1,5 @@
 @import '../../../../sass/variables';
-
-.cardBlack {
-  background-color: black;
-  box-sizing: border-box;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 16px;
-
-  &--AvailableAmountCard {
-    height: 230px;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-  }
-
-  &--AddCard {
-    min-height: 147px;
-    max-height: 167px;
-  }
-
-  &--MoneyTransfer {
-    min-height: 260px;
-    padding: 25px;
-    //max-height: 350px;
-  }
-}
-@media (max-width: 398px) {
+@media (max-width: 384px) {
   .cardBlack {
     &--AvailableAmountCard {
       height: 160px;
@@ -36,6 +9,39 @@
     }
 
     &--MoneyTransfer {
+      height: 259px;
     }
+  }
+}
+
+@media (max-width: 834px) {
+  .cardBlack {
+    &--AvailableAmountCard {
+    }
+
+    &--AddCard {
+    }
+
+    &--MoneyTransfer {
+      height: 300px;
+    }
+  }
+}
+.cardBlack {
+  background-color: black;
+  box-sizing: border-box;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 16px;
+  &--AvailableAmountCard {
+    height: 160px;
+  }
+
+  &--AddCard {
+  }
+
+  &--MoneyTransfer {
+    height: 264px; // Default para desktop
+    padding: 25px;
   }
 }

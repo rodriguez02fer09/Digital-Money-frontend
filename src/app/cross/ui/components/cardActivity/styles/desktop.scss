@@ -41,15 +41,13 @@
 
   // Estilos de variantes
   &--Activity {
-    // Define estilos específicos si los necesitas
   }
 
   &--HistoryCard {
-    // Define estilos específicos si los necesitas
   }
 
   &--ProfileData {
-    // Define estilos específicos si los necesitas
+    height: 277px;
   }
 }
 
@@ -60,7 +58,7 @@
     }
 
     &--HistoryCard {
-      height: 370px;
+      min-height: 370px;
     }
 
     &--ProfileData {
@@ -68,6 +66,7 @@
     }
 
     .contain-header p {
+      margin-bottom: 18px;
       font-size: $heading-2;
     }
 
@@ -77,16 +76,13 @@
   }
 }
 
-@media (min-width: 398px) {
+@media (max-width: 398px) {
   .cardActivity {
     &--Activity {
       height: 358px;
     }
 
     &--HistoryCard {
-    }
-
-    &--ProfileData {
       height: 381px;
       display: flex;
       flex-direction: column;
@@ -99,6 +95,10 @@
 
     .contain-footer p {
       font-size: $heading-3;
+    }
+
+    &--ProfileData {
+      height: 381px;
     }
   }
 }

@@ -1,100 +1,129 @@
 @import '../../../../sass/variables';
-@media (max-width: 398px) {
+
+@media (min-width: 398px) {
   .input-form-date {
     width: 100%;
     height: 60px;
-    padding-top: 5px;
+    padding-top: 7px;
+    align-items: flex-start;
     border-top: 1px solid #cecece;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
 
     &:last-child {
       border-bottom: 1px solid #cecece;
     }
+
     &__labelForm {
+      width: 138px;
       color: var(--A---Color-1, #201f22);
       height: 22px;
       font-family: $font-stack;
       font-size: 16px;
-      font-style: normal;
       font-weight: 400;
       line-height: normal;
     }
-    &__inputForm {
-      width: 90%;
+    &__containInputImg {
+      width: 100%;
       height: 22px;
-      border: none;
-      color: #cecece;
-      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      box-sizing: border-box;
 
-      &::placeholder {
-        font-family: '$font-stack';
+      input {
+        width: 350px;
+        height: 22px;
+        border: none;
 
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        &::placeholder {
+          font-family: '$font-stack';
+          font-weight: 400;
+          line-height: normal;
+        }
       }
-    }
-    &__containImage {
-      width: 10%;
+      img {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 }
 
-//tablet
-@media (max-width: 834px) {
+@media screen and (min-width: 399px) and (max-width: 834px) {
   .input-form-date {
+    width: 100%;
     height: 40px;
+    padding-top: 7px;
+
+    border-top: 1px solid #cecece;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &:last-child {
+      border-bottom: 1px solid #cecece;
+    }
 
     &__labelForm {
-      color: var(--A---Color-1, #201f22);
-      font-family: $font-stack;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
     }
-    &__inputForm {
-      width: 100%;
-      border: none;
-      &::placeholder {
-        color: var(--Fill-in, rgba(0, 0, 0, 0.5));
-        font-family: 'Open Sans';
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    &__containInputImg {
+      justify-content: center;
+      box-sizing: border-box;
+
+      input {
+        width: 243px;
+        height: 22px;
+        border: none;
+
+        &::placeholder {
+          font-family: '$font-stack';
+          font-weight: 400;
+          line-height: normal;
+        }
       }
-    }
-    &__containImage {
+      img {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 }
 
 //desktop
-.input-form-date {
-  height: 60px;
-  border-top: 1px solid #cecece;
-  &:last-child {
-    border-bottom: 1px solid #cecece;
+
+@media screen and (min-width: 835px) {
+  .input-form-date {
+    padding-top: 7px;
+    border-top: 1px solid #cecece;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    height: 35px;
+    &:last-child {
+      border-bottom: 1px solid #cecece;
+    }
 
     &__labelForm {
+      width: 243px;
     }
-    &__inputForm {
-      width: 100%;
-      border: none;
-      &::placeholder {
-        color: var(--Fill-in, rgba(0, 0, 0, 0.5));
-        font-family: 'Open Sans';
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    &__containInputImg {
+      input {
+        width: 90%;
+        height: 22px;
+        border: none;
+
+        &::placeholder {
+          font-family: '$font-stack';
+          font-weight: 400;
+          line-height: normal;
+        }
       }
-    }
-    &__containImage {
+      img {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 }

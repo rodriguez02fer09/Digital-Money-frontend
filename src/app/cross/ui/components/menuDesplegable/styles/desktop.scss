@@ -1,56 +1,76 @@
 @import '../../../../sass/variables';
-.contain-menu {
-  width: 276px; /* Fija el ancho del menú */
-  height: 100vh; /* Ocupa toda la altura */
-  background: $primary-color;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Añade un ligero borde para separar visualmente */
 
-  &--contain-list {
-    margin: 50px 40px;
-    width: 140px;
-    height: 240px;
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 16px;
-      a {
-        text-decoration: none;
-        color: $text-color-secondary;
-        font-family: $font-stack;
-        font-size: 17px;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-}
-@media (max-width: 834px) {
-  .contain-menu {
-    width: 221px;
-    &--contain-list {
-      ul {
-      }
-      li {
-        a {
-        }
-      }
-    }
-  }
-}
 @media (max-width: 398px) {
   .contain-menu {
     position: absolute;
     display: none;
+    background: cadetblue;
 
     &--contain-list {
       ul {
       }
       li {
         a {
+        }
+      }
+    }
+  }
+}
+
+//tablet
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .contain-menu {
+    background: $primary-color;
+    width: 221px;
+    &--contain-list {
+      margin: 50px 40px;
+      width: 140px;
+      height: 240px;
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 16px;
+        a {
+          text-decoration: none;
+          color: $text-color-secondary;
+          font-family: $font-stack;
+          font-size: 17px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 835px) {
+  .contain-menu {
+    width: 276px; /* Fija el ancho del menú */
+    height: 100vh; /* Ocupa toda la altura */
+    background: $primary-color;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Añade un ligero borde para separar visualmente */
+
+    &--contain-list {
+      margin: 50px 40px;
+      width: 140px;
+      height: 240px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 16px;
+        a {
+          text-decoration: none;
+          color: $text-color-secondary;
+          font-family: $font-stack;
+          font-size: 17px;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }

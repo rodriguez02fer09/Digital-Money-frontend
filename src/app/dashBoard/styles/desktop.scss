@@ -11,7 +11,7 @@
     max-height: calc(100vh - 120px);
     flex: 1;
     padding: 16px 79px 0 79px;
-    overflow-y: auto;
+
     background-color: rgba(210, 255, 236, 1);
   }
 
@@ -92,7 +92,6 @@
     .dashboard {
       width: 100%;
       min-height: 100vh;
-      overflow-y: auto;
 
       &__layout {
       }

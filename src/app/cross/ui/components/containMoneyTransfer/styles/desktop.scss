@@ -11,9 +11,29 @@
       p {
         color: var(--A---Color-4, #eeeaea);
         font-family: $font-stack;
-        font-size: $heading-4;
+        font-size: $heading-3;
         font-style: normal;
         font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    &__containItem {
+      height: 144px;
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .containMoneyTransfer {
+    &__containDescription {
+      height: 40px;
+      p {
+        color: var(--A---Color-4, #eeeaea);
+        font-family: $font-stack;
+        font-size: $heading-4;
+        font-style: normal;
+        font-weight: 700;
         line-height: normal;
       }
     }
