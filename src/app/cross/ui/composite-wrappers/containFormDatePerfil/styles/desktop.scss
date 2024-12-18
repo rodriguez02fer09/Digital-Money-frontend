@@ -1,11 +1,17 @@
 @import '../../../../../cross/sass/variables';
 @media (max-width: 398px) {
   .contain-form-date-perfil {
-    width: 100%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: 16px;
   }
 }
 
-//desktop
+//tablet
+
+@media (max-width: 834px) {
+  .contain-form-date-perfil {
+  }
+}
