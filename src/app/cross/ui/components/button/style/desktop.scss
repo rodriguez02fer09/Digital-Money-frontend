@@ -145,8 +145,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     &--green {
-      background: $primary-color;
+      background: #0aeb8c;
+      width: 100%;
     }
 
     &--black {

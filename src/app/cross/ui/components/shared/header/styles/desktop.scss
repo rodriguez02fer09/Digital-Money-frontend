@@ -6,8 +6,9 @@
     background: #052a2d;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px;
 
     &--green {
       background: $primary-color;

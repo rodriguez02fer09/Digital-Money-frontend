@@ -24,6 +24,7 @@ const Avatar = () => {
   }
 
   const toggleMenu = () => {
+    console.log('menu abierto')
     setMenuOpen(prev => !prev)
   }
 

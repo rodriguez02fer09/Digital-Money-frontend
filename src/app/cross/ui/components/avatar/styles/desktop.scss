@@ -1,7 +1,7 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .contain-avatar {
-    width: 300px;
+    width: 100px;
     height: 40px;
 
     display: flex;
@@ -15,14 +15,17 @@
       justify-content: space-around;
     }
     &--menu {
-      display: none;
+      display: block;
     }
   }
 }
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .contain-avatar {
-    width: 223px;
-    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
 
     &--button {
       width: 300px;
@@ -38,6 +41,11 @@
 
 @media screen and (min-width: 835px) {
   .contain-avatar {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
     &--button {
       width: 300px;
       height: 40px;
