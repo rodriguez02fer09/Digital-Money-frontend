@@ -1,73 +1,81 @@
 @import '../../cross/sass/variables';
-//Desktop Styles
-.dashboard {
-  &__layout {
-    display: flex;
+@media (max-width: 398px) {
+  .dashboard {
     width: 100%;
-    height: 100vh;
-  }
+    min-height: 100vh;
 
-  &__content {
-    max-height: calc(100vh - 120px);
-    flex: 1;
-    padding: 16px 79px 0 79px;
-
-    background-color: rgba(210, 255, 236, 1);
-  }
-
-  &__contain-header {
-    display: none;
-
-    p {
+    &__layout {
+      max-height: calc(100vh - 120px);
     }
-  }
 
-  &__contain-cardBlack {
-    height: 230px;
-  }
-
-  &__contain-buttons {
-    margin: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 20px;
-    height: 106px;
-  }
-
-  &__contain-input {
-    margin: 16px;
-
-    &::placeholder {
-      background: rgba(255, 255, 255, 1);
-      size: $heading-3;
+    &__content {
+      overflow-y: scroll;
+      width: 100%;
+      min-height: 100vh;
+      background-color: rgba(210, 255, 236, 1);
     }
-  }
 
-  &__contain-activity {
+    &__contain-header {
+      width: 78px;
+      height: 22px;
+      margin: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      p {
+        text-decoration: underline;
+      }
+    }
+
+    &__contain-cardBlack {
+    }
+
+    &__contain-buttons {
+      margin: 16px;
+      width: 360px;
+      height: 154px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &__contain-input {
+      &::placeholder {
+        background: rgba(0, 0, 0, 0.5);
+        size: 16px;
+      }
+    }
+
+    &__contain-activity {
+    }
   }
 }
 
 //Tablet Styles
-@media (max-width: 834px) {
+@media screen and (min-width: 399px) and (max-width: 834px) {
   .dashboard {
     &__layout {
+      display: flex;
+      width: 100%;
+      height: 100vh;
     }
 
     &__content {
-      padding: 68px 52px 0 50px;
-      max-height: calc(100vh - 120px);
-    }
+      max-height: calc(100vh - 20px);
+      flex: 1;
+      padding: 68px 52px 0px 52px;
 
+      background-color: rgba(210, 255, 236, 1);
+    }
     &__contain-header {
       display: none;
 
-      // p {
-      // }
+      p {
+      }
     }
-
     &__contain-cardBlack {
-      margin: 0;
     }
 
     &__contain-buttons {
@@ -75,10 +83,13 @@
       height: 190px;
       display: flex;
       flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
     }
 
     &__contain-input {
-      margin-top: 0;
+      margin: 16px;
+      height: 64px;
 
       &::placeholder {
         // }
@@ -88,56 +99,53 @@
       }
     }
   }
-  @media (max-width: 398px) {
-    .dashboard {
+}
+
+//Desktop Styles
+@media screen and (min-width: 835px) {
+  .dashboard {
+    &__layout {
+      display: flex;
       width: 100%;
-      min-height: 100vh;
+      height: 100vh;
+    }
 
-      &__layout {
+    &__content {
+      max-height: calc(100vh - 120px);
+      flex: 1;
+      padding: 16px 79px 0 79px;
+      background-color: rgba(210, 255, 236, 1);
+    }
+
+    &__contain-header {
+      display: none;
+      p {
       }
+    }
 
-      &__content {
-        padding: 0px;
+    &__contain-cardBlack {
+      height: 230px;
+    }
+
+    &__contain-buttons {
+      margin: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 20px;
+      height: 106px;
+    }
+
+    &__contain-input {
+      margin: 16px;
+
+      &::placeholder {
+        background: rgba(255, 255, 255, 1);
+        size: $heading-3;
       }
+    }
 
-      &__contain-header {
-        width: 78px;
-        height: 22px;
-        margin: 16px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-
-        p {
-          text-decoration: underline;
-        }
-      }
-
-      &__contain-cardBlack {
-      }
-
-      &__contain-buttons {
-        margin: 16px;
-        width: 360px;
-        height: 154px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-      }
-
-      &__contain-input {
-        margin: 16px;
-        height: 64px;
-
-        &::placeholder {
-          background: rgba(0, 0, 0, 0.5);
-          size: 16px;
-        }
-      }
-
-      &__contain-activity {
-      }
+    &__contain-activity {
     }
   }
 }

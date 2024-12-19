@@ -1,47 +1,50 @@
 @import '../../../../sass/variables';
-@media (max-width: 384px) {
-  .cardBlack {
-    &--AvailableAmountCard {
+
+.cardBlack {
+  background: black;
+  margin: 16px;
+  border-radius: 8px; // Fondo negro para todas las clases hijas
+
+  &--AvailableAmountCard {
+    @media (max-width: 398px) {
       height: 160px;
     }
 
-    &--AddCard {
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 230px;
     }
 
-    &--MoneyTransfer {
-      height: 259px;
+    @media screen and (min-width: 835px) {
+      height: 230px;
     }
-  }
-}
-
-@media (max-width: 834px) {
-  .cardBlack {
-    &--AvailableAmountCard {
-    }
-
-    &--AddCard {
-    }
-
-    &--MoneyTransfer {
-      height: 300px;
-    }
-  }
-}
-.cardBlack {
-  background-color: black;
-  box-sizing: border-box;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 16px;
-  &--AvailableAmountCard {
-    height: 160px;
   }
 
   &--AddCard {
+    @media (max-width: 398px) {
+      height: 147px;
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 147px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 167px;
+    }
   }
 
   &--MoneyTransfer {
-    height: 264px; // Default para desktop
-    padding: 25px;
+    @media (max-width: 398px) {
+      height: 259px;
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 300px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 264px;
+      padding: 25px;
+    }
   }
 }

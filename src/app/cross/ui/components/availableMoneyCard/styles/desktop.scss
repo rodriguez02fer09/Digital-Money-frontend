@@ -1,56 +1,13 @@
 @import '../../../../sass/variables';
 
-.container-availableMoneyCard {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  &__views {
-    width: 170px;
-    height: 16px;
-    display: flex;
-    flex-direction: row;
-    margin-left: 524px;
-    justify-content: space-between;
-  }
-  &__title {
-    width: 141px;
-    height: 22px;
-    margin-left: 40px;
-  }
-  &__account {
-    width: 247px;
-    height: 50px;
-    border-radius: 100px;
-    border: 2px solid $primary-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 25px;
-  }
-}
-
-@media (max-width: 834px) {
-  .container-availableMoneyCard {
-    &__views {
-      margin-left: 276px;
-    }
-    &__title {
-      width: 160px;
-      height: 16px;
-    }
-    &__account {
-    }
-  }
-}
-
 @media (max-width: 398px) {
   .container-availableMoneyCard {
-    width: 340px;
-    height: 150px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 
     &__views {
       width: 170px;
@@ -58,17 +15,90 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
-      margin-left: 166px;
+      margin-left: 148px;
+      margin-top: 10px;
     }
     &__title {
       width: 160px;
       height: 16px;
+      margin-right: 150px;
     }
     &__account {
-      margin-right: 0px;
-      margin-left: 12px;
       width: 207px;
+      height: 53px;
+      border-radius: 100px;
+      border: 2px solid $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      margin-right: 110px;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .container-availableMoneyCard {
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__views {
+      width: 170px;
+      margin-left: 260px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__title {
+      width: 141px;
+      height: 22px;
+      margin-right: 150px;
+    }
+    &__account {
+      width: 311px;
+      height: 74px;
+      border-radius: 100px;
+      border: 2px solid $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 103px;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .container-availableMoneyCard {
+    width: 100%;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__views {
+      width: 170px;
+      height: 16px;
+      display: flex;
+      flex-direction: row;
+      margin-left: 790px;
+      justify-content: space-between;
+    }
+    &__title {
+      width: 141px;
+      height: 22px;
+      margin-left: 40px;
+    }
+    &__account {
+      border-radius: 100px;
+      width: 285px;
+      height: 74px;
+      border: 2px solid #0aeb8c;
+      margin-left: 25px;
+      margin-bottom: 20px;
+      margin-top: -10px;
     }
   }
 }

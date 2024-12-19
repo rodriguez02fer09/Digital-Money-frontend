@@ -57,7 +57,7 @@
       max-height: calc(100vh - 20px);
       flex: 1;
       padding: 68px 52px 0px 52px;
-      overflow-y: auto;
+
       background-color: rgba(210, 255, 236, 1);
     }
 
@@ -70,7 +70,7 @@
     }
     &__contain-buttons {
       margin: 16px;
-      height: 67px;
+      height: 188px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;

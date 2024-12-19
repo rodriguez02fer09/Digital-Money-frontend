@@ -1,29 +1,56 @@
 @import '../../../../sass/variables';
-.moneyView {
-  width: 170px;
-  height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-  p {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: normal;
-    font-family: $font-stack;
-    color: $quinary-color;
-  }
-}
 @media (max-width: 398px) {
   .moneyView {
     width: 170px;
     height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     p {
-      size: 22px;
+      font-size: 24px;
       font-weight: 700;
-      line-height: 33;
+      line-height: normal;
+      font-family: $font-stack;
+      color: $quinary-color;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .moneyView {
+    width: 300px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: normal;
+      font-family: $font-stack;
+      color: $quinary-color;
+      align-items: center;
+    }
+  }
+}
+@media screen and (min-width: 835px) {
+  .moneyView {
+    width: 285px;
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: normal;
       font-family: $font-stack;
       color: $quinary-color;
     }
