@@ -35,14 +35,14 @@
     }
 
     &--sign-up {
-      width: 100%;
+      width: 99px;
       height: 40px;
       font-size: $heading-4;
       color: $primary-color;
     }
 
     &--create-acount {
-      width: 100%;
+      width: 151px;
       height: 40px;
       font-size: $heading-4;
       color: $secondary-color;
@@ -101,6 +101,19 @@
       height: 50px;
     }
 
+    &--sign-up {
+      width: 99px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $primary-color;
+    }
+
+    &--create-acount {
+      width: 151px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $secondary-color;
+    }
     &--button-activity {
       height: 85px;
       width: 481px;
@@ -150,7 +163,20 @@
       height: 50px;
     }
 
-    &--button-activity {
+    &--sign-up {
+      width: 99px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $primary-color;
+    }
+
+    &--create-acount {
+      width: 151px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $secondary-color;
+    }
+    --button-activity {
       height: 67px;
       margin: 0;
       width: 100%;
