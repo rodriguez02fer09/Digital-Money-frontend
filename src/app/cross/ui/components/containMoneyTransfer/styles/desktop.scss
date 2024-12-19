@@ -28,12 +28,15 @@
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .containMoneyTransfer {
+    padding: 40px 45px 40px 35px;
+    height: 300px;
+
     &__containDescription {
       height: 40px;
       p {
         color: var(--A---Color-4, #eeeaea);
         font-family: $font-stack;
-        font-size: $heading-4;
+        font-size: $heading-3;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -42,13 +45,19 @@
 
     &__containItem {
       height: 144px;
+      height: 165px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }
 @media screen and (min-width: 835px) {
   .containMoneyTransfer {
+    padding: 20px 25px;
     &__containDescription {
-      height: 40px;
+      width: 926;
+      height: 17px;
       p {
         color: var(--A---Color-4, #eeeaea);
         font-family: $font-stack;
@@ -60,7 +69,11 @@
     }
 
     &__containItem {
-      height: 144px;
+      height: 160px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
   }
 }

@@ -1,72 +1,102 @@
 @import '../../../../sass/variables';
+@media (max-width: 398px) {
+  .button {
+    border-radius: 10px;
+    border: none;
+    font-family: $font-stack;
+    font-size: $button-text-size-secondary;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-.button {
-  border-radius: 10px;
-  border: none;
-  font-family: $font-stack;
-  font-size: $button-text-size-secondary;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  cursor: pointer;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    &--green {
+      background: $primary-color;
+    }
 
-  &--green {
-    background: $primary-color;
-  }
+    &--black {
+      background: $secondary-color;
+      border: 1px solid $primary-color;
+    }
 
-  &--black {
-    background: $secondary-color;
-    border: 1px solid $primary-color;
-  }
+    &--grey {
+      background: $cuartary-color;
+      color: $secondary-color;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
 
-  &--grey {
-    background: $cuartary-color;
-    color: $secondary-color;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  }
+    &--large {
+      width: 100%;
+      height: 64px;
+    }
 
-  &--large {
-    width: 100%;
-    height: 64px;
-  }
+    &--sign-up {
+      width: 100%;
+      height: 40px;
+      font-size: $heading-4;
+      color: $primary-color;
+    }
 
-  &--sign-up {
-    width: 100%;
-    height: 40px;
-    font-size: $heading-4;
-    color: $primary-color;
-  }
+    &--create-acount {
+      width: 100%;
+      height: 40px;
+      font-size: $heading-4;
+      color: $secondary-color;
+    }
 
-  &--create-acount {
-    width: 100%;
-    height: 40px;
-    font-size: $heading-4;
-    color: $secondary-color;
-  }
+    &--button-activity {
+      width: 100%;
 
-  &--button-activity {
-    width: 496px;
+      height: 67px;
+    }
 
-    height: 106;
-  }
+    &--button-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 67px;
+      padding-right: 30px; // Espacio adicional para el ícono
 
-  &--button-arrow {
-    height: 67px;
-    padding-right: 30px; // Espacio adicional para el ícono
-
-    .button__icon {
-      position: relative;
-      left: 10px; // Ajusta la posición según el diseño
+      .button__icon {
+        position: relative;
+        left: 10px; // Ajusta la posición según el diseño
+      }
     }
   }
 }
 
-@media (max-width: 834px) {
+@media screen and (min-width: 399px) and (max-width: 834px) {
   .button {
+    border-radius: 10px;
+    border: none;
+    font-family: $font-stack;
+    font-size: $button-text-size-secondary;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &--green {
+      background: $primary-color;
+    }
+
+    &--black {
+      background: $secondary-color;
+      border: 1px solid $primary-color;
+    }
+
+    &--grey {
+      background: $cuartary-color;
+      color: $secondary-color;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
     &--large {
       height: 50px;
     }
@@ -78,6 +108,9 @@
     }
 
     &--button-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
       .button__icon {
         left: 55px; // Ajuste específico para pantallas pequeñas
       }
@@ -85,8 +118,34 @@
   }
 }
 
-@media (max-width: 398px) {
+@media screen and (min-width: 835px) {
   .button {
+    border-radius: 10px;
+    border: none;
+    font-family: $font-stack;
+    font-size: $button-text-size-secondary;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &--green {
+      background: $primary-color;
+    }
+
+    &--black {
+      background: $secondary-color;
+      border: 1px solid $primary-color;
+    }
+
+    &--grey {
+      background: $cuartary-color;
+      color: $secondary-color;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    }
     &--large {
       height: 50px;
     }
@@ -99,6 +158,10 @@
     }
 
     &--button-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 54px 0px 32px;
       .button__icon {
         left: 55px; // Ajuste específico para pantallas pequeñas
       }
