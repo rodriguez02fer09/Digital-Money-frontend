@@ -2,15 +2,30 @@
 
 @media (max-width: 398px) {
   .contain-menu {
+    width: 219px;
+    height: 100%;
     position: absolute;
-    display: none;
-    background: cadetblue;
+    background: $primary-color;
+    right: 53px;
 
     &--contain-list {
+      margin: 50px 40px;
+      width: 140px;
+      height: 240px;
       ul {
+        list-style: none;
+        padding: 0;
       }
       li {
+        margin-bottom: 16px;
         a {
+          text-decoration: none;
+          color: $text-color-secondary;
+          font-family: $font-stack;
+          font-size: 17px;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
