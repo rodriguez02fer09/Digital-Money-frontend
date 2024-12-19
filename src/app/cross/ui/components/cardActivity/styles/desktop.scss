@@ -1,83 +1,14 @@
 @import '../../../../sass/variables';
 
-.cardActivity {
-  background-color: rgba(255, 255, 255, 1);
-  box-sizing: border-box;
-  border-radius: 8px;
-  cursor: pointer;
-  padding: 16px;
-  margin: 16px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  .contain-header {
-    p {
-      font-family: $font-stack;
-      color: var(--A---Color-1, #201f22);
-      font-size: $heading-2;
-      font-weight: 700;
-      line-height: 138.182%;
-    }
-  }
-
-  .content {
-    height: auto;
-  }
-
-  .contain-footer {
-    height: 20px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    p {
-      font-family: $font-stack;
-      font-size: $heading-3;
-      font-weight: 700;
-      line-height: 16.34px;
-      text-align: left;
-    }
-  }
-
-  // Estilos de variantes
-  &--Activity {
-  }
-
-  &--HistoryCard {
-  }
-
-  &--ProfileData {
-    height: 277px;
-  }
-}
-
-@media (max-width: 834px) {
-  .cardActivity {
-    &--Activity {
-      height: 377px;
-    }
-
-    &--HistoryCard {
-      min-height: 370px;
-    }
-
-    &--ProfileData {
-      height: 277px;
-    }
-
-    .contain-header p {
-      margin-bottom: 18px;
-      font-size: $heading-2;
-    }
-
-    .contain-footer p {
-      font-size: $heading-3;
-    }
-  }
-}
-
 @media (max-width: 398px) {
   .cardActivity {
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     &--Activity {
       height: 358px;
     }
@@ -99,6 +30,92 @@
 
     &--ProfileData {
       height: 381px;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .cardActivity {
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &--Activity {
+      height: 377px;
+    }
+
+    &--HistoryCard {
+      height: 370px;
+    }
+
+    &--ProfileData {
+      height: 277px;
+    }
+
+    .contain-header p {
+      margin-bottom: 18px;
+      font-size: $heading-2;
+    }
+
+    .contain-footer p {
+      font-size: $heading-3;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .cardActivity {
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .contain-header {
+      p {
+        font-family: $font-stack;
+        color: var(--A---Color-1, #201f22);
+        font-size: $heading-2;
+        font-weight: 700;
+        line-height: 138.182%;
+      }
+    }
+
+    .content {
+      height: auto;
+    }
+
+    .contain-footer {
+      height: 20px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-family: $font-stack;
+        font-size: $heading-3;
+        font-weight: 700;
+        line-height: 16.34px;
+        text-align: left;
+      }
+    }
+
+    // Estilos de variantes
+    &--Activity {
+    }
+
+    &--HistoryCard {
+    }
+
+    &--ProfileData {
+      height: 277px;
     }
   }
 }

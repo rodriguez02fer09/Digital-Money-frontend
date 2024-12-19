@@ -2,11 +2,13 @@
 @media (max-width: 398px) {
   .containMoneyTransfer {
     width: 100%;
-    height: 50px;
+    height: 100%;
+
+    padding: 18px 23px 19px 25px;
 
     &__containDescription {
-      width: 222px;
-      height: 30px;
+      width: 100%;
+      height: 35px;
       margin-bottom: 40px;
       p {
         color: var(--A---Color-4, #eeeaea);
@@ -24,7 +26,26 @@
   }
 }
 
-@media (max-width: 834px) {
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .containMoneyTransfer {
+    &__containDescription {
+      height: 40px;
+      p {
+        color: var(--A---Color-4, #eeeaea);
+        font-family: $font-stack;
+        font-size: $heading-4;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+
+    &__containItem {
+      height: 144px;
+    }
+  }
+}
+@media screen and (min-width: 835px) {
   .containMoneyTransfer {
     &__containDescription {
       height: 40px;
