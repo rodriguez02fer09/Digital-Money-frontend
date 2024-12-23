@@ -1,6 +1,8 @@
 import '../styles/desktop.scss'
 import Link from 'next/link'
 
+import requestLogoutAccount from '../../../../core/uses-cases/logoutAccount'
+
 const MenuDesplegable = () => {
   const defaultMenu = 'contain-menu'
   return (
@@ -26,7 +28,9 @@ const MenuDesplegable = () => {
             <Link href="/addCards">Tarjetas</Link>
           </li>
           <li>
-            <Link href="/logout">Cerrar sesión</Link>
+            <Link href="#" onClick={requestLogoutAccount}>
+              Cerrar sesión
+            </Link>
           </li>
         </ul>
       </div>

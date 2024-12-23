@@ -51,7 +51,7 @@ const LoginPassword = () => {
         if (success) {
           localStorage.setItem('token', data.token)
           console.log('Autenticación exitosa. Redirigiendo...')
-          router.push('/dashBoard')
+          window.location.href = '/dashBoard'
         } else {
           console.error('Error de autenticación:', result.error)
           alert('Contraseña incorrecta o problema en el servidor.')
