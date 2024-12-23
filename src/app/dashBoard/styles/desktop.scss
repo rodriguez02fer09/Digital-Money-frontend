@@ -6,7 +6,9 @@
 
     &__layout {
     }
-
+    &__containMenuDesplegable {
+      display: none;
+    }
     &__content {
       overflow-y: scroll;
       width: 100%;
@@ -59,7 +61,9 @@
     &__layout {
       display: flex;
     }
-
+    &__containMenuDesplegable {
+      display: flex;
+    }
     &__content {
       max-height: calc(100vh - 20px);
       flex: 1;
@@ -105,7 +109,9 @@
     &__layout {
       display: flex;
     }
-
+    &__containMenuDesplegable {
+      display: flex;
+    }
     &__content {
       max-height: calc(100vh - 120px);
       flex: 1;

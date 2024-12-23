@@ -7,7 +7,7 @@
     background: #052a2d;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     padding: 20px;
 
@@ -23,6 +23,7 @@
       &__containImage {
         width: 90px; // Tamaño en pantallas pequeñas
         height: 30px;
+        margin-right: -10px;
 
         img {
           width: 63px;
@@ -38,8 +39,9 @@
     height: 64px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 10px;
 
     &--green {
       background: $primary-color;
@@ -53,10 +55,10 @@
       justify-content: space-between;
       align-items: center;
       background: $secondary-color;
+
       &__containImage {
         width: 100px;
         height: 50px;
-        margin-left: 20px;
 
         img {
           height: auto; // Ajustar la altura automáticamente

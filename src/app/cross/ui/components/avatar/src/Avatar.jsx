@@ -24,12 +24,7 @@ const Avatar = () => {
   }
 
   const toggleMenu = () => {
-    console.log('menu abierto')
     setMenuOpen(prev => !prev)
-  }
-
-  const closeMenu = () => {
-    setMenuOpen(false)
   }
 
   return (
@@ -66,7 +61,7 @@ const Avatar = () => {
         />
       </div>
       {menuOpen && (
-        <div className="menu-desplegable" onClick={closeMenu}>
+        <div className="menu-desplegable">
           <MenuDesplegable />
         </div>
       )}

@@ -16,11 +16,6 @@ const Header = ({color}) => {
     [`${defaultHeader}--${color}`]: color,
   })
 
-  // const firstname = acount?.firstname || 'Usuario'
-  // const lastName = acount?.lastName || ''
-
-  // const isLoggedIn = acount // Esto verifica si el usuario está logueado
-
   return (
     <header className={`${customClass}`}>
       <div className={`${customClass}__containImage`}>
