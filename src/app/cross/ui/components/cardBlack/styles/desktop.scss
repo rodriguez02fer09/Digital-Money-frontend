@@ -1,41 +1,50 @@
 @import '../../../../sass/variables';
 
 .cardBlack {
-  background-color: black;
-  box-sizing: border-box;
-  border-radius: 8px;
-  cursor: pointer;
+  background: black;
   margin: 16px;
+  border-radius: 8px; // Fondo negro para todas las clases hijas
 
   &--AvailableAmountCard {
-    height: 230px;
-    display: flex;
+    @media (max-width: 398px) {
+      height: 160px;
+    }
 
-    justify-content: center;
-    align-items: center;
-  }
-
-  &--AddCard {
-    min-height: 147px;
-    max-height: 167px;
-  }
-
-  &--MoneyTransfer {
-    min-height: 260px;
-    padding: 25px;
-    //max-height: 350px;
-  }
-}
-@media (max-width: 398px) {
-  .cardBlack {
-    &--AvailableAmountCard {
+    @media screen and (min-width: 399px) and (max-width: 834px) {
       height: 230px;
     }
 
-    &--AddCard {
+    @media screen and (min-width: 835px) {
+      height: 230px;
+    }
+  }
+
+  &--AddCard {
+    @media (max-width: 398px) {
+      height: 147px;
     }
 
-    &--MoneyTransfer {
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 147px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 167px;
+    }
+  }
+
+  &--MoneyTransfer {
+    @media (max-width: 398px) {
+      height: 259px;
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 300px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 264px;
+      padding: 25px;
     }
   }
 }

@@ -2,10 +2,78 @@
 @media (max-width: 398px) {
   .ItemMoneyTransfer {
     width: 100%;
-    height: 60px;
+    height: 70px;
     border-bottom: 1px solid white;
     margin-top: 10px;
+    &::last-child {
+      border-bottom: none;
+    }
+    &__contain-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        color: $primary-color;
+        font-family: $font-stack;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+    &__contain-description {
+      height: 19px;
+      margin-top: 10px;
 
+      p {
+        color: $quinary-color;
+
+        font-family: $font-stack;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
+//tablet
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .ItemMoneyTransfer {
+    margin-top: 18px;
+    &__contain-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        color: $primary-color;
+        font-family: $font-stack;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+    &__contain-description {
+      height: 19px;
+      margin-top: 10px;
+
+      p {
+        color: $quinary-color;
+
+        font-family: $font-stack;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
+// desktop
+@media screen and (min-width: 835px) {
+  .ItemMoneyTransfer {
+    margin-top: 18px;
     &__contain-title {
       display: flex;
       flex-direction: row;

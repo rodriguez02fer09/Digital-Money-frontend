@@ -8,7 +8,7 @@ export default {
   title: 'Components/InputFormDate',
   argTypes: {
     size: {
-      options: ['small', 'large'], // Eliminar el comentario
+      options: ['mobile', 'tablet', 'desktop'], // Corregido la coma faltante
       control: {type: 'radio'},
     },
     color: {
@@ -20,9 +20,23 @@ export default {
 
 const Template = args => <InputFormDate {...args} />
 
-export const small = Template.bind({})
-small.args = {
+export const Mobile = Template.bind({})
+Mobile.args = {
   placeholder: 'InputFormDate',
-  size: 'small',
+  size: 'mobile', // Establecido el tamaño en mobile
   label: 'label',
+}
+
+export const Tablet = Template.bind({})
+Tablet.args = {
+  placeholder: 'InputFormDate',
+  size: 'tablet', // Establecido el tamaño en tablet
+  label: 'label',
+}
+
+export const Desktop = Template.bind({})
+Desktop.args = {
+  placeholder: 'InputFormDate',
+  size: 'desktop', // Establecido el tamaño en desktop
+  label: ' label',
 }

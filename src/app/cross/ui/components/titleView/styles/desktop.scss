@@ -1,12 +1,32 @@
 @import '../../../../sass/variables';
-.titleView {
-  width: 160px;
-  height: 16px;
+@media screen and (min-width: 835px) {
+  .titleView {
+    width: 160px;
+    height: 16px;
 
-  p {
-    size: 16px;
-    font-family: $font-stack;
-    color: $quinary-color;
+    p {
+      size: 16px;
+      font-family: $font-stack;
+      color: $quinary-color;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .titleView {
+    width: 141px;
+    height: 16px;
+    margin-left: -65px;
+    margin-right: 243px;
+
+    p {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      font-family: $font-stack;
+      color: $quinary-color;
+    }
   }
 }
 @media (max-width: 398px) {

@@ -1,57 +1,115 @@
 @import '../../../../../sass/variables';
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 64px;
-  padding: 20px;
-
-  &--green {
-    background: $primary-color;
-    &__containButton {
-      display: none;
-    }
-  }
-  &--black {
-    background: $secondary-color;
-    &__containImage {
-      width: 100px;
-      height: 50px;
-
-      img {
-        width: 100%; // Hacer que la imagen ocupe todo el ancho del contenedor
-        height: auto; // Ajustar la altura automáticamente
-      }
-    }
-    &__containButton {
-      width: 290px;
-    }
-  }
-}
+//mobile
 @media (max-width: 398px) {
   .header {
     width: 100%;
+    height: 64px;
+    background: #052a2d;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    padding: 20px;
 
     &--green {
       background: $primary-color;
       &__containImage {
         width: 90px; // Tamaño en pantallas pequeñas
         height: 30px;
+        margin-right: -10px;
       }
     }
     &--black {
-      background: $secondary-color;
       &__containImage {
         width: 90px; // Tamaño en pantallas pequeñas
         height: 30px;
+        margin-right: -10px;
 
         img {
           width: 63px;
           height: 25px;
         }
+      }
+    }
+  }
+}
+//tablet
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .header {
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+
+    &--green {
+      background: $primary-color;
+      &__containButton {
+        display: none;
+      }
+    }
+    &--black {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background: $secondary-color;
+
+      &__containImage {
+        width: 100px;
+        height: 50px;
+
+        img {
+          height: auto; // Ajustar la altura automáticamente
+        }
+      }
+      &__containButton {
+        width: 290px;
+        margin-right: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+//desktop
+@media screen and (min-width: 835px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    padding: 20px;
+
+    &--green {
+      background: $primary-color;
+      &__containButton {
+        display: none;
+      }
+    }
+    &--black {
+      background: $secondary-color;
+      &__containImage {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+
+        img {
+          height: auto; // Ajustar la altura automáticamente
+        }
+      }
+      &__containButton {
+        width: 290px;
+        margin-right: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }

@@ -21,3 +21,15 @@
     }
   }
 }
+@media (max-width: 834px) {
+  .cvuView {
+    width: 103px;
+    height: 16px;
+
+    p {
+      size: 12px;
+      font-family: $font-stack;
+      color: $quinary-color;
+    }
+  }
+}

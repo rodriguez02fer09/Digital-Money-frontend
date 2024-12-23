@@ -8,12 +8,7 @@ const ItemMoneyTransfer = ({cvTitle, descriptionCV}) => {
     <div className={`${defaultItemMoney}`}>
       <div className={`${defaultItemMoney}__contain-title`}>
         <p>{cvTitle}</p>
-        <Image
-          src="/images/carbon:copy.svg"
-          width={14}
-          height={22}
-          alt="copy"
-        />
+        <Image src="/images/carbon.svg" width={24} height={24} alt="copy" />
       </div>
       <div className={`${defaultItemMoney}__contain-description`}>
         <p className={`${defaultItemMoney}--description`}>{descriptionCV}</p>

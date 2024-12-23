@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 import Form from '../../../../../cross/ui/composite-wrappers/createAccountForm/src/createAccountForm'
 import {createAccountForm} from '../../../../data/forms/default'
-import {requestCreateAccount} from 'app/app/create-acount/core/uses-cases/request-create-account'
+import {requestCreateAccount} from '../../../../../create-acount/core/uses-cases/request-create-account'
 import {useAcountStore} from '../../../../core/hoocks/useAcountStore'
 import {useEffect} from 'react'
 
