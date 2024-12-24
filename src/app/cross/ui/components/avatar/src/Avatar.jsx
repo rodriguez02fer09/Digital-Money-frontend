@@ -20,7 +20,7 @@ const Avatar = () => {
   }
 
   const handleCreateAccount = () => {
-    router.push('/create-acount')
+    router.push('/create-account')
   }
 
   const toggleMenu = () => {

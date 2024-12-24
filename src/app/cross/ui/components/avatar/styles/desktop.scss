@@ -1,9 +1,7 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .contain-avatar {
-    width: 100px;
     height: 40px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
