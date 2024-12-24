@@ -1,14 +1,21 @@
-Billetera Virtual - Sprint 1
+Billetera Virtual 
 
 1. Una aplicación de billetera virtual con funcionalidades básicas de registro,
    inicio y cierre de sesión , diseñada para gestionar cuentas de usuario de
    forma segura y eficiente.
 
-2. Tabla de Contenidos 1.Descripción General 2.Características Principales
-   3.Tecnologías Utilizadas 4.Requisitos del Sistema 5.Instalación
-   yConfiguración 6.Ejecución del Proyecto 7.Testing 8.Licencia
+2. Tabla de Contenidos
+   1.Descripción General
+   2.Características Principales
+   3.Tecnologías Utilizadas
+   4.Requisitos del Sistema
+   5.Instalación y Configuración
+   6.Ejecución del Proyecto
+   7.Testing
+   8.Licencia
 
-3. Descripción General Proposito: Este producto digital será el mínimo producto
+4. Descripción General Proposito:
+ Este producto digital será el mínimo producto
    viable para el lanzamiento de la billetera , y el usuario tendrá las
    funcionalidades básicas de registro, inicio y cierre de sesión, dar de altos
    medios de pago como tarjetas de crédito o débito, recargar saldo en su
@@ -18,7 +25,8 @@ Billetera Virtual - Sprint 1
    transacciones (ingresos y egresos) que se realizan a través de la billetera
    ,también conocido como movimientos o actividad de la cuenta.
 
-Sprints: 1.Crear una página de inicio que muestre los servicios que ofrece la
+Sprints:
+1.Crear una página de inicio que muestre los servicios que ofrece la
 billetera, y que tenga link al formulario de registro e inicio de sesión. Asi
 mismo, un link a cierre de sesión. Todo esto incluyendo el testing
 correspondiente a las páginas desarrolladas, validación de datos en formularios
@@ -50,14 +58,19 @@ formularios y respuestas de la Rest API.
 usuario usando su billetera, es decir, ingresos y egresos de dinero , y poder
 usar ciertos filtros para realizar búsqueda de esos movimientos.
 
-4. Características Principales -Página de inicio, registro, inicio y cierre de
-   sesión. -Página de Mi Perfil. -Página de Gestión de Medios de Pago.
-
-- Página de Ingreso de Dinero. -Pago de Servicios y Dashboard. -Actividad del
+4. Características Principales
+   -Página de inicio, registro, inicio y cierre desesión.
+   -Página de Mi Perfil.
+   -Página de Gestión de Medios de Pago.
+   - Página de Ingreso de Dinero. -Pago de Servicios y Dashboard.
+   -Actividad del
   usuario.
 
 5. Tecnologías Utilizadas Lista las tecnologías y frameworks usados:
 
--Frontend: React, Next.js -Estado global: Zustand -Estilos: SASS -Testing manual
--Control de versiones: Git, GitHub -Backend :No aplica -Base de datos: MySQL (No
+-Frontend: React, Next.js
+-Estado global: Zustand 
+-Estilos: SASS -Testing manual
+-Control de versiones: Git, GitHub 
+-Backend :No aplica -Base de datos: MySQL (No
 aplica)
