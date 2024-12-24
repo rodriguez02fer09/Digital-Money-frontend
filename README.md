@@ -26,6 +26,7 @@ Billetera Virtual
    ,también conocido como movimientos o actividad de la cuenta.
 
 Sprints:
+
 1.Crear una página de inicio que muestre los servicios que ofrece la
 billetera, y que tenga link al formulario de registro e inicio de sesión. Asi
 mismo, un link a cierre de sesión. Todo esto incluyendo el testing
