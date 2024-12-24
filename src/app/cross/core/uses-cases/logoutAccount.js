@@ -7,7 +7,6 @@ const callBackLogoutAccount = () => {
   localStorage.removeItem('user_id')
   localStorage.removeItem('acount')
 
-  debugger
   window.location.href = '/'
 }
 
