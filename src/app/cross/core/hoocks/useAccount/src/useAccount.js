@@ -26,6 +26,7 @@ const useAccount = () => {
       localStorage.removeItem('token')
       setAccount(null)
     } else {
+      localStorage.setItem('account', JSON.stringify(response))
       setAccount(response)
     }
   }

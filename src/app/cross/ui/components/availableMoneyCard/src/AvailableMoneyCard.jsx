@@ -3,9 +3,11 @@ import CardView from '../../cardView/src/CardView'
 import CvuView from '../../cvuView/src/CvuView'
 import TitleView from '../../titleView/src/TitleView'
 import MoneyView from '../../moneyView/src/MoneyView'
+//import useAccount from '../../../../../cross/core/hoocks/useAccount'
 
 const AvailableMoneyCard = () => {
   const defaultClass = 'container-availableMoneyCard'
+  //const {account} = useAccount()
 
   return (
     <div className={`${defaultClass}`}>
