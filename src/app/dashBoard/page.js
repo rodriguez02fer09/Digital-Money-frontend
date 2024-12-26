@@ -1,2 +1,2 @@
-import DashBoard from './src/DashBoard.jsx'
+import DashBoard from './ui/composite-wrappers/CWDasboard/src/CWDasboard'
 export default DashBoard

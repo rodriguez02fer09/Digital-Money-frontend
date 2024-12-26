@@ -1,6 +1,5 @@
 import request from './request'
 import getDataLocalStore from './getDataLocalStore'
-import {useRouter} from 'next/navigation'
 
 const callBackLogoutAccount = () => {
   localStorage.removeItem('token')

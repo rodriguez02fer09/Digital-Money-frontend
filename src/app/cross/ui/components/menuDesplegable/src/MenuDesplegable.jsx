@@ -1,3 +1,5 @@
+'use client'
+
 import '../styles/desktop.scss'
 import Link from 'next/link'
 
