@@ -14,7 +14,7 @@ const AvailableMoneyCard = () => {
   //const {account} = useAccount()
   const options = [
     {text: 'Ver tarjetas', link: '#'},
-    {text: 'Ver CVU', link: '#'}
+    {text: 'Ver CVU', link: '#'},
   ]
   return (
     <CardBlack size="AvailableAmountCard">

@@ -1,0 +1,33 @@
+@media (max-width: 398px) {
+  .service-buttons {
+    margin: 16px;
+    width: 360px;
+    height: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .service-buttons {
+    width: 511px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .service-buttons {
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    height: 106px;
+  }
+}
