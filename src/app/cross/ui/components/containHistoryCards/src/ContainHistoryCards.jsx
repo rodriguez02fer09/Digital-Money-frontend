@@ -2,7 +2,7 @@ import '../styles/desktop.scss'
 import ItemHistoryCards from '../../itemHistoryCards/src/ItemHistoryCards'
 
 const ContainHistoryCards = () => {
-  const cards = [1, 2, 3, 4]
+  const cards = [1, 2, 3]
   const defaultHistory = 'contain-history-cards'
   return (
     <div className={defaultHistory}>
