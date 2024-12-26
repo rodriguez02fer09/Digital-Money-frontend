@@ -1,24 +1,33 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .contain-avatar {
-    width: 100px;
-    height: 40px;
-
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 
     &--button {
-      width: 300px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      width: 300px;
     }
+
     &--menu {
-      display: block;
+      display: none;
+    }
+
+    &.logged-in {
+      .contain-avatar--button {
+        display: none; // Ocultar botones cuando esté logueado
+      }
+
+      .slogan-avatar,
+      .user-avatar {
+        display: flex; // Asegurarse de que los avatares estén visibles
+      }
     }
   }
 }
+
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .contain-avatar {
     display: flex;

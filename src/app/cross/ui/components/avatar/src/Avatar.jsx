@@ -28,12 +28,7 @@ const Avatar = () => {
   }
 
   return (
-    <div
-      className="contain-avatar"
-      onClick={() => {
-        window.location.href = 'dashBoard'
-      }}
-    >
+    <div className={`contain-avatar ${isLogin && account ? 'logged-in' : ''}`}>
       {isLogin && account ? (
         <>
           <SloganAvatar {...account} />

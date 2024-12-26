@@ -2,14 +2,12 @@
 //mobile
 @media (max-width: 398px) {
   .header {
-    width: 100%;
     height: 64px;
     background: #052a2d;
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: space-around;
     align-items: center;
-    padding: 20px;
 
     &--green {
       background: $primary-color;
