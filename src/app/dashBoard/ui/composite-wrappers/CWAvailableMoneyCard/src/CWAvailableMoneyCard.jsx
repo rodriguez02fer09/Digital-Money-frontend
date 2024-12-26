@@ -6,12 +6,16 @@ import TitleView from '../../../../../cross/ui/components/titleView/src/TitleVie
 import MoneyView from '../../../../../cross/ui/components/moneyView/src/MoneyView'
 import CardBlack from '../../../../../cross/ui/components/CardBlack'
 
-import CardOptions from '../../cardOptions/src/CardOptions'
-//import useAccount from '../../../../../cross/core/hoocks/useAccount'
+import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
+
+import CardOptions from '../../../components/cardOptions'
 
 const AvailableMoneyCard = () => {
   const defaultClass = 'available-money-card'
-  //const {account} = useAccount()
+  const {account, user} = useAccount()
+
+  const {available_amount = 0} = account ?? {}
+
   const options = [
     {text: 'Ver tarjetas', link: '#'},
     {text: 'Ver CVU', link: '#'},
@@ -24,7 +28,7 @@ const AvailableMoneyCard = () => {
           <TitleView title="Dinero Disponible" />
         </div>
         <div className={`${defaultClass}__account`}>
-          <MoneyView account="$ 6.890.534,17" />
+          <MoneyView account={available_amount} />
         </div>
       </div>
     </CardBlack>
