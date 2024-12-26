@@ -1,7 +1,7 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 
-const NameItem = () => {
+const NameItem = ({destination}) => {
   const defaultNameItem = 'nameItem'
   return (
     <div className={`${defaultNameItem}`}>
@@ -9,7 +9,7 @@ const NameItem = () => {
         <Image src="/images/point.svg" width="25" height="24" />
       </div>
       <div className={`${defaultNameItem}__nameCard`}>
-        <p>Transferiste a Rodrigo</p>
+        <p>transferiste a {destination}</p>
       </div>
     </div>
   )

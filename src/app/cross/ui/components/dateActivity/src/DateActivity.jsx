@@ -1,12 +1,12 @@
 import '../styles/desktop.scss'
 
-const DateActivity = () => {
+const DateActivity = ({date, amount}) => {
   const defaultDateActivity = 'dateActivity'
 
   return (
     <div className={defaultDateActivity}>
-      <p className={`${defaultDateActivity}__account`}>-$ 1265,57</p>
-      <p className={`${defaultDateActivity}__date`}>Sábado</p>
+      <p className={`${defaultDateActivity}__account`}>{amount}</p>
+      <p className={`${defaultDateActivity}__date`}>{date}</p>
     </div>
   )
 }

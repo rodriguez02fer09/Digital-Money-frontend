@@ -3,10 +3,10 @@ import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccou
 import request from '../../../../../cross/core/uses-cases/request'
 import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
 
-const useTransactions = () => {
+const useActivity = () => {
   const {account} = useAccount()
   const {id: account_id} = account ?? {}
-  const {transactions, setTransactions} = useState([])
+  const {activity, setActivity} = useState([])
 
   useEffect(() => {
     request(
@@ -18,14 +18,14 @@ const useTransactions = () => {
         },
       },
       data => {
-        setTransactions(data)
+        setActivity(data)
       },
     )
   }, [account])
 
   return {
-    transactions,
+    activity,
   }
 }
 
-export default useTransactions
+export default useActivity

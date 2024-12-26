@@ -2,13 +2,13 @@ import '../index.scss'
 import {useEffect} from 'react'
 import InputSearch from '../../../../../cross/ui/components/InputSearch'
 import CardActivity from '../../../../../cross/ui/components/cardActivity'
-import CardList from '../../../../../cross/ui/components/cardList'
+import ListActivity from '../../../../../cross/ui/components/listActivity'
 
-import useTransactions from '../../../../core/hooks/useTransactions/src/useTransactions'
+import useActivity from '../../../../core/hooks/useActivity/src/useActivity'
 
-const CWTransactionMoney = () => {
-  const defaultClass = 'transaction-money-component'
-  const {transactions} = useTransactions()
+const CWActivity = () => {
+  const defaultClass = 'activity-money-component'
+  const {activity} = useActivity()
 
   return (
     <>
@@ -17,10 +17,10 @@ const CWTransactionMoney = () => {
       </div>
       <div className={`${defaultClass}__activity`}>
         <CardActivity size="Activity">
-          <CardList />
+          <ListActivity activity={activity} />
         </CardActivity>
       </div>
     </>
   )
 }
-export default CWTransactionMoney
+export default CWActivity
