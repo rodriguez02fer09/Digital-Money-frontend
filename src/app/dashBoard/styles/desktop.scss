@@ -17,14 +17,5 @@
     &__contain-card-black {
       height: 230px;
     }
-
-    &__contain-input {
-      margin: 16px;
-
-      &::placeholder {
-        background: rgba(255, 255, 255, 1);
-        size: $heading-3;
-      }
-    }
   }
 }
