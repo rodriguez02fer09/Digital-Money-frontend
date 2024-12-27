@@ -1,5 +1,5 @@
 import '../styles/desktop.scss'
-import ItemActivity from '../../itemActuvity/'
+import ItemActivity from '../../itemActuvity'
 
 const ListActivity = () => {
   const activity = [

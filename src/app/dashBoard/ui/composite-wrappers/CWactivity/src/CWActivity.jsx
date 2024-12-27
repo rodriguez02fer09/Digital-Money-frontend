@@ -1,8 +1,8 @@
 import '../index.scss'
 import {useEffect} from 'react'
-import InputSearch from '../../../../../cross/ui/components/InputSearch'
+import InputSearch from '../../../components/inputSearch'
 import CardActivity from '../../../../../cross/ui/components/cardActivity'
-import ListActivity from '../../../../../cross/ui/components/listActivity'
+import ListActivity from '../../../components/listActivity'
 
 import useActivity from '../../../../core/hooks/useActivity/src/useActivity'
 

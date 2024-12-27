@@ -4,11 +4,11 @@ import './styles/desktop.scss'
 import {useEffect, useState} from 'react'
 
 import Button from '../../../../../cross/ui/components/button'
-import InputSearch from '../../../../../cross/ui/components/inputSearch'
+import InputSearch from '../../../../../dashBoard/ui/components/inputSearch'
 import MenuDesplegable from '../../../../../cross/ui/components/menuDesplegable'
 import CardBlack from '../../../../../cross/ui/components/cardBlack'
 import CardActivity from '../../../../../cross/ui/components/cardActivity'
-import CardList from '../../../../../cross/ui/components/listActivity'
+import CardList from '../../../../../dashBoard/ui/components/listActivity'
 
 import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
 
