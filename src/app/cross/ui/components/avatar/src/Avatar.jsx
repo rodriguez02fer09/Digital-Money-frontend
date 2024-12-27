@@ -13,7 +13,7 @@ import MenuDesplegable from '../../menuDesplegable'
 const Avatar = () => {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
-  const {account, isLogin} = useAccount()
+  const {user, isLogin} = useAccount()
 
   const handleSignUp = () => {
     router.push('/sign-email')
@@ -28,11 +28,11 @@ const Avatar = () => {
   }
 
   return (
-    <div className="contain-avatar">
-      {isLogin && account ? (
+    <div className={`contain-avatar ${isLogin && user ? 'logged-in' : ''}`}>
+      {isLogin && user ? (
         <>
-          <SloganAvatar {...account} />
-          <UserAvatar {...account} />
+          <SloganAvatar {...user} />
+          <UserAvatar {...user} />
         </>
       ) : (
         <div className="contain-avatar--button">

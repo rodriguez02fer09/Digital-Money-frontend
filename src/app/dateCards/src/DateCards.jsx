@@ -1,7 +1,7 @@
 'use client'
 
 import {useForm} from 'react-hook-form'
-import Form from '../../cross/ui/composite-wrappers/form/src/Form'
+
 import '../styles/desktop.scss'
 import Input from '../../../app/cross/ui/components/input'
 import Image from 'next/image'

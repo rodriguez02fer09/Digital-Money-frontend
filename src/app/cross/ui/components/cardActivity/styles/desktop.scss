@@ -14,7 +14,7 @@
     }
 
     &--HistoryCard {
-      height: 381px;
+      height: 370px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -22,8 +22,11 @@
 
     .contain-header p {
       font-size: $heading-2;
+      margin-bottom: 22px;
     }
-
+    .content {
+      height: auto;
+    }
     .contain-footer p {
       font-size: $heading-3;
     }

@@ -3,13 +3,13 @@ import '../styles/desktop.scss'
 import React from 'react'
 import classNames from 'classnames'
 import {useForm, FormProvider} from 'react-hook-form'
-
+import {useRouter} from 'next/navigation'
 import Input from '../../../components/input'
 import Button from '../../../components/button/src/Button'
 
-const Form = ({inputs = [], name, callBackOnSubmit}) => {
+const Form = ({inputs = [], name, callBackOnSubmit, onClick}) => {
   const methods = useForm() // Inicializamos React Hook Form
-
+  const router = useRouter()
   const defaultClass = 'form-container'
 
   const customClass = classNames(defaultClass, {
@@ -36,7 +36,13 @@ const Form = ({inputs = [], name, callBackOnSubmit}) => {
           />
         ))}
         <Button size="large" label="Continuar" color="green" type="submit" />
-        <Button size="large" label="Crear cuenta" color="grey" type="submit" />
+        <Button
+          size="large"
+          label="Crear cuenta"
+          color="grey"
+          type="button"
+          onClick={onClick}
+        />
       </form>
     </FormProvider>
   )

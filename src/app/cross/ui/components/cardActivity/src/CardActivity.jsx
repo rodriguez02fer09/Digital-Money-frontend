@@ -4,7 +4,7 @@ import '../styles/desktop.scss'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-const CardActivity = ({children, size, title}) => {
+const CardActivity = ({children, size}) => {
   const defaultCard = 'cardActivity'
   const customClass = classNames(defaultCard, {
     [`${defaultCard}--${size}`]: size,
@@ -16,6 +16,10 @@ const CardActivity = ({children, size, title}) => {
         <div className="contain-header">
           <p>{'Tus datos'}</p>
         </div>
+      ) : size === 'HistoryCard' ? (
+        <div className="contain-header">
+          <p>{'Tus tarjetas'}</p>
+        </div>
       ) : (
         <div className="contain-header">
           <p>{'Tu actividad'}</p>
@@ -24,7 +28,7 @@ const CardActivity = ({children, size, title}) => {
 
       <div className="content">{children}</div>
 
-      {size !== 'ProfileData' && (
+      {size !== 'ProfileData' && size !== 'HistoryCard' && (
         <div className="contain-footer">
           <p className="parrafo">Ver toda tu actividad</p>
           <Image

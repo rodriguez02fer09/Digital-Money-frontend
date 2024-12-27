@@ -1,0 +1,17 @@
+@import '../../../../../cross/sass/variables';
+
+.card-options {
+  cursor: pointer;
+  list-style-type: none;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    a {
+      margin-right: 10px;
+      color: $quinary-color;
+      text-decoration: underline;
+    }
+  }
+}
+

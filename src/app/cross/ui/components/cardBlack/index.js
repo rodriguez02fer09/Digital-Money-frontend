@@ -1,3 +1,3 @@
-import CardBlack from './src/CardBlack'
+import CardBlack from '../cardBlack/src/CardBlack.jsx'
 
 export default CardBlack

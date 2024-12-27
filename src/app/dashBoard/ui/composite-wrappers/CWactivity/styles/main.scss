@@ -1,0 +1,13 @@
+@media screen and (min-width: 835px) {
+  .activity-money-component {
+    margin: 16px;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+
+    &__activity {
+    }
+  }
+}

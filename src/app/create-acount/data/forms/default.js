@@ -6,7 +6,7 @@ export const createAccountForm = [
       required: 'El nombre es requerido',
       minLength: {
         value: 2,
-        message: 'El nombre debe tener al menos 2 caracteres',
+        message: 'El nombre debe tener al menos 3 caracteres',
       },
       maxLength: {
         value: 50,
@@ -24,7 +24,7 @@ export const createAccountForm = [
       required: 'El apellido es requerido',
       minLength: {
         value: 2,
-        message: 'El apellido debe tener al menos 2 caracteres',
+        message: 'El apellido debe tener al menos 3 caracteres',
       },
       maxLength: {
         value: 50,
@@ -73,7 +73,7 @@ export const createAccountForm = [
         message: 'La contraseña debe tener al menos 6 caracteres',
       },
       pattern: {
-        value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/, 
+        value: /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,20}$/,
         message: 'Contraseña no válida',
       },
     },
@@ -82,8 +82,7 @@ export const createAccountForm = [
     color: 'black',
     placeholder: 'Contraseña*',
     type: 'password',
-  }
-  ,
+  },
   {
     registerData: {
       required: 'La confirmación de la contraseña es requerida',
@@ -100,7 +99,7 @@ export const createAccountForm = [
     registerData: {
       required: 'El campo teléfono es obligatorio.',
       pattern: {
-        value: /^[0-9]{10}$/, // Validar formato de teléfono (por ejemplo, 10 dígitos)
+        value: /^\d{8,15}$/, // Validar formato de teléfono (por ejemplo, 10 dígitos)
         message: 'Teléfono inválido',
       },
     },

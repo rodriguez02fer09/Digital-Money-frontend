@@ -28,7 +28,9 @@ const LoginEmail = () => {
     localStorage.setItem('email', data.email)
     router.push('/sign-password') // Redirige a la página de contraseña
   }
-
+  const handleCreateAccount = () => {
+    router.push('/create-acount') // Redirige a la página de creación de cuenta
+  }
   // Definición de clase para el componente
   const defaultClass = 'mainContain-email'
 
@@ -38,7 +40,8 @@ const LoginEmail = () => {
         <p className={`${defaultClass}__InfoTitle`}>¡Hola! Ingresá tu e-mail</p>
         <Form
           // Pasamos el método de onSubmit y las propiedades del formulario
-          callBackOnSubmit={onSubmit} // Se pasa handleSubmit
+          callBackOnSubmit={onSubmit}
+          onClick={handleCreateAccount} // Se pasa handleSubmit
           inputs={emailForm} // Usamos emailForm para las entradas
           name="loginEmail"
           className={`${defaultClass}--loginEmail`}

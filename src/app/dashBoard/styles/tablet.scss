@@ -1,0 +1,27 @@
+//Tablet Styles
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .dashboard {
+    &__layout {
+      display: flex;
+    }
+    &__containMenuDesplegable {
+      display: flex;
+    }
+    &__content {
+      max-height: calc(100vh - 20px);
+      flex: 1;
+      padding: 68px 52px 0px 52px;
+      overflow-y: scroll;
+      background-color: rgba(210, 255, 236, 1);
+    }
+
+    &__contain-input {
+      margin: 16px;
+      height: 64px;
+
+      &::placeholder {
+        // }
+      }
+    }
+  }
+}

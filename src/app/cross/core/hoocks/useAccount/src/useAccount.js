@@ -6,6 +6,7 @@ import request from '../../../../core/uses-cases/request'
 const useAccount = () => {
   const [isLogin, setIsLogin] = useState(false)
   const [account, setAccount] = useState(null)
+  const [user, setUser] = useState(null)
 
   const validUserIsLogin = () => {
     const token = getDataLocalStore('token')
@@ -21,17 +22,20 @@ const useAccount = () => {
     setIsLogin(validUserIsLogin())
   }, [])
 
-  const setAccountCallback = response => {
-    if (response?.error) {
+  const setAUserCallback = data => {
+    if (data?.error) {
       localStorage.removeItem('token')
-      setAccount(null)
+      setUser(null)
     } else {
-      setAccount(response)
+      localStorage.setItem('user', JSON.stringify(data))
+      setUser(data)
     }
   }
 
   const callbackRequet = data => {
     const {user_id} = data
+    localStorage.setItem('account', JSON.stringify(data))
+    setAccount(data)
     request(
       {
         path: `users/${user_id}`,
@@ -40,30 +44,31 @@ const useAccount = () => {
           Authorization: getDataLocalStore('token'),
         },
       },
-      setAccountCallback,
+      setAUserCallback,
     )
   }
 
   useEffect(() => {
-    if (isLogin && account === null) {
-      const dataRequest = {
-        path: 'account',
-        method: 'GET',
-        addHeaders: {
-          Authorization: getDataLocalStore('token'),
-        },
-      }
-      const r = request(dataRequest, callbackRequet)
+    const dataRequestUser = {
+      path: 'account',
+      method: 'GET',
+      addHeaders: {
+        Authorization: getDataLocalStore('token'),
+      },
+    }
 
+    if (isLogin && user === null) {
+      const r = request(dataRequestUser, callbackRequet)
       if (r?.error) {
         localStorage.removeItem('token')
       }
     }
-  }, [isLogin, account])
+  }, [isLogin, user])
 
   return {
     isLogin,
     account,
+    user,
   }
 }
 
