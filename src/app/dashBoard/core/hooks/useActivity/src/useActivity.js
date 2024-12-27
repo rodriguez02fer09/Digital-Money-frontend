@@ -4,23 +4,28 @@ import request from '../../../../../cross/core/uses-cases/request'
 import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
 
 const useActivity = () => {
+  debugger
   const {account} = useAccount()
   const {id: account_id} = account ?? {}
-  const {activity, setActivity} = useState([])
+  const [activity, setActivity] = useState([])
+
+  const updateStateActivity = currentActivity => {
+    setActivity(() => currentActivity)
+  }
 
   useEffect(() => {
-    request(
-      {
-        path: `accounts/${account_id}/activity`,
-        method: 'GET',
-        addHeaders: {
-          Authorization: getDataLocalStore('token'),
+    if (account_id) {
+      request(
+        {
+          path: `accounts/${account_id}/activity`,
+          method: 'GET',
+          addHeaders: {
+            Authorization: getDataLocalStore('token'),
+          },
         },
-      },
-      data => {
-        setActivity(data)
-      },
-    )
+        updateStateActivity,
+      )
+    }
   }, [account])
 
   return {

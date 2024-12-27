@@ -10,6 +10,10 @@ const CWActivity = () => {
   const defaultClass = 'activity-money-component'
   const {activity} = useActivity()
 
+  useEffect(() => {
+    console.log(activity)
+  }, [activity])
+
   return (
     <>
       <div className={defaultClass}>
