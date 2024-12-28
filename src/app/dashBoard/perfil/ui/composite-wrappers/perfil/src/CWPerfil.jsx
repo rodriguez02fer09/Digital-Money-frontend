@@ -1,12 +1,18 @@
 'use client'
 import './styles/desktop.scss'
+import HeaderPerfil from '../../../components/headerPerfil/src/HeaderPerfil'
+import FormDatePerfil from '../../../components/formDatePerfil/src/FormDatePerfil'
+import ButtonProfile from '../../../components/buttonProfile/src/ButtonProfile'
+import TransferenciaProfile from '../../../components/transferenciaProfile/src/TransferenciaProfile'
 
 const CWPerfil = () => {
-  const defaultClass = 'dashboard'
   return (
-    <div>
-      <h1>Perfil</h1>
-    </div>
+    <>
+      <HeaderPerfil />
+      <FormDatePerfil />
+      <ButtonProfile />
+      <TransferenciaProfile />
+    </>
   )
 }
 
