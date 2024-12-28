@@ -4,7 +4,6 @@ import request from '../../../../../cross/core/uses-cases/request'
 import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
 
 const useActivity = () => {
-  debugger
   const {account} = useAccount()
   const {id: account_id} = account ?? {}
   const [activity, setActivity] = useState([])
