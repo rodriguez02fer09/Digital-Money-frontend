@@ -3,9 +3,9 @@ import '../styles/desktop.scss'
 const CardOptions = ({options = []}) => {
   return (
     <ul className="card-options">
-      {options?.map(({text = '', link = '#'}) => {
+      {options?.map(({text = '', link = '#'}, index) => {
         return (
-          <li>
+          <li key={index}>
             <a href={link}>{text}</a>
           </li>
         )
