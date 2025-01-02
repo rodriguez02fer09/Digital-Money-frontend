@@ -1,0 +1,24 @@
+@media (max-width: 398px) {
+  .dashboard {
+    width: 100%;
+    min-height: 100vh;
+
+    &__containMenuDesplegable {
+      display: none;
+    }
+    &__content {
+      overflow-y: scroll;
+      width: 100%;
+      background-color: rgba(210, 255, 236, 1);
+      height: 100vh;
+    }
+
+    &__contain-input {
+      margin: 0px 16px 0px 16px;
+      &::placeholder {
+        background: rgba(0, 0, 0, 0.5);
+        size: 16px;
+      }
+    }
+  }
+}

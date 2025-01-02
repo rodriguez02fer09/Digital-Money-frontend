@@ -1,0 +1,22 @@
+@import '../../../../../cross/sass/variables';
+@media (min-width: 398px) {
+  .contain-form-date-perfil {
+    height: 100%;
+    margin-top: 18px;
+  }
+}
+
+//tablet
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .contain-form-date-perfil {
+  }
+}
+
+//desktop
+@media screen and (min-width: 835px) {
+  .contain-form-date-perfil {
+    height: 100%;
+    margin-top: 18px;
+  }
+}

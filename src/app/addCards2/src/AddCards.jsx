@@ -16,29 +16,7 @@ const AddCards = () => {
         <div className={`${defaultClass}__containMenuDesplegable`}>
           <MenuDesplegable />
         </div>
-        <div className={`${defaultClass}__content`}>
-          <div className={`${defaultClass}__addCards-header`}>
-            <Image
-              src="/images/arrowBlack.svg"
-              width={14}
-              height={22}
-              alt="Flecha"
-            />
-            <p>Tarjetas</p>
-          </div>
-
-          <div className={`${defaultClass}__containAddCards`}>
-            <CardBlack size="AddCard">
-              <ContainAddCards />
-            </CardBlack>
-          </div>
-
-          <div className={`${defaultClass}__ContainActivityCard`}>
-            <CardActivity size="HistoryCard">
-              <ContainHistoryCards />
-            </CardActivity>
-          </div>
-        </div>
+        <div className={`${defaultClass}__content`}></div>
       </div>
     </main>
   )
