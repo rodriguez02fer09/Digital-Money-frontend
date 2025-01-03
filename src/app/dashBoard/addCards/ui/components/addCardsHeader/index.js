@@ -1,3 +1,3 @@
-import AddCardsHeader from './src/AddCardsHeader.jsx
+import AddCardsHeader from './src/AddCardsHeader'
 
 export default AddCardsHeader

@@ -8,6 +8,7 @@ import MenuDesplegable from '../cross/ui/components/menuDesplegable'
 import './index.scss'
 
 export default function RootLayout({children}) {
+  if (!children) return null
   const defaultClass = 'dashboard'
   return (
     <main className={`${defaultClass}`}>
