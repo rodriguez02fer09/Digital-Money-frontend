@@ -1,8 +1,13 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 import ItemMoneyTransfer from '../../ItemMoneyTransfer/src/ItemMoneyTransfer'
+import useAcountStore from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
 
 const ContainMoneyTransfer = () => {
+  const {account} = useAcountStore()
+
+  const {cvu, alias} = account ?? {}
+
   const defaultContainMoney = 'containMoneyTransfer'
   return (
     <div className={defaultContainMoney}>
@@ -13,11 +18,8 @@ const ContainMoneyTransfer = () => {
         </p>
       </div>
       <div className={`${defaultContainMoney}__containItem`}>
-        <ItemMoneyTransfer
-          cvTitle="CVU"
-          descriptionCV="0000002100075320000000"
-        />
-        <ItemMoneyTransfer cvTitle="Alias" descriptionCV="estealiasnoexiste" />
+        <ItemMoneyTransfer title={'CVU'} value={cvu} />
+        <ItemMoneyTransfer title={'Alias'} value={alias} />
       </div>
     </div>
   )
