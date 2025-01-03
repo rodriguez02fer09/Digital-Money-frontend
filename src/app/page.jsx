@@ -5,7 +5,7 @@ import './page.scss'
 import InfoHome from '../app/cross/ui/components/home/infoHome/index'
 import InfoService from '../app/cross/ui/components/home/infoService'
 
-export default function Home({titleService, titleDescription}) {
+export default function Home() {
   const defaultHome = 'home'
   return (
     <main className={`${defaultHome}`}>

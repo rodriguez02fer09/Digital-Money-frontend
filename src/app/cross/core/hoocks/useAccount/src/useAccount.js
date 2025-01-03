@@ -1,75 +1,72 @@
-import {useEffect, useState} from 'react'
+'use client'
 
+import {create} from 'zustand'
 import getDataLocalStore from '../../../../core/uses-cases/getDataLocalStore'
+import updateDataLocalStore from '../../../../core/uses-cases/updateDataLocalStore'
 import request from '../../../../core/uses-cases/request'
 
-const useAccount = () => {
-  const [isLogin, setIsLogin] = useState(false)
-  const [account, setAccount] = useState(null)
-  const [user, setUser] = useState(null)
+const useAccountStore = create((set, get) => ({
+  isLogin: false,
+  account: null,
+  user: null, // `user` ahora incluye la lógica de `perfil`.
+  setUser: user => set({user}),
 
-  const validUserIsLogin = () => {
+  // Actions
+  validUserIsLogin: () => {
     const token = getDataLocalStore('token')
+    return token !== undefined && token !== null
+  },
 
-    if (token === undefined || token === null) {
-      return false
-    }
+  updateUser: data => {
+    updateDataLocalStore('user', JSON.stringify(data))
+    set({user: data})
+  },
 
-    return true
-  }
-
-  useEffect(() => {
-    setIsLogin(validUserIsLogin())
-  }, [])
-
-  const setAUserCallback = data => {
+  handleUserResponse: data => {
     if (data?.error) {
       localStorage.removeItem('token')
-      setUser(null)
+      set({user: null})
     } else {
       localStorage.setItem('user', JSON.stringify(data))
-      setUser(data)
+      set({user: data})
     }
-  }
+  },
 
-  const callbackRequet = data => {
-    const {user_id} = data
-    localStorage.setItem('account', JSON.stringify(data))
-    setAccount(data)
-    request(
-      {
-        path: `users/${user_id}`,
+  fetchAccount: () => {
+    const isLogin = get().validUserIsLogin()
+    set({isLogin})
+
+    if (isLogin) {
+      const dataRequestUser = {
+        path: 'account',
         method: 'GET',
         addHeaders: {
           Authorization: getDataLocalStore('token'),
         },
-      },
-      setAUserCallback,
-    )
-  }
-
-  useEffect(() => {
-    const dataRequestUser = {
-      path: 'account',
-      method: 'GET',
-      addHeaders: {
-        Authorization: getDataLocalStore('token'),
-      },
-    }
-
-    if (isLogin && user === null) {
-      const r = request(dataRequestUser, callbackRequet)
-      if (r?.error) {
-        localStorage.removeItem('token')
       }
+
+      request(dataRequestUser, data => {
+        if (data?.error) {
+          localStorage.removeItem('token')
+        } else {
+          const {user_id} = data
+          localStorage.setItem('account', JSON.stringify(data))
+          set({account: data})
+
+          request(
+            {
+              path: `users/${user_id}`,
+              method: 'GET',
+              addHeaders: {
+                Authorization: getDataLocalStore('token'),
+              },
+            },
+            get().handleUserResponse,
+          )
+        }
+      })
     }
-  }, [isLogin, user])
+  },
+}))
 
-  return {
-    isLogin,
-    account,
-    user,
-  }
-}
-
-export default useAccount
+export default useAccountStore

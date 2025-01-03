@@ -1,6 +1,6 @@
 'use client'
 import '../styles/main.scss'
-import CardBlack from '../../../../../../cross/ui/components/cardBlack'
+import CardBlack from '../../../../../../cross/ui/components/cardBlack/src/CardBlack'
 import ContainMoneyTransfer from '../../../../../../cross/ui/components/ContainMoneyTransfer/src/ContainMoneyTransfer'
 
 const defaultTransferencia = 'transferencia-profile'

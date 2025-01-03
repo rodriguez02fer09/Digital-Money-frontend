@@ -5,6 +5,7 @@ import classNames from 'classnames'
 
 const CreditCard = ({children, size, color}) => {
   const defaultCard = 'creditCard'
+  if (!children) return null
   const customClass = classNames(defaultCard, {
     [`${defaultCard}--${size}`]: size,
     [`${defaultCard}--${color}`]: color,

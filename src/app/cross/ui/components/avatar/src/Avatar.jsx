@@ -1,19 +1,34 @@
 'use client'
 
+import {useEffect} from 'react'
+
 import '../styles/desktop.scss'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
 import Button from '../../button/src/Button'
 import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
-import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
+import useAccountStore from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
+import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
 import {useState} from 'react'
 import MenuDesplegable from '../../menuDesplegable'
 
 const Avatar = () => {
   const router = useRouter()
   const [menuOpen, setMenuOpen] = useState(false)
-  const {user, isLogin} = useAccount()
+
+  const {user, isLogin, fetchAccount, setUser} = useAccountStore()
+
+  useEffect(() => {
+    fetchAccount()
+  }, [fetchAccount])
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user')
+    if (storedUser) {
+      setUser(JSON.parse(storedUser))
+    }
+  }, [setUser])
 
   const handleSignUp = () => {
     router.push('/sign-email')

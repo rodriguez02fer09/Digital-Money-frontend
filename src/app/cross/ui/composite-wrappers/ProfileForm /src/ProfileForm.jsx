@@ -7,7 +7,8 @@ import InputEdit from '../../../components/inputEdit'
 import Button from '../../../components/button/src/Button'
 
 const ProfileForm = ({inputs = [], name, callBackOnSubmit}) => {
-  const methods = useForm() // Inicializamos React Hook Form
+  const methods = useForm()
+  const {handleSubmit, setValue} = methods
 
   const defaultClass = 'form-container'
 
@@ -16,13 +17,17 @@ const ProfileForm = ({inputs = [], name, callBackOnSubmit}) => {
   })
 
   const onSubmit = data => {
-    console.log('Formulario enviado:', data)
     callBackOnSubmit(data)
+  }
+
+  const handleInputBlur = (name, value) => {
+    setValue(name, value)
+    handleSubmit(onSubmit)()
   }
 
   return (
     <FormProvider {...methods}>
-      <form className={customClass} onSubmit={methods.handleSubmit(onSubmit)}>
+      <form className={customClass} onSubmit={handleSubmit(onSubmit)}>
         {inputs.map((input, index) => (
           <InputEdit
             key={index}
@@ -34,6 +39,7 @@ const ProfileForm = ({inputs = [], name, callBackOnSubmit}) => {
             size={input.size}
             color={input.color}
             registerData={input.registerData}
+            onBlur={e => handleInputBlur(e.target.name, e.target.value)}
           />
         ))}
       </form>

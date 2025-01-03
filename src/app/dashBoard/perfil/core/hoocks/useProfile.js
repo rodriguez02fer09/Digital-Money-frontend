@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 
 import getDataLocalStore from '../../../../cross/core/uses-cases/getDataLocalStore'
+import updateDataLocalStore from '../../../../cross/core/uses-cases/updateDataLocalStore'
 
 const useProfile = () => {
   const [perfil, setPerfil] = useState(null)
@@ -11,8 +12,14 @@ const useProfile = () => {
     }
   }, [perfil])
 
+  const updateProfile = data => {
+    updateDataLocalStore('user', JSON.stringify(data))
+    setPerfil(() => data)
+  }
+
   return {
     perfil,
+    updateProfile,
   }
 }
 

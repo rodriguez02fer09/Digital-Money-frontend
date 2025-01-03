@@ -1,5 +1,4 @@
-export const signPasswordSlice = set =>({
-import { passwordForm } from '../forms/default';
+export const signPasswordSlice = set => ({
   password: null,
-  setPassword : password => set (state => ({...state, password}))
+  setPassword: password => set(state => ({...state, password})),
 })
