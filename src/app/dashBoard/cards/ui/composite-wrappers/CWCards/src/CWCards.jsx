@@ -4,7 +4,7 @@ import AddCardsHeader from '../../../components/addCardsHeader/src/AddCardsHeade
 import AddCard from '../../../components/addCard/src/AddCard'
 import HistoryCards from '../../../components/historyCards/src/HistoryCards'
 
-const CWaddCards = () => {
+const CWCards = () => {
   return (
     <>
       <AddCardsHeader />
@@ -14,4 +14,4 @@ const CWaddCards = () => {
   )
 }
 
-export default CWaddCards
+export default CWCards
