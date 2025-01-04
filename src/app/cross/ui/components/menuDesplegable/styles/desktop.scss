@@ -20,12 +20,16 @@
         margin-bottom: 16px;
         a {
           text-decoration: none;
-          color: $text-color-secondary;
+          color: #000;
           font-family: $font-stack;
           font-size: 17px;
           &:hover {
             text-decoration: underline;
           }
+        }
+        &.selected a {
+          font-weight: bold; /* Pone el ítem en negrita */
+          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
         }
       }
     }
@@ -48,18 +52,24 @@
       li {
         margin-bottom: 16px;
         a {
+          font-weight: bold;
           text-decoration: none;
-          color: $text-color-secondary;
+          color: #000;
           font-family: $font-stack;
           font-size: 17px;
           &:hover {
             text-decoration: underline;
           }
         }
+        &.selected a {
+          font-weight: bold; /* Pone el ítem en negrita */
+          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
+        }
       }
     }
   }
 }
+
 @media screen and (min-width: 835px) {
   .contain-menu {
     width: 276px; /* Fija el ancho del menú */
@@ -80,12 +90,16 @@
         margin-bottom: 16px;
         a {
           text-decoration: none;
-          color: $text-color-secondary;
+          color: #000;
           font-family: $font-stack;
           font-size: 17px;
           &:hover {
             text-decoration: underline;
           }
+        }
+        &.selected a {
+          font-weight: bold; /* Pone el ítem en negrita */
+          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
         }
       }
     }

@@ -1,6 +1,7 @@
 'use client'
 
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
+import Link from 'next/link' // Usar Link para la navegación
 
 import '../styles/desktop.scss'
 import Image from 'next/image'
@@ -10,7 +11,7 @@ import SloganAvatar from '../../sloganAvatar'
 import UserAvatar from '../../userAvatar'
 import useAccountStore from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
 import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
-import {useState} from 'react'
+
 import MenuDesplegable from '../../menuDesplegable'
 
 const Avatar = () => {
@@ -47,7 +48,9 @@ const Avatar = () => {
       {isLogin && user ? (
         <>
           <SloganAvatar {...user} />
-          <UserAvatar {...user} />
+          <Link href="/dashBoard">
+            <UserAvatar {...user} />
+          </Link>
         </>
       ) : (
         <div className="contain-avatar--button">
