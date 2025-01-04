@@ -2,10 +2,10 @@ import '../styles/desktop.scss'
 import DeleteCard from '../../deleteCard'
 import NameCard from '../../NameCard'
 
-const ItemHistoryCards = ({NameCard: nameCardProp}) => {
+const ItemHistoryCards = () => {
   return (
     <div className="contain-ItemHistoryCards">
-      <NameCard NameCard={nameCardProp} />
+      <NameCard />
       <DeleteCard />
     </div>
   )

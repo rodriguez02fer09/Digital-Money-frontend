@@ -1,7 +1,7 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 
-const NameCard = ({NameCard}) => {
+const NameCard = () => {
   const defaultNameCard = 'name-card'
 
   return (
@@ -10,7 +10,7 @@ const NameCard = ({NameCard}) => {
         <Image src="/images/point.svg" width={25} height={24} alt="Ícono" />
       </div>
       <div className={`${defaultNameCard}__nameActivity`}>
-        <p>{NameCard}</p>
+        <p>Terminada en 1234</p>
       </div>
     </div>
   )
