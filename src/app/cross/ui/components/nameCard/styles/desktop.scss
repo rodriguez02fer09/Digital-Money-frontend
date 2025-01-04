@@ -12,3 +12,29 @@
     }
   }
 }
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .name-card {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    &__containImg {
+      margin-right: 10px;
+    }
+  }
+}
+@media screen and (min-width: 835px) {
+  .name-card {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    &__containImg {
+      margin-right: 10px;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 const NameCard = ({NameCard}) => {
   const defaultNameCard = 'name-card'
+
   return (
     <div className={defaultNameCard}>
       <div className={`${defaultNameCard}__containImg`}>

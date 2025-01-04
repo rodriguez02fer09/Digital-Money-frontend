@@ -1,9 +1,22 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .contain-history-cards {
-    height: 370px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .contain-history-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 835px) {
+  .contain-history-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }

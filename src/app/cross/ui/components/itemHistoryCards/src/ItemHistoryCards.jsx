@@ -1,4 +1,3 @@
-// ItemHistoryCards.js
 import '../styles/desktop.scss'
 import DeleteCard from '../../deleteCard'
 import NameCard from '../../NameCard'
