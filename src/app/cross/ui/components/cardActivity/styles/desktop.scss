@@ -52,7 +52,7 @@
     }
 
     &--HistoryCard {
-      height: 370px;
+      height: 340px;
     }
 
     &--ProfileData {
@@ -81,6 +81,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     .contain-header {
+      margin-bottom: 20px;
       p {
         font-family: $font-stack;
         color: var(--A---Color-1, #201f22);
@@ -115,6 +116,8 @@
     }
 
     &--HistoryCard {
+      height: 384px;
+      padding: 30px 38px 32px 41px;
     }
 
     &--ProfileData {

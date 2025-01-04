@@ -1,7 +1,37 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .contain-ItemHistoryCards {
-    height: 50px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #cecece;
+
+    &:last-child {
+      border-bottom: 1px solid #cecece;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .contain-ItemHistoryCards {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #cecece;
+
+    &:last-child {
+      border-bottom: 1px solid #cecece;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .contain-ItemHistoryCards {
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
