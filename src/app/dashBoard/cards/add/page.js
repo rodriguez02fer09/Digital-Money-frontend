@@ -1,2 +1,2 @@
-import CWadd from '../../cards/add/ui/composite-wrapers/src/CWadd'
+import CWadd from './ui/composite-wrapers/CWadd/src/CWadd'
 export default CWadd
