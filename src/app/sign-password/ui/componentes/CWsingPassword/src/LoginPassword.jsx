@@ -10,6 +10,17 @@ import {requestSignPassword} from '../../../../core/uses-cases/request-signPassw
 import Input from '../../../../../cross/ui/components/input/index'
 import Button from '../../../../../cross/ui/components/button'
 import {useEffect} from 'react'
+import Cookies from 'js-cookie'
+
+function loginUser(token) {
+  Cookies.set('authToken', token, {
+    secure: false,
+    sameSite: 'strict',
+    path: '/',
+  })
+
+  console.log('Token almacenado en cookies:', token)
+}
 
 const LoginPassword = () => {
   const {email, setEmail} = useAuthStore()
@@ -49,6 +60,7 @@ const LoginPassword = () => {
         const {success, data} = result
         console.log('Resultado recibido del servidor:', result)
         if (success) {
+          loginUser(data.token)
           localStorage.setItem('token', data.token)
           console.log('Autenticación exitosa. Redirigiendo...')
           window.location.href = '/dashBoard'
