@@ -24,21 +24,6 @@ const DateCards = () => {
     setAccount(data)
   }
 
-  const inputs = [
-    {name: 'numberCard', placeholder: 'Número de tarjera*', type: 'text'},
-    {name: 'lastname', placeholder: 'Nombre y apellido*', type: 'text'},
-    {
-      name: 'fechaDeVencimiemto',
-      placeholder: 'Fecha de vencimiemto*',
-      type: 'number',
-    },
-    {
-      name: 'CódigoDeSeguridad',
-      placeholder: 'Código de seguridad*',
-      type: 'number',
-    },
-  ]
-
   return (
     <main className={defaultClass}>
       <div className={`${defaultClass}__date-header`}>
