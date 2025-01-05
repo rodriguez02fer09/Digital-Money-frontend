@@ -1,5 +1,5 @@
 'use client'
-
+import './styles/desktop.scss'
 import AddCardsMobileHeader from '../../../components/addCardsMobileHeader/src/AddCardsMobileHeader'
 import AddCard from '../../addCard/src/AddCard'
 

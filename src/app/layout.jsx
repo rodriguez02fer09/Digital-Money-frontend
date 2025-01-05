@@ -1,10 +1,10 @@
 import {Roboto} from 'next/font/google'
 import Head from 'next/head'
 
-import Header from '../app/cross/ui/components/shared/header'
-import Footer from '../app/cross/ui/components/shared/footer'
+import Header from '../domains/cross/ui/components/shared/header'
+import Footer from '../domains/cross/ui/components/shared/footer'
 
-import '../app/cross/sass/globals.scss'
+import '../domains/cross/sass/globals.scss'
 
 const roboto = Roboto({
   subsets: ['latin'],

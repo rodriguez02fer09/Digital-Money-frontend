@@ -3,12 +3,12 @@
 import {useForm} from 'react-hook-form'
 
 import '../styles/desktop.scss'
-import Input from '../../cross/ui/components/input'
+import Input from '../../../domains/cross/ui/components/input'
 import Image from 'next/image'
-import CardBlack from '../../cross/ui/components/cardBlack/src/CardBlack'
-import Button from '../../cross/ui/components/button'
-import CreditCard from '../../cross/ui/components/creditCard'
-import ContainCards from '../../cross/ui/components/containCards'
+import CardBlack from '../../../domains/cross/ui/components/cardBlack/src/CardBlack'
+import Button from '../../../domains/cross/ui/components/button'
+import CreditCard from '../../../domains/cross/ui/components/creditCard'
+import ContainCards from '../../../domains/cross/ui/components/containCards'
 
 const DateCards = () => {
   const defaultClass = 'date-cards'

@@ -1,2 +1,2 @@
-import LoginEmail from './ui/componentes/CWsingEmail/src/LoginEmail.jsx'
+import LoginEmail from '../../domains/sign-email/ui/componentes/CWsingEmail/src/LoginEmail.jsx'
 export default LoginEmail

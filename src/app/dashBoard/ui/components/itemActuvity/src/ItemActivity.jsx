@@ -1,7 +1,7 @@
 import '../styles/desktop.scss'
 import NameItem from '../../nameItem/src/NameItem'
 import DateActivity from '../../dateActivity/src/DateActivity'
-import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
+import useAccount from '../../../../../../domains/cross/core/hoocks/useAccount/src/useAccount'
 
 const ItemActivity = ({activity}) => {
   const {dated, destination, amount} = activity ?? {}

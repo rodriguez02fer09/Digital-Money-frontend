@@ -2,13 +2,13 @@
 import '../styles/desktop.scss'
 
 import {useForm} from 'react-hook-form'
-import {useAuthStore} from '../../../../../sign-email/core/hoocks/UseAuthStore'
+import {useAuthStore} from '../../../../../../domains/sign-email/core/hoocks/UseAuthStore'
 import {useRouter} from 'next/navigation'
 import {passwordForm} from '../../../../data/forms/default'
-import Form from '../../../../../cross/ui/composite-wrappers/loguinPasswordForm'
+import Form from '../../../../../../domains/cross/ui/composite-wrappers/loguinPasswordForm'
 import {requestSignPassword} from '../../../../core/uses-cases/request-signPassword'
-import Input from '../../../../../cross/ui/components/input/index'
-import Button from '../../../../../cross/ui/components/button'
+import Input from '../../../../../../domains/cross/ui/components/input/index'
+import Button from '../../../../../../domains/cross/ui/components/button'
 import {useEffect} from 'react'
 
 const LoginPassword = () => {

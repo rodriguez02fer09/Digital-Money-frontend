@@ -1,8 +1,8 @@
 'use client'
 import '../styles/main.scss'
-import CardBlack from '../../../../../../cross/ui/components/cardBlack/src/CardBlack'
+import CardBlack from '../../../../../../../domains/cross/ui/components/cardBlack/src/CardBlack'
 
-import ContainAddCards from '../../../../../../cross/ui/components/containAddCards/src/ContainAddCards'
+import ContainAddCards from '../../../../../../../domains/cross/ui/components/containAddCards/src/ContainAddCards'
 
 const defaultCard = 'add-card'
 const AddCard = () => {

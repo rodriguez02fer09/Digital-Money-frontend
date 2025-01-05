@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 
-import getDataLocalStore from '../../../../cross/core/uses-cases/getDataLocalStore'
-import updateDataLocalStore from '../../../../cross/core/uses-cases/updateDataLocalStore'
+import getDataLocalStore from '../../../../../domains/cross/core/uses-cases/getDataLocalStore'
+import updateDataLocalStore from '../../../../../domains/cross/core/uses-cases/updateDataLocalStore'
 
 const useProfile = () => {
   const [perfil, setPerfil] = useState(null)

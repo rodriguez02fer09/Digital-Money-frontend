@@ -1,6 +1,6 @@
 'use client'
 import '../styles/main.scss'
-import Button from '../../../../../../cross/ui/components/button/src/Button'
+import Button from '../../../../../../../domains/cross/ui/components/button/src/Button'
 import Link from 'next/link'
 
 const defaultButton = 'button-profile'

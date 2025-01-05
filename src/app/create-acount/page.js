@@ -1,3 +1,3 @@
-import CreateAcount from './ui/composite-wrappers/CWCreateAccount/src/CreateAcount.jsx'
+import CWPageCreateAcount from '../../domains/create-account/ui/composite-wrappers/CWPageCreateAccount/src/CWPageCreateAcount'
 
-export default CreateAcount
+export default CWPageCreateAcount

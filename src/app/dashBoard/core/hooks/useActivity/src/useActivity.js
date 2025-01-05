@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
-import useAccount from '../../../../../cross/core/hoocks/useAccount/src/useAccount'
-import request from '../../../../../cross/core/uses-cases/request'
-import getDataLocalStore from '../../../../../cross/core/uses-cases/getDataLocalStore'
+import useAccount from '../../../../../../domains/cross/core/hoocks/useAccount/src/useAccount'
+import request from '../../../../../../domains/cross/core/uses-cases/request'
+import getDataLocalStore from '../../../../../../domains/cross/core/uses-cases/getDataLocalStore'
 
 const useActivity = () => {
   const {account} = useAccount()

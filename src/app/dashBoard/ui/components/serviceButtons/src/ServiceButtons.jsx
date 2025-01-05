@@ -1,5 +1,5 @@
 import '../index.scss'
-import Button from '../../../../../cross/ui/components/button'
+import Button from '../../../../../../domains/cross/ui/components/button'
 
 const ServiceButtons = () => {
   const defaultClass = 'service-buttons'

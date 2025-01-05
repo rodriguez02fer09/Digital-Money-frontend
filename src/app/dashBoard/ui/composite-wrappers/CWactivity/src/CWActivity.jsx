@@ -1,7 +1,7 @@
 import '../index.scss'
 import {useEffect} from 'react'
 import InputSearch from '../../../components/inputSearch'
-import CardActivity from '../../../../../cross/ui/components/cardActivity'
+import CardActivity from '../../../../../../domains/cross/ui/components/cardActivity'
 import ListActivity from '../../../components/listActivity'
 
 import useActivity from '../../../../core/hooks/useActivity/src/useActivity'

@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 import './page.scss'
 
-import InfoHome from '../app/cross/ui/components/home/infoHome/index'
-import InfoService from '../app/cross/ui/components/home/infoService'
+import InfoHome from '../domains/cross/ui/components/home/infoHome/index'
+import InfoService from '../domains/cross/ui/components/home/infoService'
 
 export default function Home() {
   const defaultHome = 'home'
