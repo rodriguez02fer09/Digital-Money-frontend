@@ -1,13 +1,11 @@
 @import '@domains/cross/sass/variables';
-@media (min-width: 398px) {
+@media (max-width: 398px) {
+  .transferencia-profile {
+  }
 }
-//tablet
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
 }
 
-//desktop
 @media screen and (min-width: 835px) {
-  .form-container {
-  }
 }

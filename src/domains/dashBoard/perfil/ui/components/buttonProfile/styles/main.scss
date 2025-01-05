@@ -1,0 +1,46 @@
+@import '@domains/cross/sass/variables';
+@media (max-width: 398px) {
+  .button-profile {
+    margin: 16px;
+    height: 67px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .button-profile {
+    margin: 16px;
+    height: 67 px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .button-profile {
+    margin: 16px;
+    height: 67px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+  }
+}
