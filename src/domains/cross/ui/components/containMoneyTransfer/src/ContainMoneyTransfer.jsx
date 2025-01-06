@@ -2,7 +2,7 @@ import '../styles/desktop.scss'
 import Image from 'next/image'
 
 import ItemMoneyTransfer from '@domains/cross/ui/components/ItemMoneyTransfer/src/ItemMoneyTransfer'
-import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import {useAccountStore} from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
 const ContainMoneyTransfer = () => {
   const {account} = useAccountStore()

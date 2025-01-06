@@ -1,27 +1,92 @@
-.form-card {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
+@media (max-width: 398px) {
+  .form-card {
+    width: 350px;
+    height: 593px;
+  }
+
+  .form-card--add {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las celdas */
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column; /* Alinea etiqueta e input verticalmente */
+  }
+
+  label {
+    margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
 }
 
-.form-card--add {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
-  gap: 20px; /* Espacio entre las celdas */
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .form-card {
+    width: 350px;
+    height: 593px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-card--add {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las celdas */
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column; /* Alinea etiqueta e input verticalmente */
+  }
+
+  label {
+    margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column; /* Alinea etiqueta e input verticalmente */
-}
+@media screen and (min-width: 835px) {
+  .form-card {
+    width: 350px;
+    height: 593px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
 
-label {
-  margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
-}
+  .form-card--add {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las celdas */
+  }
 
-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  .form-group {
+    display: flex;
+    flex-direction: column; /* Alinea etiqueta e input verticalmente */
+  }
+
+  label {
+    margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
 }

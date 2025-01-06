@@ -9,7 +9,7 @@ import {useRouter} from 'next/navigation'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import SloganAvatar from '@domains/cross/ui/components/sloganAvatar/src/sloganAvatar'
 import UserAvatar from '@domains/cross/ui/components/userAvatar/src/UserAvatar'
-import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import {useAccountStore} from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
 import MenuDesplegable from '@domains/cross/ui/components/menuDesplegable/src/MenuDesplegable'
