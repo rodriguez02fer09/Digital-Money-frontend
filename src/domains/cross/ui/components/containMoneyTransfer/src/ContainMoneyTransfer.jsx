@@ -1,10 +1,11 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
-import {useAcountStore} from '@domains/account/create/core/hoocks/useAcountStore'
+
 import ItemMoneyTransfer from '@domains/cross/ui/components/ItemMoneyTransfer/src/ItemMoneyTransfer'
+import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
 const ContainMoneyTransfer = () => {
-  const {account} = useAcountStore()
+  const {account} = useAccountStore()
 
   const {cvu, alias} = account ?? {}
 

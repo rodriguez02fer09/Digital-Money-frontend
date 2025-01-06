@@ -3,7 +3,8 @@
   .button-profile {
     margin: 16px;
     height: 67px;
-
+    display: inline-block; /* O block si el botón necesita expandirse completamente */
+    width: 100%; /* Opcional si el botón debe ocupar todo el ancho */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,7 +34,7 @@
 @media screen and (min-width: 835px) {
   .button-profile {
     margin: 16px;
-    height: 67px;
+    height: 116px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

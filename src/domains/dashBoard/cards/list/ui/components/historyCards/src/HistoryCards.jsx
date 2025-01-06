@@ -14,6 +14,7 @@ const defaultHistory = 'history-Cards'
 // debe ser un warpper
 const HistoryCards = () => {
   const {account} = useAccount()
+
   const {id: accountId} = account ?? {}
   const [cards, setCards] = useState()
 
