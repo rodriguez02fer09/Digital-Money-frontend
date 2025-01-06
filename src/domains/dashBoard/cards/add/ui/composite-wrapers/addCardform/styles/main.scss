@@ -1,0 +1,27 @@
+.form-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card--add {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  gap: 20px; /* Espacio entre las celdas */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column; /* Alinea etiqueta e input verticalmente */
+}
+
+label {
+  margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}

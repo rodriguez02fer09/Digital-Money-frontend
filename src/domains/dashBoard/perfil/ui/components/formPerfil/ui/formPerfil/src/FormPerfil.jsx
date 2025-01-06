@@ -14,7 +14,7 @@ import ProfileForm from '@domains/cross/ui/composite-wrappers/ProfileForm /src/P
 
 import '../../styles/main.scss'
 
-import {profileForm} from '@domains/dashBoard/perfil/data/forms/defaul'
+import {profileForm} from '@domains/dashBoard/perfil/ui/components/formPerfil/data/forms/defaul'
 import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
 const defaultProfile = 'form-perfil'

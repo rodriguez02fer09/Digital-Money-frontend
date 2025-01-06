@@ -14,43 +14,47 @@ const AddCard = () => {
 
   const useCallbackCreateAccount = result => {}
 
-  const callBackOnSubmit = newDataAccount => {}
+  const callBackOnSubmit = newDataCard => {
+    debugger
+    setCard({
+      ...newDataCard,
+    })
+  }
 
-  const defaultClass = 'mainForm-cuenta'
+  const defaultClass = 'form-card'
 
-  const [state, setState] = useState({
+  const [card, setCard] = useState({
     number: '',
     expiry: '',
     cvc: '',
     name: '',
-    focus: '',
+    focus: true,
   })
 
   const handleInputChange = evt => {
     const {name, value} = evt.target
-
-    setState(prev => ({...prev, [name]: value}))
+    setCard(prev => ({...prev, [name]: value}))
   }
 
-  const handleInputFocus = evt => {
-    setState(prev => ({...prev, focus: evt.target.name}))
+  const callbackInputFocus = evt => {
+    setCard(prev => ({...prev, focus: evt.target.name}))
   }
 
   return (
     <main className={`${defaultClass}`}>
       <Cards
-        number={state.number}
-        expiry={state.expiry}
-        cvc={state.cvc}
-        name={state.name}
-        focused={state.focus}
+        number={card.number}
+        expiry={card.expiry}
+        cvc={card.cvc}
+        name={card.name}
+        focused={card.focus}
       />
-
       <Form
         callBackOnSubmit={callBackOnSubmit}
+        callbackInputFocus={callbackInputFocus}
         inputs={inputs}
-        name="createAccount"
-        className={`${defaultClass}--createAccount`}
+        name="add"
+        className={`${defaultClass}`}
       />
     </main>
   )
