@@ -16,7 +16,7 @@ const MenuDesplegable = () => {
       <div className={`${defaultMenu}--contain-list`}>
         <ul>
           <li className={pathname === '/dashBoard/home' ? 'selected' : ''}>
-            <Link href="/dashBoard">Inicio</Link>
+            <Link href="/dashBoard/home">Inicio</Link>
           </li>
           <li className={pathname === '/dashBoard/actividad' ? 'selected' : ''}>
             <Link href="/dashBoard/actividad">Actividad</Link>

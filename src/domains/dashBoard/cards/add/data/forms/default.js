@@ -1,15 +1,15 @@
 import {parseInt} from 'lodash'
 
 export const inputs = [
-  {name: 'numberCard', placeholder: 'Número de tarjera*', type: 'text'},
-  {name: 'lastname', placeholder: 'Nombre y apellido*', type: 'text'},
+  {name: 'number', placeholder: 'Número de tarjera*', type: 'text'},
+  {name: 'name', placeholder: 'Nombre y apellido*', type: 'text'},
   {
-    name: 'fechaDeVencimiemto',
+    name: 'expiry',
     placeholder: 'Fecha de vencimiemto*',
     type: 'number',
   },
   {
-    name: 'CódigoDeSeguridad',
+    name: 'cvc',
     placeholder: 'Código de seguridad*',
     type: 'number',
   },

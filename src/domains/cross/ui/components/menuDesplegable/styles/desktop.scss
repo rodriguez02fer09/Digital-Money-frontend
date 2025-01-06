@@ -1,5 +1,6 @@
 @import '../../../../sass/variables';
 
+// Estilos móviles
 @media (max-width: 398px) {
   .contain-menu {
     width: 219px;
@@ -12,70 +13,81 @@
       margin: 50px 40px;
       width: 140px;
       height: 240px;
+
       ul {
         list-style: none;
         padding: 0;
       }
+
       li {
         margin-bottom: 16px;
+
         a {
           text-decoration: none;
           color: #000;
           font-family: $font-stack;
           font-size: 17px;
+
           &:hover {
             text-decoration: underline;
           }
         }
+
         &.selected a {
-          font-weight: bold; /* Pone el ítem en negrita */
-          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
+          font-weight: bold; /* Solo el elemento seleccionado estará en negrita */
+          color: #000;
         }
       }
     }
   }
 }
 
-//tablet
+// Estilos para tablet
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .contain-menu {
     background: $primary-color;
     width: 221px;
+
     &--contain-list {
       margin: 50px 40px;
       width: 140px;
       height: 240px;
+
       ul {
         list-style: none;
         padding: 0;
       }
+
       li {
         margin-bottom: 16px;
+
         a {
-          font-weight: bold;
           text-decoration: none;
           color: #000;
           font-family: $font-stack;
           font-size: 17px;
+
           &:hover {
             text-decoration: underline;
           }
         }
+
         &.selected a {
-          font-weight: bold; /* Pone el ítem en negrita */
-          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
+          font-weight: bold; /* Solo el elemento seleccionado estará en negrita */
+          color: #000;
         }
       }
     }
   }
 }
 
+// Estilos para desktop
 @media screen and (min-width: 835px) {
   .contain-menu {
-    width: 276px; /* Fija el ancho del menú */
-    height: 100vh; /* Ocupa toda la altura */
+    width: 276px;
+    height: 100vh;
     background: $primary-color;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Añade un ligero borde para separar visualmente */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 
     &--contain-list {
       margin: 50px 40px;
@@ -86,20 +98,24 @@
         list-style: none;
         padding: 0;
       }
+
       li {
         margin-bottom: 16px;
+
         a {
           text-decoration: none;
           color: #000;
           font-family: $font-stack;
           font-size: 17px;
+
           &:hover {
             text-decoration: underline;
           }
         }
+
         &.selected a {
-          font-weight: bold; /* Pone el ítem en negrita */
-          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
+          font-weight: bold; /* Solo el elemento seleccionado estará en negrita */
+          color: #000;
         }
       }
     }

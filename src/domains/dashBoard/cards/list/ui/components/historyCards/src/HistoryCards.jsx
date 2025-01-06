@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react'
 
 import CardActivity from '@domains/cross/ui/components/cardActivity'
 import ContainHistoryCards from '@domains/cross/ui/components/containHistoryCards'
-import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import {useAccount} from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 import request from '@domains/cross/core/uses-cases/request'
 
@@ -14,6 +14,7 @@ const defaultHistory = 'history-Cards'
 // debe ser un warpper
 const HistoryCards = () => {
   const {account} = useAccount()
+
   const {id: accountId} = account ?? {}
   const [cards, setCards] = useState()
 

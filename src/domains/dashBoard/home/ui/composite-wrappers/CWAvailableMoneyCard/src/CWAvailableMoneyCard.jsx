@@ -8,7 +8,7 @@ import TitleView from '@domains/cross/ui/components/titleView/src/TitleView'
 import MoneyView from '@domains/cross/ui/components/moneyView/src/MoneyView'
 import CardBlack from '@domains/cross/ui/components/CardBlack'
 
-import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import {useAccount} from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
 import CardOptions from '@domains/dashBoard/home/ui/components/cardOptions'
 
