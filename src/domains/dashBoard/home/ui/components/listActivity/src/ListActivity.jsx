@@ -1,5 +1,6 @@
 import '../styles/desktop.scss'
-import ItemActivity from '../../itemActuvity'
+
+import ItemActivity from '@domains/DashBoard/home/ui/components/itemActuvity/src/ItemActivity'
 
 const ListActivity = ({activity = []}) => {
   return (

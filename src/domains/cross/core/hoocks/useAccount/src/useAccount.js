@@ -1,9 +1,9 @@
 'use client'
 
 import {create} from 'zustand'
-import getDataLocalStore from '../../../uses-cases/getDataLocalStore'
-import updateDataLocalStore from '../../../uses-cases/updateDataLocalStore'
-import request from '../../../uses-cases/request'
+import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
+import updateDataLocalStore from '@domains/cross/core/uses-cases/updateDataLocalStore'
+import request from '@domains/cross/core/uses-cases/request'
 
 const useAccountStore = create((set, get) => ({
   isLogin: false,

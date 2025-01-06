@@ -4,8 +4,8 @@ import React from 'react'
 import classNames from 'classnames'
 import {useForm, FormProvider} from 'react-hook-form'
 
-import Input from '../../../../../../../../domains/cross/ui/components/input/src/Input'
-import Button from '../../../../../../../../domains/cross/ui/components/button'
+import Input from '@domains/cross/ui/components/input/src/Input'
+import Button from '@domains/cross/ui/components/button/src/Button'
 
 const Form = ({inputs = [], name, callBackOnSubmit}) => {
   const methods = useForm() // Inicializamos React Hook Form

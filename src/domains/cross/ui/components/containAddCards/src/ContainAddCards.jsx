@@ -1,5 +1,5 @@
 import '../styles/desktop.scss'
-import ItemAddCards from '../../ItemAddCards/src/ItemAddCards'
+import ItemAddCards from '@domains/cross/ui/components/ItemAddCards/src/ItemAddCards'
 
 const ContainAddCards = () => {
   const defaultAddCards = 'containAddCards'

@@ -4,7 +4,7 @@ import {usePathname} from 'next/navigation'
 
 import '../styles/desktop.scss'
 import Link from 'next/link'
-import requestLogoutAccount from '../../../../core/uses-cases/logoutAccount'
+import requestLogoutAccount from '@domains/cross/core/uses-cases/logoutAccount'
 
 const MenuDesplegable = () => {
   const pathname = usePathname() // Hook para obtener la ruta actual
@@ -15,7 +15,7 @@ const MenuDesplegable = () => {
     <div className={`${defaultMenu}`}>
       <div className={`${defaultMenu}--contain-list`}>
         <ul>
-          <li className={pathname === '/dashBoard' ? 'selected' : ''}>
+          <li className={pathname === '/dashBoard/home' ? 'selected' : ''}>
             <Link href="/dashBoard">Inicio</Link>
           </li>
           <li className={pathname === '/dashBoard/actividad' ? 'selected' : ''}>

@@ -3,9 +3,9 @@ import './styles/desktop.scss'
 
 import {useEffect, useState} from 'react'
 
-import ServiceButtons from '../../../components/serviceButtons'
-import CWActivity from '../../CWactivity/src/CWActivity'
-import CWAvailableMoneyCard from '../../CWAvailableMoneyCard'
+import ServiceButtons from '@domains/dashBoard/home/ui/components/serviceButtons'
+import CWActivity from '@domains/dashBoard/home/ui/composite-wrappers/CWactivity/src/CWActivity'
+import CWAvailableMoneyCard from '@domains/dashBoard/home/ui/composite-wrappers/CWAvailableMoneyCard'
 
 const CWDasboard = () => {
   return (

@@ -1,6 +1,6 @@
 import '../styles/desktop.scss'
-import NumberCard from '../../numberCard'
-import TitleCard from '../../titleCard/src/TitleCard'
+import NumberCard from '@domains/cross/ui/components/numberCard/src/NumberCard'
+import TitleCard from '@domains/cross/ui/components/titleCard/src/TitleCard'
 
 const ContainCards = () => {
   const defaultClass = 'contain-card'

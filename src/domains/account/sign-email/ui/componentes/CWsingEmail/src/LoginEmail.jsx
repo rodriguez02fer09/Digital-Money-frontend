@@ -3,9 +3,9 @@ import '../styles/desktop.scss'
 
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
-import {useAuthStore} from '../../../../core/hoocks/UseAuthStore'
-import Form from '../../../../../../cross/ui/composite-wrappers/LoginEmailForm'
-import {emailForm} from '../../../../data/forms/default'
+import {useAuthStore} from '@domains/account/sign-email/core/hoocks/UseAuthStore'
+import Form from '@domains/cross/ui/composite-wrappers/LoginEmailForm'
+import {emailForm} from '@domains/account/sign-email/data/forms/default'
 
 const LoginEmail = () => {
   // Usando Zustand para gestionar el estado global
@@ -26,10 +26,10 @@ const LoginEmail = () => {
     console.log('Correo:', data.email)
     setEmail(data.email) // Guardamos el correo en el estado global
     localStorage.setItem('email', data.email)
-    router.push('/sign-password') // Redirige a la página de contraseña
+    router.push('/account/sign-password') // Redirige a la página de contraseña
   }
   const handleCreateAccount = () => {
-    router.push('/create-acount') // Redirige a la página de creación de cuenta
+    router.push('/account/create') // Redirige a la página de creación de cuenta
   }
   // Definición de clase para el componente
   const defaultClass = 'mainContain-email'

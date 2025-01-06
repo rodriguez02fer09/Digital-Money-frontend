@@ -10,7 +10,7 @@ import {useRouter} from 'next/navigation'
 import {useAuthStore} from '@domains/account/sign-email/core/hoocks/useAuthStore'
 import {requestSignPassword} from '@domains/account/sign-password/core/uses-cases/request-signPassword'
 
-import {passwordForm} from '../../../../data/forms/default'
+import {passwordForm} from '@domains/account/sign-password/data/forms/default'
 
 import Form from '@domains/cross/ui/composite-wrappers/loguinPasswordForm'
 
@@ -34,7 +34,7 @@ const LoginPassword = () => {
         setEmail(storeEmail)
       } else {
         console.log('No se encontró correo, redirigiendo a /sign-email')
-        router.push('/sign-email') // Redirigir si no hay correo
+        router.push('/account/sign-email') // Redirigir si no hay correo
       }
     } else {
       console.log('Correo en el estado:', email)
@@ -57,7 +57,7 @@ const LoginPassword = () => {
         if (success) {
           localStorage.setItem('token', data.token)
           console.log('Autenticación exitosa. Redirigiendo...')
-          window.location.href = '/dashBoard'
+          window.location.href = '/dashBoard/home'
         } else {
           console.error('Error de autenticación:', result.error)
           alert('Contraseña incorrecta o problema en el servidor.')

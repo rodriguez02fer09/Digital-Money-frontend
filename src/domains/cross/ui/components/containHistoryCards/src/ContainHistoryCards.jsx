@@ -1,8 +1,8 @@
 import '../styles/desktop.scss'
-import ItemHistoryCards from '../../itemHistoryCards/src/ItemHistoryCards'
+import ItemHistoryCards from '@domains/cross/ui/components/itemHistoryCards/src/ItemHistoryCards'
 
-import request from '../../../../core/uses-cases/request'
-import getDataLocalStore from '../../../../core/uses-cases/getDataLocalStore'
+import request from '@domains/cross/core/uses-cases/request'
+import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
 const ContainHistoryCards = ({cards = [], updateCards}) => {
   const defaultHistory = 'contain-history-cards'
@@ -31,8 +31,8 @@ const ContainHistoryCards = ({cards = [], updateCards}) => {
 
   return (
     <div className={defaultHistory}>
-      {cards.length > 0 ? (
-        cards.map(card => (
+      {cards?.length > 0 ? (
+        cards?.map(card => (
           <ItemHistoryCards
             card={card}
             handlerOnClick={handlerOnClick}

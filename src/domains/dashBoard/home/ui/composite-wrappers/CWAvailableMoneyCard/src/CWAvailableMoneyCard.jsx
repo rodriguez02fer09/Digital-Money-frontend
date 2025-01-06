@@ -2,15 +2,15 @@
 import currency from 'currency.js'
 
 import '../index.scss'
-import CardView from '../../../../../../cross/ui/components/cardView/src/CardView'
-import CvuView from '../../../../../../cross/ui/components/cvuView/src/CvuView'
-import TitleView from '../../../../../../cross/ui/components/titleView/src/TitleView'
-import MoneyView from '../../../../../../cross/ui/components/moneyView/src/MoneyView'
-import CardBlack from '../../../../../../cross/ui/components/CardBlack'
+import CardView from '@domains/cross/ui/components/cardView/src/CardView'
+import CvuView from '@domains/cross/ui/components/cvuView/src/CvuView'
+import TitleView from '@domains/cross/ui/components/titleView/src/TitleView'
+import MoneyView from '@domains/cross/ui/components/moneyView/src/MoneyView'
+import CardBlack from '@domains/cross/ui/components/CardBlack'
 
-import useAccount from '../../../../../../cross/core/hoocks/useAccount/src/useAccount'
+import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
-import CardOptions from '../../../components/cardOptions'
+import CardOptions from '@domains/dashBoard/home/ui/components/cardOptions'
 
 const AvailableMoneyCard = () => {
   const defaultClass = 'available-money-card'

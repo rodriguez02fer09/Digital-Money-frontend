@@ -2,9 +2,8 @@
 import {Roboto} from 'next/font/google'
 import Head from 'next/head'
 
-import Header from '../../domains/cross/ui/components/shared/header'
-import Footer from '../../domains/cross/ui/components/shared/footer'
-import MenuDesplegable from '../../domains/cross/ui/components/menuDesplegable'
+import Footer from '@domains/cross/ui/components/shared/footer'
+import MenuDesplegable from '@domains/cross/ui/components/menuDesplegable'
 
 import './index.scss'
 

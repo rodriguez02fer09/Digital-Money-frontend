@@ -4,8 +4,8 @@ import '../styles/desktop.scss'
 import Image from 'next/image'
 import classNames from 'classnames'
 
-import Button from '../../../button/index'
-import Avatar from '../../../avatar/index'
+import Button from '@domains/cross/ui/components/button/index'
+import Avatar from '@domains/cross/ui/components/avatar/index'
 
 const Header = ({color}) => {
   const defaultHeader = 'header'

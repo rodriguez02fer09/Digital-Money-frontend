@@ -5,9 +5,9 @@ import {useState} from 'react'
 
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
-import Form from '../../addCardform/src/AddCardForm'
+import Form from '@domains/dashBoard/cards/add/ui/composite-wrapers/addCardform/src/AddCardForm'
 import Cards from 'react-credit-cards-2'
-import {inputs} from '../../../../data/forms/default'
+import {inputs} from '@domains/dashBoard/cards/add/data/forms/default'
 
 const AddCard = () => {
   const {register, handleSubmit, formState} = useForm()

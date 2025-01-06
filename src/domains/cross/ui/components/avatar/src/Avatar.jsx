@@ -6,13 +6,13 @@ import Link from 'next/link' // Usar Link para la navegación
 import '../styles/desktop.scss'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
-import Button from '../../button/src/Button'
-import SloganAvatar from '../../sloganAvatar'
-import UserAvatar from '../../userAvatar'
-import useAccountStore from '../../../../core/hoocks/useAccount/src/useAccount'
-import getDataLocalStore from '../../../../core/uses-cases/getDataLocalStore'
+import Button from '@domains/cross/ui/components/button/src/Button'
+import SloganAvatar from '@domains/cross/ui/components/sloganAvatar/src/sloganAvatar'
+import UserAvatar from '@domains/cross/ui/components/userAvatar/src/UserAvatar'
+import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
-import MenuDesplegable from '../../menuDesplegable'
+import MenuDesplegable from '@domains/cross/ui/components/menuDesplegable/src/MenuDesplegable'
 
 const Avatar = () => {
   const router = useRouter()
@@ -32,11 +32,11 @@ const Avatar = () => {
   }, [setUser])
 
   const handleSignUp = () => {
-    router.push('/sign-email')
+    router.push('/account/sign-email')
   }
 
   const handleCreateAccount = () => {
-    router.push('/create-acount')
+    router.push('/account/create')
   }
 
   const toggleMenu = () => {
@@ -48,7 +48,7 @@ const Avatar = () => {
       {isLogin && user ? (
         <>
           <SloganAvatar {...user} />
-          <Link href="/dashBoard">
+          <Link href="/dashBoard/home">
             <UserAvatar {...user} />
           </Link>
         </>

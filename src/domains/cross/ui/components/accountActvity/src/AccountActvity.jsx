@@ -1,6 +1,6 @@
 import '../styles/desktop.scss'
 
-import ItemActivity from '../../itemActivity/src/ItemActivity'
+import ItemActivity from '@domains/cross/ui/components/itemActivity/src/ItemActivity'
 
 const AccountActivity = () => {
   return (

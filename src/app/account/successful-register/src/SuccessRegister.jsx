@@ -1,8 +1,8 @@
 'use client'
 import '../styles/desktop.scss'
 import Image from 'next/image'
-import Button from '../../../../domains/cross/ui/components/button/index'
-import ImgCheck from '../../../../public/images/add.svg'
+import Button from '@domains/cross/ui/components/button/index'
+import ImgCheck from '@public/images/add.svg'
 import {useRouter} from 'next/navigation'
 
 const SuccessRegister = () => {

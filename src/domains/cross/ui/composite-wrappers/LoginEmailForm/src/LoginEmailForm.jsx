@@ -4,8 +4,8 @@ import React from 'react'
 import classNames from 'classnames'
 import {useForm, FormProvider} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
-import Input from '../../../components/input'
-import Button from '../../../components/button/src/Button'
+import Input from '@domains/cross/ui/components/input'
+import Button from '@domains/cross/ui/components/button/src/Button'
 
 const Form = ({inputs = [], name, callBackOnSubmit, onClick}) => {
   const methods = useForm() // Inicializamos React Hook Form

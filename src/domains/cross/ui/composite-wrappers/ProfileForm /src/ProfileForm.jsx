@@ -3,8 +3,8 @@ import '../styles/desktop.scss'
 import React from 'react'
 import classNames from 'classnames'
 import {useForm, FormProvider} from 'react-hook-form'
-import InputEdit from '../../../components/inputEdit'
-import Button from '../../../components/button/src/Button'
+import InputEdit from '@domains/cross/ui/components/inputEdit'
+import Button from '@domains/cross/ui/components/button/src/Button'
 
 const ProfileForm = ({inputs = [], name, callBackOnSubmit}) => {
   const methods = useForm()
