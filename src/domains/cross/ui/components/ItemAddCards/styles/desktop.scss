@@ -9,7 +9,7 @@
     align-items: center;
 
     &__containtex {
-      height: 22px;
+      height: 200px;
       width: 130px;
 
       p {
@@ -61,7 +61,6 @@
 
 @media screen and (min-width: 835px) {
   .ItemAddCards {
-    width: 100%;
     height: 34px;
     display: flex;
     flex-direction: row;
@@ -71,8 +70,11 @@
 
     &__containtex {
       height: 22px;
-      width: 130px;
+      width: 100%;
       margin-left: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
 
       p {
         color: $primary-color;
@@ -86,7 +88,6 @@
     }
 
     &__arrow {
-      margin-left: 920px;
     }
   }
 }
