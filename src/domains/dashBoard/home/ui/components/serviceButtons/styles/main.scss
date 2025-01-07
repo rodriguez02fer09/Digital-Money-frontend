@@ -23,11 +23,11 @@
 
 @media screen and (min-width: 835px) {
   .service-buttons {
-    margin: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     gap: 20px;
     height: 106px;
+    margin: 16px 0px;
   }
 }
