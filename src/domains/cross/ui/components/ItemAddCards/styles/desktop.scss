@@ -4,13 +4,10 @@
     width: 100%;
     height: 34px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 
     &__containtex {
-      height: 200px;
       width: 130px;
+      margin-left: 20px;
 
       p {
         color: $primary-color;
@@ -41,6 +38,7 @@
     &__containtex {
       height: 22px;
       width: 130px;
+      margin-left: 20px;
 
       p {
         color: $primary-color;

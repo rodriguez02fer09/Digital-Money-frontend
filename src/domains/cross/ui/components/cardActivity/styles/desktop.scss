@@ -14,21 +14,29 @@
     }
 
     &--HistoryCard {
-      height: 370px;
+      height: auto;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
 
     .contain-header p {
+      font-family: $font-stack;
+      color: var(--A---Color-1, #201f22);
       font-size: $heading-2;
+      font-weight: 700;
+      line-height: 138.182%;
       margin-bottom: 22px;
     }
     .content {
       height: auto;
     }
     .contain-footer p {
+      font-family: $font-stack;
       font-size: $heading-3;
+      font-weight: 700;
+      line-height: 16.34px;
+      text-align: left;
     }
 
     &--ProfileData {
@@ -48,13 +56,11 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     &--Activity {
-      height: 377px;
-      width: auto;
+      height: auto;
     }
 
     &--HistoryCard {
-      height: 340px;
-      width: 100%;
+      height: auto;
     }
 
     &--ProfileData {
@@ -62,12 +68,24 @@
     }
 
     .contain-header p {
-      margin-bottom: 18px;
+      color: var(--A---Color-1, #201f22);
       font-size: $heading-2;
+      font-weight: 700;
+      line-height: 138.182%;
     }
 
-    .contain-footer p {
-      font-size: $heading-3;
+    .contain-footer {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        font-family: $font-stack;
+        font-size: $heading-3;
+        font-weight: 700;
+        line-height: 16.34px;
+        text-align: left;
+      }
     }
   }
 }
