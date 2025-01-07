@@ -116,7 +116,6 @@
     }
     &--button-activity {
       height: 85px;
-      width: 481px;
     }
 
     &--button-arrow {
@@ -125,7 +124,7 @@
       align-items: center;
       justify-content: space-around;
       .button__icon {
-        left: 55px; // Ajuste específico para pantallas pequeñas
+        left: 55px;
       }
     }
   }

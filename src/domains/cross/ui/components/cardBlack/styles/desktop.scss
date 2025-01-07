@@ -2,6 +2,7 @@
 
 .cardBlack {
   background: black;
+  margin: 16px 0px;
   border-radius: 8px; // Fondo negro para todas las clases hijas
 
   &--AvailableAmountCard {
@@ -12,7 +13,7 @@
 
     @media screen and (min-width: 399px) and (max-width: 834px) {
       height: 230 px;
-      margin: 18px 0px;
+      margin: 16px 0px;
     }
 
     @media screen and (min-width: 835px) {

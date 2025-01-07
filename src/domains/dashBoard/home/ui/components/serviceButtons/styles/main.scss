@@ -12,12 +12,10 @@
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .service-buttons {
-    width: 511px;
-    height: 190px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    height: 190px;
   }
 }
 
