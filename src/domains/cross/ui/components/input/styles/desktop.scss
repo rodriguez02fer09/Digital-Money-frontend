@@ -58,6 +58,8 @@ input {
 
 @media (max-width: 398px) {
   .container-input {
+    width: 100%;
+
     &--large {
       height: 50px;
       width: 100%; // Ajuste de altura para pantallas pequeñas

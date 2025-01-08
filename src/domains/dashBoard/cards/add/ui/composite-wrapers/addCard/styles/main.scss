@@ -1,15 +1,26 @@
 @import '@domains/cross/sass/variables';
 
 @media (max-width: 398px) {
-}
-
-@media screen and (min-width: 399px) and (max-width: 834px) {
   .form-container {
-    width: 515px;
     height: 593px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    border-radius: 8px;
+    padding: 22px 23px 26px 26px;
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .form-container {
+    height: 593px;
+    padding: 48px 79px 34px 76px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 8px;
   }
 }
 @media screen and (min-width: 835px) {
