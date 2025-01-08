@@ -32,7 +32,6 @@ const Input = ({
     <div className={inputClass}>
       <input
         {...(register ? register(name, registerData) : {})} // Solo aplica `register` si está disponible
-        color={color}
         type={type}
         id={name}
         name={name}
