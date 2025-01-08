@@ -4,6 +4,21 @@
 }
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
+  .form-container {
+    width: 515px;
+    height: 593px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 835px) {
+  .form-container {
+    background-color: white;
+    padding: 30px 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 8px;
+  }
 }

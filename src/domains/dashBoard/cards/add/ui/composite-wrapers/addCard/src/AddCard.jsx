@@ -1,4 +1,5 @@
 'use client'
+import '../styles/main.scss'
 import 'react-credit-cards-2/dist/lib/styles.scss'
 
 import {useState} from 'react'
@@ -14,47 +15,44 @@ const AddCard = () => {
 
   const useCallbackCreateAccount = result => {}
 
-  const callBackOnSubmit = newDataCard => {
-    debugger
-    setCard({
-      ...newDataCard,
-    })
-  }
+  const callBackOnSubmit = newDataAccount => {}
 
-  const defaultClass = 'form-card'
+  const defaultClass = 'form-container'
 
-  const [card, setCard] = useState({
+  const [state, setState] = useState({
     number: '',
     expiry: '',
     cvc: '',
     name: '',
-    focus: true,
+    focus: '',
   })
 
   const handleInputChange = evt => {
     const {name, value} = evt.target
-    setCard(prev => ({...prev, [name]: value}))
+
+    setState(prev => ({...prev, [name]: value}))
   }
 
-  const callbackInputFocus = evt => {
-    setCard(prev => ({...prev, focus: evt.target.name}))
+  const handleInputFocus = evt => {
+    setState(prev => ({...prev, focus: evt.target.name}))
   }
 
   return (
     <main className={`${defaultClass}`}>
       <Cards
-        number={card.number}
-        expiry={card.expiry}
-        cvc={card.cvc}
-        name={card.name}
-        focused={card.focus}
+        number={state.number}
+        expiry={state.expiry}
+        cvc={state.cvc}
+        name={state.name}
+        focused={state.focus}
       />
+
       <Form
         callBackOnSubmit={callBackOnSubmit}
-        callbackInputFocus={callbackInputFocus}
         inputs={inputs}
         name="add"
         className={`${defaultClass}`}
+        color={'blue'}
       />
     </main>
   )
