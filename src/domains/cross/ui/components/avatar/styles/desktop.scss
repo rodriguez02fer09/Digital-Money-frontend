@@ -68,15 +68,15 @@
     }
     &.logged-in {
       .link {
-        text-decoration: none; /* Eliminar el subrayado */
+        text-decoration: none;
       }
       .contain-avatar--button {
-        display: none; // Ocultar botones cuando esté logueado
-      }
+        display: none;
 
-      .slogan-avatar,
-      .user-avatar {
-        display: flex; // Asegurarse de que los avatares estén visibles
+        .slogan-avatar,
+        .user-avatar {
+          display: flex;
+        }
       }
     }
   }
