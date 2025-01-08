@@ -1,8 +1,7 @@
 'use client'
 
 import {useEffect, useState} from 'react'
-import Link from 'next/link' // Usar Link para la navegación
-
+import Link from 'next/link'
 import '../styles/desktop.scss'
 import Image from 'next/image'
 import {useRouter} from 'next/navigation'
@@ -48,7 +47,7 @@ const Avatar = () => {
       {isLogin && user ? (
         <>
           <SloganAvatar {...user} />
-          <Link href="/dashBoard/home">
+          <Link href="/dashBoard/home" className="link">
             <UserAvatar {...user} />
           </Link>
         </>

@@ -66,5 +66,18 @@
     &--menu {
       display: none;
     }
+    &.logged-in {
+      .link {
+        text-decoration: none; /* Eliminar el subrayado */
+      }
+      .contain-avatar--button {
+        display: none; // Ocultar botones cuando esté logueado
+      }
+
+      .slogan-avatar,
+      .user-avatar {
+        display: flex; // Asegurarse de que los avatares estén visibles
+      }
+    }
   }
 }
