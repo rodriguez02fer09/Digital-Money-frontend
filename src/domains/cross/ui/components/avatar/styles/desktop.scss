@@ -45,6 +45,19 @@
     &--menu {
       display: none;
     }
+    &.logged-in {
+      .link {
+        text-decoration: none;
+      }
+      .contain-avatar--button {
+        display: none;
+
+        .slogan-avatar,
+        .user-avatar {
+          display: flex;
+        }
+      }
+    }
   }
 }
 
