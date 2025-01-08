@@ -41,6 +41,8 @@
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .ItemMoneyTransfer {
     margin-top: 18px;
+    height: 70px;
+    border-bottom: 1px solid white;
     &__contain-title {
       display: flex;
       flex-direction: row;
@@ -74,6 +76,8 @@
 @media screen and (min-width: 835px) {
   .ItemMoneyTransfer {
     margin-top: 18px;
+    height: 70px;
+    border-bottom: 1px solid white;
     &__contain-title {
       display: flex;
       flex-direction: row;

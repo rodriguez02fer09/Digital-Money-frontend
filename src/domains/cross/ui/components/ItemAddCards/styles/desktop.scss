@@ -1,16 +1,18 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
   .ItemAddCards {
+    cursor: pointer;
     width: 100%;
     height: 34px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 
-    &__containtex {
-      height: 22px;
+    &__icon {
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+    &__tex {
       width: 130px;
+      margin-left: 20px;
 
       p {
         color: $primary-color;
@@ -30,6 +32,7 @@
 }
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .ItemAddCards {
+    cursor: pointer;
     width: 100%;
     height: 34px;
     display: flex;
@@ -37,10 +40,14 @@
     justify-content: start;
     align-items: center;
     margin-left: 10px;
-
-    &__containtex {
+    &__icon {
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+    &__tex {
       height: 22px;
       width: 130px;
+      margin-left: 20px;
 
       p {
         color: $primary-color;
@@ -61,18 +68,23 @@
 
 @media screen and (min-width: 835px) {
   .ItemAddCards {
-    width: 100%;
     height: 34px;
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
     box-sizing: border-box;
-
-    &__containtex {
+    &__icon {
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+    &__tex {
       height: 22px;
-      width: 130px;
+      width: 100%;
       margin-left: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
 
       p {
         color: $primary-color;
@@ -86,7 +98,6 @@
     }
 
     &__arrow {
-      margin-left: 920px;
     }
   }
 }

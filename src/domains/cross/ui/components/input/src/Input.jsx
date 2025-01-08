@@ -15,13 +15,14 @@ const Input = ({
   className,
   name,
   type,
+  onFocus,
   ...rest
 }) => {
   const methods = useFormContext()
   const {register, formState, setValue} = methods || {} // Solo intenta destructurar si `methods` está disponible
   const errors = formState?.errors || {} // Maneja errores de manera segura
 
-  const defaultClass = 'container-input'
+  const defaultClass = className ? className : 'container-input'
   const inputClass = classNames(defaultClass, {
     [`${defaultClass}--${size}`]: size,
     [`${defaultClass}--${color}`]: color,
@@ -31,7 +32,6 @@ const Input = ({
     <div className={inputClass}>
       <input
         {...(register ? register(name, registerData) : {})} // Solo aplica `register` si está disponible
-        color={color}
         type={type}
         id={name}
         name={name}
@@ -39,6 +39,7 @@ const Input = ({
         placeholder={placeholder}
         className={inputClass}
         onChange={onChange}
+        onFocus={onFocus}
         {...rest}
       />
       {errors[name] && <span>{errors[name].message}</span>}

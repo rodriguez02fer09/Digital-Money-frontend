@@ -4,9 +4,9 @@ import '../styles/desktop.scss'
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
 import Form from '@domains/cross/ui/composite-wrappers/createAccountForm/src/createAccountForm'
-import {createAccountForm} from '@domains/cross/ui/composite-wrappers/createAccountForm/src/createAccountForm'
-import {requestCreateAccount} from '@domains/account/create/request-create-account'
-import {useAcountStore} from '@domains/account/create/useAcountStore'
+import {createAccountForm} from '@domains/account/create/data/forms/default'
+import requestCreateAccount from '@domains/account/create/core/uses-cases/request-create-account'
+import {useAcountStore} from '@domains/account/create/core/hoocks/useAcountStore'
 import {useEffect} from 'react'
 
 const CWPageCreateAcount = () => {

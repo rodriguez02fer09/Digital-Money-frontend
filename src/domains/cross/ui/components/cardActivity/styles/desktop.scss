@@ -10,25 +10,33 @@
     margin: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     &--Activity {
-      height: 358px;
+      height: auto;
     }
 
     &--HistoryCard {
-      height: 370px;
+      height: auto;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
 
     .contain-header p {
+      font-family: $font-stack;
+      color: var(--A---Color-1, #201f22);
       font-size: $heading-2;
+      font-weight: 700;
+      line-height: 138.182%;
       margin-bottom: 22px;
     }
     .content {
       height: auto;
     }
     .contain-footer p {
+      font-family: $font-stack;
       font-size: $heading-3;
+      font-weight: 700;
+      line-height: 16.34px;
+      text-align: left;
     }
 
     &--ProfileData {
@@ -44,15 +52,15 @@
     border-radius: 8px;
     cursor: pointer;
     padding: 16px;
-    margin: 16px;
+
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     &--Activity {
-      height: 377px;
+      height: auto;
     }
 
     &--HistoryCard {
-      height: 340px;
+      height: auto;
     }
 
     &--ProfileData {
@@ -60,24 +68,36 @@
     }
 
     .contain-header p {
-      margin-bottom: 18px;
+      color: var(--A---Color-1, #201f22);
       font-size: $heading-2;
+      font-weight: 700;
+      line-height: 138.182%;
     }
 
-    .contain-footer p {
-      font-size: $heading-3;
+    .contain-footer {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        font-family: $font-stack;
+        font-size: $heading-3;
+        font-weight: 700;
+        line-height: 16.34px;
+        text-align: left;
+      }
     }
   }
 }
 
 @media screen and (min-width: 835px) {
   .cardActivity {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(255, 255, 255);
     box-sizing: border-box;
     border-radius: 8px;
     cursor: pointer;
     padding: 16px;
-    margin: 16px;
+
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     .contain-header {
@@ -113,10 +133,11 @@
 
     // Estilos de variantes
     &--Activity {
+      width: auto;
     }
 
     &--HistoryCard {
-      height: 384px;
+      height: auto;
       padding: 30px 38px 32px 41px;
     }
 

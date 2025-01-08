@@ -3,11 +3,19 @@
   .button-profile {
     margin: 16px;
     height: 67px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    a {
+      text-decoration: none; /* Elimina subrayados del enlace */
+      display: flex;
+      justify-content: center; /* Alinea el contenido del enlace */
+      align-items: center;
 
+      &:hover {
+        text-decoration: none; /* Agrega subrayado al pasar el mouse */
+      }
+    }
     &::placeholder {
       background: rgba(255, 255, 255, 1);
       size: $heading-3;
@@ -17,8 +25,8 @@
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .button-profile {
-    margin: 16px;
-    height: 67 px;
+    margin: 16px 0px;
+    height: 116 px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -27,13 +35,23 @@
       background: rgba(255, 255, 255, 1);
       size: $heading-3;
     }
+    a {
+      text-decoration: none; /* Elimina subrayados del enlace */
+      display: flex;
+      justify-content: center; /* Alinea el contenido del enlace */
+      align-items: center;
+
+      &:hover {
+        text-decoration: none; /* Agrega subrayado al pasar el mouse */
+      }
+    }
   }
 }
 
 @media screen and (min-width: 835px) {
   .button-profile {
-    margin: 16px;
-    height: 67px;
+    margin: 16px 0px;
+    height: 116px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,6 +59,16 @@
     &::placeholder {
       background: rgba(255, 255, 255, 1);
       size: $heading-3;
+    }
+    a {
+      text-decoration: none; /* Elimina subrayados del enlace */
+      display: flex;
+      justify-content: center; /* Alinea el contenido del enlace */
+      align-items: center;
+
+      &:hover {
+        text-decoration: none; /* Agrega subrayado al pasar el mouse */
+      }
     }
   }
 }

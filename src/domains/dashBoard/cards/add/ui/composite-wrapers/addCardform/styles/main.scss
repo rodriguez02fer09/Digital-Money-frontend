@@ -1,0 +1,120 @@
+@import '@domains/cross/sass/variables';
+@media screen and (min-width: 835px) {
+  .form-add {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 20px;
+    margin-top: 29px;
+
+    grid-template-areas:
+      'inputa inputb'
+      'inputc inputd'
+      '. buton';
+
+    .input:nth-child(1) {
+      grid-area: inputa;
+    }
+    .input:nth-child(2) {
+      grid-area: inputb;
+    }
+    .input:nth-child(3) {
+      grid-area: inputc;
+    }
+    .input:nth-child(4) {
+      grid-area: inputd;
+    }
+    button {
+      grid-area: buton;
+    }
+  }
+
+  .form--add-add {
+  }
+  input {
+    height: 64px;
+    border-radius: 10px;
+    border: 1px solid $cuartary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+  }
+  form {
+    display: flex;
+    flex-direction: column; /* Alinea etiqueta e input verticalmente */
+    align-items: flex-end; /* Mueve los elementos, incluido el botón, a la derecha */
+  }
+
+  button {
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .form-add {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Cuatro columnas iguales */
+    gap: 16px;
+    grid-template-areas:
+      'inputa inputa ' /* Número de la tarjeta ocupa las 4 columnas */
+      'inputb inputb ' /* Nombre y apellido ocupa las 4 columnas */
+      'inputc inputd' /* Fecha de vencimiento y Código de seguridad comparten */
+      'buton buton';
+
+    .input:nth-child(1) {
+      grid-area: inputa;
+    }
+    .input:nth-child(2) {
+      grid-area: inputb;
+    }
+    .input:nth-child(3) {
+      grid-area: inputc;
+    }
+    .input:nth-child(4) {
+      grid-area: inputd;
+    }
+
+    button {
+      grid-area: buton;
+    }
+  }
+}
+.form--add-add {
+}
+input {
+  border-radius: 10px;
+  border: 1px solid $cuartary-color;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+}
+
+@media (max-width: 398px) {
+  .form-add {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 29px;
+    gap: 16px;
+  }
+
+  .form--add-add {
+  }
+  input {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid $cuartary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    margin-bottom: 8px; /* Espaciado entre la etiqueta y el input */
+  }
+  form {
+    display: flex;
+    flex-direction: column; /* Alinea etiqueta e input verticalmente */
+    align-items: flex-end; /* Mueve los elementos, incluido el botón, a la derecha */
+  }
+}

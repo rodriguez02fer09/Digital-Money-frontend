@@ -10,7 +10,7 @@ import Button from '@domains/cross/ui/components/button/src/Button'
 const Form = ({inputs = [], name, callBackOnSubmit}) => {
   const methods = useForm() // Inicializamos React Hook Form
 
-  const defaultClass = 'form-container'
+  const defaultClass = 'form-add'
 
   const customClass = classNames(defaultClass, {
     [`${defaultClass}--${name}`]: name,

@@ -1,6 +1,6 @@
-@media screen and (min-width: 835px) {
+@media screen and (min-width: 398px) {
   .activity-money-component {
-    margin: 16px;
+    margin: 0px 16px;
 
     &::placeholder {
       background: rgba(255, 255, 255, 1);
@@ -8,6 +8,36 @@
     }
 
     &__activity {
+      height: auto;
+    }
+  }
+}
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .activity-money-component {
+    margin: 16px 0px;
+    width: 100%;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+
+    &__activity {
+      height: auto;
+    }
+  }
+}
+@media screen and (min-width: 835px) {
+  .activity-money-component {
+    margin: 16px 0px;
+
+    &::placeholder {
+      background: rgba(255, 255, 255, 1);
+      size: $heading-3;
+    }
+
+    &__activity {
+      height: auto;
     }
   }
 }

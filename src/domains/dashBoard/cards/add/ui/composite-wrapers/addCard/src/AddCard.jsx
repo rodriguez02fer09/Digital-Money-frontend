@@ -1,4 +1,5 @@
 'use client'
+import '../styles/main.scss'
 import 'react-credit-cards-2/dist/lib/styles.scss'
 
 import {useState} from 'react'
@@ -16,7 +17,7 @@ const AddCard = () => {
 
   const callBackOnSubmit = newDataAccount => {}
 
-  const defaultClass = 'mainForm-cuenta'
+  const defaultClass = 'form-container'
 
   const [state, setState] = useState({
     number: '',
@@ -49,8 +50,9 @@ const AddCard = () => {
       <Form
         callBackOnSubmit={callBackOnSubmit}
         inputs={inputs}
-        name="createAccount"
-        className={`${defaultClass}--createAccount`}
+        name="add"
+        className={`${defaultClass}`}
+        color={'blue'}
       />
     </main>
   )
