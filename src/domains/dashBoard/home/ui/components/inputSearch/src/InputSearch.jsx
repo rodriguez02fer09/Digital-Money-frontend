@@ -1,26 +1,37 @@
 import '../styles/desktop.scss'
 import classNames from 'classnames'
-const InputSearch = ({
-  size,
-  value,
-  placeholder,
-  onChange,
-  label,
-  className = '',
-}) => {
+import {useState} from 'react'
+
+const InputSearch = ({size, placeholder, label, className = ''}) => {
   const defaultClass = 'container-SearchPrompt'
 
   const inputSearchClass = classNames(defaultClass, {
     [`${defaultClass}--${size}`]: size,
   })
 
+  const [inputValue, setInputValue] = useState('')
+
+  const hanDleChange = e => {
+    const value = e.target.value
+    setInputValue(value)
+    console.log('Input value:', value)
+  }
+  const hanDleKeyDown = e => {
+    if (e.key === 'Enter') {
+      window.location.href = `/dashBoard/activity`
+      console.log('Redirecting to:', `/dashBoard/activity`)
+    }
+  }
+
   return (
     <div className={`${inputSearchClass}`}>
       <input
+        type="text"
         size={size}
-        value={value}
+        value={inputValue}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={hanDleChange}
+        onKeyDown={hanDleKeyDown}
         className={`${inputSearchClass}__input`}
       />
       <img
