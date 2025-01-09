@@ -1,0 +1,68 @@
+@import '../../../../sass/variables';
+
+input {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+  border: none;
+  font-family: $font-stack;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 134.766%;
+  color: #00000080;
+
+  &:focus-visible {
+    outline: none;
+  }
+  &::placeholder {
+    font-family: $font-stack;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 134.766%;
+    color: gray !important;
+  }
+}
+
+.container-input {
+  border-radius: 10px;
+  border: none;
+  color: black;
+
+  &--large {
+    width: 100%;
+    height: 64px;
+  }
+
+  &--red {
+    border: 1px solid $senary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--blue {
+    border: 1px solid $cuartary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  &--black {
+    border: 1px solid $tertiary-color;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+
+    &::placeholder {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      color: #3a393e;
+    }
+  }
+}
+
+@media (max-width: 398px) {
+  .container-input {
+    width: 100%;
+
+    &--large {
+      height: 50px;
+      width: 100%; // Ajuste de altura para pantallas pequeñas
+    }
+  }
+}

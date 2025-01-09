@@ -17,7 +17,7 @@ const CWActivity = () => {
   return (
     <>
       <div className={defaultClass}>
-        <InputSearch size="medium-prompt" placeholder="Busca tu actividad" />
+        <InputSearch type="text" placeholder="Busca tu actividad" />
       </div>
       <div className={`${defaultClass}__activity`}>
         <CardActivity size="Activity">

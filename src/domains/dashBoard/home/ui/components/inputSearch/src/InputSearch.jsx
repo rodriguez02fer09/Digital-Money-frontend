@@ -21,12 +21,14 @@ const InputSearch = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
-        className={`${inputSearchClass}`}
+        className={`${inputSearchClass}__input`}
       />
       <img
+        className={`${inputSearchClass}__img`}
         src="/images/search.svg"
         alt="Search icon"
-        className={`${inputSearchClass} `}
+        width={22}
+        height={22}
       />
     </div>
   )

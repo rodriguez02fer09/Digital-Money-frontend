@@ -1,12 +1,15 @@
+'use client'
 import '../styles/main.scss'
 import Image from 'next/image'
+
+import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 
 const FilterForm = () => {
   const customClass = 'filter-form'
   return (
     <div className={customClass}>
       <div className={`${customClass}__input`}>
-        <input type="text" placeholder="Buscar..." />
+        <InputSearch type="text" placeholder="Busca tu actividad" />
       </div>
       <div className={`${customClass}__button`}>
         <button type="submit">
@@ -16,7 +19,7 @@ const FilterForm = () => {
             height={22}
             alt="Filtrar"
           />
-          Filter
+          Filtrar
         </button>
       </div>
     </div>
