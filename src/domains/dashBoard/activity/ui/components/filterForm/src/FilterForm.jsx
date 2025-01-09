@@ -4,12 +4,12 @@ import Image from 'next/image'
 
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 
-const FilterForm = () => {
+const FilterForm = ({slug}) => {
   const customClass = 'filter-form'
   return (
     <div className={customClass}>
       <div className={`${customClass}__input`}>
-        <InputSearch type="text" placeholder="Busca tu actividad" />
+        <InputSearch slug={slug} type="text" placeholder="Busca tu actividad" />
       </div>
       <div className={`${customClass}__button`}>
         <button type="submit">

@@ -2,24 +2,25 @@ import '../styles/desktop.scss'
 import classNames from 'classnames'
 import {useState} from 'react'
 
-const InputSearch = ({size, placeholder, label, className = ''}) => {
+const InputSearch = ({size, placeholder, label, className = '', slug}) => {
   const defaultClass = 'container-SearchPrompt'
 
   const inputSearchClass = classNames(defaultClass, {
     [`${defaultClass}--${size}`]: size,
   })
 
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState(slug || '')
 
   const hanDleChange = e => {
     const value = e.target.value
     setInputValue(value)
     console.log('Input value:', value)
   }
+
   const hanDleKeyDown = e => {
     if (e.key === 'Enter') {
-      window.location.href = `/dashBoard/activity`
-      console.log('Redirecting to:', `/dashBoard/activity`)
+      window.location.href = `/dashBoard/activity/${inputValue}`
+      console.log('Redirecting to:', `/dashBoard/activity/${inputValue}`)
     }
   }
 
