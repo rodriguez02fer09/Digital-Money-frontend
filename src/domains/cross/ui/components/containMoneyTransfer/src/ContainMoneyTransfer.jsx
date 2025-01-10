@@ -1,14 +1,19 @@
+import {useEffect} from 'react'
 import '../styles/desktop.scss'
-import Image from 'next/image'
-import {useAcountStore} from '@domains/account/create/core/hoocks/useAcountStore'
+import {useAcountStore} from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import ItemMoneyTransfer from '@domains/cross/ui/components/ItemMoneyTransfer/src/ItemMoneyTransfer'
 
 const ContainMoneyTransfer = () => {
   const {account} = useAcountStore()
 
+  useEffect(() => {
+    console.log(account)
+  }, [account])
+
   const {cvu, alias} = account ?? {}
 
   const defaultContainMoney = 'containMoneyTransfer'
+
   return (
     <div className={defaultContainMoney}>
       <div className={`${defaultContainMoney}__containDescription`}>

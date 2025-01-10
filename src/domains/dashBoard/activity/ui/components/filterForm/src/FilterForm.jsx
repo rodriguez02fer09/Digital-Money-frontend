@@ -1,7 +1,7 @@
 'use client'
 import '../styles/main.scss'
 import Image from 'next/image'
-import {useEffect} from 'react'
+import {useState} from 'react'
 
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
@@ -9,11 +9,7 @@ import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 
 const FilterForm = ({slug, showButton}) => {
-  const {activity} = useActivity()
-
-  useEffect(() => {
-    console.log(activity)
-  }, [activity])
+  const {activity} = useActivity([])
 
   const customClass = 'filter-form'
 
