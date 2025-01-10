@@ -3,11 +3,11 @@ import './styles/main.scss'
 
 import FilterForm from '@domains/dashBoard/activity/ui/components/filterForm/src/FilterForm'
 
-const CWActivity = ({params}) => {
+const CWActivity = ({params, showButton}) => {
   return (
-    <div>
-      <FilterForm slug={params?.slug} />
-    </div>
+    <>
+      <FilterForm slug={params?.slug} showButton={true} />
+    </>
   )
 }
 

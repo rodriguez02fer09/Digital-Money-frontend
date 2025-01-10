@@ -19,11 +19,6 @@ const CWActivity = () => {
       <div className={defaultClass}>
         <InputSearch type="text" placeholder="Busca tu actividad" />
       </div>
-      <div className={`${defaultClass}__activity`}>
-        <CardActivity size="Activity">
-          <ListActivity activity={activity} />
-        </CardActivity>
-      </div>
     </>
   )
 }
