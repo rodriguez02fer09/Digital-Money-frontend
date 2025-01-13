@@ -1,12 +1,14 @@
 'use client'
-import './styles/main.scss'
 
+import React from 'react'
 import FilterForm from '@domains/dashBoard/activity/ui/components/filterForm/src/FilterForm'
 
-const CWActivity = ({params, showButton}) => {
+const CWActivity = ({params}) => {
+  const resolvedParams = React.use(params)
+
   return (
     <>
-      <FilterForm slug={params?.slug} showButton={true} />
+      <FilterForm slug={resolvedParams?.slug} showButton={true} />
     </>
   )
 }

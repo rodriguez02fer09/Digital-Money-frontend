@@ -7,10 +7,6 @@ import ItemMoneyTransfer from '@domains/cross/ui/components/ItemMoneyTransfer/sr
 const ContainMoneyTransfer = () => {
   const {user: perfil, updateUser, account} = useAccount()
 
-  useEffect(() => {
-    console.log(account)
-  }, [account])
-
   const {cvu, alias} = account ?? {}
 
   const defaultContainMoney = 'containMoneyTransfer'
