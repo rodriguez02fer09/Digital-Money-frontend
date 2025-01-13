@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import FilterForm from '@domains/dashBoard/activity/ui/components/filterForm/src/FilterForm'
+import FilterForm from '@domains/dashBoard/activity/list/ui/components/filterForm/src/FilterForm'
 
-const CWActivity = ({params}) => {
+const CWList = ({params}) => {
   const resolvedParams = React.use(params)
 
   return (
@@ -13,4 +13,4 @@ const CWActivity = ({params}) => {
   )
 }
 
-export default CWActivity
+export default CWList

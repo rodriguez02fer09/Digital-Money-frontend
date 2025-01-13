@@ -1,3 +1,3 @@
-import Activity from '@domains/dashBoard/activity/ui/composite-wrappers/activity/src/CWActivity'
+import CWList from '@domains/dashBoard/activity/list/ui/composite-wrappers/activity/src/CWList.jsx'
 
-export default Activity
+export default CWList
