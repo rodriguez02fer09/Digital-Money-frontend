@@ -1,10 +1,11 @@
 import {useEffect} from 'react'
 import '../styles/desktop.scss'
-import {useAcountStore} from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import Image from 'next/image'
+import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import ItemMoneyTransfer from '@domains/cross/ui/components/ItemMoneyTransfer/src/ItemMoneyTransfer'
 
 const ContainMoneyTransfer = () => {
-  const {account} = useAcountStore()
+  const {user: perfil, updateUser, account} = useAccount()
 
   useEffect(() => {
     console.log(account)
