@@ -18,8 +18,8 @@ const MenuDesplegable = () => {
           <li className={pathname === '/dashBoard/home' ? 'selected' : ''}>
             <Link href="/dashBoard/home">Inicio</Link>
           </li>
-          <li className={pathname === '/dashBoard/actividad' ? 'selected' : ''}>
-            <Link href="/dashBoard/actividad">Actividad</Link>
+          <li className={pathname === '/dashBoard/activity' ? 'selected' : ''}>
+            <Link href="/dashBoard/activity">Actividad</Link>
           </li>
           <li className={pathname === '/dashBoard/perfil' ? 'selected' : ''}>
             <Link href="/dashBoard/perfil">Tu perfil</Link>

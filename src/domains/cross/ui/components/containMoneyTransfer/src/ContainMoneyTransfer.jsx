@@ -1,3 +1,4 @@
+import {useEffect} from 'react'
 import '../styles/desktop.scss'
 import Image from 'next/image'
 import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
@@ -9,6 +10,7 @@ const ContainMoneyTransfer = () => {
   const {cvu, alias} = account ?? {}
 
   const defaultContainMoney = 'containMoneyTransfer'
+
   return (
     <div className={defaultContainMoney}>
       <div className={`${defaultContainMoney}__containDescription`}>

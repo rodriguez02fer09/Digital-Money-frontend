@@ -1,0 +1,121 @@
+@import '@domains/cross/sass/_variables.scss';
+
+@media screen and (min-width: 398px) {
+  .filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__input {
+        flex: 1;
+
+        input {
+          height: 64px;
+          width: 100%;
+          padding: 8px 12px;
+          border-radius: 8px;
+          font-size: 16px;
+          border: 1px solid var(--B--Color-3, #d2ffec);
+          background: #fff;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &__button {
+        display: none;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          border-radius: 8px;
+          width: 172px;
+          height: 64px;
+          background: $primary-color;
+          font-size: 16px;
+          cursor: pointer;
+
+          img {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    &__activity {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .filter-form {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__form {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__input {
+        flex: 1;
+
+        input {
+          padding: 0 40px;
+          border-radius: 8px;
+        }
+      }
+
+      &__button {
+        display: flex;
+        margin-left: 21px;
+
+        button {
+          display: flex;
+          justify-content: space-around;
+          width: 172px;
+          height: 64px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .filter-form {
+    gap: 16px;
+
+    &__form {
+      flex-direction: row;
+
+      &__input {
+        input {
+          padding: 0 40px;
+          border-radius: 8px;
+        }
+      }
+
+      &__button {
+        display: flex;
+        margin-left: 21px;
+
+        button {
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}

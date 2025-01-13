@@ -22,11 +22,11 @@ const AvailableMoneyCard = () => {
   const amountInARS = currency(available_amount)
     .multiply(conversionRate)
     .format({
-      symbol: 'ARS', // Puedes usar 'ARS' o el símbolo de pesos argentinos '₱'
-      separator: '.', // Separador de miles
-      decimal: ',', // Separador de decimales
-      precision: 2, // Asegurarte de que tenga siempre dos decimales
-      pattern: '# !', // Esto agrega un espacio entre el valor y la moneda
+      symbol: 'ARS',
+      separator: '.',
+      decimal: ',',
+      precision: 2,
+      pattern: '# !',
     })
 
   console.log(amountInARS)
