@@ -1,0 +1,48 @@
+@import '@domains/cross/sass/_variables.scss';
+
+@media (max-width: 398px) {
+  .detail-buttons {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    width: 100%;
+
+    &__contain-buttons {
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .detail-buttons {
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+
+    &__contain-buttons {
+      display: flex;
+      flex-direction: row;
+      width: 460px;
+      gap: 20px;
+    }
+  }
+}
+@media screen and (min-width: 835px) {
+  .detail-buttons {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    &__contain-buttons {
+      display: flex;
+      flex-direction: row;
+      width: 486px;
+      gap: 20px;
+    }
+  }
+}

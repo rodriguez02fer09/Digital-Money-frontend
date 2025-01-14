@@ -48,4 +48,16 @@
       padding: 25px;
     }
   }
+  &--Detail {
+    @media (max-width: 398px) {
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 426px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 337px;
+    }
+  }
 }
