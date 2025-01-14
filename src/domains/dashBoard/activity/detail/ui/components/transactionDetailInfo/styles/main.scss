@@ -1,0 +1,83 @@
+@import '@domains/cross/sass/_variables.scss';
+@media (max-width: 398px) {
+  .detail-transaction {
+    &__statusDetail {
+      p {
+      }
+      p {
+      }
+    }
+    &__transferSummary {
+      p {
+      }
+      p {
+      }
+    }
+
+    &__approvalDetail {
+      p {
+      }
+      p {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .detail-transaction {
+    &__statusDetail {
+      p {
+      }
+      p {
+      }
+    }
+    &__transferSummary {
+      p {
+      }
+      p {
+      }
+    }
+
+    &__approvalDetail {
+      p {
+      }
+      p {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .detail-transaction {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+
+    &__statusDetail {
+      p:first-of-type {
+        color: $primary-color;
+        font-family: 'Open Sans';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+      p:last-of-type {
+      }
+    }
+    &__transferSummary {
+      p {
+      }
+      p {
+      }
+    }
+
+    &__approvalDetail {
+      p {
+      }
+      p {
+      }
+    }
+  }
+}

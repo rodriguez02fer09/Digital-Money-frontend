@@ -1,10 +1,11 @@
 import '../styles/main.scss'
+import TransactionDetailInfo from '@domains/dashBoard/activity/detail/ui/components/transactionDetailInfo/src/TransactionDetailInfo'
 
 const CWDetail = () => {
   return (
-    <div>
-      <h1>detail</h1>
-    </div>
+    <>
+      <TransactionDetailInfo />
+    </>
   )
 }
 
