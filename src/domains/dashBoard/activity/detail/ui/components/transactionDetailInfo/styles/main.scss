@@ -1,23 +1,20 @@
 @import '@domains/cross/sass/_variables.scss';
+
 @media (max-width: 398px) {
   .detail-transaction {
     &__statusDetail {
       p {
-      }
-      p {
+        // Estilos específicos para los párrafos en este tamaño de pantalla
       }
     }
     &__transferSummary {
       p {
-      }
-      p {
+        // Estilos específicos para los párrafos en este tamaño de pantalla
       }
     }
-
     &__approvalDetail {
       p {
-      }
-      p {
+        // Estilos específicos para los párrafos en este tamaño de pantalla
       }
     }
   }
@@ -27,21 +24,17 @@
   .detail-transaction {
     &__statusDetail {
       p {
-      }
-      p {
+        // Estilos específicos para los párrafos en este tamaño de pantalla
       }
     }
     &__transferSummary {
       p {
-      }
-      p {
+        // Estilos específicos para los párrafos en este tamaño de pantalla
       }
     }
-
     &__approvalDetail {
       p {
-      }
-      p {
+        // Estilos específicos para los párrafos en este tamaño de pantalla
       }
     }
   }
@@ -51,32 +44,110 @@
   .detail-transaction {
     display: flex;
     flex-direction: column;
-    width: 100px;
-    height: 100px;
+    justify-content: space-evenly;
+    padding: 33px 45px 36px 62px;
 
+    height: 337px;
     &__statusDetail {
-      p:first-of-type {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+
+      border-bottom: 1px solid white;
+      height: 46px;
+
+      &--statusInfo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 122px;
+
+        img {
+          width: 22px;
+          height: 22px;
+        }
+
+        .status-title {
+          color: $primary-color;
+          font-family: 'Open Sans';
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+      }
+
+      .status-date {
+        color: $quinary-color;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    &__transferSummary,
+    &__approvalDetail,
+    &__recipientDetail {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .summary-title {
+        color: #fff;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .summary-amount {
         color: $primary-color;
-        font-family: 'Open Sans';
+
+        font-family: '$font-stack';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
         line-height: 117.682%;
       }
-      p:last-of-type {
-      }
-    }
-    &__transferSummary {
-      p {
-      }
-      p {
-      }
-    }
 
-    &__approvalDetail {
-      p {
+      .recipient-title {
+        color: #fff;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
       }
-      p {
+
+      .recipient-amount {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .approval-title {
+        color: #fff;
+
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .approval-amount {
+        color: $primary-color;
+
+        font-family: 'Open Sans';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
       }
     }
   }
