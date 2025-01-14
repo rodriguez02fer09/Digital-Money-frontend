@@ -150,11 +150,14 @@
     &--green {
       background: #0aeb8c;
       width: 100%;
+      color: $secondary-color;
     }
 
     &--black {
+      color: #0aeb8c;
       background: $secondary-color;
       border: 1px solid $primary-color;
+      width: 100%;
     }
 
     &--grey {
@@ -179,7 +182,7 @@
       font-size: $heading-4;
       color: $secondary-color;
     }
-    --button-activity {
+    &--button-activity {
       height: 67px;
       margin: 0;
       width: 100%;

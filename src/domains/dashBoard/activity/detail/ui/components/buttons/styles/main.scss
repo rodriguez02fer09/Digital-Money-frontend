@@ -1,0 +1,18 @@
+@import '@domains/cross/sass/_variables.scss';
+
+@media (max-width: 398px) {
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+}
+
+@media screen and (min-width: 835px) {
+  .detail-buttons {
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+    width: 486px;
+    gap: 20px;
+    margin-left: 397px;
+  }
+}
