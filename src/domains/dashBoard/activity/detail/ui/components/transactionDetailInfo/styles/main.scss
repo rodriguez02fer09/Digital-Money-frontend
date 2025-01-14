@@ -2,19 +2,112 @@
 
 @media (max-width: 398px) {
   .detail-transaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 27px 29px 33px 31px;
+    height: 342px;
+
     &__statusDetail {
-      p {
-        // Estilos específicos para los párrafos en este tamaño de pantalla
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      width: 298px;
+      height: 84px;
+      padding-bottom: 10px;
+
+      &--statusInfo {
+        display: flex;
+        justify-content: space-between;
+        width: 122px;
+
+        img {
+        }
+
+        .status-title {
+          color: $primary-color;
+          font-family: 'Open Sans';
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+      }
+
+      .status-date {
+        color: $quinary-color;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        height: 30px;
+        width: 100%;
+        border-top: 1px solid white;
+        padding-top: 12px;
       }
     }
-    &__transferSummary {
-      p {
-        // Estilos específicos para los párrafos en este tamaño de pantalla
+
+    &__transferSummary,
+    &__approvalDetail,
+    &__recipientDetail {
+      margin-bottom: 7px;
+      .summary-title {
+        color: #fff;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 8px;
       }
-    }
-    &__approvalDetail {
-      p {
-        // Estilos específicos para los párrafos en este tamaño de pantalla
+
+      .summary-amount {
+        color: $primary-color;
+
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+
+      .recipient-title {
+        color: #fff;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .recipient-amount {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 8px;
+      }
+      .approval-title {
+        color: #fff;
+
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .approval-amount {
+        color: $primary-color;
+        font-family: 'Open Sans';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 8px;
       }
     }
   }
@@ -22,19 +115,109 @@
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .detail-transaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 40px 22px 55px 65px;
+    height: 427px;
+
     &__statusDetail {
-      p {
-        // Estilos específicos para los párrafos en este tamaño de pantalla
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+
+      border-bottom: 1px solid white;
+      height: 110px;
+      padding-bottom: 24px;
+
+      &--statusInfo {
+        display: flex;
+        justify-content: space-between;
+        width: 122px;
+
+        img {
+        }
+
+        .status-title {
+          color: $primary-color;
+          font-family: 'Open Sans';
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 8px;
+        }
+      }
+
+      .status-date {
+        color: $quinary-color;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        margin-left: 113px;
       }
     }
-    &__transferSummary {
-      p {
-        // Estilos específicos para los párrafos en este tamaño de pantalla
+
+    &__transferSummary,
+    &__approvalDetail,
+    &__recipientDetail {
+      .summary-title {
+        color: #fff;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 8px;
       }
-    }
-    &__approvalDetail {
-      p {
-        // Estilos específicos para los párrafos en este tamaño de pantalla
+
+      .summary-amount {
+        color: $primary-color;
+
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+
+      .recipient-title {
+        color: #fff;
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .recipient-amount {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 7px;
+      }
+      .approval-title {
+        color: #fff;
+
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .approval-amount {
+        color: $primary-color;
+
+        font-family: 'Open Sans';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 8px;
       }
     }
   }

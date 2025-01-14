@@ -21,6 +21,7 @@
     &--black {
       background: $secondary-color;
       border: 1px solid $primary-color;
+      color: $primary-color;
     }
 
     &--grey {
@@ -90,6 +91,7 @@
     &--black {
       background: $secondary-color;
       border: 1px solid $primary-color;
+      color: $primary-color;
     }
 
     &--grey {
@@ -154,7 +156,7 @@
     }
 
     &--black {
-      color: #0aeb8c;
+      color: $primary-color;
       background: $secondary-color;
       border: 1px solid $primary-color;
       width: 100%;

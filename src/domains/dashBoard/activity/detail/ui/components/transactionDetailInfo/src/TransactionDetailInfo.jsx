@@ -18,7 +18,9 @@ const TransactionDetailInfo = () => {
             />
             <p className="status-title">Aprobada</p>
           </div>
-          <p className="status-date">Creada el 17 de agosto 2022 a 16:34 hs.</p>
+          <p className="status-date">
+            Creada el 17 de agosto 2022 a 16:34 hs.{' '}
+          </p>
         </div>
 
         <div className={`${defaultDetail}__transferSummary`}>

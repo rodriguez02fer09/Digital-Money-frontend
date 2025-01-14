@@ -6,13 +6,15 @@ const Buttons = () => {
 
   return (
     <div className={`${defaultButtons}`}>
-      <Button size="large" label="Ir al inicio" color="black" type="button" />
-      <Button
-        size="large"
-        label="Descargar comprobante"
-        color="green"
-        type="submit"
-      />
+      <div className={`${defaultButtons}__contain-buttons`}>
+        <Button size="large" label="Ir al inicio" color="black" type="button" />
+        <Button
+          size="large"
+          label="Descargar comprobante"
+          color="green"
+          type="submit"
+        />
+      </div>
     </div>
   )
 }
