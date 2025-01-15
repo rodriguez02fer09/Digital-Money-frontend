@@ -1,0 +1,77 @@
+@import '../../../../../../cross/sass/variables';
+
+@media (max-width: 398px) {
+  .select-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 40px 23px 37px 23px;
+
+    &--title-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 220px;
+      p {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .select-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 60px 45px;
+
+    &--title-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 218px;
+      p {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .select-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 40px 45px;
+    padding-top: 64px;
+
+    &--title-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 220px;
+      p {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+  }
+}
