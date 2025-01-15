@@ -6,13 +6,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
-    padding: 40px 45px;
+    padding: 40px 23px 37px 23px;
 
     &--title-image {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 250px;
+      width: 220px;
       p {
         color: $primary-color;
         font-family: '$font-stack';
@@ -31,13 +31,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
-    padding: 40px 45px;
+    padding: 60px 45px;
 
     &--title-image {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 250px;
+      width: 218px;
       p {
         color: $primary-color;
         font-family: '$font-stack';
@@ -57,12 +57,13 @@
     justify-content: space-between;
     align-items: end;
     padding: 40px 45px;
+    padding-top: 64px;
 
     &--title-image {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 250px;
+      width: 220px;
       p {
         color: $primary-color;
         font-family: '$font-stack';
