@@ -7,7 +7,13 @@ export default {
   title: 'CardBlack', // El título de tu componente en Storybook
   argTypes: {
     size: {
-      options: ['AvailableAmountCard', 'AddCard', ' MoneyTransfer', 'Detail'], // Asegúrate de que estos nombres tengan sentido
+      options: [
+        'AvailableAmountCard',
+        'AddCard',
+        ' MoneyTransfer',
+        'Detail',
+        'DepositMoney',
+      ], // Asegúrate de que estos nombres tengan sentido
       control: {type: 'radio'},
     },
     color: {
@@ -33,4 +39,16 @@ export const AddCard = Template.bind({})
 AddCard.args = {
   color: 'black',
   size: 'AddCard',
+}
+
+export const Detail = Template.bind({})
+Detail.args = {
+  color: 'black',
+  size: 'Detail',
+}
+
+export const DepositMoney = Template.bind({})
+DepositMoney.args = {
+  color: 'black',
+  size: 'DepositMoney',
 }

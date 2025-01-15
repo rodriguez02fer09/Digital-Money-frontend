@@ -1,6 +1,6 @@
-import CardBlack from '@domains/cross/ui/components/cardBlack'
 import '../styles/main.scss'
 import Image from 'next/image'
+import CardBlack from '@domains/cross/ui/components/cardBlack'
 
 const TransactionDetailInfo = () => {
   const defaultDetail = 'detail-transaction'

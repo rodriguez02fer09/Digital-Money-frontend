@@ -60,4 +60,17 @@
       height: 337px;
     }
   }
+  &--DepositMoney {
+    @media (max-width: 398px) {
+      height: 122px;
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 157px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 157px;
+    }
+  }
 }

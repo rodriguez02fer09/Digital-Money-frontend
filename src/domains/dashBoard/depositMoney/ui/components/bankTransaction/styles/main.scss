@@ -1,0 +1,76 @@
+@import '../../../../../../cross/sass/variables';
+
+@media (max-width: 398px) {
+  .bank-transaction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 40px 45px;
+
+    &--title-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 250px;
+      p {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .bank-transaction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 40px 45px;
+
+    &--title-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 250px;
+      p {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .bank-transaction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    padding: 40px 45px;
+
+    &--title-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 250px;
+      p {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 117.682%;
+      }
+    }
+  }
+}
