@@ -1,12 +1,13 @@
 'use client'
 
-import AddCardsMobileHeader from '@domains/dashBoard/cards/add/ui/components/addCardsMobileHeader/src/AddCardsMobileHeader'
+import MobileHeader from '@domains/cross/ui/components/MobileHeader/src/MobileHeader'
+
 import AddCard from '@domains/dashBoard/cards/add/ui/composite-wrapers/addCard/src/AddCard'
 
-const CWadd = () => {
+const CWadd = ({title}) => {
   return (
     <>
-      <AddCardsMobileHeader />
+      <MobileHeader title="Tarjetas" />
 
       <AddCard />
     </>

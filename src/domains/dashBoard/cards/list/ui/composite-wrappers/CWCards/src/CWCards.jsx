@@ -1,13 +1,14 @@
 'use client'
 import '../styles/main.scss'
-import AddCardsHeader from '@domains/dashBoard/cards/list/ui/components/addCardsHeader/src/AddCardsHeader'
+
 import AddCard from '@domains/dashBoard/cards/list/ui/components/addCard/src/AddCard'
 import HistoryCards from '@domains/dashBoard/cards/list/ui/components/historyCards/src/HistoryCards'
+import MobileHeader from '@domains/cross/ui/components/MobileHeader/src/MobileHeader'
 
-const CWCards = () => {
+const CWCards = ({title}) => {
   return (
     <>
-      <AddCardsHeader />
+      <MobileHeader title="Tarjetas" />
       <AddCard />
       <HistoryCards />
     </>
