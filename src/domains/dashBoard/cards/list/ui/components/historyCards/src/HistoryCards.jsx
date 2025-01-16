@@ -11,7 +11,6 @@ import request from '@domains/cross/core/uses-cases/request'
 
 const defaultHistory = 'history-Cards'
 
-// debe ser un warpper
 const HistoryCards = () => {
   const {account} = useAccount()
   const {id: accountId} = account ?? {}

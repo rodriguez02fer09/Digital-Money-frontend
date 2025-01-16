@@ -73,4 +73,20 @@
       height: 157px;
     }
   }
+  &--SelectCard {
+    @media (max-width: 398px) {
+      height: 346px;
+      padding: 20px;
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 532px;
+      padding: 41px 28px 50px 54px;
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 453px;
+      padding: 40px 43px 42px 57px;
+    }
+  }
 }
