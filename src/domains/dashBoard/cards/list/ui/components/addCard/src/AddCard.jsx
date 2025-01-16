@@ -5,6 +5,7 @@ import CardBlack from '@domains/cross/ui/components/cardBlack/src/CardBlack'
 import ContainAddCards from '@domains/cross/ui/components/containAddCards/src/ContainAddCards'
 
 const defaultCard = 'add-card'
+
 const AddCard = () => {
   return (
     <div className={defaultCard}>
