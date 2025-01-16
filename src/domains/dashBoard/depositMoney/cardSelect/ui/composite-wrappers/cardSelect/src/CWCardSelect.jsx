@@ -15,7 +15,7 @@ const CWCardSelect = ({title}) => {
         <HistoryCards />
         <ButtonAddCard />
       </CardBlack>
-      <div className="button">
+      <div className="button-add">
         <Button size="medium" color="green" label="Continuar" />
       </div>
     </>

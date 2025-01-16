@@ -1,6 +1,6 @@
 @import '@domains/cross/sass/_variables.scss';
 @media (max-width: 398px) {
-  .button {
+  .button-add {
     width: 100%;
     height: 50px;
     display: flex;
@@ -13,5 +13,15 @@
       flex-direction: row;
       justify-content: center;
     }
+  }
+}
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .button-add {
+    display: none;
+  }
+}
+@media screen and (min-width: 835px) {
+  .button-add {
+    display: none;
   }
 }
