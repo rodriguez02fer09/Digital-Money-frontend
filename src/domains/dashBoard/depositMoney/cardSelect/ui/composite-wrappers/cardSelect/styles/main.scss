@@ -1,0 +1,17 @@
+@import '@domains/cross/sass/_variables.scss';
+@media (max-width: 398px) {
+  .button {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    Button {
+      width: 165px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}

@@ -2,14 +2,30 @@
 
 @media (max-width: 398px) {
   .title-select-card {
+    height: 24px;
+    margin-bottom: 15px;
     h1 {
+      color: $primary-color;
+      font-family: '$font-stack';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
     }
   }
 }
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .title-select-card {
+    height: 24px;
+    margin-bottom: 40px;
     h1 {
+      color: $primary-color;
+      font-family: '$font-stack';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
     }
   }
 }
