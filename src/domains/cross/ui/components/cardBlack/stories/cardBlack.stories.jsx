@@ -14,7 +14,9 @@ export default {
         'Detail',
         'DepositMoney',
         'SelectCard',
-      ], // Asegúrate de que estos nombres tengan sentido
+        'Account',
+      ], // Asegúrate d
+      e que estos nombres tengan sentido
       control: {type: 'radio'},
     },
     color: {
@@ -58,4 +60,10 @@ export const SelectCard = Template.bind({})
 SelectCard.args = {
   color: 'black',
   size: 'SelectCard',
+}
+
+export const Account= Template.bind({})
+Account.args = {
+  color: 'black',
+  size: 'Account',
 }
