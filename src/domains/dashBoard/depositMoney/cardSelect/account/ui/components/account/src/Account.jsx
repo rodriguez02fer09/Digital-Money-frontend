@@ -13,6 +13,9 @@ const Account = ({size, color}) => {
       <div className={`${defaultAccount}--button-account`}>
         <Button size="large" color="green" label="Continuar" />
       </div>
+      <div className={`${defaultAccount}--button-mobile`}>
+        <Button size="large" color="green" label="Continuar" />
+      </div>
     </div>
   )
 }
