@@ -105,4 +105,17 @@
       padding: 38px 43px 36px 54px;
     }
   }
+
+  &--TransferConfirmation {
+    @media (max-width: 398px) {
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 365px;
+      padding: 40px 45px 45px 64px;
+    }
+  }
 }

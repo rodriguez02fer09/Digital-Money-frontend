@@ -1,0 +1,24 @@
+@import '@domains/cross/sass/_variables.scss';
+
+@media (max-width: 398px) {
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+}
+
+@media screen and (min-width: 835px) {
+  .title-transfer-amount {
+    width: 356px;
+    height: 22px;
+
+    margin-bottom: 34px;
+    h1 {
+      color: $primary-color;
+      font-family: '$font-stack';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 117.682%; /* 23.536px */
+    }
+  }
+}

@@ -15,6 +15,7 @@ export default {
         'DepositMoney',
         'SelectCard',
         'Account',
+        'TransferConfirmation',
       ], // Asegúrate d
       e que estos nombres tengan sentido
       control: {type: 'radio'},
@@ -66,4 +67,10 @@ export const Account= Template.bind({})
 Account.args = {
   color: 'black',
   size: 'Account',
+}
+
+export const TransferConfirmation= Template.bind({})
+TransferConfirmation.args = {
+  color: 'black',
+  size: 'TransferConfirmation',
 }
