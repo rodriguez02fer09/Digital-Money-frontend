@@ -7,7 +7,7 @@ const ServiceButtons = () => {
     <div className={defaultClass}>
       <Button size="button-activity" label="Cargar dinero" color="green" />
       <Button size="button-activity" label="Pago de servicios" color="green" />
-    </div>x
+    </div>
   )
 }
 export default ServiceButtons

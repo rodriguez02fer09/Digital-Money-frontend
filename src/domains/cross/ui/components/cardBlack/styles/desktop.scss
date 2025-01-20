@@ -108,9 +108,13 @@
 
   &--TransferConfirmation {
     @media (max-width: 398px) {
+      height: 342px;
+      padding: 27px 29px 46px 22px;
     }
 
     @media screen and (min-width: 399px) and (max-width: 834px) {
+      height: 419px;
+      padding: 40px 35px 30px 37px;
     }
 
     @media screen and (min-width: 835px) {
