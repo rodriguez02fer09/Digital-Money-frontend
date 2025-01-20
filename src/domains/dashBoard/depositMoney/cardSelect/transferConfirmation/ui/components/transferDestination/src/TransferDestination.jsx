@@ -10,11 +10,11 @@ const TransferDestination = () => {
         <p>Cuenta propia</p>
       </div>
       <div className={`${defaultDestination}--account`}>
-        <div className={`${defaultDestination}--info`}>
+        <div className={`${defaultDestination}__info`}>
           <p>Brubank</p>
           <p>CVU: 0000002100075990000000</p>
         </div>
-        <div className={`${defaultDestination}--button`}>
+        <div className={`${defaultDestination}__button`}>
           <Button size="large" color="green" label="Continuar" />
         </div>
       </div>
