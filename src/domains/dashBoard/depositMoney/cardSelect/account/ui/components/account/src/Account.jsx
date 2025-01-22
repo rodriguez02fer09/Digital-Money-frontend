@@ -6,7 +6,7 @@ import Input from '@domains/cross/ui/components/input/index'
 const Account = ({size, color}) => {
   const handleAccount = () => {
     window.location.href =
-      '/dashBoard/depositMoney/cardSelect/transferConfirmation'
+      '/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation'
   }
   const defaultAccount = 'account'
   return (

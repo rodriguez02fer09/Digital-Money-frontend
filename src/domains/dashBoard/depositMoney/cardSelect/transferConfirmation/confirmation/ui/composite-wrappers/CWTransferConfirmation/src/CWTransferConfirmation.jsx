@@ -1,3 +1,4 @@
+'use client'
 import '../styles/main.scss'
 import CardBlack from '@domains/cross/ui/components/cardBlack/src/CardBlack'
 import MobileHeader from '@domains/cross/ui/components/MobileHeader/src/MobileHeader'
@@ -7,6 +8,10 @@ import TransferDestination from '@domains/dashBoard/depositMoney/cardSelect/tran
 import Button from '@domains/cross/ui/components/button/src/Button'
 
 const TransferConfirmation = ({title}) => {
+  const handleDestination = () => {
+    window.location.href =
+      '/dashBoard/depositMoney/cardSelect/transferConfirmation/aprove'
+  }
   return (
     <>
       <MobileHeader title="Cargar dinero" />
@@ -16,7 +21,12 @@ const TransferConfirmation = ({title}) => {
         <TransferDestination />
       </CardBlack>
       <div className="button-mobile">
-        <Button size="large" color="green" label="Continuar" />
+        <Button
+          size="large"
+          color="green"
+          label="Continuar"
+          onClick={handleDestination}
+        />
       </div>
     </>
   )
