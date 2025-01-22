@@ -1,8 +1,13 @@
+'use client'
 import '../styles/main.scss'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import Input from '@domains/cross/ui/components/input/index'
 
 const Account = ({size, color}) => {
+  const handleAccount = () => {
+    window.location.href =
+      '/dashBoard/depositMoney/cardSelect/transferConfirmation'
+  }
   const defaultAccount = 'account'
   return (
     <div className={`${defaultAccount}`}>
@@ -11,10 +16,20 @@ const Account = ({size, color}) => {
         <input type="number" placeholder="$0" />
       </div>
       <div className={`${defaultAccount}--button-account`}>
-        <Button size="large" color="green" label="Continuar" />
+        <Button
+          size="large"
+          color="green"
+          label="Continuar"
+          onClick={handleAccount}
+        />
       </div>
       <div className={`${defaultAccount}--button-mobile`}>
-        <Button size="large" color="green" label="Continuar" />
+        <Button
+          size="large"
+          color="green"
+          label="Continuar"
+          onClick={handleAccount}
+        />
       </div>
     </div>
   )
