@@ -1,0 +1,3 @@
+import TransferConfirmation from '@domains/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation/ui/composite-wrappers/CWTransferConfirmation/src/CWTransferConfirmation'
+
+export default TransferConfirmation

@@ -122,4 +122,17 @@
       padding: 40px 45px 45px 64px;
     }
   }
+
+  &--AproveInfo {
+    @media (max-width: 398px) {
+    }
+
+    @media screen and (min-width: 399px) and (max-width: 834px) {
+    }
+
+    @media screen and (min-width: 835px) {
+      height: 278px;
+      padding: 35px 0px 0px 62px;
+    }
+  }
 }

@@ -16,6 +16,7 @@ export default {
         'SelectCard',
         'Account',
         'TransferConfirmation',
+        'AproveInfo',
       ], // Asegúrate d
       e que estos nombres tengan sentido
       control: {type: 'radio'},
@@ -73,4 +74,10 @@ export const TransferConfirmation= Template.bind({})
 TransferConfirmation.args = {
   color: 'black',
   size: 'TransferConfirmation',
+}
+
+export const AproveInfo= Template.bind({})
+AproveInfo.args = {
+  color: 'black',
+  size: 'AproveInfo',
 }
