@@ -8,9 +8,12 @@ const Account = ({size, color}) => {
   const [inputValue, setInputValue] = useState('')
 
   const handleAccount = () => {
+    if (!inputValue) return
+
     window.location.href =
       '/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation'
   }
+
   const defaultAccount = 'account'
 
   const handleInputChange = e => {
@@ -39,7 +42,7 @@ const Account = ({size, color}) => {
           color={isButtonDisabled ? 'gray' : 'green'} // Cambia el color según si está deshabilitado
           label="Continuar"
           onClick={handleAccount}
-          disabled={!inputValue}
+          disabled={isButtonDisabled}
         />
       </div>
       <div className={`${defaultAccount}--button-mobile`}>
@@ -48,7 +51,7 @@ const Account = ({size, color}) => {
           color={isButtonDisabled ? 'gray' : 'green'}
           label="Continuar"
           onClick={handleAccount}
-          disabled={!inputValue}
+          disabled={isButtonDisabled}
         />
       </div>
     </div>
