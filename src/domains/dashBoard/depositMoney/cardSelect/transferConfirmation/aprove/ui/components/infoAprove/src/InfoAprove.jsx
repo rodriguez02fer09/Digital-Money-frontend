@@ -4,6 +4,11 @@ const InfoAprove = () => {
   const defaultAprove = 'aprove'
   return (
     <div className={`${defaultAprove}`}>
+      <div className="title">
+        {' '}
+        <p>Revisá que está todo bien</p>
+      </div>
+
       <div className={`${defaultAprove}__date-amount`}>
         <p className="date">17 de agosto 2022 a 16:34 hs.</p>
         <p className="amount">$300</p>

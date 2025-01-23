@@ -1,9 +1,61 @@
 @import '@domains/cross/sass/_variables.scss';
 
 @media (max-width: 398px) {
+  .aprove-check {
+    height: 118px;
+    background: $primary-color;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0px 13px 0px;
+
+    &--img-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+
+      h1 {
+        font-family: '$font-stack';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
+  .aprove-check {
+    height: 148px;
+    background: $primary-color;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0px 13px 0px;
+
+    &--img-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 106px;
+
+      h1 {
+        font-family: '$font-stack';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 835px) {
@@ -23,6 +75,10 @@
       justify-content: space-between;
       align-items: center;
       height: 106px;
+      img {
+        width: 45px;
+        height: 47px;
+      }
 
       h1 {
         font-family: '$font-stack';
