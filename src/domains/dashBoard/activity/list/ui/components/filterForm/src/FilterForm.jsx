@@ -9,7 +9,7 @@ import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 
 const FilterForm = ({slug, showButton}) => {
-  const {activity} = useActivity([])
+  const {activity} = useActivity({searchItem: slug})
 
   const customClass = 'filter-form'
 
@@ -37,9 +37,13 @@ const FilterForm = ({slug, showButton}) => {
           </div>
         )}
       </div>
-      <div className={`${customClass}__activity`}>
+      <div className="filter-form__activity">
         <CardActivity size="Activity">
-          <ListActivity activity={activity} />
+          {activity.length > 0 ? (
+            <ListActivity activity={activity} />
+          ) : (
+            <p>No hay actividades disponibles</p>
+          )}
         </CardActivity>
       </div>
     </div>

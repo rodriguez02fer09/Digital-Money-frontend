@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react'
-import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
+import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import request from '@domains/cross/core/uses-cases/request'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 import {deburr} from 'lodash'
 
 const useActivity = ({searchItem = ''}) => {
-  const {account} = useAccount() || {}
+  const {account} = useAccountStore()
 
   const {id: account_id} = account ?? {}
   const [activity, setActivity] = useState([])
@@ -20,10 +20,10 @@ const useActivity = ({searchItem = ''}) => {
 
       request(
         {
-          path: `accounts/${account_id}/${filterItem}`,
+          path: `accounts/${account_id}/activity`,
           method: 'GET',
           addHeaders: {
-            Authorization: `Bearer ${getDataLocalStore('token')}`,
+            Authorization: `${getDataLocalStore('token')}`,
           },
         },
         updateStateActivity,

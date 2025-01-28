@@ -9,6 +9,7 @@ import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useA
 const CWActivity = () => {
   const defaultClass = 'activity-money-component'
   const {activity} = useActivity()
+  debugger
 
   useEffect(() => {
     console.log(activity)
