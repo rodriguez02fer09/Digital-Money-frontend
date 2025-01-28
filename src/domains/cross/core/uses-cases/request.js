@@ -1,5 +1,9 @@
 const request = (data, callBack) => {
   const {path, data: dataRequest, method, addHeaders} = data
+  if (!fetch) {
+    return
+  }
+
   fetch(`https://digitalmoney.digitalhouse.com/api/${path}`, {
     method: method,
     headers: {
