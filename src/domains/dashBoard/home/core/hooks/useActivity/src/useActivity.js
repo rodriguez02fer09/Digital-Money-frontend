@@ -58,6 +58,21 @@ const useActivity = ({searchItem = ''}) => {
         console.error('Filtro no reconocido:', filter)
         return null
     }
+
+    console.log(`Fecha sin formatear para filtro "${filter}":`, date) // Verificar la fecha antes de formatear
+
+    if (!date) {
+      console.error('Fecha es undefined para filtro:', filter)
+      return null
+    }
+
+    const formattedDate = formatUTC(date)
+    console.log(
+      `Fecha formateada en UTC para filtro "${filter}":`,
+      formattedDate,
+    )
+
+    return formattedDate
   }
 
   useEffect(() => {
