@@ -11,27 +11,28 @@ const InputSearch = ({size, placeholder, label, className = '', slug}) => {
 
   const [inputValue, setInputValue] = useState(slug || '')
 
-  const hanDleChange = e => {
+  const handleChange = e => {
     const value = e.target.value
     setInputValue(value)
     console.log('Input value:', value)
   }
-
   const hanDleKeyDown = e => {
+    debugger
     if (e.key === 'Enter') {
-      window.location.href = `/dashBoard/activity/${inputValue}`
-      console.log('Redirecting to:', `/dashBoard/activity/${inputValue}`)
+      e.preventDefault()
+      window.location.href = `/dashBoard/activity/list?search=${inputValue}`
     }
   }
 
   return (
     <div className={`${inputSearchClass}`}>
       <input
+        slug={slug}
         type="text"
         size={size}
         value={inputValue}
         placeholder={placeholder}
-        onChange={hanDleChange}
+        onChange={handleChange}
         onKeyDown={hanDleKeyDown}
         className={`${inputSearchClass}__input`}
       />
