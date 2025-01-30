@@ -7,8 +7,6 @@ import MobileHeader from '@domains/cross/ui/components/MobileHeader/src/MobileHe
 const CWList = ({params, title}) => {
   const resolvedParams = React.use(params)
 
-  debugger
-
   return (
     <>
       <MobileHeader title="Actividad" />

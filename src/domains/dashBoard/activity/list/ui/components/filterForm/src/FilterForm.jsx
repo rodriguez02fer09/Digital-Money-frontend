@@ -6,11 +6,17 @@ import {useState} from 'react'
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
 import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src/ListActivity'
+import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFilter/src/ModalFilter'
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 
 const FilterForm = ({slug, showButton}) => {
   const {activity} = useActivity({searchItem: slug})
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen)
+  }
   const customClass = 'filter-form'
 
   return (
@@ -25,7 +31,7 @@ const FilterForm = ({slug, showButton}) => {
         </div>
         {showButton && (
           <div className={`${customClass}__form__button`}>
-            <button type="submit">
+            <button type="submit" onClick={toggleModal}>
               <Image
                 src="/images/filtrar.svg"
                 width={22}
@@ -46,6 +52,7 @@ const FilterForm = ({slug, showButton}) => {
           )}
         </CardActivity>
       </div>
+      <ModalFilter isOpen={isModalOpen} toggleModal={toggleModal} />
     </div>
   )
 }
