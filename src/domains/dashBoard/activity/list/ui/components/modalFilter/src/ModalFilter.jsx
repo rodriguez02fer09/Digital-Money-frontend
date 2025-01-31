@@ -3,7 +3,7 @@ import {useState} from 'react'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import Image from 'next/image'
 
-const ModalFilter = ({isOpen, toggleModal}) => {
+const ModalFilter = ({isOpen}) => {
   const defaulFilter = 'modal-filter'
 
   const [selectedPeriod, setSelectedPeriod] = useState('hoy')
