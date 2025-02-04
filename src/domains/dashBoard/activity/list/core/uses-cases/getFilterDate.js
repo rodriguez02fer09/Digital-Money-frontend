@@ -6,48 +6,67 @@ import {
   subYears,
   format,
   startOfWeek,
+  isWithinInterval,
+  parseISO,
 } from 'date-fns'
 
-// Función para formatear la fecha en UTC
-const formatUTC = date => format(date, 'yyyy-MM-dd')
-const getFilterDate = filter => {
-  let date
-  console.log(`Filtro recibido: ${filter}`) // Verificar qué filtro se está pasando
-
-  switch (filter) {
-    case 'today':
-      date = startOfDay(new Date())
-      break
-    case 'yesterday':
-      date = startOfDay(subDays(new Date(), 1))
-      break
-    case 'lastWeek':
-      date = startOfWeek(subWeeks(new Date(), 1))
-      break
-    case 'last15Days':
-      date = startOfDay(subDays(new Date(), 15))
-      break
-    case 'lastMonth':
-      date = startOfDay(subMonths(new Date(), 1))
-      break
-    case 'lastYear':
-      date = startOfDay(subYears(new Date(), 1))
-      break
-    default:
-      console.error('Filtro no reconocido:', filter)
-      return null
+const formatRange = range => {
+  const {startDate, end} = range
+  return {
+    startDate: format(startDate, "yyyy-MM-dd'T'HH:mm:ss"),
+    end: format(end, "yyyy-MM-dd'T'HH:mm:ss"),
   }
-
-  console.log(`Fecha sin formatear para filtro "${filter}":`, date) // Verificar la fecha antes de formatear
-
-  if (!date) {
-    console.error('Fecha es undefined para filtro:', filter)
-    return null
-  }
-
-  const formatedDate = formatUTC(date)
-  console.log(`Fecha formateada en UTC para filtro "${filter}":`, formatedDate)
-
-  return formatedDate
 }
-export default getFilterDate
+
+const today = startOfDay(new Date())
+const rangeMethods = {
+  today: () => ({
+    startDate: today,
+    end: today,
+  }),
+
+  yesterday: () => ({
+    startDate: startOfDay(subDays(new Date(), 1)),
+    end: today,
+  }),
+
+  lastWeek: () => ({
+    startDate: startOfWeek(subWeeks(new Date(), 1)),
+    end: today,
+  }),
+
+  last15Days: () => ({
+    startDate: startOfDay(subDays(new Date(), 15)),
+    end: today,
+  }),
+
+  lastMonth: () => ({
+    startDate: startOfDay(subMonths(new Date(), 1)),
+    end: today,
+  }),
+
+  lastYear: () => ({
+    startDate: startOfDay(subYears(new Date(), 1)),
+    end: today,
+  }),
+}
+export default rangeMethods
+//funcion que devuelve su fecha filtrada
+
+/**
+ * Description placeholder
+ *
+ * @param {date utc} date
+ * @param {strings} range
+ * @returns {date utc}
+ */
+const isWithinDateRange = (date, range) => {
+  const dateRangeFormat = formatRange(rangeMethods[range]())
+  
+  return isWithinInterval(
+    format(date, "yyyy-MM-dd'T'HH:mm:ss"),
+    dateRangeFormat,
+  )
+}
+
+

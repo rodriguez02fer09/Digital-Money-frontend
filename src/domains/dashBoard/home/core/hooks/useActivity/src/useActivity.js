@@ -4,7 +4,6 @@ import request from '@domains/cross/core/uses-cases/request'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 import getFilterDate from '@domains/dashBoard/activity/list/core/uses-cases/getFilterDate'
 import filterWord from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
-import {deburr} from 'lodash'
 import {parseISO} from 'date-fns'
 
 const timeZone = 'UTC'
@@ -16,7 +15,7 @@ const useActivity = ({searchItem = ''}) => {
   const [activity, setActivity] = useState([])
 
   const updateStateActivity = currentActivity => {
-    console.log('Fecha filtrada:', getFilterDate('lastWeek')) // Verifica si se imprime correctamente
+    console.log('Fecha filtrada:', getFilterDate('lastWeek'))
     debugger
     setActivity(currentActivity)
   }

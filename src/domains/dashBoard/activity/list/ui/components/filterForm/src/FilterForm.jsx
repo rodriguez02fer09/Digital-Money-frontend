@@ -8,21 +8,31 @@ import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActi
 import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src/ListActivity'
 import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFilter/src/ModalFilter'
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
-import filterUpWord from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
+import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
+import getFilterDate from '@domains/dashBoard/activity/list/core/uses-cases/getFilterDate'
 
 const FilterForm = ({slug, showButton}) => {
   const {activity, updateStateActivity} = useActivity({searchItem: slug})
 
   const [filterActivity, setFilterActivity] = useState([])
 
+  //Componente principal que gestiona el filtrado y muestra la actividad.
+
   useEffect(() => {
-    setFilterActivity(filterUpWord(activity, 'Deposito'))
+    setFilterActivity(filterUpWork(activity, 'Deposito'))
   }, [activity])
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
+  }
+
+  const handleFilter = selectedPeriod => {
+    const filteredDate = getFilterDate(selectedPeriod)
+    if (filteredDate) {
+      updateStateActivity(filteredDate)
+    }
   }
   const customClass = 'filter-form'
   debugger
@@ -59,7 +69,11 @@ const FilterForm = ({slug, showButton}) => {
           )}
         </CardActivity>
       </div>
-      <ModalFilter isOpen={isModalOpen} toggleModal={toggleModal} />
+      <ModalFilter
+        isOpen={isModalOpen}
+        toggleModal={toggleModal}
+        handleFilter={handleFilter}
+      />
     </div>
   )
 }

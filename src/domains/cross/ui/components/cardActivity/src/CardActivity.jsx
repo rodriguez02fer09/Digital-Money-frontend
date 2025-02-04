@@ -5,7 +5,8 @@ import classNames from 'classnames'
 import Image from 'next/image'
 
 const CardActivity = ({children, size}) => {
-  if (!children) return null
+  if (!children) return
+
   const defaultCard = 'cardActivity'
   const customClass = classNames(defaultCard, {
     [`${defaultCard}--${size}`]: size,
