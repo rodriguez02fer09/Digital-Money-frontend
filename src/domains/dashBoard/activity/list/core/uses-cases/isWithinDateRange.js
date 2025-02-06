@@ -12,13 +12,11 @@ import {
 
 const formatRange = range => {
   const {startDate, end} = range
-  return {
-    startDate: startDate,
-    end: end,
-  }
+  return {startDate, end}
 }
 
 const today = startOfDay(new Date())
+
 const rangeMethods = {
   today: () => ({
     startDate: today,
@@ -50,14 +48,13 @@ const rangeMethods = {
     end: today,
   }),
 }
-export default rangeMethods
-//funcion que devuelve su fecha filtrada
 
 /**
+ * Verifica si una fecha está dentro de un rango dado
  *
- * @param {date utc} date
- * @param {strings} range
- * @returns {date utc}
+ * @param {string | Date} date - Fecha en formato UTC o Date
+ * @param {string} range - Nombre del rango ('today', 'yesterday', etc.)
+ * @returns {boolean}
  */
 const isWithinDateRange = (date, range) => {
   const dateRange = formatRange(rangeMethods[range]())
@@ -67,3 +64,5 @@ const isWithinDateRange = (date, range) => {
     end: dateRange.end,
   })
 }
+
+export default isWithinDateRange

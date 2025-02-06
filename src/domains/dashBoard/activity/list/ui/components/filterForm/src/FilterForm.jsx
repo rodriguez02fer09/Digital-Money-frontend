@@ -10,6 +10,7 @@ import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFil
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
 import isWithinDateRange from '@domains/dashBoard/activity/list/core/uses-cases/isWithinDateRange'
+import filterWithRangeDate from '@domains/dashBoard/activity/list/core/uses-cases/filterWithRangeDate'
 
 const FilterForm = ({slug, showButton}) => {
   const {activity, updateStateActivity} = useActivity({searchItem: slug})
@@ -19,7 +20,7 @@ const FilterForm = ({slug, showButton}) => {
   //Componente principal que gestiona el filtrado y muestra la actividad.
 
   useEffect(() => {
-    setFilterActivity(filterUpWork(activity, 'Deposito'))
+    setFilterActivity(filterUpWork(activity, ''))
   }, [activity])
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -30,11 +31,11 @@ const FilterForm = ({slug, showButton}) => {
 
   const handleFilter = selectedPeriod => {
     setFilterActivity(
-      filterWithRangeDate(filterUpWork(activity, 'Deposito'), selectedPeriod),
+      filterWithRangeDate(filterUpWork(activity, 'pagos'), selectedPeriod),
     )
   }
   const customClass = 'filter-form'
-  debugger
+
   return (
     <div className={customClass}>
       <div className={`${customClass}__form`}>

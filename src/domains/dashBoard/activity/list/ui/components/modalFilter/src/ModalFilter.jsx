@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 //Modal que permite seleccionar el período de filtrado.
 
-
 const ModalFilter = ({isOpen, handleFilter}) => {
   const defaulFilter = 'modal-filter'
 
