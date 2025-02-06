@@ -8,15 +8,19 @@ import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActi
 import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src/ListActivity'
 import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFilter/src/ModalFilter'
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
-import filterUpWord from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
+import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
+import isWithinDateRange from '@domains/dashBoard/activity/list/core/uses-cases/isWithinDateRange'
+import filterWithRangeDate from '@domains/dashBoard/activity/list/core/uses-cases/filterWithRangeDate'
 
 const FilterForm = ({slug, showButton}) => {
   const {activity, updateStateActivity} = useActivity({searchItem: slug})
 
   const [filterActivity, setFilterActivity] = useState([])
 
+  //Componente principal que gestiona el filtrado y muestra la actividad.
+
   useEffect(() => {
-    setFilterActivity(filterUpWord(activity, 'Deposito'))
+    setFilterActivity(filterUpWork(activity, ''))
   }, [activity])
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -24,8 +28,14 @@ const FilterForm = ({slug, showButton}) => {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
   }
+
+  const handleFilter = selectedPeriod => {
+    setFilterActivity(
+      filterWithRangeDate(filterUpWork(activity, 'pagos'), selectedPeriod),
+    )
+  }
   const customClass = 'filter-form'
-  debugger
+
   return (
     <div className={customClass}>
       <div className={`${customClass}__form`}>
@@ -59,7 +69,11 @@ const FilterForm = ({slug, showButton}) => {
           )}
         </CardActivity>
       </div>
-      <ModalFilter isOpen={isModalOpen} toggleModal={toggleModal} />
+      <ModalFilter
+        isOpen={isModalOpen}
+        toggleModal={toggleModal}
+        handleFilter={handleFilter}
+      />
     </div>
   )
 }

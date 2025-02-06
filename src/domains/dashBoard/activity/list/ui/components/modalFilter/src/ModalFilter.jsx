@@ -3,10 +3,12 @@ import {useState} from 'react'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import Image from 'next/image'
 
-const ModalFilter = ({isOpen}) => {
+//Modal que permite seleccionar el período de filtrado.
+
+const ModalFilter = ({isOpen, handleFilter}) => {
   const defaulFilter = 'modal-filter'
 
-  const [selectedPeriod, setSelectedPeriod] = useState('hoy')
+  const [selectedPeriod, setSelectedPeriod] = useState('today')
 
   const handlePeriodChange = e => {
     setSelectedPeriod(e.target.value)
@@ -25,10 +27,10 @@ const ModalFilter = ({isOpen}) => {
           <label>Hoy</label>
           <input
             type="radio"
-            id="hoy"
+            id="today"
             name="period"
-            value="hoy"
-            checked={selectedPeriod === 'hoy'}
+            value="today"
+            checked={selectedPeriod === 'today'}
             onChange={handlePeriodChange}
           />
         </div>
@@ -37,10 +39,10 @@ const ModalFilter = ({isOpen}) => {
           <label htmlFor="Ayer">Ayer</label>
           <input
             type="radio"
-            id="Ayer"
+            id="yesterday"
             name="period"
-            value="Ayer"
-            checked={selectedPeriod === 'Ayer'}
+            value="yesterday"
+            checked={selectedPeriod === 'yesterday'}
             onChange={handlePeriodChange}
           />
         </div>
@@ -49,10 +51,10 @@ const ModalFilter = ({isOpen}) => {
           <label htmlFor="Ultima semana">Ultima semana</label>
           <input
             type="radio"
-            id="Ultima semana"
+            id="lastWeek"
             name="period"
-            value="Ultima semana"
-            checked={selectedPeriod === 'Ultima semana'}
+            value="lastWeek"
+            checked={selectedPeriod === 'lastWeek'}
             onChange={handlePeriodChange}
           />
         </div>
@@ -60,10 +62,10 @@ const ModalFilter = ({isOpen}) => {
           <label htmlFor="Ultimos 15 dias">Ultimos 15 dias </label>
           <input
             type="radio"
-            id="Ultimos 15 dias"
+            id="last15Days"
             name="period"
-            value="Ultimos 15 dias"
-            checked={selectedPeriod === 'Ultimos 15 dias'}
+            value="last15Days"
+            checked={selectedPeriod === 'last15Days'}
             onChange={handlePeriodChange}
           />
         </div>
@@ -72,10 +74,10 @@ const ModalFilter = ({isOpen}) => {
           <label htmlFor="Último mes">Último mes</label>
           <input
             type="radio"
-            id="Último mes"
+            id="lastMonth"
             name="period"
-            value="Último mes"
-            checked={selectedPeriod === 'Último mes'}
+            value="lastMonth"
+            checked={selectedPeriod === 'lastMonth'}
             onChange={handlePeriodChange}
           />
         </div>
@@ -84,10 +86,10 @@ const ModalFilter = ({isOpen}) => {
           <label htmlFor="Último año">Último año</label>
           <input
             type="radio"
-            id="Último año"
+            id="lastYear"
             name="period"
-            value="Último año"
-            checked={selectedPeriod === 'Último año'}
+            value="lastYear"
+            checked={selectedPeriod === 'lastYear'}
             onChange={handlePeriodChange}
           />
         </div>
@@ -104,7 +106,12 @@ const ModalFilter = ({isOpen}) => {
           />
         </div>
         <div className={`${defaulFilter}--button`}>
-          <Button size="large" color="green" label="Filtrar" />
+          <Button
+            size="large"
+            color="green"
+            label="Filtrar"
+            onClick={() => handleFilter(selectedPeriod)}
+          />
         </div>
       </div>
     </main>

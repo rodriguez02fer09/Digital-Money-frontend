@@ -17,7 +17,6 @@ const InputSearch = ({size, placeholder, label, className = '', slug}) => {
     console.log('Input value:', value)
   }
   const hanDleKeyDown = e => {
-    debugger
     if (e.key === 'Enter') {
       e.preventDefault()
       window.location.href = `/dashBoard/activity/list?search=${inputValue}`
