@@ -9,7 +9,7 @@ import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src
 import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFilter/src/ModalFilter'
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
-import getFilterDate from '@domains/dashBoard/activity/list/core/uses-cases/getFilterDate'
+import isWithinDateRange from '@domains/dashBoard/activity/list/core/uses-cases/isWithinDateRange'
 
 const FilterForm = ({slug, showButton}) => {
   const {activity, updateStateActivity} = useActivity({searchItem: slug})
@@ -29,10 +29,9 @@ const FilterForm = ({slug, showButton}) => {
   }
 
   const handleFilter = selectedPeriod => {
-    const filteredDate = getFilterDate(selectedPeriod)
-    if (filteredDate) {
-      updateStateActivity(filteredDate)
-    }
+    setFilterActivity(
+      filterWithRangeDate(filterUpWork(activity, 'Deposito'), selectedPeriod),
+    )
   }
   const customClass = 'filter-form'
   debugger

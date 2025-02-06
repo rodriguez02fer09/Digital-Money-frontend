@@ -13,8 +13,8 @@ import {
 const formatRange = range => {
   const {startDate, end} = range
   return {
-    startDate: format(startDate, "yyyy-MM-dd'T'HH:mm:ss"),
-    end: format(end, "yyyy-MM-dd'T'HH:mm:ss"),
+    startDate: startDate,
+    end: end,
   }
 }
 
@@ -54,19 +54,16 @@ export default rangeMethods
 //funcion que devuelve su fecha filtrada
 
 /**
- * Description placeholder
  *
  * @param {date utc} date
  * @param {strings} range
  * @returns {date utc}
  */
 const isWithinDateRange = (date, range) => {
-  const dateRangeFormat = formatRange(rangeMethods[range]())
-  
-  return isWithinInterval(
-    format(date, "yyyy-MM-dd'T'HH:mm:ss"),
-    dateRangeFormat,
-  )
+  const dateRange = formatRange(rangeMethods[range]())
+
+  return isWithinInterval(new Date(date), {
+    start: dateRange.startDate,
+    end: dateRange.end,
+  })
 }
-
-
