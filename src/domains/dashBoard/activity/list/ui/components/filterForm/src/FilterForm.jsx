@@ -20,7 +20,7 @@ const FilterForm = ({slug, showButton}) => {
   //Componente principal que gestiona el filtrado y muestra la actividad.
 
   useEffect(() => {
-    setFilterActivity(filterUpWork(activity, ''))
+    setFilterActivity(filterUpWork(activity, 'Deposito'))
   }, [activity])
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -31,7 +31,7 @@ const FilterForm = ({slug, showButton}) => {
 
   const handleFilter = selectedPeriod => {
     setFilterActivity(
-      filterWithRangeDate(filterUpWork(activity, 'pagos'), selectedPeriod),
+      filterWithRangeDate(filterUpWork(activity, 'Deposito'), selectedPeriod),
     )
   }
   const customClass = 'filter-form'
