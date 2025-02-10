@@ -34,8 +34,9 @@ const FormPerfil = () => {
 
       // Caso especial: Combinar firstname y lastname en name
       if (key === 'name') {
-        const fullName =
-          `${profile?.firstname || ''} ${profile?.lastname || ''}`.trim()
+        const fullName = `${profile?.firstname || ''} ${
+          profile?.lastname || ''
+        }`.trim()
         return {
           ...field,
           value: fullName,

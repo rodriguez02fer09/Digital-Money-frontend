@@ -4,7 +4,7 @@ import '../styles/desktop.scss'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-const CardActivity = ({children, size}) => {
+const CardActivity = ({children, size, paginate}) => {
   if (!children) return
 
   const defaultCard = 'cardActivity'
