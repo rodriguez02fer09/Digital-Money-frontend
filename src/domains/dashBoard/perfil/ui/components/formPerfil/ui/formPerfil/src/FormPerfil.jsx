@@ -10,7 +10,7 @@ import request from '@domains/cross/core/uses-cases/request'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
-import ProfileForm from '@domains/cross/ui/composite-wrappers/ProfileForm /src/ProfileForm'
+import ProfileForm from '@domains/cross/ui/composite-wrappers/ProfileForm/src/ProfileForm'
 
 import '../../styles/main.scss'
 
@@ -34,8 +34,9 @@ const FormPerfil = () => {
 
       // Caso especial: Combinar firstname y lastname en name
       if (key === 'name') {
-        const fullName =
-          `${profile?.firstname || ''} ${profile?.lastname || ''}`.trim()
+        const fullName = `${profile?.firstname || ''} ${
+          profile?.lastname || ''
+        }`.trim()
         return {
           ...field,
           value: fullName,

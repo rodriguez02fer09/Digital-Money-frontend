@@ -4,8 +4,10 @@ import '../styles/desktop.scss'
 const DateActivity = ({date, amount}) => {
   const defaultDateActivity = 'dateActivity'
 
-  // Formatear la fecha en formato año-mes-día
-  const formatdDate = format(new Date(date), 'yyyy-MM-dd')
+  // Validar si la fecha es válida antes de formatearla
+  const formatdDate = date
+    ? format(new Date(date), 'yyyy-MM-dd')
+    : 'Fecha inválida'
 
   return (
     <div className={defaultDateActivity}>
