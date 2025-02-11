@@ -3,21 +3,14 @@ import '../styles/main.scss'
 import 'react-credit-cards-2/dist/lib/styles.scss'
 
 import {useState} from 'react'
-
 import {useForm} from 'react-hook-form'
-import {useRouter} from 'next/navigation'
-import Form from '@domains/dashBoard/cards/add/ui/composite-wrapers/addCardform/src/AddCardForm'
 import Cards from 'react-credit-cards-2'
+
+import Form from '@domains/dashBoard/cards/add/ui/composite-wrapers/addCardform/src/AddCardForm'
 import {inputs} from '@domains/dashBoard/cards/add/data/forms/default'
 
 const AddCard = () => {
   const {register, handleSubmit, formState} = useForm()
-
-  const useCallbackCreateAccount = result => {}
-
-  const callBackOnSubmit = newDataAccount => {}
-
-  const defaultClass = 'form-container'
 
   const [state, setState] = useState({
     number: '',
@@ -27,37 +20,37 @@ const AddCard = () => {
     focus: '',
   })
 
-  const handleInputChange = evt => {
-    const {name, value} = evt.target
-
+  const handleInputChange = (name, value) => {
     setState(prev => ({...prev, [name]: value}))
   }
 
-  const handleInputFocus = evt => {
-    setState(prev => ({...prev, focus: evt.target.name}))
+  const handleInputFocus = name => {
+    setState(prev => ({...prev, focus: name}))
+  }
+
+  const callBackOnSubmit = data => {
+    console.log('Datos enviados:', data)
   }
 
   return (
-    <main className={`${defaultClass}`}>
+    <main className="form-container">
       <Cards
         number={state.number}
         expiry={state.expiry}
         cvc={state.cvc}
         name={state.name}
-        focused={state.focus}
+        focused={state.focus} // Asegura que `focused` reciba el estado actualizado
       />
 
       <Form
         callBackOnSubmit={callBackOnSubmit}
         inputs={inputs}
         name="add"
-        className={`${defaultClass}`}
-        color={'blue'}
+        onInputChange={handleInputChange}
+        onInputFocus={handleInputFocus}
       />
     </main>
   )
 }
-
-AddCard.displayName = 'AddCard'
 
 export default AddCard

@@ -30,18 +30,34 @@ const Input = ({
 
   return (
     <div className={inputClass}>
-      <input
-        {...(register ? register(name, registerData) : {})} // Solo aplica `register` si está disponible
-        type={type}
-        id={name}
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        className={inputClass}
-        onChange={onChange}
-        onFocus={onFocus}
-        {...rest}
-      />
+      {onChange && onFocus && (
+        <input
+          {...registerData}
+          // {...(register ? register(name, registerData) : {})}
+          type={type}
+          id={name}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          className={inputClass}
+          onChange={onChange}
+          onFocus={onFocus}
+          {...rest}
+        />
+      )}
+
+      {!onChange && !onFocus && (
+        <input
+          {...(register ? register(name, registerData) : {})}
+          type={type}
+          id={name}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          className={inputClass}
+          {...rest}
+        />
+      )}
       {errors[name] && <span>{errors[name].message}</span>}
     </div>
   )
