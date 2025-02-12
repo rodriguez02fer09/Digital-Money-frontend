@@ -17,7 +17,7 @@ const AddCard = () => {
     expiry: '',
     cvc: '',
     name: '',
-    focus: '',
+    focused: '',
   })
 
   const callBackOnSubmit = data => {
@@ -29,19 +29,13 @@ const AddCard = () => {
     setState(state => ({
       ...state,
       ...data,
-      focus: control,
+      focused: control,
     }))
   }
 
   return (
     <main className="form-container">
-      <Cards
-        number={state.number}
-        expiry={state.expiry}
-        cvc={state.cvc}
-        name={state.name}
-        focused={state.focus} // Asegura que `focused` reciba el estado actualizado
-      />
+      <Cards {...state} />
 
       <Form
         callBackOnSubmit={callBackOnSubmit}
