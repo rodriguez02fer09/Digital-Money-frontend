@@ -11,11 +11,9 @@ const Input = ({
   size,
   value,
   placeholder,
-  onChange,
   className,
   name,
   type,
-  onFocus,
   ...rest
 }) => {
   const methods = useFormContext()
@@ -30,34 +28,16 @@ const Input = ({
 
   return (
     <div className={inputClass}>
-      {onChange && onFocus && (
-        <input
-          {...registerData}
-          // {...(register ? register(name, registerData) : {})}
-          type={type}
-          id={name}
-          name={name}
-          value={value}
-          placeholder={placeholder}
-          className={inputClass}
-          onChange={onChange}
-          onFocus={onFocus}
-          {...rest}
-        />
-      )}
+      <input
+        {...(register ? register(name, registerData) : {})}
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        className={inputClass}
+      />
 
-      {!onChange && !onFocus && (
-        <input
-          {...(register ? register(name, registerData) : {})}
-          type={type}
-          id={name}
-          name={name}
-          value={value}
-          placeholder={placeholder}
-          className={inputClass}
-          {...rest}
-        />
-      )}
       {errors[name] && <span>{errors[name].message}</span>}
     </div>
   )

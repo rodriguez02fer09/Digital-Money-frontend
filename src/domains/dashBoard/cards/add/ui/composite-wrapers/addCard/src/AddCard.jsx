@@ -20,16 +20,15 @@ const AddCard = () => {
     focus: '',
   })
 
-  const handleInputChange = (name, value) => {
-    setState(prev => ({...prev, [name]: value}))
-  }
-
-  const handleInputFocus = name => {
-    setState(prev => ({...prev, focus: name}))
-  }
-
   const callBackOnSubmit = data => {
     console.log('Datos enviados:', data)
+  }
+
+  const callBackOnChange = data => {
+    setState(state => ({
+      ...state, // Mantiene el estado anterior
+      ...data, // Actualiza con los nuevos valores
+    }))
   }
 
   return (
@@ -44,10 +43,9 @@ const AddCard = () => {
 
       <Form
         callBackOnSubmit={callBackOnSubmit}
+        callBackOnChange={callBackOnChange}
         inputs={inputs}
         name="add"
-        onInputChange={handleInputChange}
-        onInputFocus={handleInputFocus}
       />
     </main>
   )
