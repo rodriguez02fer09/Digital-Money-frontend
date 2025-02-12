@@ -11,7 +11,6 @@ const Input = ({
   size,
   value,
   placeholder,
-  onChange,
   className,
   name,
   type,
@@ -31,17 +30,16 @@ const Input = ({
   return (
     <div className={inputClass}>
       <input
-        {...(register ? register(name, registerData) : {})} // Solo aplica `register` si está disponible
+        {...(register ? register(name, registerData) : {})}
         type={type}
         id={name}
         name={name}
         value={value}
         placeholder={placeholder}
         className={inputClass}
-        onChange={onChange}
         onFocus={onFocus}
-        {...rest}
       />
+
       {errors[name] && <span>{errors[name].message}</span>}
     </div>
   )
