@@ -54,6 +54,7 @@ const AddCard = () => {
           },
           data: {
             ...data,
+            code: data.number,
             expiration_date: '09/2032',
             first_last_name: data.name,
           },

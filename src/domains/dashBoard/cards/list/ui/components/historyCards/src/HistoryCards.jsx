@@ -20,6 +20,8 @@ const HistoryCards = () => {
     setCards(() => currentCards)
   }
 
+  useEffect(() => {}, [cards])
+
   useEffect(() => {
     if (account !== null) {
       request(
@@ -37,7 +39,7 @@ const HistoryCards = () => {
   }, [account])
 
   const updateCards = cards => {
-    setCards(cards)
+    setCards(() => cards)
   }
 
   return (
