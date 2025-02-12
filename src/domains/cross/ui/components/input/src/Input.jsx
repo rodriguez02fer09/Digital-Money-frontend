@@ -14,6 +14,7 @@ const Input = ({
   className,
   name,
   type,
+  onFocus,
   ...rest
 }) => {
   const methods = useFormContext()
@@ -36,6 +37,7 @@ const Input = ({
         value={value}
         placeholder={placeholder}
         className={inputClass}
+        onFocus={onFocus}
       />
 
       {errors[name] && <span>{errors[name].message}</span>}

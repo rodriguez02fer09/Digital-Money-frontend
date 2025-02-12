@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import classNames from 'classnames'
 import {useForm, FormProvider, useWatch} from 'react-hook-form'
 import '../styles/main.scss'
@@ -8,6 +8,7 @@ import Button from '@domains/cross/ui/components/button/src/Button'
 const Form = ({inputs = [], name, callBackOnSubmit, callBackOnChange}) => {
   const methods = useForm()
   const {control, handleSubmit} = methods
+  const [focusedField, setFocusedField] = useState(null)
 
   // Observamos todos los valores del formulario
   const watchedValues = useWatch({control})
@@ -18,12 +19,11 @@ const Form = ({inputs = [], name, callBackOnSubmit, callBackOnChange}) => {
   })
 
   const onSubmit = data => {
-    debugger
     callBackOnSubmit(data)
   }
 
   useEffect(() => {
-    callBackOnChange(watchedValues)
+    callBackOnChange(watchedValues, focusedField)
   }, [watchedValues])
 
   return (
@@ -38,6 +38,7 @@ const Form = ({inputs = [], name, callBackOnSubmit, callBackOnChange}) => {
             size={input.size}
             color={input.color}
             registerData={input.registerData}
+            onFocus={() => setFocusedField(input.name)}
           />
         ))}
         <Button size="large" label="Continuar" color="green" type="submit" />

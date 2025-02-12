@@ -24,10 +24,12 @@ const AddCard = () => {
     console.log('Datos enviados:', data)
   }
 
-  const callBackOnChange = data => {
+  const callBackOnChange = (data, control) => {
+    console.log(control)
     setState(state => ({
-      ...state, // Mantiene el estado anterior
-      ...data, // Actualiza con los nuevos valores
+      ...state,
+      ...data,
+      focus: control,
     }))
   }
 
