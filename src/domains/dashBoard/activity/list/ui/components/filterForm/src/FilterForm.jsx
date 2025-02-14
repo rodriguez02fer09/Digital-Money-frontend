@@ -2,7 +2,7 @@
 import '../styles/main.scss'
 import Image from 'next/image'
 import {useState, useEffect} from 'react'
-
+import {useSearchParams} from 'next/navigation'
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
 import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src/ListActivity'
@@ -12,16 +12,18 @@ import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filte
 import isWithinDateRange from '@domains/dashBoard/activity/list/core/uses-cases/isWithinDateRange'
 import filterWithRangeDate from '@domains/dashBoard/activity/list/core/uses-cases/filterWithRangeDate'
 
-const FilterForm = ({slug, showButton}) => {
-  const {activity, updateStateActivity} = useActivity({searchItem: slug})
+const FilterForm = ({showButton}) => {
+  const searchParams = useSearchParams()
+  const SearchQuery = searchParams.get('search') || ''
+  const {activity, updateStateActivity} = useActivity(SearchQuery)
 
   const [filterActivity, setFilterActivity] = useState([])
 
   //Componente principal que gestiona el filtrado y muestra la actividad.
 
   useEffect(() => {
-    setFilterActivity(filterUpWork(activity, 'Deposito'))
-  }, [activity])
+    setFilterActivity(filterUpWork(activity, SearchQuery))
+  }, [activity, SearchQuery])
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -31,7 +33,7 @@ const FilterForm = ({slug, showButton}) => {
 
   const handleFilter = selectedPeriod => {
     setFilterActivity(
-      filterWithRangeDate(filterUpWork(activity, 'Deposito'), selectedPeriod),
+      filterWithRangeDate(filterUpWork(activity, SearchQuery), selectedPeriod),
     )
   }
   const customClass = 'filter-form'
@@ -40,11 +42,7 @@ const FilterForm = ({slug, showButton}) => {
     <div className={customClass}>
       <div className={`${customClass}__form`}>
         <div className={`${customClass}__form__input`}>
-          <InputSearch
-            slug={slug}
-            type="text"
-            placeholder="Busca tu actividad"
-          />
+          <InputSearch type="text" placeholder="Busca tu actividad" />
         </div>
         {showButton && (
           <div className={`${customClass}__form__button`}>
