@@ -1,32 +1,43 @@
+'use client'
+
 import '../styles/desktop.scss'
 import classNames from 'classnames'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import {useSearchParams, useRouter} from 'next/navigation'
 
-const InputSearch = ({size, placeholder, label, className = '', slug}) => {
+const InputSearch = ({size, placeholder, label, className = ''}) => {
   const defaultClass = 'container-SearchPrompt'
 
   const inputSearchClass = classNames(defaultClass, {
     [`${defaultClass}--${size}`]: size,
   })
 
-  const [inputValue, setInputValue] = useState(slug || '')
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
+  const [inputValue, setInputValue] = useState(searchParams.get('search') || '')
+
+  useEffect(() => {
+    setInputValue(searchParams.get('search') || '')
+  }, [searchParams])
 
   const handleChange = e => {
-    const value = e.target.value
-    setInputValue(value)
-    console.log('Input value:', value)
+    setInputValue(e.target.value)
+    console.log('Input value:', e.target.value)
   }
+
   const hanDleKeyDown = e => {
     if (e.key === 'Enter') {
       e.preventDefault()
-      window.location.href = `/dashBoard/activity/list?search=${inputValue}`
+      const newParams = new URLSearchParams(searchParams.toString())
+      newParams.set('search', inputValue)
+      router.push(`/dashBoard/activity/list?${newParams.toString()}`)
     }
   }
 
   return (
     <div className={`${inputSearchClass}`}>
       <input
-        slug={slug}
         type="text"
         size={size}
         value={inputValue}
