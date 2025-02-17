@@ -53,9 +53,10 @@ const AddCard = () => {
             Authorization: getDataLocalStore('token'),
           },
           data: {
-            ...data,
+            code: data.number,
             expiration_date: '09/2032',
             first_last_name: data.name,
+            number_id: parseInt(data.number),
           },
         },
         callBackAddCard,
