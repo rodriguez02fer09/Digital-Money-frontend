@@ -5,7 +5,7 @@ import ItemHistoryCards from '@domains/cross/ui/components/itemHistoryCards/src/
 import request from '@domains/cross/core/uses-cases/request'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
-const ContainHistoryCards = ({cards = [], updateCards}) => {
+const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   const defaultHistory = 'contain-history-cards'
   const [currentId, setCurrentId] = useState()
 
@@ -43,6 +43,7 @@ const ContainHistoryCards = ({cards = [], updateCards}) => {
             card={card}
             handlerOnClick={handlerOnClick}
             key={card.id}
+            selected={selected}
           />
         ))
       ) : (

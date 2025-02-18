@@ -11,7 +11,7 @@ import request from '@domains/cross/core/uses-cases/request'
 
 const defaultHistory = 'history-Cards'
 
-const HistoryCards = () => {
+const HistoryCards = ({selected = false}) => {
   const {account} = useAccount()
   const {id: accountId} = account ?? {}
   const [cards, setCards] = useState()
@@ -45,7 +45,11 @@ const HistoryCards = () => {
   return (
     <div className={defaultHistory}>
       <CardActivity size="HistoryCard">
-        <ContainHistoryCards cards={cards} updateCards={updateCards} />
+        <ContainHistoryCards
+          cards={cards}
+          updateCards={updateCards}
+          selected={selected}
+        />
       </CardActivity>
     </div>
   )
