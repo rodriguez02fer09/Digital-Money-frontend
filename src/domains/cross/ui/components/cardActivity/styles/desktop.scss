@@ -136,8 +136,9 @@
     }
 
     &--HistoryCard {
-      height: auto;
+      height: 219px;
       padding: 30px 38px 32px 41px;
+      overflow-y: scroll;
     }
 
     &--ProfileData {

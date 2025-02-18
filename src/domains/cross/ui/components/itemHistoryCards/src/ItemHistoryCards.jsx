@@ -1,7 +1,7 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 
-const ItemHistoryCards = ({card, handlerOnClick}) => {
+const ItemHistoryCards = ({card, handlerOnClick,selected}) => {
   const defaultNameCard = 'name-card'
 
   // Desestructuramos las propiedades del objeto 'card'
@@ -21,9 +21,13 @@ const ItemHistoryCards = ({card, handlerOnClick}) => {
           <p>Terminada en {lastFourNumbers}</p>
         </div>
       </div>
-      <button onClick={() => handlerOnClick(card)}>
-        <label>Eliminar</label>
-      </button>
+      {selected ? (
+        <input type="radio" />
+      ) : (
+        <button onClick={() => handlerOnClick(card)}>
+          <label>Eliminar</label>
+        </button>
+      )}
     </div>
   )
 }

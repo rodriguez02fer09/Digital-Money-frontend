@@ -18,7 +18,7 @@ const CWCardSelect = ({title = 'Cargar dinero'}) => {
       <main className="cw-card-select">
         <CardBlack size="SelectCard">
           <Title />
-          <HistoryCards />
+          <HistoryCards selected={true} />
           <ButtonAddCard onClick={handleContinue} />
         </CardBlack>
         <div className="button-container">
