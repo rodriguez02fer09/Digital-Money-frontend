@@ -7,8 +7,16 @@ import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
 const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   const defaultHistory = 'contain-history-cards'
+
   const [currentId, setCurrentId] = useState()
 
+  const [isSelect, setIsSelect] = useState(null)
+
+  const handleSelectChange = e => {
+    debugger
+    setIsSelect(() => e.target.value)
+    console.log(isSelect)
+  }
   const deleteCardsCallback = () => {}
 
   useEffect(() => {
@@ -43,7 +51,9 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
             card={card}
             handlerOnClick={handlerOnClick}
             key={card.id}
+            handleSelectChange={handleSelectChange}
             selected={selected}
+            isSelect={isSelect}
           />
         ))
       ) : (

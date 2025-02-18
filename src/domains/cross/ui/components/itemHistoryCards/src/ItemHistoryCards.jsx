@@ -1,7 +1,13 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 
-const ItemHistoryCards = ({card, handlerOnClick,selected}) => {
+const ItemHistoryCards = ({
+  card,
+  handlerOnClick,
+  selected,
+  handleSelectChange,
+  isSelect,
+}) => {
   const defaultNameCard = 'name-card'
 
   // Desestructuramos las propiedades del objeto 'card'
@@ -22,7 +28,12 @@ const ItemHistoryCards = ({card, handlerOnClick,selected}) => {
         </div>
       </div>
       {selected ? (
-        <input type="radio" />
+        <input
+          type="radio"
+          onChange={handleSelectChange}
+          checked={isSelect == id}
+          value={id}
+        />
       ) : (
         <button onClick={() => handlerOnClick(card)}>
           <label>Eliminar</label>
