@@ -13,9 +13,9 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   const [isSelect, setIsSelect] = useState(null)
 
   const handleSelectChange = e => {
-    debugger
     setIsSelect(() => e.target.value)
     console.log(isSelect)
+    localStorage.setItem('selectedCard', JSON.stringify(card))
   }
   const deleteCardsCallback = () => {}
 
@@ -27,7 +27,7 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   const handlerOnClick = card => {
     const {number_id, account_id, cod, expiration_date, first_last_name, id} =
       card ?? {}
-    debugger
+
     setCurrentId(() => id)
     request(
       {

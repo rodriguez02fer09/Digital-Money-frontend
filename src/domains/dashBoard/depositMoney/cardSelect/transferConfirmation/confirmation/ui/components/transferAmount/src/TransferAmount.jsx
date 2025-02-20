@@ -10,7 +10,7 @@ const TransferAmount = () => {
         <Image src="/images/amount.svg" width={30} height={30} alt="Arrow" />
       </div>
       <div className={`${defaultTransferAmount}--amount`}>
-        <p>$ 300</p>
+        <p>$ 900</p>
       </div>
     </div>
   )

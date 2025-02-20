@@ -9,7 +9,7 @@ const Account = ({size, color}) => {
 
   const handleAccount = () => {
     if (!inputValue) return
-
+    localStorage.getItem('selectedCard', JSON.stringify(card))
     window.location.href =
       '/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation'
   }
