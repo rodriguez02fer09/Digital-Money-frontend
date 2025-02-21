@@ -7,7 +7,23 @@ import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
 const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   const defaultHistory = 'contain-history-cards'
+
   const [currentId, setCurrentId] = useState()
+
+  const [isSelect, setIsSelect] = useState(null)
+
+  useEffect(() => {
+    const storedCard = JSON.parse(localStorage.getItem('selectedCard'))
+    if (storedCard) {
+      setIsSelect(storedCard)
+    }
+  }, [])
+
+  const handleSelectChange = e => {
+    const newSelected = e.target.value
+    setIsSelect(newSelected)
+    localStorage.setItem('selectedCard', JSON.stringify(newSelected))
+  }
 
   const deleteCardsCallback = () => {}
 
@@ -19,7 +35,7 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   const handlerOnClick = card => {
     const {number_id, account_id, cod, expiration_date, first_last_name, id} =
       card ?? {}
-    debugger
+
     setCurrentId(() => id)
     request(
       {
@@ -43,7 +59,9 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
             card={card}
             handlerOnClick={handlerOnClick}
             key={card.id}
+            handleSelectChange={handleSelectChange}
             selected={selected}
+            isSelect={isSelect}
           />
         ))
       ) : (

@@ -4,7 +4,7 @@ import ItemActivity from '@domains/DashBoard/home/ui/components/itemActuvity/src
 import Pagination from '@domains/dashBoard/home/core/hooks/pagination/src/Pagination'
 
 const ListActivity = ({activity = []}) => {
-  const itemsPerPage = 2
+  const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(0)
 
   const totalItems = activity.length
