@@ -1,7 +1,16 @@
+import {useEffect} from 'react'
 import '../styles/main.scss'
 import Image from 'next/image'
+import {useState} from 'react'
 
 const TransferAmount = () => {
+  const [amount, setAmount] = useState('')
+
+  useEffect(() => {
+    const storedAmount = localStorage.getItem('amountToDeposit') || '0'
+    setAmount(storedAmount)
+  }, [])
+
   const defaultTransferAmount = 'transfer-amount'
   return (
     <div className={`${defaultTransferAmount}`}>
@@ -10,7 +19,7 @@ const TransferAmount = () => {
         <Image src="/images/amount.svg" width={30} height={30} alt="Arrow" />
       </div>
       <div className={`${defaultTransferAmount}--amount`}>
-        <p>$ 900</p>
+        <p>$ {Number(amount).toLocaleString()}</p>
       </div>
     </div>
   )

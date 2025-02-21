@@ -12,11 +12,19 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
 
   const [isSelect, setIsSelect] = useState(null)
 
+  useEffect(() => {
+    const storedCard = JSON.parse(localStorage.getItem('selectedCard'))
+    if (storedCard) {
+      setIsSelect(storedCard)
+    }
+  }, [])
+
   const handleSelectChange = e => {
-    setIsSelect(() => e.target.value)
-    console.log(isSelect)
-    localStorage.setItem('selectedCard', JSON.stringify(card))
+    const newSelected = e.target.value
+    setIsSelect(newSelected)
+    localStorage.setItem('selectedCard', JSON.stringify(newSelected))
   }
+
   const deleteCardsCallback = () => {}
 
   useEffect(() => {

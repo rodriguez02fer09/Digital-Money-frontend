@@ -9,7 +9,7 @@ const Account = ({size, color}) => {
 
   const handleAccount = () => {
     if (!inputValue) return
-    localStorage.getItem('selectedCard', JSON.stringify(card))
+    const selectedCard = JSON.parse(localStorage.getItem('selectedCard'))
     window.location.href =
       '/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation'
   }
@@ -18,7 +18,7 @@ const Account = ({size, color}) => {
 
   const handleInputChange = e => {
     const value = e.target.value
-
+    localStorage.setItem('amountToDeposit', value)
     if (/^\d*\.?\d*$/.test(value)) {
       setInputValue(value)
     }
@@ -39,7 +39,7 @@ const Account = ({size, color}) => {
       <div className={`${defaultAccount}--button-account`}>
         <Button
           size="large"
-          color={isButtonDisabled ? 'gray' : 'green'} // Cambia el color según si está deshabilitado
+          color={isButtonDisabled ? 'gray' : 'green'}
           label="Continuar"
           onClick={handleAccount}
           disabled={isButtonDisabled}

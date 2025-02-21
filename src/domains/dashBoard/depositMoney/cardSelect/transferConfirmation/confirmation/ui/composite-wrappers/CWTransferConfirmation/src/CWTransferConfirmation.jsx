@@ -6,7 +6,6 @@ import Title from '@domains/dashBoard/depositMoney/cardSelect/transferConfirmati
 import TransferAmount from '@domains/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation/ui/components/transferAmount/src/TransferAmount'
 import TransferDestination from '@domains/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation/ui/components/transferDestination/src/TransferDestination'
 import Button from '@domains/cross/ui/components/button/src/Button'
-import request from '@domains/cross/core/uses-cases/request'
 
 const TransferConfirmation = ({title}) => {
   return (
