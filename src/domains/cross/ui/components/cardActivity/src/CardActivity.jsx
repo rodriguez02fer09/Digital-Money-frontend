@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import Image from 'next/image'
 
 const CardActivity = ({children, size, paginate}) => {
-  if (!children) return
+  if (!children) return null
 
   const defaultCard = 'cardActivity'
   const customClass = classNames(defaultCard, {
@@ -14,33 +14,33 @@ const CardActivity = ({children, size, paginate}) => {
 
   return (
     <div className={customClass}>
-      {size === 'ProfileData' ? (
-        <div className="contain-header">
-          <p>{'Tus datos'}</p>
-        </div>
-      ) : size === 'HistoryCard' ? (
-        <div className="contain-header">
-          <p>{'Tus tarjetas'}</p>
-        </div>
-      ) : (
-        <div className="contain-header">
-          <p>{'Tu actividad'}</p>
-        </div>
-      )}
+      <div className="contain-header">
+        <p>
+          {size === 'ProfileData'
+            ? 'Tus datos'
+            : size === 'HistoryCard'
+            ? 'Tus tarjetas'
+            : size === 'Services'
+            ? 'Más recientes'
+            : 'Tu actividad'}
+        </p>
+      </div>
 
       <div className="content">{children}</div>
 
-      {size !== 'ProfileData' && size !== 'HistoryCard' && (
-        <div className="contain-footer">
-          <p className="parrafo">Ver toda tu actividad</p>
-          <Image
-            src="/images/arrowBlack.svg"
-            width={14}
-            height={22}
-            alt="Arrow"
-          />
-        </div>
-      )}
+      {size !== 'ProfileData' &&
+        size !== 'HistoryCard' &&
+        size !== 'Services' && (
+          <div className="contain-footer">
+            <p className="parrafo">Ver toda tu actividad</p>
+            <Image
+              src="/images/arrowBlack.svg"
+              width={14}
+              height={22}
+              alt="Arrow"
+            />
+          </div>
+        )}
     </div>
   )
 }
