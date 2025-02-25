@@ -1,12 +1,10 @@
-'use client'
 import {useState, useEffect} from 'react'
-import '../styles/main.scss'
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
 import ItemServices from '@domains/dashBoard/paymentService/list/ui/components/itemServices/src/ItemServices'
 
-const Historyservices = () => {
-  const baseUrl = 'https://digitalmoney.digitalhouse.com/service'
+const HistoryServices = ({searchQuery}) => {
   const [services, setServices] = useState([])
+  const baseUrl = 'https://digitalmoney.digitalhouse.com/service'
 
   useEffect(() => {
     fetch(baseUrl, {
@@ -14,24 +12,25 @@ const Historyservices = () => {
       headers: {'Content-Type': 'application/json'},
     })
       .then(res => res.json())
-      .then(data => {
-        console.log('Service response:', data)
-        setServices(data)
-      })
+      .then(data => setServices(data))
       .catch(err => console.error('API error:', err))
   }, [])
 
+  const filteredServices = services.filter(service =>
+    service.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  )
+
   return (
     <CardActivity size="Services">
-      {services.length > 0 ? (
-        services.map(service => (
+      {filteredServices.length > 0 ? (
+        filteredServices.map(service => (
           <ItemServices key={service.id} service={service} />
         ))
       ) : (
-        <p>Cargando servicios...</p>
+        <p>No hay servicios disponibles.</p>
       )}
     </CardActivity>
   )
 }
 
-export default Historyservices
+export default HistoryServices

@@ -2,19 +2,13 @@ import '../styles/main.scss'
 
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 
-const SearchServices = ({placeholder, setSearchQuery}) => {
-  const handleInputChange = e => {
-    setSearchQuery(e.target.value)
-  }
-
+const SearchServices = ({setSearchQuery}) => {
   return (
-    <div>
-      <InputSearch
-        type="text"
-        placeholder="Buscá entre más de 5.000 empresas"
-        onChange={handleInputChange}
-      />
-    </div>
+    <InputSearch
+      placeholder="Buscar servicio"
+      onEnter={value => setSearchQuery(value)} // Solo actualiza el estado
+    />
   )
 }
+
 export default SearchServices

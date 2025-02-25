@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import {useState, useEffect} from 'react'
 import {useSearchParams, useRouter} from 'next/navigation'
 
-const InputSearch = ({size, placeholder, label, className = ''}) => {
+const InputSearch = ({size, placeholder, label, className = '', onEnter}) => {
   const defaultClass = 'container-SearchPrompt'
 
   const inputSearchClass = classNames(defaultClass, {
@@ -26,12 +26,18 @@ const InputSearch = ({size, placeholder, label, className = ''}) => {
     console.log('Input value:', e.target.value)
   }
 
-  const hanDleKeyDown = e => {
+  const handleKeyDown = e => {
     if (e.key === 'Enter') {
       e.preventDefault()
-      const newParams = new URLSearchParams(searchParams.toString())
-      newParams.set('search', inputValue)
-      router.push(`/dashBoard/activity/list?${newParams.toString()}`)
+
+      if (onEnter) {
+        onEnter(inputValue) // Para `SearchServices` solo filtra
+      } else {
+        // Para `SearchActivity` redirige
+        const newParams = new URLSearchParams(searchParams.toString())
+        newParams.set('search', inputValue)
+        router.push(`/dashBoard/activity/list?${newParams.toString()}`)
+      }
     }
   }
 
@@ -43,7 +49,7 @@ const InputSearch = ({size, placeholder, label, className = ''}) => {
         value={inputValue}
         placeholder={placeholder}
         onChange={handleChange}
-        onKeyDown={hanDleKeyDown}
+        onKeyDown={handleKeyDown}
         className={`${inputSearchClass}__input`}
       />
       <img
