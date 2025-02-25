@@ -29,8 +29,12 @@ const MenuDesplegable = () => {
           >
             <Link href="/dashBoard/depositMoney">Cargar dinero</Link>
           </li>
-          <li className={pathname === '/pagarServicios' ? 'selected' : ''}>
-            <Link href="/pagarServicios">Pagar servicios</Link>
+          <li
+            className={
+              pathname === '/dashBoard/paymentService' ? 'selected' : ''
+            }
+          >
+            <Link href="/dashBoard/paymentService">Pagar servicios</Link>
           </li>
           <li className={pathname === '/dashBoard/cards' ? 'selected' : ''}>
             <Link href="/dashBoard/cards">Tarjetas</Link>
