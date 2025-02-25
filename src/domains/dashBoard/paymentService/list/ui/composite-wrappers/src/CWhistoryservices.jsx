@@ -7,11 +7,10 @@ import SearchServices from '@domains/dashBoard/paymentService/list/ui/components
 import Historyservices from '@domains/dashBoard/paymentService/list/ui/components/historyServices/src/HistoryServices'
 
 const CWhistoryservices = () => {
-  const [searchQuery, setSearchQuery] = useState('')
   return (
     <>
-      <SearchServices setSearchQuery={setSearchQuery} />
-      <Historyservices searchQuery={searchQuery} />
+      <SearchServices />
+      <Historyservices />
     </>
   )
 }
