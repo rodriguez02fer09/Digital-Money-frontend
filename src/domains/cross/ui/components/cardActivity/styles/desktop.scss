@@ -13,7 +13,8 @@
       height: auto;
     }
     &--HistoryCard {
-      height: auto;
+      height: 219px;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -64,7 +65,8 @@
     }
 
     &--HistoryCard {
-      height: auto;
+      height: 219px;
+      overflow-y: scroll;
     }
 
     &--ProfileData {
