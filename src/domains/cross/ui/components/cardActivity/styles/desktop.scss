@@ -41,6 +41,11 @@
     &--ProfileData {
       height: 381px;
     }
+    &--Services {
+      width: auto;
+
+      margin-top: 20px;
+    }
   }
 }
 
@@ -65,7 +70,11 @@
     &--ProfileData {
       height: 277px;
     }
+    &--Services {
+      width: auto;
 
+      margin-top: 20px;
+    }
     .contain-header p {
       color: var(--A---Color-1, #201f22);
       font-size: $heading-2;
