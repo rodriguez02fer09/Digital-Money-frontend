@@ -22,9 +22,9 @@ const InputSearch = ({
       <input
         type="text"
         size={size}
-        value={value} // Asegura que el input muestra el valor correcto
+        value={value}
         placeholder={placeholder}
-        onChange={handleInputChange} // Maneja los cambios
+        onChange={handleInputChange}
         onKeyDown={onKeyDown}
         className="container-SearchPrompt__input"
       />
