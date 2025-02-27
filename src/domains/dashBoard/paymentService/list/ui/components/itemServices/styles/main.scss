@@ -1,65 +1,105 @@
 @import '@domains/cross/sass/_variables.scss';
-@media (max-width: 398px) {
-  .contain-ItemHistoryCards {
-    height: 65px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #cecece;
 
-    &:last-child {
-      border-bottom: 1px solid #cecece;
-    }
-  }
-}
+.name-card {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #cecece;
 
-@media screen and (min-width: 399px) and (max-width: 834px) {
-  .contain-ItemHistoryCards {
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid #cecece;
-
-    &:last-child {
-      border-bottom: 1px solid #cecece;
-    }
-  }
-}
-
-@media screen and (min-width: 835px) {
-  .name-card {
-    height: 70px;
+  &__containItem {
+    height: 40px;
+    width: 180px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #cecece;
-    &__containItem {
-      height: 40px;
-      width: 180px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    &:last-child {
-      border-bottom: 1px solid #cecece;
+  }
+
+  &--containImg {
+    img {
+      width: 70px;
+      height: 30px;
     }
   }
-  button {
-    border: none;
-    background: none;
-    cursor: pointer;
 
-    label {
-      color: #000;
-      text-align: right;
+  &--nameService {
+    height: 40px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
       font-family: 'Open Sans', sans-serif;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 400;
       line-height: normal;
+      color: black;
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #cecece;
+  }
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+
+  label {
+    color: #000;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 398px) {
+  .name-card {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    &--containImg {
+      align-items: center;
+      margin: 10px 0px 0px 10px;
+      img {
+        width: 60px;
+        height: 20px;
+      }
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .name-card__containItem {
+    width: 100%;
+  }
+}
+
+@media (min-width: 399px) and (max-width: 834px) {
+  .name-card {
+    height: 70px;
+    &__containItem {
+      width: 280px;
+    }
+  }
+}
+
+@media (min-width: 835px) {
+  .name-card {
+    height: 80px;
+
+    &__containItem {
+      width: 300px;
     }
   }
 }
