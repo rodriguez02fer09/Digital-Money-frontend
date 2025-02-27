@@ -9,39 +9,27 @@ const InputSearch = ({
   size,
   placeholder,
   className = '',
+  value,
   onChange,
   onKeyDown,
 }) => {
-  const defaultClass = 'container-SearchPrompt'
-  const inputSearchClass = classNames(defaultClass, {
-    [`${defaultClass}--${size}`]: size,
-  })
-
-  const searchParams = useSearchParams()
-  const [inputValue, setInputValue] = useState(searchParams.get('search') || '')
-
-  useEffect(() => {
-    setInputValue(searchParams.get('search') || '')
-  }, [searchParams])
-
-  const handleChange = e => {
-    setInputValue(e.target.value)
+  const handleInputChange = e => {
     if (onChange) onChange(e.target.value)
   }
 
   return (
-    <div className={inputSearchClass}>
+    <div className="container-SearchPrompt">
       <input
         type="text"
         size={size}
-        value={inputValue}
+        value={value} // Asegura que el input muestra el valor correcto
         placeholder={placeholder}
-        onChange={handleChange}
+        onChange={handleInputChange} // Maneja los cambios
         onKeyDown={onKeyDown}
-        className={`${inputSearchClass}__input`}
+        className="container-SearchPrompt__input"
       />
       <img
-        className={`${inputSearchClass}__img`}
+        className="container-SearchPrompt__img"
         src="/images/search.svg"
         alt="Search icon"
         width={22}
