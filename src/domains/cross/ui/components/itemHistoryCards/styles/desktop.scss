@@ -1,30 +1,70 @@
 @import '../../../../sass/variables';
 @media (max-width: 398px) {
-  .contain-ItemHistoryCards {
-    height: 65px;
+  .name-card {
+    height: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-top: 1px solid #cecece;
-
+    &__containItem {
+      height: 40px;
+      width: 180px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
     &:last-child {
       border-bottom: 1px solid #cecece;
+    }
+  }
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    label {
+      color: #000;
+      text-align: right;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: normal;
     }
   }
 }
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
-  .contain-ItemHistoryCards {
-    height: 60px;
+  .name-card {
+    height: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-top: 1px solid #cecece;
-
+    &__containItem {
+      height: 40px;
+      width: 180px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
     &:last-child {
       border-bottom: 1px solid #cecece;
+    }
+  }
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    label {
+      color: #000;
+      text-align: right;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: normal;
     }
   }
 }
@@ -53,7 +93,7 @@
     background: none;
     cursor: pointer;
 
-  label {
+    label {
       color: #000;
       text-align: right;
       font-family: 'Open Sans', sans-serif;

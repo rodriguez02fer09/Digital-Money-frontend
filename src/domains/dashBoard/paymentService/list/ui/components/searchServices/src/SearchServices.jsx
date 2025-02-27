@@ -6,7 +6,7 @@ const SearchServices = ({setSearchQuery}) => {
   return (
     <InputSearch
       placeholder="Buscar servicio"
-      onEnter={value => setSearchQuery(value)} // Solo actualiza el estado
+      onEnter={value => setSearchQuery(value)}
     />
   )
 }
