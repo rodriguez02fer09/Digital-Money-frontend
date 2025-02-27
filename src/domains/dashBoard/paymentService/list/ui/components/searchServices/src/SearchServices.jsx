@@ -1,12 +1,24 @@
-import '../styles/main.scss'
+'use client'
 
+import {useSearchParams} from 'next/navigation'
+import {useState, useEffect} from 'react'
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 
-const SearchServices = ({setSearchQuery}) => {
+const SearchServices = ({onFilter}) => {
+  const searchParams = useSearchParams()
+  const [searchValue, setSearchValue] = useState(
+    searchParams.get('search') || '',
+  )
+
+  useEffect(() => {
+    onFilter(searchValue)
+  }, [searchValue])
+
   return (
     <InputSearch
-      placeholder="Buscar servicio"
-      onEnter={value => setSearchQuery(value)}
+      type="text"
+      placeholder="Busca un servicio"
+      onChange={setSearchValue}
     />
   )
 }

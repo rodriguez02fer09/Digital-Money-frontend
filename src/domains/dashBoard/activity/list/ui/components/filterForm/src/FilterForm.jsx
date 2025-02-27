@@ -2,51 +2,57 @@
 import '../styles/main.scss'
 import Image from 'next/image'
 import {useState, useEffect} from 'react'
-import {useSearchParams} from 'next/navigation'
+import {useSearchParams, useRouter} from 'next/navigation'
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
 import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src/ListActivity'
 import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFilter/src/ModalFilter'
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
-import isWithinDateRange from '@domains/dashBoard/activity/list/core/uses-cases/isWithinDateRange'
 import filterWithRangeDate from '@domains/dashBoard/activity/list/core/uses-cases/filterWithRangeDate'
 
 const FilterForm = ({showButton}) => {
   const searchParams = useSearchParams()
+  const router = useRouter() // Inicializar router
   const SearchQuery = searchParams.get('search') || ''
   const {activity, updateStateActivity} = useActivity(SearchQuery)
+  const [searchQuery, setSearchQuery] = useState(SearchQuery)
 
   const [filterActivity, setFilterActivity] = useState([])
 
-  //Componente principal que gestiona el filtrado y muestra la actividad.
-
   useEffect(() => {
-    setFilterActivity(filterUpWork(activity, SearchQuery))
-  }, [activity, SearchQuery])
+    setFilterActivity(filterUpWork(activity, searchQuery))
+  }, [activity, searchQuery])
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen)
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      const newParams = new URLSearchParams(searchParams.toString())
+      newParams.set('search', searchQuery)
+      router.push(`/dashBoard/activity/list?${newParams.toString()}`)
+    }
   }
 
-  const handleFilter = selectedPeriod => {
-    setFilterActivity(
-      filterWithRangeDate(filterUpWork(activity, SearchQuery), selectedPeriod),
-    )
+  const handleChange = value => {
+    console.log('Valor ingresado:', value) // Debug en consola
+    setSearchQuery(value) // Asegura que el estado se actualiza
   }
-  const customClass = 'filter-form'
 
   return (
-    <div className={customClass}>
-      <div className={`${customClass}__form`}>
-        <div className={`${customClass}__form__input`}>
-          <InputSearch type="text" placeholder="Busca tu actividad" />
+    <div className="filter-form">
+      <div className="filter-form__form">
+        <div className="filter-form__form__input">
+          <InputSearch
+            type="text"
+            placeholder="Busca tu actividad"
+            value={searchQuery} // Pasamos el valor para que se refleje en el input
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+          />
         </div>
         {showButton && (
-          <div className={`${customClass}__form__button`}>
-            <button type="submit" onClick={toggleModal}>
+          <div className="filter-form__form__button">
+            <button type="submit">
               <Image
                 src="/images/filtrar.svg"
                 width={22}
@@ -67,11 +73,7 @@ const FilterForm = ({showButton}) => {
           )}
         </CardActivity>
       </div>
-      <ModalFilter
-        isOpen={isModalOpen}
-        toggleModal={toggleModal}
-        handleFilter={handleFilter}
-      />
+      <ModalFilter isOpen={false} />
     </div>
   )
 }
