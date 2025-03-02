@@ -10,8 +10,8 @@ const AccountStep = ({size, color}) => {
   const handleAccountStep = () => {
     if (!inputValue) return
     const storedService = JSON.parse(localStorage.getItem('selectedService'))
-    //window.location.href =
-    //'/dashBoard/depositMoney/cardSelect/transferConfirmation/confirmation'
+    window.location.href =
+      '/dashBoard/paymentService/accountStep/stepSelectCard'
   }
 
   const defaultAccountStep = 'account-step'
@@ -24,7 +24,6 @@ const AccountStep = ({size, color}) => {
     }
   }
 
-  const defaultAccount = 'account-step'
   return (
     <div className={`${defaultAccountStep}`}>
       <div className={`${defaultAccountStep}--text-input`}>
@@ -39,6 +38,7 @@ const AccountStep = ({size, color}) => {
           Son 11 números sin espacios, sin el “2” inicial. Agregá ceros adelante
           si tenés menos.{' '}
         </p>
+        s
       </div>
 
       <div className={`${defaultAccountStep}--button-accountStep`}>

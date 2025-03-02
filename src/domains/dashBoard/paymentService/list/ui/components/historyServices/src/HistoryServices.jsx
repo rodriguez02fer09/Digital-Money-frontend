@@ -36,7 +36,7 @@ const HistoryServices = ({searchQuery}) => {
   const handleSelect = id => {
     setIsSelected(id)
     localStorage.setItem('selectedService', JSON.stringify(id))
-    window.location.href = '/dashBoard/paymentService/accountStep'
+    window.location.href = '/dashBoard/paymentService/accountStep/stepNumber'
   }
 
   return (
