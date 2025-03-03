@@ -44,7 +44,6 @@
     }
     &--Services {
       width: auto;
-
       margin-top: 20px;
     }
   }
@@ -67,6 +66,7 @@
     &--HistoryCard {
       height: 219px;
       overflow-y: scroll;
+      margin-bottom: 20px;
     }
 
     &--ProfileData {

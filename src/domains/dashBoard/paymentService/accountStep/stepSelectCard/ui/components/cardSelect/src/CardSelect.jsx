@@ -1,14 +1,18 @@
+'use client'
 import '../styles/main.scss'
-import PayService from '@domains/dashBoard/paymentService/accountStep/stepSelectCard/ui/components/payService/src/PayService'
-import CardSelect from './CardSelect'
+import {useState, useEffect} from 'react'
+import HistoryCards from '@domains/dashBoard/cards/list/ui/components/historyCards/src/HistoryCards'
 
-const CWSelectCardService = ({isSelectionMode}) => {
-  return (
-    <>
-      <PayService />
-      <CardSelect selected={isSelectionMode} />
-    </>
-  )
+const CardSelect = ({selected}) => {
+  const [selectedCard, setSelectedCar] = useState(null)
+
+  const handleSelectCard = cardId => {
+    setSelectedCar(cardId)
+    console.log('tarjetaSelecionada', cardId)
+    localStorage
+  }
+
+  return <HistoryCards selected={true} onSelect={handleSelectCard} />
 }
 
-export default CWSelectCardService
+export default CardSelect

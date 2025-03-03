@@ -1,8 +1,10 @@
+'use client'
 import '../styles/main.scss'
+
 import CardBlack from '@domains/cross/ui/components/cardBlack/src/CardBlack'
 
-const PayService = ({service}) => {
-  const {id, name = 'Servicio sin nombre'} = service || {}
+const PayService = ({serviceData = {}}) => {
+  const {name, invoice_value, date} = serviceData
 
   const defaultPayService = 'pay-service'
 
@@ -10,12 +12,13 @@ const PayService = ({service}) => {
     <CardBlack>
       <div className={defaultPayService}>
         <div className={`${defaultPayService}--detailService`}>
-          <p>{name}</p>
+          <p>{name || 'Servicio sin nombre'}</p>
+          <p>Fecha: {date || 'Sin fecha'}</p>
           <p>Ver detalles del pago</p>
         </div>
         <div className={`${defaultPayService}--detailAmount`}>
           <p>Total a pagar</p>
-          <p>Ver detalles del pago</p>
+          <p> $ {invoice_value || 'No disponible'}</p>
         </div>
       </div>
     </CardBlack>
