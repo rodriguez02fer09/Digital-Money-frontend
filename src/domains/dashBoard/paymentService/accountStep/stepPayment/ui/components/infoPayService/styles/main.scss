@@ -1,0 +1,100 @@
+@import '@domains/cross/sass/_variables.scss';
+
+.info-pay-service {
+  &__date-amount,
+  &__account,
+  &__number-account {
+    width: 277px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    p {
+    }
+  }
+
+  &__date-amount {
+    height: 50px;
+    margin-top: 21px;
+
+    .date {
+      color: #fff;
+      font-family: $font-stack;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .amount {
+      color: $primary-color;
+      font-family: $font-stack;
+      font-size: $heading-2;
+      font-weight: 700;
+      line-height: 117.682%;
+    }
+  }
+
+  &__account {
+    height: 50px;
+    margin-top: 31px;
+
+    .account-label {
+      color: white;
+      font-family: $font-stack;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .account-service {
+      color: $primary-color;
+      font-family: $font-stack;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 117.682%;
+    }
+  }
+
+  &__number-account {
+    height: 40px;
+    margin-top: 23px;
+
+    .card,
+    .name-card {
+      color: $quinary-color;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .card {
+      color: $quinary-color;
+      font-size: 16px;
+    }
+  }
+}
+
+// 📱 **Responsive**
+@media (max-width: 398px) {
+  .info-pay-service {
+    &__date-amount,
+    &__account,
+    &__number-account {
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 399px) and (max-width: 834px) {
+  .info-pay-service {
+    &__date-amount,
+    &__account,
+    &__number-account {
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: 835px) {
+  .info-pay-service {
+    &__number-account {
+    }
+  }
+}

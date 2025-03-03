@@ -37,6 +37,12 @@ const CWSelectCardService = () => {
       .catch(err => console.error('API error:', err))
   }, [])
 
+  const payData = {
+    amount: 0,
+    dated: 'string',
+    description: 'string',
+  }
+
   return (
     <>
       <PayService serviceData={serviceData} />
