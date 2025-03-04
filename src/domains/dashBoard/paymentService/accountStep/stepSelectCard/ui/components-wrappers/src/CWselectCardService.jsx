@@ -1,7 +1,7 @@
 'use client'
 import '../styles/main.scss'
 import {useEffect, useState} from 'react'
-import {useRouter} from 'next/navigation' // 🔹 Mejor manejo de navegación en Next.js
+import {useRouter} from 'next/navigation'
 import PayService from '@domains/dashBoard/paymentService/accountStep/stepSelectCard/ui/components/payService/src/PayService'
 import CardSelect from '@domains/dashBoard/paymentService/accountStep/stepSelectCard/ui/components/cardSelect/src/CardSelect'
 import Button from '@domains/cross/ui/components/button'
@@ -24,12 +24,9 @@ const CWSelectCardService = () => {
   useEffect(() => {
     const storedServiceId = JSON.parse(localStorage.getItem('selectedService'))
     if (!storedServiceId) {
-      console.error(
-        '❌ No se encontró un ID de servicio válido en localStorage',
-      )
+      console.error('No se encontró un ID de servicio válido en localStorage')
       return
     }
-
     const baseUrl = `https://digitalmoney.digitalhouse.com/service/${storedServiceId}`
 
     fetch(baseUrl, {
@@ -41,9 +38,10 @@ const CWSelectCardService = () => {
         return res.json()
       })
       .then(data => setServiceData(data))
-      .catch(err => console.error('❌ API error:', err.message))
+      .catch(err => console.error('API error:', err.message))
   }, [])
 
+  // Calcula payData basado en serviceData
   const payData = {
     amount: -Math.abs(Number(serviceData.invoice_value)) || 0,
     dated: new Date().toISOString(),
@@ -55,16 +53,15 @@ const CWSelectCardService = () => {
       localStorage.setItem('payData', JSON.stringify(payData))
       router.push('/dashBoard/paymentService/accountStep/stepPayment')
     } else {
-      console.error(' Error en la transacción:', result.error)
+      console.error('Error en la transacción:', result.error)
     }
   }
 
   const handlePaymentService = () => {
     if (!account_id) {
-      console.error(' No se encontró un account_id válido')
+      console.error('No se encontró un account_id válido')
       return
     }
-
     request(
       {
         path: `accounts/${account_id}/transactions`,

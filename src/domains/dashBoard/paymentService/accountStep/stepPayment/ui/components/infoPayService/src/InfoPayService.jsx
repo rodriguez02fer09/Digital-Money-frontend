@@ -1,11 +1,9 @@
+'use client'
 import '../styles/main.scss'
 
-const InfoPayService = ({payData = {}}) => {
-  const {
-    amount = 0,
-    dated = new Date().toISOString(),
-    description = 'Pago',
-  } = payData
+const InfoPayService = ({payData = {}, serviceData = {}}) => {
+  const {amount, dated = new Date().toISOString(), description} = payData
+  const {id, name, date, invoice_value} = serviceData
   const defaultAprove = 'info-pay-service'
 
   return (
