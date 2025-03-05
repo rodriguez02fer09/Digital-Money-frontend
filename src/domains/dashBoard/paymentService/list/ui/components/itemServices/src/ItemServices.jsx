@@ -1,6 +1,6 @@
 import '../styles/main.scss'
 
-const ItemServices = ({service}) => {
+const ItemServices = ({service, handleSelect, isSelected}) => {
   const defaultNameCard = 'name-card'
   const {id, name = 'Servicio sin nombre'} = service || {}
   const imageUrl = id ? `/services/${id}.svg` : `/images/default.svg`
@@ -16,7 +16,12 @@ const ItemServices = ({service}) => {
         </div>
       </div>
 
-      <button>Seleccionar</button>
+      <button
+        onClick={() => handleSelect(id)}
+        className={isSelected === id ? 'selected' : ''}
+      >
+        {isSelected === id ? 'Seleccionado' : 'Seleccionar'}
+      </button>
     </div>
   )
 }

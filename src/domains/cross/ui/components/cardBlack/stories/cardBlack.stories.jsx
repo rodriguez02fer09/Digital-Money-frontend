@@ -17,7 +17,8 @@ export default {
         'Account',
         'TransferConfirmation',
         'AproveInfo',
-      ], // Asegúrate d
+        'PaymentService'
+      ], 
       e que estos nombres tengan sentido
       control: {type: 'radio'},
     },
@@ -81,3 +82,10 @@ AproveInfo.args = {
   color: 'black',
   size: 'AproveInfo',
 }
+
+export const PaymentService= Template.bind({})
+PaymentService.args = {
+  color: 'black',
+  size: 'PaymentService',
+}
+

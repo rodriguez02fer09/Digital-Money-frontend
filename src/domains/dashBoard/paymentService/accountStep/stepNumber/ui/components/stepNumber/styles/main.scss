@@ -1,0 +1,174 @@
+@import '@domains/cross/sass/_variables.scss';
+@media (max-width: 398px) {
+  .account-step {
+    height: 240px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &--text-input {
+      width: 250px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h1 {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      input {
+        border-radius: 10px;
+        width: 300px;
+        height: 50px;
+        border: 1px solid var #d2ffec;
+        background: #fff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+        ::placeholder {
+          color: var(--Fill-in, rgba(0, 0, 0, 0.5));
+          font-family: 'Open Sans';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 134.766%;
+        }
+      }
+    }
+
+    &--button-accountStep {
+      display: none;
+    }
+    &--button-mobile {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      Button {
+        width: 165px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  }
+}
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .account-step {
+    height: 240px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &--text-input {
+      width: 439px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h1 {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      input {
+        border-radius: 10px;
+        width: 387px;
+        height: 64px;
+        border: 1px solid var #d2ffec;
+        background: #fff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+        ::placeholder {
+          color: var(--Fill-in, rgba(0, 0, 0, 0.5));
+          font-family: 'Open Sans';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 134.766%;
+        }
+      }
+    }
+
+    &--button-accountStep {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 64px;
+      Button {
+        width: 100%;
+      }
+    }
+    &--button-mobile {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 835px) {
+  .account-step {
+    height: 240px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &--text-input {
+      width: 469px;
+      height: 130px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h1 {
+        color: $primary-color;
+        font-family: '$font-stack';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      input {
+        border-radius: 10px;
+        width: 360px;
+        height: 64px;
+        border: 1px solid var #d2ffec;
+        background: #fff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+        ::placeholder {
+          color: var(--Fill-in, rgba(0, 0, 0, 0.5));
+          font-family: 'Open Sans';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 134.766%;
+        }
+      }
+      p {
+        color: var(--white, #fff);
+
+        font-family: 'Open Sans';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+
+    &--button-accountStep {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: 64px;
+      Button {
+        width: 233px;
+      }
+    }
+    &--button-mobile {
+      display: none;
+    }
+  }
+}

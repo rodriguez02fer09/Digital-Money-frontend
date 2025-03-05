@@ -1,7 +1,7 @@
 import '../styles/main.scss'
 import Image from 'next/image'
 
-const AproveCheck = () => {
+const AproveCheck = ({title}) => {
   const defaultAproveCheck = 'aprove-check'
   return (
     <div className={`${defaultAproveCheck}`}>
@@ -12,7 +12,7 @@ const AproveCheck = () => {
           height={68}
           alt="check"
         />
-        <h1>Ya cargamos el dinero en tu cuenta</h1>
+        <h1>{title}</h1>
       </div>
     </div>
   )

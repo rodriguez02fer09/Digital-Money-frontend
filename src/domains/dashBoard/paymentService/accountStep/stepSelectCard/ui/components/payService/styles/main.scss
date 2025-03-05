@@ -1,0 +1,62 @@
+@import '@domains/cross/sass/_variables.scss';
+.pay-service {
+  height: 167px;
+
+  &--detailService {
+    padding: 25px 48px 25px 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    p:first-child {
+      color: $primary-color;
+      /* A - Headling 1 */
+      font-family: $font-stack;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    p:last-child {
+      color: $quinary-color;
+      text-align: right;
+      font-family: $font-stack;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 16px */
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+    }
+  }
+  &--detailAmount {
+    padding: 25px 48px 25px 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      color: #fff;
+      font-family: $font-stack;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+}
+@media (max-width: 398px) {
+}
+
+@media (min-width: 399px) and (max-width: 834px) {
+}
+
+@media (min-width: 835px) {
+}

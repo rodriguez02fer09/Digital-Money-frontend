@@ -3,57 +3,33 @@
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 import {useState, useEffect} from 'react'
-import {useSearchParams, useRouter} from 'next/navigation'
+import {useSearchParams} from 'next/navigation'
 
-const InputSearch = ({size, placeholder, label, className = '', onEnter}) => {
-  const defaultClass = 'container-SearchPrompt'
-
-  const inputSearchClass = classNames(defaultClass, {
-    [`${defaultClass}--${size}`]: size,
-  })
-
-  const searchParams = useSearchParams()
-  const router = useRouter()
-
-  const [inputValue, setInputValue] = useState(searchParams.get('search') || '')
-
-  useEffect(() => {
-    setInputValue(searchParams.get('search') || '')
-  }, [searchParams])
-
-  const handleChange = e => {
-    setInputValue(e.target.value)
-    console.log('Input value:', e.target.value)
-  }
-
-  const handleKeyDown = e => {
-    if (e.key === 'Enter') {
-      e.preventDefault()
-
-      if (onEnter) {
-        onEnter(inputValue) // Para `SearchServices` solo filtra
-      } else {
-        // Para `SearchActivity` redirige
-        const newParams = new URLSearchParams(searchParams.toString())
-        newParams.set('search', inputValue)
-        router.push(`/dashBoard/activity/list?${newParams.toString()}`)
-      }
-    }
+const InputSearch = ({
+  size,
+  placeholder,
+  className = '',
+  value,
+  onChange,
+  onKeyDown,
+}) => {
+  const handleInputChange = e => {
+    if (onChange) onChange(e.target.value)
   }
 
   return (
-    <div className={`${inputSearchClass}`}>
+    <div className="container-SearchPrompt">
       <input
         type="text"
         size={size}
-        value={inputValue}
+        value={value}
         placeholder={placeholder}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown}
-        className={`${inputSearchClass}__input`}
+        onChange={handleInputChange}
+        onKeyDown={onKeyDown}
+        className="container-SearchPrompt__input"
       />
       <img
-        className={`${inputSearchClass}__img`}
+        className="container-SearchPrompt__img"
         src="/images/search.svg"
         alt="Search icon"
         width={22}
