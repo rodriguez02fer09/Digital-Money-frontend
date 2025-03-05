@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react'
 import {useSearchParams, useRouter} from 'next/navigation'
 import InputSearch from '@domains/dashBoard/home/ui/components/inputSearch'
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
-import ListActivity from '@domains/dashBoard/home/ui/components/listActivity/src/ListActivity'
+import ListActivity from '@domains/DashBoard/home/ui/components/listActivity/src/ListActivity'
 import ModalFilter from '@domains/dashBoard/activity/list/ui/components/modalFilter/src/ModalFilter'
 import useActivity from '@domains/dashBoard/home/core/hooks/useActivity/src/useActivity'
 import filterUpWork from '@domains/dashBoard/activity/list/core/uses-cases/filterUpWork'
@@ -17,8 +17,9 @@ const FilterForm = ({showButton}) => {
   const SearchQuery = searchParams.get('search') || ''
   const {activity, updateStateActivity} = useActivity(SearchQuery)
   const [searchQuery, setSearchQuery] = useState(SearchQuery)
-
   const [filterActivity, setFilterActivity] = useState([])
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     setFilterActivity(filterUpWork(activity, searchQuery))
@@ -34,8 +35,15 @@ const FilterForm = ({showButton}) => {
   }
 
   const handleChange = value => {
-    console.log('Valor ingresado:', value) // Debug en consola
-    setSearchQuery(value) // Asegura que el estado se actualiza
+    console.log('Valor ingresado:', value)
+    setSearchQuery(value)
+  }
+
+  // Función para manejar el filtrado por período
+  const handleFilter = selectedPeriod => {
+    console.log('Periodo seleccionado:', selectedPeriod)
+    // Aquí puedes aplicar la lógica adicional del filtro según el período seleccionado
+    setIsModalOpen(false) // Cierra el modal al aplicar el filtro
   }
 
   return (
@@ -45,14 +53,14 @@ const FilterForm = ({showButton}) => {
           <InputSearch
             type="text"
             placeholder="Busca tu actividad"
-            value={searchQuery} // Pasamos el valor para que se refleje en el input
+            value={searchQuery}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
           />
         </div>
         {showButton && (
           <div className="filter-form__form__button">
-            <button type="submit">
+            <button type="button" onClick={() => setIsModalOpen(true)}>
               <Image
                 src="/images/filtrar.svg"
                 width={22}
@@ -73,7 +81,8 @@ const FilterForm = ({showButton}) => {
           )}
         </CardActivity>
       </div>
-      <ModalFilter isOpen={false} />
+      {/* Aquí se controla la visibilidad del ModalFilter */}
+      <ModalFilter isOpen={isModalOpen} handleFilter={handleFilter} />
     </div>
   )
 }
