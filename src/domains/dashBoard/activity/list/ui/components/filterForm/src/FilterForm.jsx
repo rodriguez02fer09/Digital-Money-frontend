@@ -13,13 +13,19 @@ import filterWithRangeDate from '@domains/dashBoard/activity/list/core/uses-case
 
 const FilterForm = ({showButton}) => {
   const searchParams = useSearchParams()
-  const router = useRouter() // Inicializar router
+  const router = useRouter()
   const SearchQuery = searchParams.get('search') || ''
   const {activity, updateStateActivity} = useActivity(SearchQuery)
   const [searchQuery, setSearchQuery] = useState(SearchQuery)
-
   const [filterActivity, setFilterActivity] = useState([])
 
+  // Estado para controlar la visibilidad del modal
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const toggleModal = () => {
+    debugger
+    setIsModalOpen(!isModalOpen)
+  }
   useEffect(() => {
     setFilterActivity(filterUpWork(activity, searchQuery))
   }, [activity, searchQuery])
@@ -34,8 +40,14 @@ const FilterForm = ({showButton}) => {
   }
 
   const handleChange = value => {
-    console.log('Valor ingresado:', value) // Debug en consola
-    setSearchQuery(value) // Asegura que el estado se actualiza
+    console.log('Valor ingresado:', value)
+    setSearchQuery(value)
+  }
+
+  const handleFilter = selectedPeriod => {
+    setFilterActivity(
+      filterWithRangeDate(filterUpWork(activity, SearchQuery), selectedPeriod),
+    )
   }
 
   return (
@@ -45,14 +57,14 @@ const FilterForm = ({showButton}) => {
           <InputSearch
             type="text"
             placeholder="Busca tu actividad"
-            value={searchQuery} // Pasamos el valor para que se refleje en el input
+            value={searchQuery}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
           />
         </div>
         {showButton && (
           <div className="filter-form__form__button">
-            <button type="submit">
+            <button type="button" onClick={() => setIsModalOpen(true)}>
               <Image
                 src="/images/filtrar.svg"
                 width={22}
@@ -73,7 +85,12 @@ const FilterForm = ({showButton}) => {
           )}
         </CardActivity>
       </div>
-      <ModalFilter isOpen={false} />
+
+      <ModalFilter
+        isOpen={isModalOpen}
+        toggleModal={toggleModal}
+        handleFilter={handleFilter}
+      />
     </div>
   )
 }

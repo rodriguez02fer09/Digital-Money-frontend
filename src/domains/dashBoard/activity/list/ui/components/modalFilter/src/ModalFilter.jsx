@@ -1,19 +1,18 @@
+'use client'
 import '../styles/main.scss'
 import {useState} from 'react'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import Image from 'next/image'
 
-//Modal que permite seleccionar el período de filtrado.
-
 const ModalFilter = ({isOpen, handleFilter}) => {
   const defaulFilter = 'modal-filter'
-
   const [selectedPeriod, setSelectedPeriod] = useState('today')
 
   const handlePeriodChange = e => {
     setSelectedPeriod(e.target.value)
   }
 
+  // Si no está abierto, no se renderiza nada
   if (!isOpen) return null
 
   return (
@@ -34,9 +33,8 @@ const ModalFilter = ({isOpen, handleFilter}) => {
             onChange={handlePeriodChange}
           />
         </div>
-
         <div>
-          <label htmlFor="Ayer">Ayer</label>
+          <label htmlFor="yesterday">Ayer</label>
           <input
             type="radio"
             id="yesterday"
@@ -46,9 +44,8 @@ const ModalFilter = ({isOpen, handleFilter}) => {
             onChange={handlePeriodChange}
           />
         </div>
-
         <div>
-          <label htmlFor="Ultima semana">Ultima semana</label>
+          <label htmlFor="lastWeek">Ultima semana</label>
           <input
             type="radio"
             id="lastWeek"
@@ -59,7 +56,7 @@ const ModalFilter = ({isOpen, handleFilter}) => {
           />
         </div>
         <div>
-          <label htmlFor="Ultimos 15 dias">Ultimos 15 dias </label>
+          <label htmlFor="last15Days">Ultimos 15 dias</label>
           <input
             type="radio"
             id="last15Days"
@@ -69,9 +66,8 @@ const ModalFilter = ({isOpen, handleFilter}) => {
             onChange={handlePeriodChange}
           />
         </div>
-
         <div>
-          <label htmlFor="Último mes">Último mes</label>
+          <label htmlFor="lastMonth">Último mes</label>
           <input
             type="radio"
             id="lastMonth"
@@ -81,9 +77,8 @@ const ModalFilter = ({isOpen, handleFilter}) => {
             onChange={handlePeriodChange}
           />
         </div>
-
         <div>
-          <label htmlFor="Último año">Último año</label>
+          <label htmlFor="lastYear">Último año</label>
           <input
             type="radio"
             id="lastYear"
@@ -97,7 +92,6 @@ const ModalFilter = ({isOpen, handleFilter}) => {
       <div className={`${defaulFilter}--other-option-button`}>
         <div>
           <p>Otro período</p>
-
           <Image
             src="/images/butonFilter.svg"
             width={10}
@@ -117,4 +111,5 @@ const ModalFilter = ({isOpen, handleFilter}) => {
     </main>
   )
 }
+
 export default ModalFilter
