@@ -32,10 +32,6 @@ const TransactionDetailInfo = () => {
     }
   }, [])
 
-  if (!activity) {
-    return <p>Cargando información...</p>
-  }
-
   return (
     <CardBlack size="Detail">
       <div className="detail-transaction">
