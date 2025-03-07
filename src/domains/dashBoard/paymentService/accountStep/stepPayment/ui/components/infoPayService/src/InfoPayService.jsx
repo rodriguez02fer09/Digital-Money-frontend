@@ -11,7 +11,6 @@ const InfoPayService = () => {
   const [cardNumber, setCardNumber] = useState('')
 
   useEffect(() => {
-    // Recupera payData desde localStorage
     const storedPayData = localStorage.getItem('payData')
     if (storedPayData) {
       setPayData(JSON.parse(storedPayData))
@@ -19,14 +18,12 @@ const InfoPayService = () => {
       console.log('No se encontró payData en localStorage')
     }
 
-    // Recupera el id de la tarjeta (selectedCard) desde localStorage
     const storedCardId = JSON.parse(localStorage.getItem('selectedCard'))
     if (storedCardId) {
-      // Recupera el listado de tarjetas (cardsList) desde localStorage
       const storedCards = localStorage.getItem('cardsList')
       if (storedCards) {
         const cards = JSON.parse(storedCards)
-        // Convertir ambos valores a string para evitar problemas de tipo
+
         const cardFound = cards.find(
           card => String(card.id) === String(storedCardId),
         )
