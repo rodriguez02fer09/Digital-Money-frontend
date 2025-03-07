@@ -1,13 +1,12 @@
 import React, {useState} from 'react'
 import '../styles/desktop.scss'
-import ItemActivity from '@domains/DashBoard/home/ui/components/itemActuvity/src/ItemActivity'
+import ItemActivity from '@domains/dashBoard/home/ui/components/itemActivity/src/ItemActivity'
 import Pagination from '@domains/dashBoard/home/core/hooks/pagination/src/Pagination'
 
 const ListActivity = ({activity = []}) => {
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(0)
 
-  // Ordena las actividades de la más reciente a la más antigua usando la propiedad "dated"
   const sortedActivity = [...activity].sort(
     (a, b) => new Date(b.dated) - new Date(a.dated),
   )
