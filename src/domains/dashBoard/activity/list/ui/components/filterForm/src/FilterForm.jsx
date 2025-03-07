@@ -13,14 +13,19 @@ import filterWithRangeDate from '@domains/dashBoard/activity/list/core/uses-case
 
 const FilterForm = ({showButton}) => {
   const searchParams = useSearchParams()
-  const router = useRouter() // Inicializar router
+  const router = useRouter()
   const SearchQuery = searchParams.get('search') || ''
   const {activity, updateStateActivity} = useActivity(SearchQuery)
   const [searchQuery, setSearchQuery] = useState(SearchQuery)
   const [filterActivity, setFilterActivity] = useState([])
 
+  // Estado para controlar la visibilidad del modal
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  const toggleModal = () => {
+    debugger
+    setIsModalOpen(!isModalOpen)
+  }
   useEffect(() => {
     setFilterActivity(filterUpWork(activity, searchQuery))
   }, [activity, searchQuery])
@@ -39,11 +44,18 @@ const FilterForm = ({showButton}) => {
     setSearchQuery(value)
   }
 
+<<<<<<< HEAD
   // Función para manejar el filtrado por período
   const handleFilter = selectedPeriod => {
     console.log('Periodo seleccionado:', selectedPeriod)
     // Aquí puedes aplicar la lógica adicional del filtro según el período seleccionado
     setIsModalOpen(false) // Cierra el modal al aplicar el filtro
+=======
+  const handleFilter = selectedPeriod => {
+    setFilterActivity(
+      filterWithRangeDate(filterUpWork(activity, SearchQuery), selectedPeriod),
+    )
+>>>>>>> 46abb3e7e92ab9606c2de4214d64c876e7807606
   }
 
   return (
@@ -81,8 +93,17 @@ const FilterForm = ({showButton}) => {
           )}
         </CardActivity>
       </div>
+<<<<<<< HEAD
       {/* Aquí se controla la visibilidad del ModalFilter */}
       <ModalFilter isOpen={isModalOpen} handleFilter={handleFilter} />
+=======
+
+      <ModalFilter
+        isOpen={isModalOpen}
+        toggleModal={toggleModal}
+        handleFilter={handleFilter}
+      />
+>>>>>>> 46abb3e7e92ab9606c2de4214d64c876e7807606
     </div>
   )
 }

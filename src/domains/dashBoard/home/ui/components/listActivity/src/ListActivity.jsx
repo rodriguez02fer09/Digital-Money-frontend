@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../styles/desktop.scss'
-import ItemActivity from '@domains/DashBoard/home/ui/components/itemActuvity/src/ItemActivity'
+import ItemActivity from '@domains/dashBoard/home/ui/components/itemActivity/src/ItemActivity'
 import Pagination from '@domains/dashBoard/home/core/hooks/pagination/src/Pagination'
 
 const ListActivity = ({activity = []}) => {

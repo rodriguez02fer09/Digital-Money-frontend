@@ -1,7 +1,7 @@
 import '../styles/desktop.scss'
 import Image from 'next/image'
 
-const NameItem = ({destination}) => {
+const NameItem = ({description}) => {
   const defaultNameItem = 'nameItem'
 
   return (
@@ -15,7 +15,7 @@ const NameItem = ({destination}) => {
         />
       </div>
       <div className={`${defaultNameItem}__nameCard`}>
-        <p>Transferiste a {destination}</p>
+        <p>Transferiste a {description}</p>
       </div>
     </div>
   )
