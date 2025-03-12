@@ -15,6 +15,7 @@ const Avatar = () => {
   const router = useRouter()
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   const {user, isLogin, fetchAccount, setUser} = useAccountStore()
 
@@ -28,6 +29,14 @@ const Avatar = () => {
       setUser(JSON.parse(storedUser))
     }
   }, [setUser])
+
+  useEffect(() => {
+    // Detectar si es una pantalla mobile o tablet
+    const checkMobile = () => setIsMobile(window.innerWidth <= 834)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const handleSignUp = () => {
     router.push('/account/sign-email')
@@ -74,16 +83,19 @@ const Avatar = () => {
           </div>
         )
       )}
-      <div className="contain-avatar--menu">
-        <Image
-          src="/images/iconMenú.svg"
-          width={40}
-          height={40}
-          alt="Abrir menú"
-          onClick={toggleMenu}
-          style={{cursor: 'pointer'}}
-        />
-      </div>
+
+      {isLogin && user && isMobile && (
+        <div className="contain-avatar--menu">
+          <Image
+            src="/images/iconMenú.svg"
+            width={40}
+            height={40}
+            alt="Abrir menú"
+            onClick={toggleMenu}
+            style={{cursor: 'pointer'}}
+          />
+        </div>
+      )}
       {menuOpen && (
         <div className="menu-desplegable">
           <MenuDesplegable />

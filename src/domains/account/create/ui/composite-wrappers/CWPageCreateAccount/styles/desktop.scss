@@ -11,7 +11,7 @@
   background: $secondary-color;
 
   &--container {
-    margin-bottom: 300px;
+    margin-bottom: 220px;
     p {
       color: $quinary-color;
       text-align: center;
@@ -70,7 +70,7 @@
 @media (max-width: 398px) {
   .mainForm-cuenta {
     &--container {
-      margin-bottom: 220px;
+      margin-bottom: 142px;
       p {
       }
     }
