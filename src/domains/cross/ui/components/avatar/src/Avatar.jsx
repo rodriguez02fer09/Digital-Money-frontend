@@ -31,7 +31,6 @@ const Avatar = () => {
   }, [setUser])
 
   useEffect(() => {
-    // Detectar si es una pantalla mobile o tablet
     const checkMobile = () => setIsMobile(window.innerWidth <= 834)
     checkMobile()
     window.addEventListener('resize', checkMobile)

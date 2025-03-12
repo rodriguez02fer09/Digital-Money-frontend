@@ -3,11 +3,20 @@
 @media (max-width: 398px) {
   .contain-menu {
     width: 219px;
-    height: 100%;
+    height: 92%;
     position: absolute;
     background: $primary-color;
-    right: 53px;
+    right: 10px;
+    z-index: 1000;
+    &--containClose {
+      width: 22px;
+      height: 28px;
+      padding: 10px;
 
+      cursor: pointer;
+      Image {
+      }
+    }
     &--contain-list {
       margin: 50px 40px;
       width: 140px;
@@ -15,6 +24,7 @@
       ul {
         list-style: none;
         padding: 0;
+        margin-top: 126px;
       }
       li {
         margin-bottom: 16px;
@@ -28,8 +38,8 @@
           }
         }
         &.selected a {
-          font-weight: bold; /* Pone el ítem en negrita */
-          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
+          font-weight: bold;
+          color: #000;
         }
       }
     }
@@ -101,8 +111,8 @@
           }
         }
         &.selected a {
-          font-weight: bold; /* Pone el ítem en negrita */
-          color: #000; /* Asegura que el texto seleccionado tenga el color primario */
+          font-weight: bold;
+          color: #000;
         }
       }
     }

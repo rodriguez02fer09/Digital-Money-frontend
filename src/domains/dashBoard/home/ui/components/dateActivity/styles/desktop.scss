@@ -31,6 +31,30 @@
   }
 }
 @media screen and (min-width: 399px) and (max-width: 834px) {
+  .dateActivity {
+    height: 70px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__account {
+      font-family: $font-stack;
+      font-size: 16px;
+      font-weight: 400 !important; // Mueve el !important al final de la propiedad
+      line-height: 21.79px;
+      text-align: right;
+    }
+
+    &__date {
+      font-family: $font-stack;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 12px;
+      text-align: right;
+      color: var(--Fill-in, rgba(0, 0, 0, 0.5));
+    }
+  }
 }
 
 @media screen and (min-width: 835px) {

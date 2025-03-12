@@ -1,18 +1,22 @@
 'use client'
 
 import {usePathname} from 'next/navigation'
-
+import Image from 'next/image'
 import '../styles/desktop.scss'
 import Link from 'next/link'
 import requestLogoutAccount from '@domains/cross/core/uses-cases/logoutAccount'
 
 const MenuDesplegable = () => {
-  const pathname = usePathname() // Hook para obtener la ruta actual
+  const pathname = usePathname()
 
   const defaultMenu = 'contain-menu'
 
   return (
     <div className={`${defaultMenu}`}>
+      <div className={`${defaultMenu}--containClose`}>
+        <Image src="/images/IconClose.svg" width={22} height={28} alt="close" />
+      </div>
+
       <div className={`${defaultMenu}--contain-list`}>
         <ul>
           <li className={pathname === '/dashBoard/home' ? 'selected' : ''}>
