@@ -4,17 +4,16 @@ import {useEffect, useState} from 'react'
 import Link from 'next/link'
 import '../styles/desktop.scss'
 import Image from 'next/image'
-import {useRouter} from 'next/navigation'
+import {useRouter, usePathname} from 'next/navigation'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import SloganAvatar from '@domains/cross/ui/components/sloganAvatar/src/sloganAvatar'
 import UserAvatar from '@domains/cross/ui/components/userAvatar/src/UserAvatar'
 import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
-import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
-
 import MenuDesplegable from '@domains/cross/ui/components/menuDesplegable/src/MenuDesplegable'
 
 const Avatar = () => {
   const router = useRouter()
+  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
 
   const {user, isLogin, fetchAccount, setUser} = useAccountStore()
@@ -42,6 +41,10 @@ const Avatar = () => {
     setMenuOpen(prev => !prev)
   }
 
+  const isAuthPage =
+    pathname === '/account/sign-email' || pathname === '/account/sign-password'
+  const isRegisterPage = pathname === '/account/create'
+
   return (
     <div className={`contain-avatar ${isLogin && user ? 'logged-in' : ''}`}>
       {isLogin && user ? (
@@ -52,20 +55,24 @@ const Avatar = () => {
           </Link>
         </>
       ) : (
-        <div className="contain-avatar--button">
-          <Button
-            size="sign-up"
-            label="Ingresar"
-            color="black"
-            onClick={handleSignUp}
-          />
-          <Button
-            size="create-acount"
-            color="green"
-            label="Crear cuenta"
-            onClick={handleCreateAccount}
-          />
-        </div>
+        !isAuthPage && (
+          <div className="contain-avatar--button">
+            <Button
+              size="sign-up"
+              label="Ingresar"
+              color="black"
+              onClick={handleSignUp}
+            />
+            {!isRegisterPage && (
+              <Button
+                size="create-acount"
+                color="green"
+                label="Crear cuenta"
+                onClick={handleCreateAccount}
+              />
+            )}
+          </div>
+        )
       )}
       <div className="contain-avatar--menu">
         <Image
