@@ -11,7 +11,6 @@ const CWhistoryservices = () => {
 
   return (
     <>
-      {' '}
       <MobileHeader title="Pago se servicios" />
       <SearchServices onFilter={setSearchQuery} />
       <Historyservices searchQuery={searchQuery} />
