@@ -1,5 +1,9 @@
 @import '../../../../sass/variables';
 
+.hidden {
+  display: none !important;
+}
+
 @media (max-width: 398px) {
   .contain-menu {
     width: 219px;
@@ -53,7 +57,13 @@
     height: 100vh; /* Ocupa toda la altura */
     background: $primary-color;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Añade un ligero borde para separar visualmente */
+    &--containClose {
+      display: none;
 
+      cursor: pointer;
+      Image {
+      }
+    }
     &--contain-list {
       margin: 50px 40px;
       width: 140px;
@@ -89,7 +99,11 @@
     height: 100vh; /* Ocupa toda la altura */
     background: $primary-color;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Añade un ligero borde para separar visualmente */
-
+    &--containClose {
+      display: none;
+      Image {
+      }
+    }
     &--contain-list {
       margin: 50px 40px;
       width: 140px;

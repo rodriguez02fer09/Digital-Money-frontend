@@ -22,7 +22,12 @@ const CWCardSelect = ({title = 'Cargar dinero'}) => {
           <ButtonAddCard onClick={handleContinue} />
         </CardBlack>
         <div className="button-container">
-          <Button size="medium" color="green" label="Continuar" />
+          <Button
+            size="medium"
+            color="green"
+            label="Continuar"
+            onClick={handleContinue}
+          />
         </div>
       </main>
     </>
