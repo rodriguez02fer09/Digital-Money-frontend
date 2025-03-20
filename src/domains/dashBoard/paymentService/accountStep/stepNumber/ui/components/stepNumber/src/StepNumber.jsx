@@ -38,7 +38,6 @@ const AccountStep = ({size, color}) => {
           Son 11 números sin espacios, sin el “2” inicial. Agregá ceros adelante
           si tenés menos.{' '}
         </p>
-        s
       </div>
 
       <div className={`${defaultAccountStep}--button-accountStep`}>

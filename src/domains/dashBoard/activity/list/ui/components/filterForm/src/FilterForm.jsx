@@ -18,17 +18,18 @@ const FilterForm = ({showButton}) => {
   const {activity, updateStateActivity} = useActivity(SearchQuery)
   const [searchQuery, setSearchQuery] = useState(SearchQuery)
   const [filterActivity, setFilterActivity] = useState([])
-
-  // Estado para controlar la visibilidad del modal
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const toggleModal = () => {
-    debugger
     setIsModalOpen(!isModalOpen)
   }
   useEffect(() => {
     setFilterActivity(filterUpWork(activity, searchQuery))
   }, [activity, searchQuery])
+
+  useEffect(() => {
+    console.log('Actividades filtradas actualizadas:', filterActivity)
+  }, [filterActivity])
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
@@ -76,6 +77,7 @@ const FilterForm = ({showButton}) => {
           </div>
         )}
       </div>
+
       <div className="filter-form__activity">
         <CardActivity size="Activity">
           {filterActivity.length > 0 ? (
