@@ -46,9 +46,16 @@ const FilterForm = ({showButton}) => {
   }
 
   const handleFilter = selectedPeriod => {
-    setFilterActivity(
-      filterWithRangeDate(filterUpWork(activity, SearchQuery), selectedPeriod),
-    )
+    if (!selectedPeriod) {
+      setFilterActivity(filterUpWork(activity, SearchQuery))
+    } else {
+      setFilterActivity(
+        filterWithRangeDate(
+          filterUpWork(activity, SearchQuery),
+          selectedPeriod,
+        ),
+      )
+    }
   }
 
   return (

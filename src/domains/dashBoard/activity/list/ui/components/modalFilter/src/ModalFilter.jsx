@@ -6,20 +6,19 @@ import Image from 'next/image'
 
 const ModalFilter = ({isOpen, handleFilter}) => {
   const defaulFilter = 'modal-filter'
-  const [selectedPeriod, setSelectedPeriod] = useState('today')
+  const [selectedPeriod, setSelectedPeriod] = useState('')
 
   const handlePeriodChange = e => {
     setSelectedPeriod(e.target.value)
   }
 
-  // Si no está abierto, no se renderiza nada
   if (!isOpen) return null
 
   return (
     <main className={`${defaulFilter}`}>
       <div className={`${defaulFilter}--header-modal`}>
         <p>Período</p>
-        <p>Borrar filtros</p>
+        <p onClick={() => setSelectedPeriod('')}>Borrar filtros</p>
       </div>
       <div className={`${defaulFilter}--list-options`}>
         <div>
