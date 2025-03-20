@@ -7,7 +7,6 @@ const ListActivity = ({activity = []}) => {
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(0)
 
-  // Ordena las actividades de la más reciente a la más antigua usando la propiedad "dated"
   const sortedActivity = [...activity].sort(
     (a, b) => new Date(b.dated) - new Date(a.dated),
   )

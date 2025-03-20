@@ -20,6 +20,13 @@ const FilterForm = ({showButton}) => {
   const [filterActivity, setFilterActivity] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  // Estado para controlar la visibilidad del modal
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const toggleModal = () => {
+    debugger
+    setIsModalOpen(!isModalOpen)
+  }
   useEffect(() => {
     setFilterActivity(filterUpWork(activity, searchQuery))
   }, [activity, searchQuery])
@@ -47,16 +54,9 @@ const FilterForm = ({showButton}) => {
   }
 
   const handleFilter = selectedPeriod => {
-    console.log('Actividad antes del filtrado:', activity)
-    console.log('Período seleccionado:', selectedPeriod)
-
-    const filteredData = filterWithRangeDate(
-      filterUpWork(activity, searchQuery),
-      selectedPeriod,
+    setFilterActivity(
+      filterWithRangeDate(filterUpWork(activity, SearchQuery), selectedPeriod),
     )
-
-    console.log('Datos filtrados:', filteredData)
-    setFilterActivity(filteredData)
   }
 
   return (
@@ -73,7 +73,7 @@ const FilterForm = ({showButton}) => {
         </div>
         {showButton && (
           <div className="filter-form__form__button">
-            <button type="button" onClick={toggleModal}>
+            <button type="button" onClick={() => setIsModalOpen(true)}>
               <Image
                 src="/images/filtrar.svg"
                 width={22}
