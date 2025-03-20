@@ -44,6 +44,12 @@ const HistoryCards = ({selected = false}) => {
 
   return (
     <div className={defaultHistory}>
+      {cards?.length === 10 && (
+        <p className="max-cards-message">
+          Has alcanzado el límite máximo de 10 tarjetas.
+        </p>
+      )}
+
       <CardActivity size="HistoryCard">
         <ContainHistoryCards
           cards={cards}

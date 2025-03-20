@@ -10,11 +10,9 @@ const ItemHistoryCards = ({
 }) => {
   const defaultNameCard = 'name-card'
 
-  // Desestructuramos las propiedades del objeto 'card'
   const {number_id, account_id, cod, expiration_date, first_last_name, id} =
     card ?? {}
 
-  // Verificamos si 'number_id' está definido y es un número
   const lastFourNumbers = number_id ? number_id.toString().slice(-4) : '****'
 
   return (

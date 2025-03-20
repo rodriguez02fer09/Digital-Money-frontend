@@ -29,12 +29,12 @@
       }
       :last-child {
         color: gba(0, 0, 0, 0.5);
-
         font-family: $heading-3;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        cursor: pointer;
       }
     }
     &--list-options {
