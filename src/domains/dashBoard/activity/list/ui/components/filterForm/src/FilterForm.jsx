@@ -20,11 +20,7 @@ const FilterForm = ({showButton}) => {
   const [filterActivity, setFilterActivity] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // Estado para controlar la visibilidad del modal
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   const toggleModal = () => {
-    debugger
     setIsModalOpen(!isModalOpen)
   }
   useEffect(() => {
@@ -34,10 +30,6 @@ const FilterForm = ({showButton}) => {
   useEffect(() => {
     console.log('Actividades filtradas actualizadas:', filterActivity)
   }, [filterActivity])
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen)
-  }
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
