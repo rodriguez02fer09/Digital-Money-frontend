@@ -1,4 +1,19 @@
-@import '../../../../sass/variables';
+@import '@domains/cross/sass/_variables.scss';
+
+// Estilos base para el botón móvil
+.mobile-only-button {
+  display: none; // Oculta el botón por defecto
+  background-color: white; // Color de fondo del botón
+  color: black; // Color del texto
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: $font-stack;
+  font-size: $heading-3;
+  font-weight: 600;
+  line-height: 16px;
+}
 
 @media (max-width: 398px) {
   .cardActivity {
@@ -9,9 +24,11 @@
     cursor: pointer;
     padding: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
     &--Activity {
       height: auto;
     }
+
     &--HistoryCard {
       height: 219px;
       overflow-y: scroll;
@@ -20,17 +37,32 @@
       justify-content: flex-start;
     }
 
-    .contain-header p {
-      font-family: $font-stack;
-      color: var(--A---Color-1, #201f22);
-      font-size: $heading-2;
-      font-weight: 700;
-      line-height: 138.182%;
-      margin-bottom: 22px;
+    .contain-header {
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-family: $font-stack;
+        color: var(--A---Color-1, #201f22);
+        font-size: $heading-2;
+        font-weight: 700;
+        line-height: 138.182%;
+        margin-bottom: 22px;
+      }
+
+      // Mostrar el botón solo en móviles
+      .mobile-only-button {
+        display: inline-block; // Muestra el botón en móviles
+      }
     }
+
     .content {
       height: auto;
     }
+
     .contain-footer p {
       font-family: $font-stack;
       font-size: $heading-3;
@@ -42,6 +74,7 @@
     &--ProfileData {
       height: 381px;
     }
+
     &--Services {
       width: auto;
       margin-top: 20px;
@@ -56,7 +89,6 @@
     border-radius: 8px;
     cursor: pointer;
     padding: 16px;
-
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     &--Activity {
@@ -72,11 +104,12 @@
     &--ProfileData {
       height: 277px;
     }
+
     &--Services {
       width: auto;
-
       margin-top: 20px;
     }
+
     .contain-header p {
       color: var(--A---Color-1, #201f22);
       font-size: $heading-2;
@@ -89,6 +122,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
       p {
         font-family: $font-stack;
         font-size: $heading-3;
@@ -107,11 +141,11 @@
     border-radius: 8px;
     cursor: pointer;
     padding: 16px;
-
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     .contain-header {
       margin-bottom: 20px;
+
       p {
         font-family: $font-stack;
         color: var(--A---Color-1, #201f22);
@@ -156,6 +190,7 @@
       height: 277px;
       padding: 22px 54px 32px 32px;
     }
+
     &--Services {
       width: auto;
       margin: 20px 0px 50px 0px;

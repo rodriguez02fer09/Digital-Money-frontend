@@ -1,10 +1,9 @@
 import React from 'react'
-import '../../../../sass/_variables.scss'
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-const CardActivity = ({children, size, paginate}) => {
+const CardActivity = ({children, size, paginate, toggleModal}) => {
   if (!children) return null
 
   const defaultCard = 'cardActivity'
@@ -24,6 +23,11 @@ const CardActivity = ({children, size, paginate}) => {
             ? 'Más recientes'
             : 'Tu actividad'}
         </p>
+        {size === 'Activity' && (
+          <button className="mobile-only-button" onClick={toggleModal}>
+            Filtrar
+          </button>
+        )}
       </div>
 
       <div className="content">{children}</div>
