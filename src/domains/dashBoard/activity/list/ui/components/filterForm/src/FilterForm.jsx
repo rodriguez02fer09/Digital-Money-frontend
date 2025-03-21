@@ -86,7 +86,7 @@ const FilterForm = ({showButton}) => {
       </div>
 
       <div className="filter-form__activity">
-        <CardActivity size="Activity">
+        <CardActivity size="Activity" toggleModal={toggleModal}>
           {filterActivity.length > 0 ? (
             <ListActivity activity={filterActivity} />
           ) : (
