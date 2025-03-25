@@ -8,7 +8,7 @@ import request from '@domains/cross/core/uses-cases/request'
 const useAccountStore = create((set, get) => ({
   isLogin: false,
   account: null,
-  user: null, // `user` ahora incluye la lógica de `perfil`.
+  user: null,
   setUser: user => set({user}),
 
   // Actions
