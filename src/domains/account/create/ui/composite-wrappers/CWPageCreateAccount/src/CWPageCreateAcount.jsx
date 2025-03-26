@@ -21,13 +21,18 @@ const CWPageCreateAcount = () => {
   }
 
   const callBackOnSubmit = newDataAccount => {
-    setAccount({
+    // Preparo los datos exactamente como antes
+    const accountData = {
       ...newDataAccount,
       dni: parseInt(newDataAccount.dni),
-    })
-    requestCreateAccount(account, useCallbackCreateAccount)
-  }
+    }
 
+    // Primero actualizo el estado
+    setAccount(accountData)
+
+    // Luego llamo a la API con los datos preparados (no con el estado)
+    requestCreateAccount(accountData, useCallbackCreateAccount)
+  }
   const defaultClass = 'mainForm-cuenta'
 
   return (

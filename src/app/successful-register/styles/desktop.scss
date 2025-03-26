@@ -1,4 +1,4 @@
-@import '../../../app/cross/sass/variables';
+@import '@domains/cross/sass/_variables.scss';
 
 .main-successRegister {
   width: 100%;
@@ -48,6 +48,9 @@
       font-weight: 400;
       line-height: normal;
       margin-top: 32px;
+    }
+    &__contain-image {
+      margin-top: 30px;
     }
   }
 }
