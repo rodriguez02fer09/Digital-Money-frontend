@@ -1,10 +1,9 @@
 import {NextResponse} from 'next/server'
 
-export function middleware(request) {
-  const token = request.cookies.get('token')?.value
+export async function middleware(request) {
   const {pathname} = request.nextUrl
 
-  // Rutas protegidas (requieren autenticación)
+  // Rutas protegidas
   const protectedRoutes = [
     '/dashBoard/home',
     '/dashBoard/activity',
@@ -14,22 +13,18 @@ export function middleware(request) {
     '/dashBoard/cards',
   ]
 
-  // Rutas de autenticación (no accesibles si ya estás autenticado)
-  const authRoutes = [
-    '/account/sign-email',
-    '/account/sign-password',
-    '/account/create',
-  ]
+  // Rutas de auth
+  const authRoutes = ['/account/sign-email', '/account/sign-password']
 
-  // 1. Redirigir si no está autenticado y accede a ruta protegida
-  if (!token && protectedRoutes.some(route => pathname.startsWith(route))) {
-    const loginUrl = new URL('/account/sign-email', request.url)
-    return NextResponse.redirect(loginUrl)
+  // Para rutas protegidas, simplemente permitir el paso
+  // La redirección se manejará en el cliente
+  if (protectedRoutes.some(route => pathname.startsWith(route))) {
+    return NextResponse.next()
   }
 
-  // 2. Redirigir si está autenticado y accede a ruta de auth
-  if (token && authRoutes.includes(pathname)) {
-    return NextResponse.redirect(new URL('/dashBoard/home', request.url))
+  // Para rutas de auth, también permitir el paso
+  if (authRoutes.some(route => pathname.startsWith(route))) {
+    return NextResponse.next()
   }
 
   return NextResponse.next()

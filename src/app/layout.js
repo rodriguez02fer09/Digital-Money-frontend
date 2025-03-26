@@ -1,7 +1,7 @@
 import {Roboto} from 'next/font/google'
 import RootLayout from '../app/RootLayout.jsx'
 import '@domains/cross/sass/globals.scss'
-
+import RouteGuard from './RouteGuard.jsx'
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -16,7 +16,9 @@ export default function Layout({children}) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <RootLayout>{children}</RootLayout>
+        <RootLayout>
+          <RouteGuard>{children}</RouteGuard>
+        </RootLayout>
       </body>
     </html>
   )
