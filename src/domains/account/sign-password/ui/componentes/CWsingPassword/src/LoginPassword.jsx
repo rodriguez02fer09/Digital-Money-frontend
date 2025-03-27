@@ -9,7 +9,7 @@ import {useRouter} from 'next/navigation'
 
 import {useAuthStore} from '@domains/account/sign-email/core/hoocks/useAuthStore'
 import {requestSignPassword} from '@domains/account/sign-password/core/uses-cases/request-signPassword'
-
+import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import {passwordForm} from '@domains/account/sign-password/data/forms/default'
 
 import Form from '@domains/cross/ui/composite-wrappers/loguinPasswordForm'
@@ -45,25 +45,23 @@ const LoginPassword = () => {
     console.log('Respuesta de la API:', response)
   }
 
-  const onSubmit = data => {
-    requestSignPassword(
-      {
-        email,
-        password: data.password,
-      },
-      result => {
-        const {success, data} = result
-        console.log('Resultado recibido del servidor:', result)
-        if (success) {
-          localStorage.setItem('token', data.token)
-          console.log('Autenticación exitosa. Redirigiendo...')
-          window.location.href = '/dashBoard/home'
-        } else {
-          console.error('Error de autenticación:', result.error)
-          alert('Contraseña incorrecta o problema en el servidor.')
-        }
-      },
-    )
+  const onSubmit = async data => {
+    requestSignPassword({email, password: data.password}, async result => {
+      const {success, data} = result
+      if (success) {
+        // 1. Guardar token
+        localStorage.setItem('token', data.token)
+
+        // 2. Forzar carga de datos
+        await new Promise(resolve => {
+          useAccountStore.getState().fetchAccount()
+          setTimeout(resolve, 300) // Espera suficiente
+        })
+
+        // 3. Redirigir
+        window.location.href = '/dashBoard/home' // Usamos location.href para asegurar recarga
+      }
+    })
   }
 
   const defaultClass = 'mainContainForm-password'
