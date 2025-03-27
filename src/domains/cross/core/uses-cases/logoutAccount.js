@@ -4,8 +4,9 @@ import getDataLocalStore from './getDataLocalStore'
 const callBackLogoutAccount = () => {
   localStorage.removeItem('token')
   localStorage.removeItem('user_id')
-  localStorage.removeItem('acount')
-
+  localStorage.removeItem('account')
+  localStorage.removeItem('email')
+  localStorage.removeItem('user')
   window.location.href = '/'
 }
 
