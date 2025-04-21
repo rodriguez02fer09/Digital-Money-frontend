@@ -1,68 +1,62 @@
+// @domains/dashBoard/activity/list/core/uses-cases/isWithinDateRange.js
+
 import {
   startOfDay,
+  endOfDay,
   subDays,
   subWeeks,
   subMonths,
   subYears,
-  format,
   startOfWeek,
   isWithinInterval,
   parseISO,
+  isValid,
 } from 'date-fns'
 
-const formatRange = range => {
-  const {startDate, end} = range
-  return {startDate, end}
-}
-
-const today = startOfDay(new Date())
+const today = new Date()
 
 const rangeMethods = {
   today: () => ({
-    startDate: today,
-    end: today,
+    startDate: startOfDay(today),
+    end: endOfDay(today),
   }),
-
-  yesterday: () => ({
-    startDate: startOfDay(subDays(new Date(), 1)),
-    end: today,
-  }),
-
+  yesterday: () => {
+    const date = subDays(today, 1)
+    return {
+      startDate: startOfDay(date),
+      end: endOfDay(date),
+    }
+  },
   lastWeek: () => ({
-    startDate: startOfWeek(subWeeks(new Date(), 1)),
-    end: today,
+    startDate: startOfWeek(subWeeks(today, 1), {weekStartsOn: 1}),
+    end: endOfDay(today),
   }),
-
   last15Days: () => ({
-    startDate: startOfDay(subDays(new Date(), 15)),
-    end: today,
+    startDate: startOfDay(subDays(today, 15)),
+    end: endOfDay(today),
   }),
-
   lastMonth: () => ({
-    startDate: startOfDay(subMonths(new Date(), 1)),
-    end: today,
+    startDate: startOfDay(subMonths(today, 1)),
+    end: endOfDay(today),
   }),
-
   lastYear: () => ({
-    startDate: startOfDay(subYears(new Date(), 1)),
-    end: today,
+    startDate: startOfDay(subYears(today, 1)),
+    end: endOfDay(today),
   }),
 }
 
-/**
- * Verifica si una fecha está dentro de un rango dado
- *
- * @param {string | Date} date - Fecha en formato UTC o Date
- * @param {string} range - Nombre del rango ('today', 'yesterday', etc.)
- * @returns {boolean}
- */
 const isWithinDateRange = (date, range) => {
-  const dateRange = formatRange(rangeMethods[range]())
+  if (!date || !rangeMethods[range]) return false
 
-  return isWithinInterval(new Date(date), {
-    start: dateRange.startDate,
-    end: dateRange.end,
-  })
+  const {startDate, end} = rangeMethods[range]()
+  const parsedDate = typeof date === 'string' ? parseISO(date) : new Date(date)
+
+  if (!isValid(parsedDate)) {
+    console.warn('Fecha inválida:', date)
+    return false
+  }
+
+  return isWithinInterval(parsedDate, {start: startDate, end})
 }
 
 export default isWithinDateRange

@@ -18,7 +18,14 @@ const ModalFilter = ({isOpen, handleFilter}) => {
     <main className={`${defaulFilter}`}>
       <div className={`${defaulFilter}--header-modal`}>
         <p>Período</p>
-        <p onClick={() => setSelectedPeriod('')}>Borrar filtros</p>
+        <p
+          onClick={() => {
+            setSelectedPeriod('')
+            handleFilter('') // 👉 Aquí se actualiza el listado al borrar filtros
+          }}
+        >
+          Borrar filtros
+        </p>
       </div>
       <div className={`${defaulFilter}--list-options`}>
         <div>
