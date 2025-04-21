@@ -11,7 +11,6 @@ import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
 import CardActivity from '@domains/cross/ui/components/cardActivity/src/CardActivity'
 import ProfileForm from '@domains/cross/ui/composite-wrappers/ProfileForm/src/ProfileForm'
-
 import '../../styles/main.scss'
 
 import {profileForm} from '@domains/dashBoard/perfil/ui/components/formPerfil/data/forms/defaul'
