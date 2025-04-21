@@ -30,8 +30,8 @@
     }
 
     &--HistoryCard {
-      height: 219px;
-      overflow-y: scroll;
+      height: auto;
+
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -96,8 +96,8 @@
     }
 
     &--HistoryCard {
-      height: 219px;
-      overflow-y: scroll;
+      height: auto;
+
       margin-bottom: 20px;
     }
 
@@ -181,9 +181,8 @@
     }
 
     &--HistoryCard {
-      height: 219px;
+      height: auto;
       padding: 30px 38px 32px 41px;
-      overflow-y: scroll;
     }
 
     &--ProfileData {

@@ -1,3 +1,5 @@
+// @domains/dashBoard/home/ui/components/filterForm/src/FilterForm.jsx
+
 'use client'
 import '../styles/main.scss'
 import Image from 'next/image'
@@ -16,20 +18,16 @@ const FilterForm = ({showButton}) => {
   const router = useRouter()
   const SearchQuery = searchParams.get('search') || ''
   const {activity, updateStateActivity} = useActivity(SearchQuery)
+
   const [searchQuery, setSearchQuery] = useState(SearchQuery)
   const [filterActivity, setFilterActivity] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen)
-  }
+  const toggleModal = () => setIsModalOpen(!isModalOpen)
+
   useEffect(() => {
     setFilterActivity(filterUpWork(activity, searchQuery))
   }, [activity, searchQuery])
-
-  useEffect(() => {
-    console.log('Actividades filtradas actualizadas:', filterActivity)
-  }, [filterActivity])
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
@@ -41,20 +39,16 @@ const FilterForm = ({showButton}) => {
   }
 
   const handleChange = value => {
-    console.log('Valor ingresado:', value)
     setSearchQuery(value)
   }
 
   const handleFilter = selectedPeriod => {
+    const base = filterUpWork(activity, searchQuery)
     if (!selectedPeriod) {
-      setFilterActivity(filterUpWork(activity, SearchQuery))
+      setFilterActivity(base)
     } else {
-      setFilterActivity(
-        filterWithRangeDate(
-          filterUpWork(activity, SearchQuery),
-          selectedPeriod,
-        ),
-      )
+      const filtered = filterWithRangeDate(base, selectedPeriod)
+      setFilterActivity(filtered)
     }
   }
 
@@ -72,7 +66,7 @@ const FilterForm = ({showButton}) => {
         </div>
         {showButton && (
           <div className="filter-form__form__button">
-            <button type="button" onClick={() => setIsModalOpen(true)}>
+            <button type="button" onClick={toggleModal}>
               <Image
                 src="/images/filtrar.svg"
                 width={22}
@@ -95,11 +89,7 @@ const FilterForm = ({showButton}) => {
         </CardActivity>
       </div>
 
-      <ModalFilter
-        isOpen={isModalOpen}
-        toggleModal={toggleModal}
-        handleFilter={handleFilter}
-      />
+      <ModalFilter isOpen={isModalOpen} handleFilter={handleFilter} />
     </div>
   )
 }
