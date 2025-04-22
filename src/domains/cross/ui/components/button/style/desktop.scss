@@ -42,9 +42,15 @@
       font-size: $heading-4;
       color: $primary-color;
     }
-
+    &--logIn {
+      width: 99px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $primary-color;
+      margin-left: auto;
+    }
     &--create-acount {
-      width: 151px;
+      width: 131px;
       height: 40px;
       font-size: $heading-4;
       color: $secondary-color;
@@ -111,7 +117,13 @@
       font-size: $heading-4;
       color: $primary-color;
     }
-
+    &--logIn {
+      width: 133px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $primary-color;
+      margin-left: auto;
+    }
     &--create-acount {
       width: 151px;
       height: 40px;

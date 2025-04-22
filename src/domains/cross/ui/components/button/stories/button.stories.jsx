@@ -66,6 +66,11 @@ SignUp.args = {
   size: 'sign-up',
 }
 
+export const Log in = Template.bind({})
+LogIn.args = {
+  label: 'Botón Small',
+  size: 'logIn',
+}
 export const CreateAcount = Template.bind({})
 CreateAcount.args = {
   label: 'Botón Small',

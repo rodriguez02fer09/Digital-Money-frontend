@@ -67,7 +67,6 @@ const Avatar = () => {
         !isAuthPage && (
           <div className="contain-avatar--button">
             <Button
-              className={`login-btn ${!showCreateAccount ? 'align-right' : ''}`} // Mover el botón a la derecha cuando "Crear cuenta" se oculta
               size="logIn"
               label={isRegisterPage ? 'Iniciar sesión' : 'Ingresar'}
               color="black"

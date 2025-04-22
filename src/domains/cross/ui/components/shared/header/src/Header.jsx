@@ -10,13 +10,19 @@ const Header = ({color}) => {
     color === 'green' ? '/images/logoblack.svg' : '/images/logoverde.svg'
 
   const customClass = classNames(defaultHeader, {
-    [`${defaultHeader}--${color}`]: color, // Solo se agrega si `color` tiene un valor
+    [`${defaultHeader}--${color}`]: color,
   })
 
   return (
     <header className={customClass}>
       <div className={`${defaultHeader}__containImage`}>
-        <Image src={imageSrc} alt="Logo" width={87} height={34} />
+        <Image
+          src={imageSrc}
+          alt="Logo"
+          layout="responsive"
+          width={87}
+          height={34}
+        />
       </div>
 
       <div className={`${defaultHeader}__containButton`}>
