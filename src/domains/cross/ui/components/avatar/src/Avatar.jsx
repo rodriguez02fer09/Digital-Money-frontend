@@ -16,7 +16,7 @@ const Avatar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-
+  const [showCreateAccount, setShowCreateAccount] = useState(true)
   const {user, isLogin, fetchAccount, setUser} = useAccountStore()
 
   useEffect(() => {
@@ -42,6 +42,7 @@ const Avatar = () => {
   }
 
   const handleCreateAccount = () => {
+    setShowCreateAccount(false)
     router.push('/account/create')
   }
 
@@ -66,8 +67,9 @@ const Avatar = () => {
         !isAuthPage && (
           <div className="contain-avatar--button">
             <Button
-              size="sign-up"
-              label="Ingresar"
+              className={`login-btn ${!showCreateAccount ? 'align-right' : ''}`} // Mover el botón a la derecha cuando "Crear cuenta" se oculta
+              size="logIn"
+              label={isRegisterPage ? 'Iniciar sesión' : 'Ingresar'}
               color="black"
               onClick={handleSignUp}
             />

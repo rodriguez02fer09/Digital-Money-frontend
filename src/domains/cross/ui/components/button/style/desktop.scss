@@ -106,7 +106,7 @@
     }
 
     &--sign-up {
-      width: 99px;
+      width: 133px;
       height: 40px;
       font-size: $heading-4;
       color: $primary-color;
@@ -173,12 +173,18 @@
     }
 
     &--sign-up {
-      width: 99px;
+      width: 133px;
       height: 40px;
       font-size: $heading-4;
       color: $primary-color;
     }
-
+    &--logIn {
+      width: 133px;
+      height: 40px;
+      font-size: $heading-4;
+      color: $primary-color;
+      margin-left: auto;
+    }
     &--create-acount {
       width: 151px;
       height: 40px;

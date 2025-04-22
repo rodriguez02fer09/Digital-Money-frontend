@@ -40,7 +40,7 @@
       width: 300px;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
     }
     &--menu {
       display: none;
@@ -72,9 +72,9 @@
       width: 300px;
       height: 40px;
       display: flex;
-      justify-content: space-evenly;
-
-      margin-right: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
     }
     &--menu {
       display: none;
@@ -93,4 +93,7 @@
       }
     }
   }
+}
+.contain-avatar--button .login-btn.align-right {
+  margin-left: auto; /* Esto moverá el botón a la derecha cuando el otro botón esté oculto */
 }

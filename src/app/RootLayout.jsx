@@ -20,7 +20,7 @@ export default function RootLayout({children}) {
     <>
       <Header color={color} />
       {children}
-      <Footer color={color} />
+      <Footer />
     </>
   )
 }
