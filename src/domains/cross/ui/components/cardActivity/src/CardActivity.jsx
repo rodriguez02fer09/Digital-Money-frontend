@@ -11,6 +11,8 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
     [`${defaultCard}--${size}`]: size,
   })
 
+  const isHomeRoute = window.location.pathname === '/dashBoard/home'
+
   return (
     <div className={customClass}>
       <div className="contain-header">
@@ -23,7 +25,9 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
             ? 'Más recientes'
             : 'Tu actividad'}
         </p>
-        {size === 'Activity' && (
+
+        {/* Botón oculto en /dashBoard/home */}
+        {size === 'Activity' && !isHomeRoute && (
           <button className="mobile-only-button" onClick={toggleModal}>
             Filtrar
           </button>

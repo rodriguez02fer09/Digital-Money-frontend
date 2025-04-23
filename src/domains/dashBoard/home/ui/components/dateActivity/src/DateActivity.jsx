@@ -8,12 +8,11 @@ const DateActivity = ({date, amount}) => {
     <div className={defaultDateActivity}>
       <p className={`${defaultDateActivity}__account`}> $ {amount}</p>
       <p className={`${defaultDateActivity}__date`}>
-        {new Intl.DateTimeFormat('es-ES', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }).format(new Date(date))}
+        <p className="dateActivity__date">
+          {new Intl.DateTimeFormat('es-ES', {
+            weekday: 'long', // Solo muestra el día de la semana
+          }).format(new Date(date))}
+        </p>
       </p>
     </div>
   )

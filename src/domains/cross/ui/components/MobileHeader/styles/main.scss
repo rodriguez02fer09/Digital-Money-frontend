@@ -7,9 +7,10 @@
     margin: 0px 0px 16px 0px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     p {
       text-decoration: underline;
+      margin-left: 10px;
     }
   }
 }

@@ -35,7 +35,7 @@ const Form = ({inputs = [], name, callBackOnSubmit}) => {
             registerData={input.registerData}
           />
         ))}
-        <Button size="large" label="Continuar" color="green" type="submit" />
+        <Button size="large" label="Crear cuenta" color="green" type="submit" />
       </form>
     </FormProvider>
   )

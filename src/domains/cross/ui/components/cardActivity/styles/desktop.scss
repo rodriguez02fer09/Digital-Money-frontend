@@ -1,199 +1,137 @@
 @import '@domains/cross/sass/_variables.scss';
 
-// Estilos base para el botón móvil
-.mobile-only-button {
-  display: none; // Oculta el botón por defecto
-  background-color: white; // Color de fondo del botón
-  color: black; // Color del texto
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+/* ==================== */
+/* ESTILOS BASE (MOBILE FIRST) */
+/* ==================== */
+.cardActivity {
+  margin: 0;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 8px;
   cursor: pointer;
-  font-family: $font-stack;
-  font-size: $heading-3;
-  font-weight: 600;
-  line-height: 16px;
-}
+  padding: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-@media (max-width: 398px) {
-  .cardActivity {
-    margin: 0px;
-    background-color: rgba(255, 255, 255, 1);
-    box-sizing: border-box;
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 16px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* Elementos comunes */
+  .contain-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 
-    &--Activity {
-      height: auto;
+    p {
+      font-family: $font-stack;
+      color: #201f22;
+      font-size: $heading-2;
+      font-weight: 700;
+      line-height: 1.38;
+      margin: 0;
     }
+  }
 
-    &--HistoryCard {
-      height: auto;
+  .content {
+    height: auto;
+  }
 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
+  .contain-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 
-    .contain-header {
-      height: auto;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      p {
-        font-family: $font-stack;
-        color: var(--A---Color-1, #201f22);
-        font-size: $heading-2;
-        font-weight: 700;
-        line-height: 138.182%;
-        margin-bottom: 22px;
-      }
-
-      // Mostrar el botón solo en móviles
-      .mobile-only-button {
-        display: inline-block; // Muestra el botón en móviles
-      }
-    }
-
-    .content {
-      height: auto;
-    }
-
-    .contain-footer p {
+    p {
       font-family: $font-stack;
       font-size: $heading-3;
       font-weight: 700;
-      line-height: 16.34px;
-      text-align: left;
+      line-height: 1.2;
+      margin: 0;
+    }
+  }
+
+  /* Variantes */
+  &--Activity {
+    height: auto;
+  }
+
+  &--HistoryCard {
+    height: auto;
+  }
+
+  &--ProfileData {
+    height: 277px;
+  }
+
+  &--Services {
+    width: auto;
+    margin-top: 20px;
+  }
+
+  /* Botón móvil (oculto por defecto) */
+  .mobile-only-button {
+    display: none;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $font-stack;
+    font-size: $heading-3;
+    font-weight: 600;
+    line-height: 16px;
+  }
+}
+
+/* ==================== */
+/* MEDIA QUERIES */
+/* ==================== */
+
+/* Pantallas pequeñas (hasta 398px) */
+@media (max-width: 398px) {
+  .cardActivity {
+    .contain-header {
+      height: auto;
+      width: 100%;
+      margin-bottom: 22px;
+
+      .mobile-only-button {
+        display: inline-block; /* Muestra el botón solo en móviles */
+      }
     }
 
     &--ProfileData {
       height: 381px;
     }
-
-    &--Services {
-      width: auto;
-      margin-top: 20px;
-    }
   }
 }
 
-@media screen and (min-width: 399px) and (max-width: 834px) {
+/* Tablets (399px a 834px) */
+@media (min-width: 399px) and (max-width: 834px) {
   .cardActivity {
-    background-color: rgba(255, 255, 255, 1);
-    box-sizing: border-box;
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 16px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    &--Activity {
-      height: auto;
-    }
-
     &--HistoryCard {
-      height: auto;
-
       margin-bottom: 20px;
-    }
-
-    &--ProfileData {
-      height: 277px;
-    }
-
-    &--Services {
-      width: auto;
-      margin-top: 20px;
-    }
-
-    .contain-header p {
-      color: var(--A---Color-1, #201f22);
-      font-size: $heading-2;
-      font-weight: 700;
-      line-height: 138.182%;
     }
 
     .contain-footer {
       margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      p {
-        font-family: $font-stack;
-        font-size: $heading-3;
-        font-weight: 700;
-        line-height: 16.34px;
-        text-align: left;
-      }
     }
   }
 }
 
-@media screen and (min-width: 835px) {
+/* Desktop (835px en adelante) */
+@media (min-width: 835px) {
   .cardActivity {
-    background-color: rgb(255, 255, 255);
-    box-sizing: border-box;
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 16px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    .contain-header {
-      margin-bottom: 20px;
-
-      p {
-        font-family: $font-stack;
-        color: var(--A---Color-1, #201f22);
-        font-size: $heading-2;
-        font-weight: 700;
-        line-height: 138.182%;
-      }
-    }
-
-    .content {
-      height: auto;
-    }
-
-    .contain-footer {
-      height: 20px;
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      p {
-        font-family: $font-stack;
-        font-size: $heading-3;
-        font-weight: 700;
-        line-height: 16.34px;
-        text-align: left;
-      }
-    }
-
-    // Estilos de variantes
-    &--Activity {
-      width: auto;
-    }
-
     &--HistoryCard {
-      height: auto;
       padding: 30px 38px 32px 41px;
     }
 
     &--ProfileData {
-      height: 277px;
       padding: 22px 54px 32px 32px;
     }
 
     &--Services {
-      width: auto;
-      margin: 20px 0px 50px 0px;
-      padding: 23px 40px 0px 42px;
+      margin: 20px 0 50px 0;
+      padding: 23px 40px 0 42px;
     }
   }
 }

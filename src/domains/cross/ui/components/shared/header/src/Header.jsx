@@ -19,7 +19,7 @@ const Header = ({color}) => {
         <Image
           src={imageSrc}
           alt="Logo"
-          layout="responsive"
+          layout="intrinsic"
           width={87}
           height={34}
         />
