@@ -1,0 +1,32 @@
+@import '../../../../sass/variables';
+.contain-user-mobile {
+  width: 164px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-left: 50px;
+  p {
+    color: $primary-color;
+    text-align: center;
+    /* A - Heading 3 */
+    font-family: $font-stack;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 138.182%; /* 22.109px */
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .contain-user-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 399px) and (max-width: 834px) {
+  .contain-user-mobile {
+    display: none;
+  }
+}
