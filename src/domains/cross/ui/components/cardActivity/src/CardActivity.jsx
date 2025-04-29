@@ -12,6 +12,7 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
   })
 
   const isHomeRoute = window.location.pathname === '/dashBoard/home'
+  const isActivityRoute = window.location.pathname === '/dashBoard/activity'
 
   return (
     <div className={customClass}>
@@ -38,7 +39,8 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
 
       {size !== 'ProfileData' &&
         size !== 'HistoryCard' &&
-        size !== 'Services' && (
+        size !== 'Services' &&
+        !isActivityRoute && (
           <div className="contain-footer">
             <p className="parrafo">Ver toda tu actividad</p>
             <Image

@@ -8,6 +8,10 @@ import TransferDestination from '@domains/dashBoard/depositMoney/cardSelect/tran
 import Button from '@domains/cross/ui/components/button/src/Button'
 
 const TransferConfirmation = ({title}) => {
+  const handleDestination = () => {
+    window.location.href = '/dashBoard/activity'
+  }
+
   return (
     <>
       <MobileHeader title="Cargar dinero" />
@@ -17,12 +21,12 @@ const TransferConfirmation = ({title}) => {
         <TransferDestination />
       </CardBlack>
       <div className="button-mobile">
-        {/* <Button
+        <Button
           size="large"
           color="green"
           label="Continuar"
           onClick={handleDestination}
-        /> */}
+        />
       </div>
     </>
   )

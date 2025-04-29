@@ -11,6 +11,7 @@ import request from '@domains/cross/core/uses-cases/request'
 
 const defaultHistory = 'history-Cards'
 
+const MAX_CARDS = 10
 const HistoryCards = ({selected = false}) => {
   const {account} = useAccount()
   const {id: accountId} = account ?? {}
@@ -43,10 +44,10 @@ const HistoryCards = ({selected = false}) => {
   }
 
   return (
-    <div className={defaultHistory}>
-      {cards?.length === 10 && (
+    <div className="history-Cards">
+      {cards?.length === MAX_CARDS && ( // Cambiado a === MAX_CARDS
         <p className="max-cards-message">
-          Has alcanzado el límite máximo de 10 tarjetas.
+          Has alcanzado el límite máximo de {MAX_CARDS} tarjetas.
         </p>
       )}
 
