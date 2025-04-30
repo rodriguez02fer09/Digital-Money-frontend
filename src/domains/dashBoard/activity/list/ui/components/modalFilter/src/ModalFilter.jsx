@@ -21,7 +21,8 @@ const ModalFilter = ({isOpen, handleFilter}) => {
         <p
           onClick={() => {
             setSelectedPeriod('')
-            handleFilter('') // 👉 Aquí se actualiza el listado al borrar filtros
+            handleFilter('')
+            isOpen(false)
           }}
         >
           Borrar filtros

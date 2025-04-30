@@ -13,6 +13,9 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
 
   const isHomeRoute = window.location.pathname === '/dashBoard/home'
   const isActivityRoute = window.location.pathname === '/dashBoard/activity'
+  const handleActivity = () => {
+    window.location.href = '/dashBoard/activity'
+  }
 
   return (
     <div className={customClass}>
@@ -41,7 +44,7 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
         size !== 'HistoryCard' &&
         size !== 'Services' &&
         !isActivityRoute && (
-          <div className="contain-footer">
+          <div className="contain-footer" onClick={handleActivity}>
             <p className="parrafo">Ver toda tu actividad</p>
             <Image
               src="/images/arrowBlack.svg"
