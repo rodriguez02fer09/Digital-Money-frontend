@@ -8,7 +8,6 @@ import Link from 'next/link'
 import requestLogoutAccount from '@domains/cross/core/uses-cases/logoutAccount'
 import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 const MenuDesplegable = () => {
-  debugger
   const {user} = useAccountStore()
   const [isMenuClosed, setIsMenuClosed] = useState(false)
   const pathname = usePathname()

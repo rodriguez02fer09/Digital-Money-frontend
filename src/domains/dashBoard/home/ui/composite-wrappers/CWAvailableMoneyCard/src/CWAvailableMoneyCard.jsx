@@ -32,8 +32,8 @@ const AvailableMoneyCard = () => {
   console.log(amountInARS)
 
   const options = [
-    {text: 'Ver tarjetas', link: '#'},
-    {text: 'Ver CVU', link: '#'},
+    {text: 'Ver tarjetas', link: '/dashBoard/cards'},
+    {text: 'Ver CVU', link: '/dashBoard/perfil'},
   ]
   return (
     <CardBlack size="AvailableAmountCard">
