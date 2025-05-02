@@ -96,11 +96,7 @@ const Avatar = () => {
           />
         </div>
       )}
-      {menuOpen && (
-        <div className="menu-desplegable">
-          <MenuDesplegable />
-        </div>
-      )}
+      {menuOpen && <MenuDesplegable onClose={() => setMenuOpen(false)} />}
     </div>
   )
 }

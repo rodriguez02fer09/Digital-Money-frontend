@@ -7,7 +7,9 @@ import UserMenuMobile from '@domains/cross/ui/components/userMenuMobile/src/User
 import Link from 'next/link'
 import requestLogoutAccount from '@domains/cross/core/uses-cases/logoutAccount'
 import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
-const MenuDesplegable = () => {
+
+const MenuDesplegable = ({onClose}) => {
+  // Añade onClose como prop
   const {user} = useAccountStore()
   const [isMenuClosed, setIsMenuClosed] = useState(false)
   const pathname = usePathname()
@@ -17,11 +19,21 @@ const MenuDesplegable = () => {
   const handleClose = e => {
     e.stopPropagation()
     setIsMenuClosed(true)
-  }
-  const handleLinkClick = () => {
-    setIsMenuClosed(true)
+    onClose() // Llama a onClose cuando se cierra el menú
   }
 
+  const handleLinkClick = () => {
+    setIsMenuClosed(true)
+    onClose() // Llama a onClose cuando se hace clic en un enlace
+  }
+
+  const handleLogout = async e => {
+    e.preventDefault()
+    await requestLogoutAccount()
+    handleLinkClick() // Reutiliza la función de cierre
+  }
+
+  //if (isMenuClosed) return null
   return (
     <div className={defaultMenu}>
       <div className={`${defaultMenu}--containClose`} onClick={handleClose}>
@@ -35,6 +47,7 @@ const MenuDesplegable = () => {
         />
       </div>
 
+      {/* Resto de tu código permanece igual */}
       <div className={`${defaultMenu}--containProfile`}>
         <UserMenuMobile {...user} />
       </div>
@@ -78,14 +91,7 @@ const MenuDesplegable = () => {
             </Link>
           </li>
           <li>
-            <Link
-              href="#"
-              onClick={e => {
-                e.preventDefault()
-                requestLogoutAccount()
-                handleLinkClick()
-              }}
-            >
+            <Link href="#" onClick={handleLogout}>
               Cerrar sesión
             </Link>
           </li>
