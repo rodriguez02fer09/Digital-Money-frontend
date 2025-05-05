@@ -82,7 +82,7 @@ const FilterForm = ({showButton}) => {
 
       <div className="filter-form__activity">
         <CardActivity size="Activity" toggleModal={toggleModal}>
-          {!isModalOpen && ( // Solo muestra cuando el modal está cerrado
+          {!isModalOpen && (
             <>
               {filterActivity.length > 0 ? (
                 <ListActivity activity={filterActivity} />
