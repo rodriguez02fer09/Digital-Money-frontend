@@ -9,48 +9,42 @@ import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 import request from '@domains/cross/core/uses-cases/request'
 
-const defaultHistory = 'history-Cards'
-
 const MAX_CARDS = 10
-const HistoryCards = ({selected = false}) => {
+
+const HistoryCards = ({selected = false, handleCards}) => {
   const {account} = useAccount()
-  const {id: accountId} = account ?? {}
-  const [cards, setCards] = useState()
-
-  const getCardsCallback = currentCards => {
-    setCards(() => currentCards)
-  }
-
-  useEffect(() => {}, [cards])
+  const accountId = account?.id
+  const [cards, setCards] = useState([])
 
   useEffect(() => {
-    if (account !== null) {
-      request(
-        {
-          path: `accounts/${accountId}/cards`,
-          method: 'GET',
-          addHeaders: {
-            Authorization: getDataLocalStore('token'),
-          },
-          data: null,
-        },
-        getCardsCallback,
-      )
-    }
-  }, [account])
+    handleCards(cards)
+  }, [cards, handleCards])
 
-  const updateCards = cards => {
-    setCards(() => cards)
+  useEffect(() => {
+    if (!accountId) return
+
+    request(
+      {
+        path: `accounts/${accountId}/cards`,
+        method: 'GET',
+        addHeaders: {Authorization: getDataLocalStore('token')},
+        data: null,
+      },
+      setCards,
+    )
+  }, [accountId])
+
+  const updateCards = newCards => {
+    setCards(newCards)
   }
 
   return (
     <div className="history-Cards">
-      {cards?.length === MAX_CARDS && ( // Cambiado a === MAX_CARDS
+      {cards.length === MAX_CARDS && (
         <p className="max-cards-message">
           Has alcanzado el límite máximo de {MAX_CARDS} tarjetas.
         </p>
       )}
-
       <CardActivity size="HistoryCard">
         <ContainHistoryCards
           cards={cards}

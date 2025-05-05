@@ -9,7 +9,6 @@ import requestLogoutAccount from '@domains/cross/core/uses-cases/logoutAccount'
 import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
 const MenuDesplegable = ({onClose}) => {
-  // Añade onClose como prop
   const {user} = useAccountStore()
   const [isMenuClosed, setIsMenuClosed] = useState(false)
   const pathname = usePathname()
@@ -19,21 +18,21 @@ const MenuDesplegable = ({onClose}) => {
   const handleClose = e => {
     e.stopPropagation()
     setIsMenuClosed(true)
-    onClose() // Llama a onClose cuando se cierra el menú
+    onClose()
   }
 
   const handleLinkClick = () => {
     setIsMenuClosed(true)
-    onClose() // Llama a onClose cuando se hace clic en un enlace
+    onClose()
   }
 
   const handleLogout = async e => {
     e.preventDefault()
     await requestLogoutAccount()
-    handleLinkClick() // Reutiliza la función de cierre
+    handleLinkClick()
   }
 
-  //if (isMenuClosed) return null
+  if (isMenuClosed) return null
   return (
     <div className={defaultMenu}>
       <div className={`${defaultMenu}--containClose`} onClick={handleClose}>
