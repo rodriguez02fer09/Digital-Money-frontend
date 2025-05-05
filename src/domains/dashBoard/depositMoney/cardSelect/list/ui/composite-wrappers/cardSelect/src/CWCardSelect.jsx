@@ -7,9 +7,13 @@ import ButtonAddCard from '@domains/dashBoard/depositMoney/cardSelect/list/ui/co
 import MobileHeader from '@domains/cross/ui/components/MobileHeader/src/MobileHeader'
 import Button from '@domains/cross/ui/components/button/src/Button'
 
-const CWCardSelect = ({title = 'Cargar dinero'}) => {
+const CWCardSelect = ({title = 'Cargar dinero', onClick}) => {
   const handleContinue = () => {
     window.location.href = '/dashBoard/depositMoney/cardSelect/account'
+  }
+
+  const handleAddCard = () => {
+    window.location.href = '/dashBoard/cards'
   }
 
   return (
@@ -19,14 +23,14 @@ const CWCardSelect = ({title = 'Cargar dinero'}) => {
         <CardBlack size="SelectCard">
           <Title />
           <HistoryCards selected={true} />
-          <ButtonAddCard onClick={handleContinue} />
+          <ButtonAddCard onClick={handleAddCard} />
         </CardBlack>
         <div className="button-container">
           <Button
             size="medium"
             color="green"
             label="Continuar"
-            onClick={handleContinue}
+            onClick={handleContinue} // <- corregido aquí
           />
         </div>
       </main>

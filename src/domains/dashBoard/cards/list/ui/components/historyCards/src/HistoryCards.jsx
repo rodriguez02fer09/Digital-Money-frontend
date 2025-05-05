@@ -11,13 +11,19 @@ import request from '@domains/cross/core/uses-cases/request'
 
 const MAX_CARDS = 10
 
-const HistoryCards = ({selected = false, handleCards}) => {
+const HistoryCards = ({
+  selected = false,
+  handleCards = () => {}, // ← Valor por defecto
+}) => {
   const {account} = useAccount()
   const accountId = account?.id
   const [cards, setCards] = useState([])
 
+  // Notificamos al padre solo si handleCards es función
   useEffect(() => {
-    handleCards(cards)
+    if (typeof handleCards === 'function') {
+      handleCards(cards)
+    }
   }, [cards, handleCards])
 
   useEffect(() => {
