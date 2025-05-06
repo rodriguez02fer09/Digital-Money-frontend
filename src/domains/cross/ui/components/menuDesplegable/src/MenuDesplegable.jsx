@@ -8,34 +8,26 @@ import Link from 'next/link'
 import requestLogoutAccount from '@domains/cross/core/uses-cases/logoutAccount'
 import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 
-const MenuDesplegable = ({onClose}) => {
+const MenuDesplegable = ({onClose, onMobileClose, onMobileLinkClick}) => {
   const {user} = useAccountStore()
   const [isMenuClosed, setIsMenuClosed] = useState(true)
   const pathname = usePathname()
 
   const defaultMenu = 'contain-menu'
 
-  const handleClose = e => {
-    e.stopPropagation()
-    debugger
-    onClose()
-  }
-  const handleLinkClick = () => {
-    setIsMenuClosed(true)
-    debugger
-    onClose()
-  }
-
   const handleLogout = async e => {
     e.preventDefault()
     await requestLogoutAccount()
-    handleLinkClick()
+    onMobileLinkClick?.()
   }
 
   if (!isMenuClosed) return null
   return (
     <div className={defaultMenu}>
-      <div className={`${defaultMenu}--containClose`} onClick={handleClose}>
+      <div
+        className={`${defaultMenu}--containClose`}
+        onClick={onMobileClose || onClose}
+      >
         <Image
           src="/images/IconClose.svg"
           width={22}
@@ -53,24 +45,33 @@ const MenuDesplegable = ({onClose}) => {
       <div className={`${defaultMenu}--contain-list`}>
         <ul>
           <li className={pathname === '/dashBoard/home' ? 'selected' : ''}>
-            <Link href="/dashBoard/home" onClick={handleLinkClick}>
+            <Link href="/dashBoard/home" onClick={onMobileLinkClick || onClose}>
               Inicio
             </Link>
           </li>
           <li className={pathname === '/dashBoard/activity' ? 'selected' : ''}>
-            <Link href="/dashBoard/activity" onClick={handleLinkClick}>
+            <Link
+              href="/dashBoard/activity"
+              onClick={onMobileLinkClick || onClose}
+            >
               Actividad
             </Link>
           </li>
           <li className={pathname === '/dashBoard/perfil' ? 'selected' : ''}>
-            <Link href="/dashBoard/perfil" onClick={handleLinkClick}>
+            <Link
+              href="/dashBoard/perfil"
+              onClick={onMobileLinkClick || onClose}
+            >
               Tu perfil
             </Link>
           </li>
           <li
             className={pathname === '/dashBoard/depositMoney' ? 'selected' : ''}
           >
-            <Link href="/dashBoard/depositMoney" onClick={handleLinkClick}>
+            <Link
+              href="/dashBoard/depositMoney"
+              onClick={onMobileLinkClick || onClose}
+            >
               Cargar dinero
             </Link>
           </li>
@@ -79,12 +80,18 @@ const MenuDesplegable = ({onClose}) => {
               pathname === '/dashBoard/paymentService' ? 'selected' : ''
             }
           >
-            <Link href="/dashBoard/paymentService" onClick={handleLinkClick}>
+            <Link
+              href="/dashBoard/paymentService"
+              onClick={onMobileLinkClick || onClose}
+            >
               Pagar servicios
             </Link>
           </li>
           <li className={pathname === '/dashBoard/cards' ? 'selected' : ''}>
-            <Link href="/dashBoard/cards" onClick={handleLinkClick}>
+            <Link
+              href="/dashBoard/cards"
+              onClick={onMobileLinkClick || onClose}
+            >
               Tarjetas
             </Link>
           </li>

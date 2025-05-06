@@ -50,6 +50,17 @@ const Avatar = () => {
     setMenuOpen(prev => !prev)
   }
 
+  const handleClose = e => {
+    if (!isMobile) return
+    e.stopPropagation()
+    setMenuOpen(false)
+  }
+
+  const handleLinkClick = () => {
+    if (!isMobile) return
+    setMenuOpen(false)
+  }
+
   const isAuthPage =
     pathname === '/account/sign-email' || pathname === '/account/sign-password'
   const isRegisterPage = pathname === '/account/create'
@@ -96,7 +107,14 @@ const Avatar = () => {
           />
         </div>
       )}
-      {menuOpen && <MenuDesplegable onClose={() => setMenuOpen(false)} />}
+
+      {menuOpen && (
+        <MenuDesplegable
+          onClose={() => setMenuOpen(false)}
+          onMobileClose={isMobile ? handleClose : undefined}
+          onMobileLinkClick={isMobile ? handleLinkClick : undefined}
+        />
+      )}
     </div>
   )
 }
