@@ -10,19 +10,19 @@ import useAccountStore from '@domains/cross/core/hoocks/useAccount/src/useAccoun
 
 const MenuDesplegable = ({onClose}) => {
   const {user} = useAccountStore()
-  const [isMenuClosed, setIsMenuClosed] = useState(false)
+  const [isMenuClosed, setIsMenuClosed] = useState(true)
   const pathname = usePathname()
 
   const defaultMenu = 'contain-menu'
 
   const handleClose = e => {
     e.stopPropagation()
-    setIsMenuClosed(true)
+    debugger
     onClose()
   }
-
   const handleLinkClick = () => {
     setIsMenuClosed(true)
+    debugger
     onClose()
   }
 
@@ -32,7 +32,7 @@ const MenuDesplegable = ({onClose}) => {
     handleLinkClick()
   }
 
-  if (isMenuClosed) return null
+  if (!isMenuClosed) return null
   return (
     <div className={defaultMenu}>
       <div className={`${defaultMenu}--containClose`} onClick={handleClose}>
@@ -46,7 +46,6 @@ const MenuDesplegable = ({onClose}) => {
         />
       </div>
 
-      {/* Resto de tu código permanece igual */}
       <div className={`${defaultMenu}--containProfile`}>
         <UserMenuMobile {...user} />
       </div>

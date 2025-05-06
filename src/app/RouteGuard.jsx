@@ -13,18 +13,15 @@ export default function RouteGuard({children}) {
     const protectRoutes = async () => {
       setIsLoading(true)
 
-      // Verificar autenticación
       const isAuthenticated = validUserIsLogin()
 
-      // Si está autenticado pero no tiene datos, cargarlos
       if (isAuthenticated && !user) {
         await new Promise(resolve => {
           fetchAccount()
-          setTimeout(resolve, 300) // Espera suficiente para la carga
+          setTimeout(resolve, 300)
         })
       }
 
-      // Definir rutas
       const protectedRoutes = [
         '/dashBoard/home',
         '/dashBoard/activity',
@@ -36,7 +33,6 @@ export default function RouteGuard({children}) {
 
       const authRoutes = ['/account/sign-email', '/account/sign-password']
 
-      // Lógica de redirección
       if (
         !isAuthenticated &&
         protectedRoutes.some(route => pathname.startsWith(route))

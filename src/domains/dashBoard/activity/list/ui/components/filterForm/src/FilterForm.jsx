@@ -50,7 +50,7 @@ const FilterForm = ({showButton}) => {
       const filtered = filterWithRangeDate(base, selectedPeriod)
       setFilterActivity(filtered)
     }
-    setIsModalOpen(false)
+    setIsModalOpen(false) // ✅ Cierra el modal al aplicar filtro
   }
 
   return (
@@ -82,14 +82,10 @@ const FilterForm = ({showButton}) => {
 
       <div className="filter-form__activity">
         <CardActivity size="Activity" toggleModal={toggleModal}>
-          {!isModalOpen && (
-            <>
-              {filterActivity.length > 0 ? (
-                <ListActivity activity={filterActivity} />
-              ) : (
-                <p>No hay actividades disponibles</p>
-              )}
-            </>
+          {filterActivity.length > 0 ? (
+            <ListActivity activity={filterActivity} />
+          ) : (
+            <p>No hay actividades disponibles</p>
           )}
         </CardActivity>
       </div>
