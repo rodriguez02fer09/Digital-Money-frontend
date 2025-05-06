@@ -11,6 +11,12 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
     [`${defaultCard}--${size}`]: size,
   })
 
+  const isHomeRoute = window.location.pathname === '/dashBoard/home'
+  const isActivityRoute = window.location.pathname === '/dashBoard/activity'
+  const handleActivity = () => {
+    window.location.href = '/dashBoard/activity'
+  }
+
   return (
     <div className={customClass}>
       <div className="contain-header">
@@ -23,7 +29,9 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
             ? 'Más recientes'
             : 'Tu actividad'}
         </p>
-        {size === 'Activity' && (
+
+        {/* Botón oculto en /dashBoard/home */}
+        {size === 'Activity' && !isHomeRoute && (
           <button className="mobile-only-button" onClick={toggleModal}>
             Filtrar
           </button>
@@ -34,8 +42,9 @@ const CardActivity = ({children, size, paginate, toggleModal}) => {
 
       {size !== 'ProfileData' &&
         size !== 'HistoryCard' &&
-        size !== 'Services' && (
-          <div className="contain-footer">
+        size !== 'Services' &&
+        !isActivityRoute && (
+          <div className="contain-footer" onClick={handleActivity}>
             <p className="parrafo">Ver toda tu actividad</p>
             <Image
               src="/images/arrowBlack.svg"

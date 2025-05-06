@@ -28,6 +28,15 @@
     &__arrow {
       margin-left: 122px;
     }
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &__icon,
+      &__arrow {
+        opacity: 0.5;
+      }
+    }
   }
 }
 @media screen and (min-width: 399px) and (max-width: 834px) {
@@ -62,6 +71,15 @@
 
     &__arrow {
       margin-left: 122px;
+    }
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &__icon,
+      &__arrow {
+        opacity: 0.5;
+      }
     }
   }
 }
@@ -98,6 +116,15 @@
     }
 
     &__arrow {
+    }
+    &--disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &__icon,
+      &__arrow {
+        opacity: 0.5;
+      }
     }
   }
 }

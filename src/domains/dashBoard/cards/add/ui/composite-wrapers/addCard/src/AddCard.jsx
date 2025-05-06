@@ -66,12 +66,10 @@ const AddCard = () => {
   }
 
   const callBackOnChange = (data, control) => {
-    console.log(control)
-    setState(state => ({
-      ...state,
-      ...data,
-      focused: control,
-    }))
+    if (control === 'number') {
+      data.number = data.number.replace(/\D/g, '').slice(0, 16)
+    }
+    setState(prev => ({...prev, ...data, focused: control}))
   }
 
   return (

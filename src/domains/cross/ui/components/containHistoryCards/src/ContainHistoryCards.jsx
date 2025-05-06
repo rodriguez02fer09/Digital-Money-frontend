@@ -1,7 +1,6 @@
 import '../styles/desktop.scss'
 import {useEffect, useState} from 'react'
 import ItemHistoryCards from '@domains/cross/ui/components/itemHistoryCards/src/ItemHistoryCards'
-
 import request from '@domains/cross/core/uses-cases/request'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 
@@ -58,7 +57,6 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
             key={card.id}
             card={card}
             handlerOnClick={handlerOnClick}
-            key={card.id}
             handleSelectChange={handleSelectChange}
             selected={selected}
             isSelect={isSelect}

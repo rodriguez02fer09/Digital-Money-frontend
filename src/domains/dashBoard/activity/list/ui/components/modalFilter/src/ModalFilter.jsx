@@ -4,7 +4,7 @@ import {useState} from 'react'
 import Button from '@domains/cross/ui/components/button/src/Button'
 import Image from 'next/image'
 
-const ModalFilter = ({isOpen, handleFilter}) => {
+const ModalFilter = ({isOpen, handleFilter, onClose}) => {
   const defaulFilter = 'modal-filter'
   const [selectedPeriod, setSelectedPeriod] = useState('')
 
@@ -21,7 +21,8 @@ const ModalFilter = ({isOpen, handleFilter}) => {
         <p
           onClick={() => {
             setSelectedPeriod('')
-            handleFilter('') // 👉 Aquí se actualiza el listado al borrar filtros
+            handleFilter('')
+            onClose()
           }}
         >
           Borrar filtros

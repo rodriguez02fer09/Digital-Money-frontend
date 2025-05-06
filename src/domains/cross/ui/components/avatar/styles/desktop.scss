@@ -1,4 +1,7 @@
 @import '../../../../sass/variables';
+.login-btn.align-right {
+  margin-left: auto;
+}
 @media (max-width: 398px) {
   .contain-avatar {
     display: flex;
@@ -7,8 +10,9 @@
     &--button {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
-      width: 300px;
+      justify-content: space-between;
+      width: 262px;
+      gap: 20px;
     }
 
     &--menu {
@@ -39,8 +43,8 @@
     &--button {
       width: 300px;
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      gap: 10px;
+      margin-right: 30px;
     }
     &--menu {
       display: none;
@@ -72,9 +76,9 @@
       width: 300px;
       height: 40px;
       display: flex;
-      justify-content: space-evenly;
-
-      margin-right: 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
     }
     &--menu {
       display: none;

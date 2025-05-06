@@ -9,47 +9,48 @@ import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 import getDataLocalStore from '@domains/cross/core/uses-cases/getDataLocalStore'
 import request from '@domains/cross/core/uses-cases/request'
 
-const defaultHistory = 'history-Cards'
+const MAX_CARDS = 10
 
-const HistoryCards = ({selected = false}) => {
+const HistoryCards = ({
+  selected = false,
+  handleCards = () => {}, // ← Valor por defecto
+}) => {
   const {account} = useAccount()
-  const {id: accountId} = account ?? {}
-  const [cards, setCards] = useState()
+  const accountId = account?.id
+  const [cards, setCards] = useState([])
 
-  const getCardsCallback = currentCards => {
-    setCards(() => currentCards)
-  }
-
-  useEffect(() => {}, [cards])
+  // Notificamos al padre solo si handleCards es función
+  useEffect(() => {
+    if (typeof handleCards === 'function') {
+      handleCards(cards)
+    }
+  }, [cards, handleCards])
 
   useEffect(() => {
-    if (account !== null) {
-      request(
-        {
-          path: `accounts/${accountId}/cards`,
-          method: 'GET',
-          addHeaders: {
-            Authorization: getDataLocalStore('token'),
-          },
-          data: null,
-        },
-        getCardsCallback,
-      )
-    }
-  }, [account])
+    if (!accountId) return
 
-  const updateCards = cards => {
-    setCards(() => cards)
+    request(
+      {
+        path: `accounts/${accountId}/cards`,
+        method: 'GET',
+        addHeaders: {Authorization: getDataLocalStore('token')},
+        data: null,
+      },
+      setCards,
+    )
+  }, [accountId])
+
+  const updateCards = newCards => {
+    setCards(newCards)
   }
 
   return (
-    <div className={defaultHistory}>
-      {cards?.length === 10 && (
+    <div className="history-Cards">
+      {cards.length === MAX_CARDS && (
         <p className="max-cards-message">
-          Has alcanzado el límite máximo de 10 tarjetas.
+          Has alcanzado el límite máximo de {MAX_CARDS} tarjetas.
         </p>
       )}
-
       <CardActivity size="HistoryCard">
         <ContainHistoryCards
           cards={cards}

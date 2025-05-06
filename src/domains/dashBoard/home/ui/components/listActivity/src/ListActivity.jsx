@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+
 import '../styles/desktop.scss'
 import ItemActivity from '@domains/dashBoard/home/ui/components/itemActivity/src/ItemActivity'
 import Pagination from '@domains/dashBoard/home/core/hooks/pagination/src/Pagination'
@@ -22,6 +23,8 @@ const ListActivity = ({activity = []}) => {
     indexOfFirstItem + itemsPerPage,
   )
 
+  const shouldHidePagination = window.location.pathname === '/dashBoard/home'
+
   return (
     <div className="contain-cardList">
       {currentItems.length > 0 ? (
@@ -30,13 +33,11 @@ const ListActivity = ({activity = []}) => {
         <p>No hay actividad disponible</p>
       )}
 
-      {totalPages > 1 ? (
+      {/* Paginación oculta solo en /dashBoard/home */}
+      {!shouldHidePagination && totalPages > 1 && (
         <Pagination totalPages={totalPages} onPageChange={setCurrentPage} />
-      ) : (
-        <p>Sin paginación</p>
       )}
     </div>
   )
 }
-
 export default ListActivity

@@ -2,10 +2,22 @@
 @media (max-width: 398px) {
   .history-Cards {
   }
+  .max-cards-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0px;
+  }
 }
 
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .history-Cards {
+  }
+  .max-cards-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0px;
   }
 }
 @media screen and (min-width: 835px) {

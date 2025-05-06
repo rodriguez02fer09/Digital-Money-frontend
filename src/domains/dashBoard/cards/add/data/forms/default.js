@@ -6,8 +6,22 @@ export const inputs = [
     registerData: {
       required: 'El número de tarjeta es obligatorio',
       minLength: {value: 13, message: 'Debe tener al menos 13 dígitos'},
-      maxLength: {value: 19, message: 'No puede tener más de 19 dígitos'},
+      maxLength: {value: 16, message: 'No puede tener más de 16 dígitos'},
       pattern: {value: /^[0-9]+$/, message: 'Solo números permitidos'},
+      onChange: e => {
+        // Limitar estrictamente a 16 dígitos
+        const cleanValue = e.target.value.replace(/\D/g, '').slice(0, 16)
+        e.target.value = cleanValue
+
+        // Actualizar el valor en react-hook-form
+        const event = new Event('input', {bubbles: true})
+        e.target.dispatchEvent(event)
+      },
+      onBlur: e => {
+        // Formatear visualmente con espacios cada 4 dígitos
+        const value = e.target.value.replace(/\D/g, '')
+        e.target.value = value.replace(/(\d{4})/g, '$1 ').trim()
+      },
     },
   },
   {

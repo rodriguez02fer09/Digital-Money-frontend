@@ -16,7 +16,7 @@ const Avatar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-
+  const [showCreateAccount, setShowCreateAccount] = useState(true)
   const {user, isLogin, fetchAccount, setUser} = useAccountStore()
 
   useEffect(() => {
@@ -42,11 +42,23 @@ const Avatar = () => {
   }
 
   const handleCreateAccount = () => {
+    setShowCreateAccount(false)
     router.push('/account/create')
   }
 
   const toggleMenu = () => {
     setMenuOpen(prev => !prev)
+  }
+
+  const handleClose = e => {
+    if (!isMobile) return
+    e.stopPropagation()
+    setMenuOpen(false)
+  }
+
+  const handleLinkClick = () => {
+    if (!isMobile) return
+    setMenuOpen(false)
   }
 
   const isAuthPage =
@@ -66,8 +78,8 @@ const Avatar = () => {
         !isAuthPage && (
           <div className="contain-avatar--button">
             <Button
-              size="sign-up"
-              label="Ingresar"
+              size="logIn"
+              label={isRegisterPage ? 'Iniciar sesión' : 'Ingresar'}
               color="black"
               onClick={handleSignUp}
             />
@@ -95,10 +107,13 @@ const Avatar = () => {
           />
         </div>
       )}
+
       {menuOpen && (
-        <div className="menu-desplegable">
-          <MenuDesplegable />
-        </div>
+        <MenuDesplegable
+          onClose={() => setMenuOpen(false)}
+          onMobileClose={isMobile ? handleClose : undefined}
+          onMobileLinkClick={isMobile ? handleLinkClick : undefined}
+        />
       )}
     </div>
   )

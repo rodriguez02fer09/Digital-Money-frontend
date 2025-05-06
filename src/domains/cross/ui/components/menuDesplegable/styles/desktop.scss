@@ -1,25 +1,33 @@
 @import '../../../../sass/variables';
 
-.hidden {
-  display: none !important;
-}
-
 @media (max-width: 398px) {
   .contain-menu {
-    width: 219px;
-    height: 92%;
+    width: 100%;
+    height: 93%;
     position: absolute;
     background: $primary-color;
-    right: 10px;
+    right: 0px;
+    top: 0px;
     z-index: 1000;
     &--containClose {
-      width: 22px;
-      height: 28px;
+      width: 100%;
+      height: 40px;
       padding: 10px;
+      background: $secondary-color;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
 
       cursor: pointer;
       Image {
       }
+    }
+
+    &--containProfile {
+      width: 100%;
+      height: 100px;
+      background: $secondary-color;
     }
     &--contain-list {
       margin: 50px 40px;
@@ -64,6 +72,9 @@
       Image {
       }
     }
+    &--containProfile {
+      display: none;
+    }
     &--contain-list {
       margin: 50px 40px;
       width: 140px;
@@ -103,6 +114,9 @@
       display: none;
       Image {
       }
+    }
+    &--containProfile {
+      display: none;
     }
     &--contain-list {
       margin: 50px 40px;

@@ -8,11 +8,13 @@
   li {
     margin: 0 5px;
     padding: 8px 12px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s ease;
 
+    transition: background-color 0.3s ease;
+    a {
+      color: black;
+    }
     &:hover {
       background-color: #d1d1d1;
     }
@@ -26,11 +28,15 @@
 
   .prev-button,
   .next-button {
-    font-weight: bold;
+    display: none;
   }
 
   .disabled {
     opacity: 0.5;
     pointer-events: none;
+    display: none;
+  }
+  .next {
+    display: none;
   }
 }

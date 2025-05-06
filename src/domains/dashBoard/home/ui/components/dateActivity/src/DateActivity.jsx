@@ -2,19 +2,14 @@ import {format} from 'date-fns'
 import '../styles/desktop.scss'
 
 const DateActivity = ({date, amount}) => {
-  const defaultDateActivity = 'dateActivity'
-
   return (
-    <div className={defaultDateActivity}>
-      <p className={`${defaultDateActivity}__account`}> $ {amount}</p>
-      <p className={`${defaultDateActivity}__date`}>
+    <div className="dateActivity">
+      <p className="dateActivity__account">$ {amount}</p>
+      <div className="dateActivity__date">
         {new Intl.DateTimeFormat('es-ES', {
           weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
         }).format(new Date(date))}
-      </p>
+      </div>
     </div>
   )
 }

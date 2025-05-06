@@ -6,6 +6,10 @@ const ServiceButtons = () => {
     window.location.href = '/dashBoard/depositMoney'
   }
 
+  const handlerPayServices = () => {
+    window.location.href = '/dashBoard/paymentService'
+  }
+
   const defaultClass = 'service-buttons'
   return (
     <div className={defaultClass}>
@@ -15,7 +19,12 @@ const ServiceButtons = () => {
         color="green"
         onClick={handlerDepositMoney}
       />
-      <Button size="button-activity" label="Pago de servicios" color="green" />
+      <Button
+        size="button-activity"
+        label="Pago de servicios"
+        color="green"
+        onClick={handlerPayServices}
+      />
     </div>
   )
 }

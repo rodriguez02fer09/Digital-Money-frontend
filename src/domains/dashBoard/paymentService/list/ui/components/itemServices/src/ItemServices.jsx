@@ -20,7 +20,7 @@ const ItemServices = ({service, handleSelect, isSelected}) => {
         onClick={() => handleSelect(id)}
         className={isSelected === id ? 'selected' : ''}
       >
-        {isSelected === id ? 'Seleccionado' : 'Seleccionar'}
+        {isSelected === id ? 'Seleccionar' : 'Seleccionar'}
       </button>
     </div>
   )
