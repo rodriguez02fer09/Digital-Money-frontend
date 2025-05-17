@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   webpack(config) {
-    // Soporte para SVG
+    // Soporte para archivos SVG
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
