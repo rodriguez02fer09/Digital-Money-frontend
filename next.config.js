@@ -2,13 +2,13 @@ const path = require('path')
 
 module.exports = {
   webpack(config) {
-    // Soporte para archivos SVG
+    // Soporte para SVG
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     })
 
-    // Alias @domains para Vercel
+    // Alias para @domains
     config.resolve.alias['@domains'] = path.resolve(__dirname, 'src/domains')
 
     return config
