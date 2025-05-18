@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables.scss' as *;
+
 .login-btn.align-right {
   margin-left: auto;
 }

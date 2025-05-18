@@ -4,6 +4,7 @@ import '../styles/desktop.scss'
 import classNames from 'classnames'
 import {useState, useEffect} from 'react'
 import {useSearchParams} from 'next/navigation'
+import Image from 'next/image' // ✅ Importar Image de next/image
 
 const InputSearch = ({
   size,
@@ -28,7 +29,7 @@ const InputSearch = ({
         onKeyDown={onKeyDown}
         className="container-SearchPrompt__input"
       />
-      <img
+      <Image
         className="container-SearchPrompt__img"
         src="/images/search.svg"
         alt="Search icon"

@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables' as *;
+
 @media (max-width: 398px) {
   .ItemAddCards {
     cursor: pointer;

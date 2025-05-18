@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables.scss' as *;
+
 @media (max-width: 398px) {
   .button {
     border-radius: 10px;

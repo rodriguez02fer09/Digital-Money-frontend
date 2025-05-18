@@ -23,8 +23,10 @@ const Form = ({inputs = [], name, callBackOnSubmit, callBackOnChange}) => {
   }
 
   useEffect(() => {
-    callBackOnChange(watchedValues, focusedField)
-  }, [watchedValues])
+    if (callBackOnChange) {
+      callBackOnChange(watchedValues, focusedField)
+    }
+  }, [watchedValues, focusedField, callBackOnChange])
 
   return (
     <FormProvider {...methods}>
@@ -42,8 +44,6 @@ const Form = ({inputs = [], name, callBackOnSubmit, callBackOnChange}) => {
           />
         ))}
         <Button size="large" label="Continuar" color="green" type="submit" />
-
-        {/* Mostramos valores en tiempo real */}
       </form>
     </FormProvider>
   )

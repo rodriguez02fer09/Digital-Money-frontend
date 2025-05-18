@@ -12,7 +12,7 @@ const SearchServices = ({onFilter}) => {
 
   useEffect(() => {
     onFilter(searchValue)
-  }, [searchValue])
+  }, [searchValue, onFilter]) // ✅ Agregado `onFilter`
 
   return (
     <InputSearch

@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables.scss' as *;
+
 .cvuView {
   width: 100px;
   height: 20px;

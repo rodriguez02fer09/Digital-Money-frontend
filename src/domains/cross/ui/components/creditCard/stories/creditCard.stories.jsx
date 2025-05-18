@@ -1,5 +1,5 @@
 // styles
-@use '../../../../sass/variables.scss';
+import '../../../../sass/variables.scss'
 import '../styles/desktop.scss'
 import CreditCard from '../index'
 
@@ -20,14 +20,14 @@ export default {
 
 const Template = args => <CreditCard {...args} />
 
-export const cardEmpty = Template.bind({})
-cardEmpty.args = {
+export const CardEmpty = Template.bind({})
+CardEmpty.args = {
   size: 'cardEmpty',
   color: 'grey',
 }
 
-export const cardFilled = Template.bind({})
-cardFilled.args = {
+export const CardFilled = Template.bind({})
+CardFilled.args = {
   size: 'cardFilled',
   color: 'black',
 }

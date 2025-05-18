@@ -1,11 +1,10 @@
-// styles
-@use '../../../../sass/variables.scss';
+import '../../../../sass/variables.scss'
 import '../style/desktop.scss'
 import Button from '../index'
 
 export default {
   component: Button,
-  title: 'Button', // El título de tu componente en Storybook
+  title: 'Button',
   argTypes: {
     size: {
       options: [
@@ -31,7 +30,6 @@ export const Green = Template.bind({})
 Green.args = {
   label: 'Botón',
   color: 'green',
-  // dataTestId: 'large-yellow-button',
 }
 
 export const Black = Template.bind({})
@@ -50,14 +48,12 @@ export const Large = Template.bind({})
 Large.args = {
   label: 'Botón Small',
   size: 'large',
-  // dataTestId: 'small-gray-button',
 }
 
 export const Medium = Template.bind({})
 Medium.args = {
   label: 'Botón Small',
   size: 'medium',
-  // dataTestId: 'small-gray-button',
 }
 
 export const SignUp = Template.bind({})
@@ -66,24 +62,26 @@ SignUp.args = {
   size: 'sign-up',
 }
 
-export const Log in = Template.bind({})
+export const LogIn = Template.bind({})
 LogIn.args = {
   label: 'Botón Small',
   size: 'logIn',
 }
+
 export const CreateAcount = Template.bind({})
 CreateAcount.args = {
   label: 'Botón Small',
   size: 'create-acount',
 }
 
-export const buttonActivity = Template.bind({})
-buttonActivity.args = {
+export const ButtonActivity = Template.bind({})
+ButtonActivity.args = {
   label: 'button-activity',
   size: 'button-activity',
 }
-export const buttonArrow = Template.bind({})
-buttonArrow.args = {
+
+export const ButtonArrow = Template.bind({})
+ButtonArrow.args = {
   label: 'button-arrow',
   size: 'button-arrow',
 }

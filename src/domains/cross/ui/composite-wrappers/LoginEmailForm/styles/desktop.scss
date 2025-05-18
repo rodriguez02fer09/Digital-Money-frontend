@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables.scss' as *;
+
 .form-container {
   &--loginEmail {
     display: flex;

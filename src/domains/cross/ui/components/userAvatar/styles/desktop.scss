@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables.scss' as *;
+
 .contain-user {
   width: 200px;
   height: 24px;

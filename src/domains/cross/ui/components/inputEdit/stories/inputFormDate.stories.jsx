@@ -1,8 +1,7 @@
 import React from 'react'
 import InputFormDate from '../index'
 import '../styles/desktop.scss'
-@use '../../../../sass/variables.scss';
-
+import '../../../../sass/variables.scss'
 
 export default {
   component: InputFormDate,

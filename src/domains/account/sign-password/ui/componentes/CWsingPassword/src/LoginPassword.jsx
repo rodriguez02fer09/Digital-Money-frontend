@@ -39,7 +39,7 @@ const LoginPassword = () => {
     } else {
       console.log('Correo en el estado:', email)
     }
-  }, [email, setEmail])
+  }, [email, setEmail, router])
 
   const rq = response => {
     console.log('Respuesta de la API:', response)

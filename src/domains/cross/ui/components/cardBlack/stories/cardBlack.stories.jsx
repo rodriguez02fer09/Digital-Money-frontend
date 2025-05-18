@@ -1,30 +1,29 @@
 // styles
-@use '../../../../sass/variables.scss';
+import '../../../../sass/variables.scss'
 import '../styles/desktop.scss'
 import CardBlack from '../index'
 
 export default {
   component: CardBlack,
-  title: 'CardBlack', // El título de tu componente en Storybook
+  title: 'CardBlack',
   argTypes: {
     size: {
       options: [
-        'AvailableAmountCard',
-        'AddCard',
-        ' MoneyTransfer',
-        'Detail',
-        'DepositMoney',
-        'SelectCard',
         'Account',
-        'TransferConfirmation',
+        'AddCard',
         'AproveInfo',
-        'PaymentService'
-      ], 
-      e que estos nombres tengan sentido
+        'AvailableAmountCard',
+        'DepositMoney',
+        'Detail',
+        'MoneyTransfer', // eliminado el espacio
+        'PaymentService',
+        'SelectCard',
+        'TransferConfirmation',
+      ],
       control: {type: 'radio'},
     },
     color: {
-      control: {type: 'color'}, // Agregado para permitir selección de color en Storybook
+      control: {type: 'color'},
     },
   },
 }
@@ -42,6 +41,7 @@ MoneyTransfer.args = {
   color: 'black',
   size: 'MoneyTransfer',
 }
+
 export const AddCard = Template.bind({})
 AddCard.args = {
   color: 'black',
@@ -66,27 +66,26 @@ SelectCard.args = {
   size: 'SelectCard',
 }
 
-export const Account= Template.bind({})
+export const Account = Template.bind({})
 Account.args = {
   color: 'black',
   size: 'Account',
 }
 
-export const TransferConfirmation= Template.bind({})
+export const TransferConfirmation = Template.bind({})
 TransferConfirmation.args = {
   color: 'black',
   size: 'TransferConfirmation',
 }
 
-export const AproveInfo= Template.bind({})
+export const AproveInfo = Template.bind({})
 AproveInfo.args = {
   color: 'black',
   size: 'AproveInfo',
 }
 
-export const PaymentService= Template.bind({})
+export const PaymentService = Template.bind({})
 PaymentService.args = {
   color: 'black',
   size: 'PaymentService',
 }
-

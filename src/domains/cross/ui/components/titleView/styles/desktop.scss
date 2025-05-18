@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+@use '../../../../sass/variables.scss' as *;
+
 @media screen and (min-width: 835px) {
   .titleView {
     width: 160px;

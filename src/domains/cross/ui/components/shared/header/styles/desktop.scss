@@ -1,4 +1,4 @@
-@import '../../../../../sass/variables';
+@use '../../../../../sass//variables' as *;
 
 // Mobile (max-width: 398px)
 @media (max-width: 398px) {

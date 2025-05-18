@@ -1,4 +1,4 @@
+@use './styles/desktop.scss' as *;
+@use './styles/mobile.scss' as *;
+@use './styles/tablet.scss' as *;
 @use '@domains/cross/sass/variables' as *;
-@import './styles/desktop.scss';
-@import './styles/mobile.scss';
-@import './styles/tablet.scss';

@@ -29,7 +29,7 @@ const ContainHistoryCards = ({cards = [], updateCards, selected}) => {
   useEffect(() => {
     const r = cards.filter(c => c.id !== currentId)
     updateCards(r)
-  }, [currentId])
+  }, [currentId, cards, updateCards])
 
   const handlerOnClick = card => {
     const {number_id, account_id, cod, expiration_date, first_last_name, id} =

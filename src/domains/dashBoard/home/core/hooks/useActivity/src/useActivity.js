@@ -29,7 +29,7 @@ const useActivity = ({searchItem = ''}) => {
         updateStateActivity,
       )
     }
-  }, [account, searchItem])
+  }, [account_id, searchItem])
 
   return {
     activity,
