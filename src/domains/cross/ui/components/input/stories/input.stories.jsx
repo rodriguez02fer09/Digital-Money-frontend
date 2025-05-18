@@ -1,6 +1,7 @@
 import Input from '../index'
 import '../styles/desktop.scss'
-import '../../../../sass/_variables.scss'
+// styles
+@use '../../../../sass/variables.scss';
 
 export default {
   component: Input,

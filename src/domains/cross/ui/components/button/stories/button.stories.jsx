@@ -1,5 +1,5 @@
-import '../../../../sass/_variables.scss'
-
+// styles
+@use '../../../../sass/variables.scss';
 import '../style/desktop.scss'
 import Button from '../index'
 

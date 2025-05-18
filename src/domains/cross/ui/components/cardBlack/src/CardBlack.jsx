@@ -1,5 +1,6 @@
 import React from 'react'
-import '../../../../sass/_variables.scss'
+@use '../../../../sass/variables.scss';
+
 import '../styles/desktop.scss'
 import classNames from 'classnames'
 

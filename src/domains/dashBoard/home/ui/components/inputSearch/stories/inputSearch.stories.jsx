@@ -1,5 +1,6 @@
 import InputSearch from '../index'
-import '../../../../sass/_variables.scss'
+// styles
+@use '../../../../sass/variables.scss';
 
 export default {
   component: InputSearch,

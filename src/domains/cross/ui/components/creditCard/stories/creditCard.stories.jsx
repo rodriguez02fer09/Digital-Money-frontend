@@ -1,4 +1,5 @@
-import '../../../../sass/_variables.scss'
+// styles
+@use '../../../../sass/variables.scss';
 import '../styles/desktop.scss'
 import CreditCard from '../index'
 

@@ -2,7 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 import {useFormContext} from 'react-hook-form'
 
-import '../../../../sass/_variables.scss'
+@use '../../../../sass/variables.scss';
+
 import '../styles/desktop.scss'
 
 const Input = ({

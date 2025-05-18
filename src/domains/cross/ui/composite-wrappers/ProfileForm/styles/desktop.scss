@@ -1,4 +1,4 @@
-@import '@domains/cross/sass/_variables.scss';
+@use '@domains/cross/sass/variables' as *;
 @media (min-width: 398px) {
 }
 //tablet
