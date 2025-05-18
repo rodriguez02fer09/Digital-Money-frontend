@@ -1,4 +1,4 @@
-@import '@domains/cross/sass/variables';
+@import '@domains/cross/sass/_variables.scss';
 
 @media (max-width: 398px) {
   .mobile-header {
@@ -18,14 +18,10 @@
 @media screen and (min-width: 399px) and (max-width: 834px) {
   .mobile-header {
     display: none;
-    p {
-    }
   }
 }
 @media screen and (min-width: 835px) {
   .mobile-header {
     display: none;
-    p {
-    }
   }
 }

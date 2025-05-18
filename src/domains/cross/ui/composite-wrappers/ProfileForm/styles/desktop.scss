@@ -1,4 +1,4 @@
-@import '@domains/cross/sass/variables';
+@import '@domains/cross/sass/_variables.scss';
 @media (min-width: 398px) {
 }
 //tablet
@@ -8,6 +8,4 @@
 
 //desktop
 @media screen and (min-width: 835px) {
-  .form-container {
-  }
 }

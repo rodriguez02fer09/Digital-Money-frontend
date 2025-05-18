@@ -3,7 +3,7 @@ import '../styles/desktop.scss'
 
 import {useForm} from 'react-hook-form'
 import {useRouter} from 'next/navigation'
-import {useAuthStore} from '@domains/account/sign-email/core/hoocks/UseAuthStore'
+import {useAuthStore} from '@domains/account/sign-email/core/hoocks/useAuthStore'
 import Form from '@domains/cross/ui/composite-wrappers/LoginEmailForm'
 import {emailForm} from '@domains/account/sign-email/data/forms/default'
 
