@@ -1,4 +1,5 @@
-@import '../../../../sass/variables';
+// ✅ Correcto en SCSS
+@use '../../../../sass/variables.scss' as *;
 
 input {
   width: 100%;
