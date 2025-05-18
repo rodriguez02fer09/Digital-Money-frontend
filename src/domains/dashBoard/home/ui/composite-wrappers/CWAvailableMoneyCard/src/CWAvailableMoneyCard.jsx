@@ -6,7 +6,7 @@ import CardView from '@domains/cross/ui/components/cardView/src/CardView'
 import CvuView from '@domains/cross/ui/components/cvuView/src/CvuView'
 import TitleView from '@domains/cross/ui/components/titleView/src/TitleView'
 import MoneyView from '@domains/cross/ui/components/moneyView/src/MoneyView'
-import CardBlack from '@domains/cross/ui/components/CardBlack'
+import CardBlack from '@domains/cross/ui/components/CardBlack/src/CardBlack'
 
 import useAccount from '@domains/cross/core/hoocks/useAccount/src/useAccount'
 

@@ -1,7 +1,7 @@
 'use client'
 import '../styles/main.scss'
 import Image from 'next/image'
-import CardBlack from '@domains/cross/ui/components/cardBlack'
+import CardBlack from '@domains/cross/ui/components/cardBlack/src/CardBlack'
 
 const BankTransaction = () => {
   const defaultBankTransaction = 'bank-transaction'
